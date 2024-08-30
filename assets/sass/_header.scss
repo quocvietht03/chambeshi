@@ -304,135 +304,161 @@
         }
       }
     }
-    &.bt-header-main-nav {
+    &.bt-header-main-topbar {
       > .e-con-inner {
         > .elementor-element {
+          &:first-child {
+            @media (max-width: 1280px) and (min-width: $break-tl) {
+              width: 28%;
+              .bt-elwg-site-infor {
+                row-gap: 0;
+                .bt-elwg-site-infor--item:not(:last-child)::before {
+                  opacity: 0;
+                }
+              }
+            }
+            @media (max-width: 950px) and (min-width: $break-sm) {
+              width: 40%;
+              .bt-elwg-site-infor {
+                row-gap: 0;
+                padding: 5px 0;
+              }
+            }
+            @media (max-width: $break-xs) {
+              .bt-elwg-site-infor {
+                row-gap: 0;
+                &--item {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+          &:last-child {
+            @media (max-width: 1280px) and (min-width: $break-tl) {
+              width: 72%;
+            }
+            @media (max-width: 950px) and (min-width: $break-sm) {
+              width: 60%;
+            }
+            > .elementor-element {
+              &:first-child {
+                .elementor-widget-container {
+                  @media (max-width: 1400px) and (min-width: $break-tl) {
+                    padding: 15px;
+                  }
+                  @media (max-width: 1280px) and (min-width: $break-tl) {
+                    padding: 15px;
+                  }
+                }
+              }
+              &:nth-child(2) {
+                .bt-elwg-account-login-inner ul li {
+                  @media (max-width: $break-xs) {
+                    span,
+                    a {
+                      font-size: 14px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.bt-header-main-nav {
+      &.elementor-sticky {
+        &--effects {
+          box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
           .elementor-widget-nav-menu {
             > .elementor-widget-container {
               .elementor-nav-menu {
-                .menu-item-has-children {
-                  .elementor-item {
-                    padding-right: 0 !important;
+                .elementor-item {
+                  padding-top: 30px;
+                  padding-bottom: 30px;
+                }
+              }
+            }
+          }
+          .elementor-widget-button {
+            .elementor-button-wrapper {
+              .elementor-button {
+                padding-top: 16px;
+                padding-bottom: 16px;
+              }
+            }
+          }
+        }
+      }
+      .elementor-element {
+        .elementor-widget-nav-menu {
+          > .elementor-widget-container {
+            .elementor-nav-menu {
+              > .menu-item {
+                &.current-menu-item {
+                  > a {
+                    background: $color-accent;
+                  }
+                }
+                > a {
+                  &:hover {
+                    background: $color-accent;
+                  }
+                  &.highlighted {
+                    background: $color-accent;
+                  }
+                }
+              }
+            }
+            .menu-item-has-children {
+              .elementor-item {
+                .sub-arrow {
+                  padding: 0;
+                  svg {
+                    margin-left: 10px;
                   }
                 }
               }
             }
           }
-          &.elementor-sticky {
-            &--effects {
-              box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
-              border-radius: 60px 30px 30px 60px;
-              > .e-con-inner {
-                > .elementor-element {
-                  &:first-child {
-                    margin-bottom: 0;
-                    padding: 20px;
-                    img {
-                      @media (min-width: $break-lg) {
-                        max-width: 190px;
-                      }
-                    }
-                  }
-                  &:last-child {
-                    .elementor-widget-nav-menu {
-                      > .elementor-widget-container {
-                        .elementor-nav-menu {
-                          .elementor-item {
-                            padding-top: 35px;
-                            padding-bottom: 35px;
-                            @media (max-width: $break-lg) and (min-width: $break-tl) {
-                              padding-top: 33px;
-                              padding-bottom: 33px;
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-          > .e-con-inner {
-            > .elementor-element {
-              &:first-child {
-                img {
-                  transition: 0.3s all;
-                }
-              }
+        }
+      }
+      > .e-con-inner {
+        > .elementor-element {
+          &:last-child {
+            @media (max-width: 1345px) and (min-width: $break-tl) {
               .elementor-widget-nav-menu {
                 > .elementor-widget-container {
+                  margin-right: 20px;
                   .elementor-nav-menu {
                     .elementor-item {
-                      transition: 0.3s all;
+                      padding-left: 20px;
+                      padding-right: 20px;
                     }
                   }
                 }
               }
-              .bt-button-header-main {
-                height: 100%;
-                .elementor-button-wrapper {
-                  height: 100%;
-                  .elementor-button {
-                    overflow: hidden;
-                    transition: 0.3s all;
-                    display: flex;
-                    align-items: center;
-                    height: 100%;
-                  }
-                }
-              }
-              @media (max-width: 1380px) and (min-width: $break-lg) {
-                &:last-child {
-                  gap: 15px;
-                  .elementor-widget-nav-menu {
-                    > .elementor-widget-container {
-                      margin-right: 0;
-                      .elementor-nav-menu {
-                        .elementor-item {
-                          font-size: 20px;
-                          margin-left: 8px;
-                          margin-right: 8px;
-                        }
-                      }
-                    }
-                  }
-                  .bt-button-header-main {
-                    .elementor-button {
-                      padding: 0 30px 0 30px;
-                    }
-                  }
-                }
-              }
-              @media (max-width: $break-lg) and (min-width: $break-tl) {
-                &:first-child {
-                  padding: 20px;
-                  img {
-                    max-width: 190px;
-                  }
-                }
-                &:last-child {
-                  gap: 15px;
-                  .elementor-widget-nav-menu {
-                    > .elementor-widget-container {
-                      .elementor-nav-menu {
-                        .elementor-item {
-                          font-size: 18px;
-                          margin-left: 5px;
-                          margin-right: 5px;
-                          padding-top: 33px;
-                          padding-bottom: 33px;
-                          padding-left: 5px;
-                          padding-right: 5px;
-                        }
-                      }
-                    }
-                  }
-                  .bt-button-header-main {
-                    .elementor-button {
+            }
+            @media (max-width: $break-lg) and (min-width: $break-tl) {
+              .elementor-widget-nav-menu {
+                > .elementor-widget-container {
+                  margin-right: 10px;
+                  .elementor-nav-menu {
+                    .elementor-item {
+                      padding-left: 15px;
+                      padding-right: 15px;
+                      padding-top: 38px;
+                      padding-bottom: 38px;
                       font-size: 16px;
-                      padding: 0 30px 0 30px;
                     }
+                  }
+                }
+              }
+              .elementor-widget-button {
+                .elementor-button-wrapper {
+                  .elementor-button {
+                    padding: 16px 25px 16px 25px;
+                    font-size: 16px;
                   }
                 }
               }

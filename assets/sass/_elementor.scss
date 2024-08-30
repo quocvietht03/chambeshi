@@ -162,23 +162,31 @@
   gap: 4px 50px;
 
   &--item {
-    font-family: $primary-font;
     font-size: 16px;
-    line-height: 150%;
-    color: $color-primary;
-
+    color: $color-text;
+    font-family: $secondary-font;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    strong {
+      font-weight: 600;
+      color: $color-primary;
+      margin-right: 5px;
+    }
     a {
       display: flex;
       align-items: center;
-      grid-gap: 11px;
+      grid-gap: 8px;
     }
     &.address {
       display: flex;
       align-items: center;
-      grid-gap: 11px;
+      grid-gap: 8px;
     }
     span {
       width: calc(100% - 37px);
+      display: flex;
+      min-width: max-content;
     }
     svg {
       display: inline-block;
@@ -193,11 +201,11 @@
           &::before {
             content: " ";
             display: inline-block;
-            height: 100%;
+            height: 70%;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: $color-secondary;
+            background-color: $color-text;
           }
         }
       }
@@ -278,29 +286,31 @@
 }
 
 .bt-elwg-site-social-style-2 {
-  gap: 16px;
+  gap: 3px;
   .bt-title {
     margin: 0;
   }
 
   a {
-    width: auto;
-    height: auto;
     background: transparent !important;
     border-radius: 0;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
     svg {
-      fill: $color-secondary;
+      fill: $color-text;
       width: auto;
       height: 18px;
+      width: 18px;
       transition: $transition;
     }
     &:hover {
+      background: #fff !important;
       svg {
-        fill: $color-accent;
+        fill: $color-primary;
       }
     }
   }
@@ -642,6 +652,62 @@
 .bt-elwg-therapist-loop-item {
   &--default {
     @extend .__bt-therapist-style-default;
+  }
+}
+.bt-elwg-account-login {
+  display: flex;
+  width: 100%;
+
+  &-inner {
+    width: 100%;
+
+    ul {
+      width: 100%;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+      align-content: center;
+
+      li {
+        list-style-type: none;
+        position: relative;
+        display: flex;
+
+        a,
+        span {
+          color: $color-primary;
+          font-family: $secondary-font;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          text-decoration-line: underline;
+        }
+
+        &:not(:first-child) {
+          &::before {
+            content: " ";
+            display: inline-block;
+            width: 2px;
+            height: 65%;
+            background-color: var(--e-global-color-primary, #222);
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%) rotate(17deg);
+          }
+        }
+      }
+      &.status-login {
+        li {
+          a,
+          span {
+            text-decoration-line: none;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -1214,15 +1280,18 @@
     position: relative;
     color: $color-accent;
     display: initial;
-    img {
+    span{
+      color: $color-primary;
+      font-weight: 400;
+    }
+    svg {
       position: absolute;
-      min-width: calc(100% + 70%);
+      min-width: calc(100% + 50px);
       height: 100%;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
       z-index: -1;
-      cursor: pointer;
     }
   }
 

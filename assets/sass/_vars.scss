@@ -3,15 +3,15 @@
  */
 $text-font: var(--e-global-typography-text-font-family, "DM Sans");
 $primary-font: var(--e-global-typography-primary-font-family, "DM Sans");
-$secondary-font: var(--e-global-typography-secondary-font-family, "Cormorant");
-$accent-font: var(--e-global-typography-accent-font-family, "Dancing Script");
+$secondary-font: var(--e-global-typography-secondary-font-family, "Poppins");
+$accent-font: var(--e-global-typography-accent-font-family, "DM Sans");
 /*
  * colors
  */
 $color-text: var(--e-global-color-text, #555);
 $color-primary: var(--e-global-color-primary, #222);
-$color-accent: var(--e-global-color-accent, #c2a74e);
-$color-secondary: var(--e-global-color-secondary, #111);
+$color-accent: var(--e-global-color-accent, #4F6A35);
+$color-secondary: var(--e-global-color-secondary, #FFE17F);
 
 /* Layout */
 $container: var(--container-max-width, 1420px);

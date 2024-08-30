@@ -161,7 +161,7 @@
                                 "facebook": "Facebook",
                                 "linkedin": "Linkedin",
                                 "twitter": "Twitter",
-                                "google": "Google"
+                                "instagram": "Instagram"
                             },
                             "default_value": false,
                             "return_format": "value",
@@ -1266,5 +1266,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1720680201
+    "modified": 1724985632
 }
