@@ -1,30 +1,30 @@
 <?php
 /*
- * Brand CPT
+ * Company CPT
  */
 
-function chambeshi_brand_register() {
+function chambeshi_company_register() {
 
-	$cpt_slug = get_theme_mod('chambeshi_brand_slug');
+	$cpt_slug = get_theme_mod('chambeshi_company_slug');
 
 	if(isset($cpt_slug) && $cpt_slug != ''){
 		$cpt_slug = $cpt_slug;
 	} else {
-		$cpt_slug = 'brand';
+		$cpt_slug = 'company';
 	}
 
 	$labels = array(
-		'name'               => esc_html__( 'Brands', 'chambeshi' ),
-		'singular_name'      => esc_html__( 'Brand', 'chambeshi' ),
+		'name'               => esc_html__( 'Company', 'chambeshi' ),
+		'singular_name'      => esc_html__( 'Company', 'chambeshi' ),
 		'add_new'            => esc_html__( 'Add New', 'chambeshi' ),
-		'add_new_item'       => esc_html__( 'Add New Brand', 'chambeshi' ),
-		'all_items'          => esc_html__( 'All Brands', 'chambeshi' ),
-		'edit_item'          => esc_html__( 'Edit Brand', 'chambeshi' ),
-		'new_item'           => esc_html__( 'Add New Brand', 'chambeshi' ),
+		'add_new_item'       => esc_html__( 'Add New Company', 'chambeshi' ),
+		'all_items'          => esc_html__( 'All Company', 'chambeshi' ),
+		'edit_item'          => esc_html__( 'Edit Company', 'chambeshi' ),
+		'new_item'           => esc_html__( 'Add New Company', 'chambeshi' ),
 		'view_item'          => esc_html__( 'View Item', 'chambeshi' ),
-		'search_items'       => esc_html__( 'Search Brands', 'chambeshi' ),
-		'not_found'          => esc_html__( 'No brand(s) found', 'chambeshi' ),
-		'not_found_in_trash' => esc_html__( 'No brand(s) found in trash', 'chambeshi' )
+		'search_items'       => esc_html__( 'Search Company', 'chambeshi' ),
+		'not_found'          => esc_html__( 'No company(s) found', 'chambeshi' ),
+		'not_found_in_trash' => esc_html__( 'No company(s) found in trash', 'chambeshi' )
 	);
 
   $args = array(
@@ -39,18 +39,18 @@ function chambeshi_brand_register() {
 		'supports'        => array('title', 'thumbnail')
   );
 
-  add_filter( 'enter_title_here',  'chambeshi_brand_change_default_title');
+  add_filter( 'enter_title_here',  'chambeshi_company_change_default_title');
 
-  register_post_type( 'brand' , $args );
+  register_post_type( 'company' , $args );
 }
-add_action('init', 'chambeshi_brand_register', 1);
+add_action('init', 'chambeshi_company_register', 1);
 
 
-function chambeshi_brand_taxonomy() {
+function chambeshi_company_taxonomy() {
 
 	register_taxonomy(
-		"brand_categories",
-		array("brand"),
+		"company_categories",
+		array("company"),
 		array(
 			"hierarchical"   => true,
 			"label"          => "Categories",
@@ -60,8 +60,8 @@ function chambeshi_brand_taxonomy() {
 	);
 
 	register_taxonomy(
-        'brand_tag',
-        'brand',
+        'company_tag',
+        'company',
         array(
             'hierarchical'  => false,
             'label'         => __( 'Tags', 'chambeshi' ),
@@ -72,34 +72,34 @@ function chambeshi_brand_taxonomy() {
     );
 
 }
-add_action('init', 'chambeshi_brand_taxonomy', 1);
+add_action('init', 'chambeshi_company_taxonomy', 1);
 
 
-function chambeshi_brand_change_default_title( $title ) {
+function chambeshi_company_change_default_title( $title ) {
 	$screen = get_current_screen();
 
-	if ( 'brand' == $screen->post_type )
-		$title = esc_html__( "Enter the brand's name here", 'chambeshi' );
+	if ( 'company' == $screen->post_type )
+		$title = esc_html__( "Enter the company's name here", 'chambeshi' );
 
 	return $title;
 }
 
 
-function chambeshi_brand_edit_columns( $brand_columns ) {
-	$brand_columns = array(
+function chambeshi_company_edit_columns( $company_columns ) {
+	$company_columns = array(
 		"cb"                     => "<input type=\"checkbox\" />",
 		"title"                  => esc_html__('Title', 'chambeshi'),
 		"thumbnail"              => esc_html__('Thumbnail', 'chambeshi'),
-		"brand_categories" 			 => esc_html__('Categories', 'chambeshi'),
+		"company_categories" 			 => esc_html__('Categories', 'chambeshi'),
 		"date"                   => esc_html__('Date', 'chambeshi'),
 	);
-	return $brand_columns;
+	return $company_columns;
 }
-add_filter( 'manage_edit-brand_columns', 'chambeshi_brand_edit_columns' );
+add_filter( 'manage_edit-company_columns', 'chambeshi_company_edit_columns' );
 
-function chambeshi_brand_column_display( $brand_columns, $post_id ) {
+function chambeshi_company_column_display( $company_columns, $post_id ) {
 
-	switch ( $brand_columns ) {
+	switch ( $company_columns ) {
 
 		// Display the thumbnail in the column view
 		case "thumbnail":
@@ -118,10 +118,10 @@ function chambeshi_brand_column_display( $brand_columns, $post_id ) {
 			}
 			break;
 
-		// Display the brand tags in the column view
-		case "brand_categories":
+		// Display the company tags in the column view
+		case "company_categories":
 
-		if ( $category_list = get_the_term_list( $post_id, 'brand_categories', '', ', ', '' ) ) {
+		if ( $category_list = get_the_term_list( $post_id, 'company_categories', '', ', ', '' ) ) {
 			echo wp_kses_post( $category_list );
 		} else {
 			echo esc_html__('None', 'chambeshi');
@@ -129,4 +129,4 @@ function chambeshi_brand_column_display( $brand_columns, $post_id ) {
 		break;
 	}
 }
-add_action( 'manage_brand_posts_custom_column', 'chambeshi_brand_column_display', 10, 2 );
+add_action( 'manage_company_posts_custom_column', 'chambeshi_company_column_display', 10, 2 );

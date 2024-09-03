@@ -1223,7 +1223,7 @@
     @extend .__bt-service-style-default;
   }
 }
-.bt-elwg-brand-loop-item {
+.bt-elwg-company-loop-item {
   &--default {
     a {
       display: block;
@@ -1232,15 +1232,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 47px 35px;
+      padding: 27px 35px;
       background: #fff;
-      border-radius: 20px 20px 80px 20px;
+      border-radius: 20px;
       @media (max-width: $break-xs) {
-        border-radius: 15px 15px 50px 15px;
+        padding: 20px 35px;
       }
       img {
-        max-width: 142px;
         width: 100%;
+        height: 46px;
+        object-fit: contain;
       }
     }
   }
@@ -1279,7 +1280,6 @@
   .__text-highlighted {
     position: relative;
     color: $color-accent;
-    display: initial;
     span{
       color: $color-primary;
       font-weight: 400;

@@ -1,5 +1,5 @@
 <?php
-namespace ChambeshiElementorWidgets\Widgets\BrandLoopItem;
+namespace ChambeshiElementorWidgets\Widgets\CompanyLoopItem;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -9,14 +9,14 @@ use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 
-class Widget_BrandLoopItem extends Widget_Base {
+class Widget_CompanyLoopItem extends Widget_Base {
 
 	public function get_name() {
-		return 'bt-brand-loop-item';
+		return 'bt-company-loop-item';
 	}
 
 	public function get_title() {
-		return __( 'Brand Loop Item', 'chambeshi' );
+		return __( 'Company Loop Item', 'chambeshi' );
 	}
 
 	public function get_icon() {
@@ -135,8 +135,8 @@ class Widget_BrandLoopItem extends Widget_Base {
 		$link = get_field('link');
 
 		?>
-			<div class="bt-elwg-brand-loop-item--default">
-				<?php get_template_part( 'framework/templates/brand', 'style' ); ?>
+			<div class="bt-elwg-company-loop-item--default">
+				<?php get_template_part( 'framework/templates/company', 'style' ); ?>
 	    </div>
 		<?php
 	}

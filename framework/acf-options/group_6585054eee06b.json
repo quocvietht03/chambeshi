@@ -1,6 +1,6 @@
 {
     "key": "group_6585054eee06b",
-    "title": "Brands Options",
+    "title": "Company Options",
     "fields": [
         {
             "key": "field_6585054ef3f45",
@@ -49,7 +49,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "brand"
+                "value": "company"
             }
         ]
     ],
@@ -62,5 +62,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719022246
+    "modified": 1725345649
 }

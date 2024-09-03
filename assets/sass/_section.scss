@@ -59,9 +59,101 @@
         }
     }
     &.bt-section-hero-home1 {
-      > .elementor-element{
-       // mix-blend-mode: multiply;
-      }
+        > .elementor-element {
+            .elementor-widget-progress {
+                .elementor-progress-bar {
+                    border-radius: 0;
+                }
+            }
+            @media (max-width: 1400px) and (min-width: $break-lg) {
+                &:last-child {
+                    > .e-con-inner {
+                        > .elementor-element {
+                            &:first-child {
+                                width: 45%;
+                            }
+                            &:last-child {
+                                width: 55%;
+                                > .elementor-element {
+                                    &:first-child {
+                                        > .elementor-element {
+                                            padding-left: 30px;
+                                            padding-right: 30px;
+                                        }
+                                    }
+                                    &:last-child {
+                                        > .elementor-element {
+                                            &:last-child {
+                                                padding-left: 30px;
+                                                padding-right: 30px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @media (max-width: $break-lg) {
+                position: relative;
+                bottom: 0 !important;
+            }
+            @media (max-width: $break-lg) and (min-width: $break-tl) {
+                &:first-child {
+                    > .elementor-element {
+                        > .e-con-inner {
+                            > .elementor-element {
+                                &:first-child {
+                                    width: 60%;
+                                }
+                                &:last-child {
+                                    width: 40%;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:last-child {
+                    margin-top: 60px;
+                    margin-bottom: 60px;
+                    > .e-con-inner {
+                        > .elementor-element {
+                            &:first-child {
+                                display: none;
+                            }
+                            &:last-child {
+                                width: 100%;
+                                > .elementor-element {
+                                    &:first-child {
+                                        width: calc(33.33% - 10px);
+                                        > .elementor-element {
+                                            height: 100%;
+                                            padding: 30px;
+                                        }
+                                    }
+                                    &:last-child {
+                                        width: calc(66.66% - 10px);
+                                        flex-direction: row;
+                                        > .elementor-element {
+                                            width: calc(50% - 10px);
+                                            height: 100%;
+                                            &:first-child {
+                                                border-width: 10px;
+                                            }
+                                            &:last-child {
+                                                padding-left: 20px;
+                                                padding-right: 20px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     &.bt-form-subscribe-home1 {
         width: 100%;
