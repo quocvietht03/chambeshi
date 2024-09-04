@@ -69,7 +69,6 @@ class ElementorWidgets
 			'buble-background',
 			'product-loop-item',
 			'highlighted-heading',
-			'highlighted-heading-style-1',
 			'popular-services',
 			'pricing-item',
 			'pricing-item-style-1',
@@ -203,7 +202,6 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ProductLoopItem\Widget_ProductLoopItem());
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\HighlightedHeading\Widget_HighlightedHeading());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\HighlightedHeadingStyle1\Widget_HighlightedHeadingStyle1());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PricingItem\Widget_PricingItem());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PricingItemStyle1\Widget_PricingItemStyle1());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TimeList\Widget_TimeList());

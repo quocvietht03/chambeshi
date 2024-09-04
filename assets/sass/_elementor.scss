@@ -902,12 +902,20 @@
 .bt-elwg-testimonial-loop-item {
   &--default {
     .bt-post {
-      padding: 10px;
+      padding: 58px 45px 41px 52px;
+      background: #d9e9b9;
+      border-radius: 20px 20px 0 0;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      @media (max-width: $break-xs) {
+        padding: 20px 20px 30px 20px;
+      }
       &--quote-icon {
         position: absolute;
         z-index: 3;
-        right: 20px;
-        top: 20px;
+        right: 39px;
+        top: 44px;
         @media (max-width: $break-xs) {
           right: 14px;
           top: 13px;
@@ -917,37 +925,13 @@
           }
         }
       }
-      &--inner {
-        position: relative;
-        overflow: hidden;
-        padding: 50px 71px;
-        z-index: 1;
-        background-image: url("../images/bg-item-testimonials.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-radius: 20px 20px 80px 20px;
-        &::before {
-          background: $color-accent;
-          position: absolute;
-          content: "";
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          mix-blend-mode: multiply;
-        }
-        @media (max-width: $break-xs) {
-          padding: 35px;
-        }
-      }
       &--desc {
-        color: #fff;
+        position: relative;
+        color: $color-text;
+        font-size: 20px;
         font-style: italic;
         font-weight: 400;
-        line-height: 36px;
-        font-size: 22px;
-        position: relative;
+        line-height: 30px;
         > * {
           margin-left: auto;
           margin-right: auto;
@@ -969,8 +953,8 @@
       &--avatar {
         display: flex;
         overflow: hidden;
-        width: 88px;
-        height: 88px;
+        width: 56px;
+        height: 56px;
         background: #f5f5f5;
         border-radius: 50%;
         img {
@@ -980,21 +964,25 @@
         }
       }
       &--title-wrap {
-        width: calc(100% - 88px);
-        padding-left: 22px;
+        width: calc(100% - 56px);
+        padding-left: 16px;
       }
       &--title {
-        color: #fff;
         font-family: $secondary-font;
-        font-size: 30px;
-        font-weight: 600;
         transition: all 0.3s;
-        margin-bottom: 5px;
+        color: $color-primary;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        text-transform: capitalize;
       }
       &--job {
-        color: $color-accent;
-        font-size: 18px;
+        color: $color-text;
+        font-size: 16px;
+        font-style: normal;
         font-weight: 500;
+        line-height: 187.5%;
         text-transform: capitalize;
         transition: all 0.3s;
       }
@@ -1280,7 +1268,7 @@
   .__text-highlighted {
     position: relative;
     color: $color-accent;
-    span{
+    span {
       color: $color-primary;
       font-weight: 400;
     }
@@ -1297,7 +1285,7 @@
 
   &.animationed {
     .__text-highlighted {
-      img {
+      svg {
         animation: effectScaleAnimation 2s ease-in-out infinite;
       }
     }

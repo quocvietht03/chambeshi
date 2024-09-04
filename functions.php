@@ -106,6 +106,7 @@ require_once get_template_directory() . '/install/import-pack/import-functions.p
 /* CPT Load */
 require_once get_template_directory() . '/framework/cpt-therapist.php';
 require_once get_template_directory() . '/framework/cpt-service.php';
+require_once get_template_directory() . '/framework/cpt-project.php';
 require_once get_template_directory() . '/framework/cpt-company.php';
 require_once get_template_directory() . '/framework/cpt-testimonial.php';
 require_once get_template_directory() . '/framework/cpt-gallery.php';

@@ -155,6 +155,88 @@
             }
         }
     }
+    &.bt-button-viewmore-testimonials {
+        .elementor-button {
+            width: 100%;
+            text-align: left;
+            .elementor-button-content-wrapper {
+                justify-content: flex-end;
+                svg {
+                    width: 22px;
+                    fill: $color-accent;
+                }
+            }
+        }
+    }
+    &.bt-section-our-capabilities {
+        > .elementor-element {
+            > .e-con-inner {
+                > .elementor-element {
+                    @media (max-width: $break-lg) and (min-width: $break-tl) {
+                        &:first-child {
+                            .bt-elwg-testimonial-loop-item--default .bt-post {
+                                padding: 30px;
+                            }
+                        }
+                        &:last-child {
+                            > .elementor-element {
+                                > .elementor-element {
+                                    padding-left: 20px;
+                                    padding-right: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bt-section-why-choose-us {
+        > .elementor-element {
+            > .e-con-inner {
+                > .elementor-element {
+                    &:last-child {
+                        .bt-counter-center {
+                            text-align: center;
+                            @media (max-width: $break-lg) and (min-width: $break-tl) {
+                                width: 185px;
+                                > .elementor-widget-container {
+                                    padding: 40px 24px 32px 25px;
+                                    .elementor-counter-title {
+                                        font-size: 16px;
+                                    }
+                                    .elementor-counter-number-wrapper {
+                                        font-size: 45px;
+                                    }
+                                }
+                            }
+                            @media(max-width:$break-sm){
+                                position: relative;
+                                right: auto;
+                                left: auto;
+                                width: 100%;
+                                > .elementor-widget-container {
+                                    border-radius: 20px;
+                                    padding: 30px 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.bt-list-why-choose-us {
+        .elementor-icon-list-item {
+            > a {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: flex-end !important;
+                gap: 17px;
+            }
+        }
+    }
     &.bt-form-subscribe-home1 {
         width: 100%;
         .tnp-subscription-minimal {
