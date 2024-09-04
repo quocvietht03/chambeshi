@@ -234,6 +234,9 @@
                 flex-direction: row-reverse;
                 justify-content: flex-end !important;
                 gap: 17px;
+                .elementor-icon-list-text{
+                    padding: 0;
+                }
             }
         }
     }
