@@ -37,6 +37,7 @@ function chambeshi_project_register() {
 		'menu_icon'       => 'dashicons-admin-post',
 		'rewrite'         => array('slug' => $cpt_slug), // Permalinks format
 		'show_in_rest' 		=> true,
+		'taxonomies'      => array('project_categories', 'project_tag'),
 		'supports'        => array('title', 'editor', 'excerpt', 'thumbnail', 'comments')
   );
 
@@ -56,6 +57,7 @@ function chambeshi_project_taxonomy() {
 			"hierarchical"   => true,
 			"label"          => "Categories",
 			"singular_label" => "Category",
+			'show_in_rest' 		=> true,
 			"rewrite"        => true
 		)
 	);
@@ -67,6 +69,7 @@ function chambeshi_project_taxonomy() {
             'hierarchical'  => false,
             'label'         => __( 'Tags', 'chambeshi' ),
             'singular_name' => __( 'Tag', 'chambeshi' ),
+			'show_in_rest' 		=> true,
             'rewrite'       => true,
             'query_var'     => true
         )

@@ -80,7 +80,8 @@ class ElementorWidgets
 			'page-title-bar',
 			'site-box-phone',
 			'location-list',
-			'account-login'
+			'account-login',
+			'project-grid'
 		);
 
 		return $this->widgets;
@@ -194,6 +195,8 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PopularServicesStyle1\Widget_PopularServicesStyle1());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ServicesList\Widget_ServicesList());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ServiceLoopItem\Widget_ServiceLoopItem());
+
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ProjectGrid\Widget_ProjectGrid());
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\OrbitCircle\Widget_OrbitCircle());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PatternBackground\Widget_PatternBackground());

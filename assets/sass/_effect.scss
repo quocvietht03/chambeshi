@@ -439,7 +439,20 @@ body {
 			animation: effectBgScrollHorizontal 50s infinite;
 		}
 	}
+
 }
+@keyframes effectscaleBackground {
+    0% {
+        background-size: 863px auto;
+    }
+    50% {
+        background-size: 820px auto;
+    }
+    100% {
+        background-size: 863px auto;
+    }
+}
+
 @keyframes effectImageZoom {
 	from {
 		transform: sscale(1);

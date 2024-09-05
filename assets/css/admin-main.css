@@ -1015,7 +1015,7 @@ html :where(.editor-styles-wrapper) {
   margin: 9px 0 18px 0;
 }
 .__make-appointment-style .bt-make-appointment--head span, .bt-block-make-appointment .bt-make-appointment--head span {
-  font-family: var(--e-global-typography-accent-font-family, "DM Sans");
+  font-family: var(--e-global-typography-accent-font-family, "Plus Jakarta Sans");
 }
 .__make-appointment-style .bt-make-appointment--desc, .bt-block-make-appointment .bt-make-appointment--desc {
   color: #fff;
