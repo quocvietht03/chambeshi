@@ -255,13 +255,45 @@
     }
     &.bt-section-finance-solutions {
         animation: effectscaleBackground 15s ease-in-out infinite;
-        .bt-button-view-more{
-            .elementor-button-content-wrapper{
-                flex-direction: column-reverse;
-                gap: 12px;
-                flex-wrap: wrap;
-                .elementor-button-icon{
-                    justify-content: center;
+        .bt-button-view-more {
+            .elementor-button-wrapper {
+                .elementor-button {
+                    position: relative;
+                    overflow: hidden;
+                    .elementor-button-content-wrapper {
+                        flex-direction: column-reverse;
+                        gap: 12px;
+                        flex-wrap: wrap;
+                        position: relative;
+                        z-index: 1;
+                        .elementor-button-icon {
+                            justify-content: center;
+                        }
+                    }
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: $color-secondary;
+                        border-radius: 50%;
+                        transform: translate(-50%, 50%) scale(0);
+                        transition: transform 0.9s ease;
+                    }
+                    &:hover{
+                        &::before{
+                            transform: translate(-50%, 50%) scale(3);
+                        }
+                    }
+                    @media (max-width: $break-xs) {
+                        padding: 39px 24px 38px 25px;
+                        font-size: 14px;
+                        .elementor-button-icon svg {
+                            width: 16px;
+                        }
+                    }
                 }
             }
         }
