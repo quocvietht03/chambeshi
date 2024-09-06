@@ -81,7 +81,8 @@ class ElementorWidgets
 			'site-box-phone',
 			'location-list',
 			'account-login',
-			'project-grid'
+			'project-grid',
+			'graph-progress'
 		);
 
 		return $this->widgets;
@@ -212,6 +213,7 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PageTitleBar\Widget_PageTitleBar());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\LocationList\Widget_LocationList());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\AccountLogin\Widget_AccountLogin());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\GraphProgress\Widget_GraphProgress());
 	}
 
 	/**

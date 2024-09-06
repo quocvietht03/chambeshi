@@ -93,17 +93,17 @@
 
 	};
 	/* location list toggle */
-	var LocationListHandler = function( $scope, $ ) {
+	var LocationListHandler = function ($scope, $) {
 		var buttonMore = $scope.find('.bt-more-info');
 		var contentList = $scope.find('.bt-location-list--content');
-		if(buttonMore.length > 0) {
-			buttonMore.on('click', function(e) {
+		if (buttonMore.length > 0) {
+			buttonMore.on('click', function (e) {
 				e.preventDefault();
-				if($(this).hasClass('active')){
+				if ($(this).hasClass('active')) {
 					$(this).parent().find('.bt-location-list--content').slideUp();
 					$(this).removeClass('active');
 					$(this).children('span').text('More Information');
-				}else{
+				} else {
 					contentList.slideUp();
 					buttonMore.children('span').text('More Information');
 					buttonMore.removeClass('active');
@@ -114,12 +114,43 @@
 			});
 		}
 	};
+	/* Graph Progress */
+	var GraphProgressHandler = function ($scope, $) {
+		const $progressBars = $scope.find('.bt-progress-bar');
 
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const $bar = $(entry.target);
+					const percentage = $bar.data('percentage');
+
+					if (!$bar.hasClass('animated')) {
+						setTimeout(() => {
+							$bar.css('height', percentage + '%');
+							$bar.addClass('animated');
+							if (percentage > 3) {
+								setTimeout(function() {
+									$bar.addClass('show-text');
+								}, 500); 
+							}
+						}, 100);
+
+						observer.unobserve(entry.target);
+					}
+				}
+			});
+		}, { threshold: 0.5 });
+
+		$progressBars.each(function () {
+			observer.observe(this);
+		});
+	}
 	// Make sure you run this code under Elementor.
 	$(window).on('elementor/frontend/init', function () {
 		elementorFrontend.hooks.addAction('frontend/element_ready/bt-testimonial-slider.default', SliderSyncingHandler);
 		elementorFrontend.hooks.addAction('frontend/element_ready/bt-step-list.default', MoreStepsHandler);
 		elementorFrontend.hooks.addAction('frontend/element_ready/bt-location-list.default', LocationListHandler);
+		elementorFrontend.hooks.addAction('frontend/element_ready/bt-graph-progress.default', GraphProgressHandler);
 	});
 
 })(jQuery);

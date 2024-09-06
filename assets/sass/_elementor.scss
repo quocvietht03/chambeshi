@@ -1869,6 +1869,57 @@
     }
   }
 }
+.bt-elwg-graph-progress {
+  &--default {
+    .bt-graph-progress {
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      height: 300px;
+      margin: 0;
+      list-style: none;
+      padding: 0;
+      gap: 10px;
+      li {
+        width: 100px;
+        text-align: center;
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        .bt-progress-bar {
+          background-color: $color-secondary;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          border-radius: 10px;
+          height: 0;
+          transition: height 2s ease;
+          color: $color-primary;
+          font-family: $secondary-font;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 36px;
+          flex-direction: column;
+          padding: 7px 0 10px 0;
+          > * {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+          }
+          &.show-text{
+            > * {
+              opacity: 1;
+            }
+          }
+          .bt-progress-text {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
 .elementor-widget-button {
   .elementor-button-icon svg {
     width: fit-content;
