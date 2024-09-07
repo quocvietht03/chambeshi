@@ -302,22 +302,75 @@
         > .elementor-element {
             > .e-con-inner {
                 > .elementor-element {
+                    &:first-child {
+                        > .elementor-element {
+                            &:last-child {
+                                > .elementor-element {
+                                    max-width: 460px;
+                                    @media (max-width: 1250px) and (min-width: $break-tl) {
+                                        padding-left: 25px;
+                                        padding-right: 25px;
+                                    }
+                                }
+                                @media (max-width: 1110px) and (min-width: $break-tl) {
+                                    width: 40%;
+                                }
+                            }
+                            &:first-child {
+                                @media (max-width: 1110px) and (min-width: $break-tl) {
+                                    width: 60%;
+                                }
+                            }
+                        }
+                    }
                     &:last-child {
                         .elementor-tabs {
                             .elementor-tabs-wrapper {
                                 border-bottom: 1px solid #d9d9d9;
                                 display: flex;
                                 gap: 58px;
-                                .elementor-tab-title{
+                                @media (max-width: $break-lg) and (min-width: $break-tl) {
+                                    gap: 30px;
+                                    .elementor-tab-title {
+                                        font-size: 18px;
+                                    }
+                                }
+                                @media (max-width: $break-tl) {
+                                    gap: 25px;
+                                    .elementor-tab-title {
+                                        font-size: 18px;
+                                        line-height: 1.4;
+                                        text-align: center;
+                                    }
+                                }
+                                @media (max-width: 650px) {
+                                    flex-wrap: wrap;
+                                    gap: 15px 30px;
+                                    padding-bottom: 25px;
+                                    .elementor-tab-title {
+                                        padding: 0 !important;
+                                        border-bottom: none !important;
+                                        font-size: 16px;
+                                    }
+                                }
+                                .elementor-tab-title {
                                     padding: 0 0 22px 0;
                                     border-bottom: 6px solid transparent;
-                                    &.elementor-active{
+                                    &.elementor-active {
                                         border-color: #fff;
                                     }
                                 }
                             }
-                            .elementor-tab-content{
+                            .elementor-tab-content {
                                 padding: 0;
+                             
+                            }
+                            .elementor-tabs-content-wrapper{
+                                @media (max-width: $break-sm) {
+                                    .elementor-tab-title {
+                                        display: none;
+                                    }
+                                }
                             }
                         }
                     }
