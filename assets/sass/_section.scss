@@ -363,12 +363,45 @@
                             }
                             .elementor-tab-content {
                                 padding: 0;
-                             
                             }
-                            .elementor-tabs-content-wrapper{
+                            .elementor-tabs-content-wrapper {
                                 @media (max-width: $break-sm) {
                                     .elementor-tab-title {
                                         display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bt-section-blog-home1 {
+        > .elementor-element {
+            > .e-con-inner {
+                > .elementor-element {
+                    .bt-elwg-post-loop-item--default {
+                        .bt-post {
+                            @media (max-width: 1275px) and (min-width: $break-tl) {
+                                &--content {
+                                    padding: 0 15px 30px 15px;
+                                }
+
+                            }
+                            @media (max-width: 860px) and (min-width: $break-sm) {
+                                &--content {
+                                    padding: 0 15px 30px 15px;
+                                }
+                            }
+                            @media(max-width: $break-xs){
+                                &--content {
+                                    padding: 0 15px 30px 15px;
+                                }
+                                &--info{
+                                    gap: 14px 10px;
+                                    .bt-reading-time{
+                                        gap: 10px;
                                     }
                                 }
                             }
