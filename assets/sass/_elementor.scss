@@ -308,7 +308,7 @@
       transition: $transition;
     }
     &:hover {
-      background: #fff !important;
+      background: $color-secondary !important;
       svg {
         fill: $color-primary;
       }

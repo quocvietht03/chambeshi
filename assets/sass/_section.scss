@@ -387,25 +387,66 @@
                                 &--content {
                                     padding: 0 15px 30px 15px;
                                 }
-
                             }
                             @media (max-width: 860px) and (min-width: $break-sm) {
                                 &--content {
                                     padding: 0 15px 30px 15px;
                                 }
                             }
-                            @media(max-width: $break-xs){
+                            @media (max-width: $break-xs) {
                                 &--content {
                                     padding: 0 15px 30px 15px;
                                 }
-                                &--info{
+                                &--info {
                                     gap: 14px 10px;
-                                    .bt-reading-time{
+                                    .bt-reading-time {
                                         gap: 10px;
                                     }
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+    &.bt-grid-solutions {
+        .elementor-image-box-wrapper {
+            display: flex;
+            align-items: stretch !important;
+            height: 100%;
+            .elementor-image-box-img {
+                width: 109px;
+                background: $color-secondary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px 0 0 20px;
+                img {
+                    max-width: 50px;
+                }
+            }
+            .elementor-image-box-content {
+                padding: 38px 30px 39px;
+                width: calc(100% - 109px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                text-align: left;
+                @media (max-width: $break-lg) and (min-width: $break-tl) {
+                    padding: 15px;
+                }
+                @media (max-width: 860px) and (min-width: $break-sm) {
+                    padding: 30px 20px;
+                }
+                @media (max-width: $break-xs) {
+                    padding: 20px;
+                }
+                .elementor-image-box-description {
+                    a {
+                        font-weight: initial;
+                        color: $color-accent;
                     }
                 }
             }

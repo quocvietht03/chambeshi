@@ -8,84 +8,17 @@
 }
 
 .elementor-element {
-  &.bt-gallery-footer-main {
-    .elementor-gallery-item {
-      .elementor-gallery-item__overlay {
-        border-radius: 20px;
-      }
-      &:nth-child(5n + 1) {
-        border-bottom-left-radius: 50%;
-        .elementor-gallery-item__overlay {
-          border-bottom-left-radius: 50%;
-        }
-      }
-      &:nth-child(5n + 2) {
-        border-top-left-radius: 50%;
-        .elementor-gallery-item__overlay {
-          border-top-left-radius: 50%;
-        }
-      }
-      &:nth-child(5n + 3) {
-        border-top-right-radius: 50%;
-        .elementor-gallery-item__overlay {
-          border-top-right-radius: 50%;
-        }
-      }
-      &:nth-child(5n + 4) {
-        border-top-left-radius: 50%;
-        .elementor-gallery-item__overlay {
-          border-top-left-radius: 50%;
-        }
-      }
-      &:nth-child(5n + 5) {
-        border-bottom-right-radius: 50%;
-        .elementor-gallery-item__overlay {
-          border-bottom-right-radius: 50%;
-        }
-      }
-    }
-  }
   &.bt-site-footer-main {
     > .e-con-inner {
       > .elementor-element {
-        &:not(:last-child) {
-          &::after {
-            @media (min-width: $break-tl) {
-              content: "";
-              display: block;
-              position: absolute;
-              right: 0;
-              top: 63px;
-              height: 173px;
-              border-right: 1px dashed #8a8a8a;
-            }
-          }
-        }
-        &:not(:first-child) {
-          @media (max-width: 1250px) and (min-width: $break-tl) {
-            padding-left: 15px;
-          }
-        }
-        @media (max-width: 1095px) and (min-width: $break-tl) {
-          &:first-child {
-            width: 30%;
-          }
-          &:nth-child(2) {
-            width: 45%;
-          }
-        }
-        .bt-elwg-site-infor {
-          &.bt-elwg-site-infor {
-            &--style-1 {
-              @media (max-width: 1290px) and (min-width: $break-tl) {
-                grid-gap: 15px;
-              }
-              @media (max-width: $break-xs) {
-                grid-gap: 15px;
+          &:nth-child(2){
+            .elementor-icon-box-wrapper{
+              align-items: center;
+              .elementor-icon-box-icon{
+                display: flex;
               }
             }
           }
-        }
       }
     }
   }
