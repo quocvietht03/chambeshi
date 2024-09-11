@@ -714,6 +714,7 @@ body {
 }
 .bt-button-hover-accent{
 	.elementor-button-wrapper {
+		display: flex;
 		.elementor-button {
 			position: relative;
 			overflow: hidden;
@@ -745,6 +746,7 @@ body {
 }
 .bt-button-hover-secondary{
 	.elementor-button-wrapper {
+		display: flex;
 		.elementor-button {
 			position: relative;
 			overflow: hidden;

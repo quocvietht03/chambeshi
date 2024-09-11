@@ -210,6 +210,13 @@
 			});
 		}
 	};
+	/* Get width body */
+	function updateBodyWidthVariable() {
+		var widthBody = $(window).width();
+		$('.bt-col-container-left').css('--width-body', widthBody + 'px');
+		$('.bt-col-container-right').css('--width-body', widthBody + 'px');
+	}
+	
 	jQuery(document).ready(function ($) {
 		ChambeshiSubmenuAuto();
 		ChambeshiToggleMenuMobile();
@@ -221,11 +228,13 @@
 		ChambeshiUnitsCustom();
 		ChambeshiCheckboxCustom();
 		ChambeshiBorderTop();
+		updateBodyWidthVariable();
 	});
 
 	jQuery(window).on('resize', function () {
 		ChambeshiSubmenuAuto();
 		ChambeshiBorderTop();
+		updateBodyWidthVariable();
 	});
 
 	jQuery(window).on('scroll', function () {

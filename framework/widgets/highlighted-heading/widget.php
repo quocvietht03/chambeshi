@@ -249,22 +249,22 @@ class Widget_HighlightedHeading extends Widget_Base
 
 			<?php if (!empty($link)) : ?>
 				<a href="<?php echo esc_url($link); ?>">
-					<?php echo !empty($before_text) ? esc_html($before_text) : ''; ?>
+					<?php echo !empty($before_text) ? $before_text : ''; ?>
 
 					<?php if (!empty($hl_text)) :
 						echo '<span class="__text-highlighted">' . $hl_text . $brush_svg . '</span>';
 					endif; ?>
 
-					<?php echo !empty($after_text) ? esc_html($after_text) : ''; ?>
+					<?php echo !empty($after_text) ? $after_text : ''; ?>
 				</a>
 			<?php else : ?>
-				<?php echo !empty($before_text) ? esc_html($before_text) : ''; ?>
+				<?php echo !empty($before_text) ? $before_text : ''; ?>
 
 				<?php if (!empty($hl_text)) :
 					echo '<span class="__text-highlighted">' . $hl_text . $brush_svg . '</span>';
 				endif; ?>
 
-				<?php echo !empty($after_text) ? esc_html($after_text) : ''; ?>
+				<?php echo !empty($after_text) ? $after_text : ''; ?>
 			<?php endif; ?>
 
 			<?php echo "</$html_tag>"; ?>

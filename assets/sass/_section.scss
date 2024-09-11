@@ -7,7 +7,19 @@
         font-size: 45px;
     }
 }
-
+body{
+    --width-body : 100%;
+}
+.elementor-element {
+    @media (min-width: 1450px) {
+        &.bt-col-container-left {
+            padding-left: calc((var(--width-body) + 5px - var(--container-max-width)) / 2);
+        }
+        &.bt-col-container-right {
+            padding-right: calc((var(--width-body) + 5px - var(--container-max-width)) / 2);
+        }
+    }
+}
 .__bt-pd-container-full-width {
     > .elementor-element {
         &:first-child {
@@ -449,6 +461,16 @@
                         color: $color-accent;
                     }
                 }
+            }
+        }
+    }
+    &.bt-section-hero-home2{
+        > .elementor-element {
+            &:first-child{
+                clip-path: polygon(0 0, 100% 0, 68% 100%, 0% 100%);
+            }
+            &:last-child{
+                clip-path: polygon(46% 0, 100% 0, 100% 100%, 0 100%);
             }
         }
     }
