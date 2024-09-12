@@ -7,8 +7,8 @@
         font-size: 45px;
     }
 }
-body{
-    --width-body : 100%;
+body {
+    --width-body: 100%;
 }
 .elementor-element {
     @media (min-width: 1450px) {
@@ -464,13 +464,191 @@ body{
             }
         }
     }
-    &.bt-section-hero-home2{
+    &.bt-section-hero-home2 {
         > .elementor-element {
-            &:first-child{
-                clip-path: polygon(0 0, 100% 0, 68% 100%, 0% 100%);
+            &:first-child {
+                @media (min-width: $break-tl) {
+                    clip-path: polygon(0 0, 100% 0, 68% 100%, 0% 100%);
+                }
+                > .elementor-element {
+                    > .elementor-element {
+                        .elementor-widget-text-editor {
+                            > .elementor-widget-container {
+                                @media (max-width: $break-lg) and (min-width: $break-tl) {
+                                    max-width: 581px;
+                                }
+                            }
+                        }
+                    }
+                }
             }
-            &:last-child{
-                clip-path: polygon(46% 0, 100% 0, 100% 100%, 0 100%);
+            &:last-child {
+                @media (min-width: $break-tl) {
+                    clip-path: polygon(46% 0, 100% 0, 100% 100%, 0 100%);
+                }
+                .elementor-widget-image {
+                    height: 100%;
+                }
+            }
+        }
+    }
+    &.bt-section-view-report {
+        > .e-con-inner {
+            > .elementor-element {
+                &:nth-child(2) {
+                    .elementor-widget-counter {
+                        .elementor-counter {
+                            align-items: baseline;
+                            .elementor-counter-title {
+                                margin-left: 8px;
+                            }
+                            .elementor-counter-number-wrapper {
+                                flex: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: $break-lg) and (min-width: $break-tl) {
+            bottom: 15px !important;
+            > .e-con-inner {
+                > .elementor-element {
+                    &:first-child {
+                        width: 10%;
+                    }
+                    &:nth-child(2) {
+                        width: 50%;
+                    }
+                    &:last-child {
+                        width: 40%;
+                    }
+                }
+            }
+        }
+        @media (max-width: $break-tl) {
+            position: relative;
+            bottom: 0 !important;
+        }
+    }
+    &.bt-section-us-help-you {
+        > .elementor-element {
+            @media (max-width: $break-lg) and (min-width: $break-tl) {
+                &.e-grid {
+                    gap: 15px;
+                    > .elementor-element {
+                        > .elementor-widget-container {
+                            padding: 30px 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bt-why-choose-us-home2 {
+        > .elementor-element {
+            &:first-child {
+                .bt-line-circle {
+                    width: 500px;
+                    height: 500px;
+                    border-radius: 50%;
+                    border-top: 2px solid $color-accent;
+                    border-right: 2px solid $color-accent;
+                    border-left: 2px solid $color-secondary;
+                    border-bottom: 2px solid $color-secondary;
+                    animation: spin 10s infinite linear;
+                    img {
+                        animation: spin 10s infinite reverse linear;
+                    }
+                    @media (max-width: 1270px) and (min-width: $break-tl) {
+                        width: 82%;
+                        height: auto;
+                        aspect-ratio: 1 / 1;
+                        right: 19%;
+                    }
+                    @media(max-width:690px){
+                        width: 81%;
+                        height: auto;
+                        aspect-ratio: 1 / 1;
+                        left: 9px;
+                        top: 13%;
+                        right: auto;
+                    }
+                }
+                .elementor-widget-counter {
+                    &::before {
+                        content: "";
+                        width: 186px;
+                        height: 186px;
+                        border-radius: 50%;
+                        background: #fff;
+                        position: absolute;
+                        z-index: -1;
+                        bottom: -36px;
+                        left: -46px;
+                        @media (max-width: 1270px) and (min-width: $break-tl) {
+                            width: 160px;
+                            height: 160px;
+                            bottom: -41px;
+                            left: -25px;
+                        }
+                    }
+                }
+                @media(max-width:$break-tl) and (min-width: 690px){
+                    .bt-line-circle {
+                        right: auto;
+                    }
+                    .elementor-widget-icon{
+                        right: auto;
+                        left: 399px;
+                    }
+                    .elementor-widget-counter {
+                        right: auto;
+                        left: 400px;
+                    }
+                }
+                @media(max-width:690px){
+                    .elementor-widget-icon{
+                        right: auto;
+                        left: 63%;
+                        .elementor-icon svg{
+                            height: 65px;
+                        }
+                    }
+                    .elementor-widget-counter {
+                        right: auto;
+                        left: 60%;
+                        &::before{
+                            width: 100px;
+                            height: 100px;
+                            bottom: -23px;
+                            left: -15px;
+                        }
+                        .elementor-counter-title{
+                            font-size: 13px;
+                        }
+                        .elementor-counter-number-wrapper{
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+            &:last-child {
+                .elementor-icon-list-items {
+                    .elementor-icon-list-item {
+                        > a {
+                            padding-bottom: 21px;
+                        }
+                    }
+                }
+                @media (max-width: 1270px) and (min-width: $break-tl) {
+                    .bt-elwg-highlighted-heading {
+                        h3 {
+                            font-size: 45px;
+                            line-height: 55px;
+                        }
+                    }
+                }
             }
         }
     }

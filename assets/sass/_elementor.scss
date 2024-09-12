@@ -1272,6 +1272,10 @@
       color: $color-primary;
       font-weight: 400;
     }
+    em{
+      color: $color-primary;
+      font-style: normal;
+    }
     svg {
       position: absolute;
       min-width: calc(100% + 50px);
