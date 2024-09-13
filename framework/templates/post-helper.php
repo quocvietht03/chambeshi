@@ -372,27 +372,29 @@ if (!function_exists('chambeshi_post_button_render')) {
         </svg>
       </a>
     </div>
-    <?php }
+  <?php }
 }
-/* Book Now Button */
-if (!function_exists('chambeshi_service_button_book_now_render')) {
-  function chambeshi_service_button_book_now_render($text)
-  {
-    $site_infor = get_field('site_information', 'options') ?: '';
-    if (!empty($site_infor) && isset($site_infor)) {
-      if (!empty($site_infor['page_book_now'])) {
-        $book_now = esc_url($site_infor['page_book_now']);
-      } else {
-        $book_now = '#';
-      }
-    ?>
-      <div class="bt-post--button-booknow">
-        <a href="<?php echo esc_html($book_now); ?>" class="bt-button-effect">
-          <span> <?php echo esc_html($text) ?> </span>
-        </a>
-      </div>
+/* Service Button */
+if (!function_exists('chambeshi_service_button_render')) {
+  function chambeshi_service_button_render($text)
+  { ?>
+    <div class="bt-post--button bt-button-hover-secondary">
+      <a href="<?php echo esc_url(get_permalink()) ?>">
+        <span> <?php echo esc_html($text) ?> </span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="#FFE17F">
+          <g clip-path="url(#clip0_23_10128)">
+            <path d="M10.9999 0C4.92482 0 0 4.92482 0 10.9999C0 17.075 4.92482 22.0001 10.9999 22.0001C17.075 22.0001 22.0001 17.075 22.0001 10.9999C21.9932 4.92764 17.0724 0.00684812 10.9999 0ZM10.9999 20.8999C5.53229 20.8999 1.09993 16.4676 1.09993 10.9999C1.09993 5.53229 5.53229 1.09993 10.9999 1.09993C16.4676 1.09993 20.8999 5.53229 20.8999 10.9999C20.8937 16.465 16.465 20.8937 10.9999 20.8999Z"  />
+            <path d="M9.71117 6.73596C9.48236 6.53596 9.13492 6.55932 8.93492 6.78793C8.73511 7.01674 8.75848 7.36418 8.98708 7.56419L12.9139 10.9999L8.98688 14.4359C8.75807 14.6359 8.73491 14.9833 8.93471 15.212C9.13472 15.4408 9.48216 15.4641 9.71097 15.2641L14.1109 11.4141C14.2303 11.3097 14.2988 11.1587 14.2988 10.9999C14.2988 10.8412 14.2303 10.6904 14.1109 10.5858L9.71117 6.73596Z"  />
+          </g>
+          <defs>
+            <clipPath id="clip0_23_10128">
+              <rect width="22" height="22" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </a>
+    </div>
     <?php }
-  }
 }
 
 /* Author Icon */

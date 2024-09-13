@@ -478,7 +478,6 @@
       > .elementor-element {
         &:first-child {
           clip-path: polygon(0 0, 100% 0, calc(100% - 25px) 100%, 0% 100%);
-          filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.1));
           @media (max-width: $break-lg) and (min-width: $break-tl) {
             --padding-right: 50px;
           }
@@ -544,6 +543,7 @@
     &.bt-header-nav-style-1 {
       > .elementor-element {
         &:first-child {
+          filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.1));
           > .elementor-element {
             &:last-child {
               clip-path: polygon(0 0, 100% 0, calc(100% - 50px) 100%, 0% 100%);

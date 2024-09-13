@@ -566,7 +566,7 @@ body {
                         aspect-ratio: 1 / 1;
                         right: 19%;
                     }
-                    @media(max-width:690px){
+                    @media (max-width: 690px) {
                         width: 81%;
                         height: auto;
                         aspect-ratio: 1 / 1;
@@ -594,11 +594,11 @@ body {
                         }
                     }
                 }
-                @media(max-width:$break-tl) and (min-width: 690px){
+                @media (max-width: $break-tl) and (min-width: 690px) {
                     .bt-line-circle {
                         right: auto;
                     }
-                    .elementor-widget-icon{
+                    .elementor-widget-icon {
                         right: auto;
                         left: 399px;
                     }
@@ -607,27 +607,27 @@ body {
                         left: 400px;
                     }
                 }
-                @media(max-width:690px){
-                    .elementor-widget-icon{
+                @media (max-width: 690px) {
+                    .elementor-widget-icon {
                         right: auto;
                         left: 63%;
-                        .elementor-icon svg{
+                        .elementor-icon svg {
                             height: 65px;
                         }
                     }
                     .elementor-widget-counter {
                         right: auto;
                         left: 60%;
-                        &::before{
+                        &::before {
                             width: 100px;
                             height: 100px;
                             bottom: -23px;
                             left: -15px;
                         }
-                        .elementor-counter-title{
+                        .elementor-counter-title {
                             font-size: 13px;
                         }
-                        .elementor-counter-number-wrapper{
+                        .elementor-counter-number-wrapper {
                             font-size: 30px;
                         }
                     }
@@ -646,6 +646,66 @@ body {
                         h3 {
                             font-size: 45px;
                             line-height: 55px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bt-section-service-home-2 {
+        > .elementor-element {
+            > .e-con-inner {
+                > .elementor-element {
+                    &:last-child {
+                        .bt-elwg-service-loop-item--default {
+                            .bt-post--inner {
+                                @media (max-width: $break-lg) and (min-width: $break-tl) {
+                                    padding: 30px 15px 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bt-section-pricing {
+        > .elementor-element {
+            > .e-con-inner {
+                position: relative;
+                @media (max-width: $break-lg) and (min-width: $break-tl) {
+                    > .elementor-element{
+                        &:first-child{
+                            width: 48%;
+                        }
+                        &:nth-child(2){
+                            width: 52%;
+                        }
+                        &:last-child{
+                            left: 15%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bt-item-pricing-home2 {
+        > .e-con-inner {
+            > .elementor-element {
+                &:nth-child(2) {
+                    .elementor-counter-number-prefix {
+                        text-decoration-line: underline;
+                        text-underline-offset: 4px;
+                    }
+                }
+                &:last-child {
+                    .elementor-icon-list-items {
+                        display: grid;
+                        grid-gap: 18px;
+                        grid-template-columns: repeat(2, 1fr);
+                        @media(max-width:$break-xs){
+                            grid-gap: 5px;
+                            grid-template-columns: 1fr;
                         }
                     }
                 }

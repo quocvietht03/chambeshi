@@ -640,7 +640,8 @@ body {
 	}
 }
 .bt-play-btn-effect2 {
-	.elementor-icon-box-icon,.elementor-icon {
+	.elementor-icon-box-icon,
+	.elementor-icon {
 		-webkit-animation: effectPlayButton2 2s infinite;
 		animation: effectPlayButton2 2s infinite;
 		border-radius: 50%;
@@ -714,31 +715,35 @@ body {
 .bt-button-hover-accent {
 	.elementor-button-wrapper {
 		display: flex;
-		.elementor-button {
-			position: relative;
-			overflow: hidden;
+	}
+	.elementor-button,
+	a {
+		position: relative;
+		overflow: hidden;
 
-			.elementor-button-content-wrapper {
-				position: relative;
-				z-index: 1;
-			}
+		.elementor-button-content-wrapper,span,svg {
+			position: relative;
+			z-index: 1;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			aspect-ratio: 1 / 1;
+			background: $color-accent;
+			border-radius: 50%;
+			transform: translate(-50%, 50%) scale(0);
+			transition: transform 0.9s ease;
+		}
+		&:hover {
+			color: #fff !important;
 			&::before {
-				content: "";
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				width: 100%;
-				aspect-ratio: 1 / 1;
-				background: $color-accent;
-				border-radius: 50%;
-				transform: translate(-50%, 50%) scale(0);
-				transition: transform 0.9s ease;
+				transform: translate(-50%, 50%) scale(1.8);
 			}
-			&:hover {
-				color: #fff !important;
-				&::before {
-					transform: translate(-50%, 50%) scale(1.8);
-				}
+			svg{
+				fill: $color-accent;
 			}
 		}
 	}
@@ -746,31 +751,35 @@ body {
 .bt-button-hover-secondary {
 	.elementor-button-wrapper {
 		display: flex;
-		.elementor-button {
-			position: relative;
-			overflow: hidden;
+	}
+	.elementor-button,
+	a {
+		position: relative;
+		overflow: hidden;
 
-			.elementor-button-content-wrapper {
-				position: relative;
-				z-index: 1;
-			}
+		.elementor-button-content-wrapper,span,svg {
+			position: relative;
+			z-index: 1;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			aspect-ratio: 1 / 1;
+			background: $color-secondary;
+			border-radius: 50%;
+			transform: translate(-50%, 50%) scale(0);
+			transition: transform 0.9s ease;
+		}
+		&:hover {
+			color: $color-primary !important;
 			&::before {
-				content: "";
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				width: 100%;
-				aspect-ratio: 1 / 1;
-				background: $color-secondary;
-				border-radius: 50%;
-				transform: translate(-50%, 50%) scale(0);
-				transition: transform 0.9s ease;
+				transform: translate(-50%, 50%) scale(1.8);
 			}
-			&:hover {
-				color: $color-primary !important;
-				&::before {
-					transform: translate(-50%, 50%) scale(1.8);
-				}
+			svg{
+				fill: $color-accent;
 			}
 		}
 	}

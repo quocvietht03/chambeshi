@@ -35,34 +35,22 @@ class Widget_ServiceLoopItem extends Widget_Base {
 				'label' => __( 'Content', 'chambeshi' ),
 			]
 		);
-
-		$this->add_group_control(
-			Group_Control_Image_Size::get_type(),
-			[
-				'name' => 'thumbnail',
-				'label' => __( 'Image Size', 'chambeshi' ),
-				'show_label' => true,
-				'default' => 'medium',
-				'exclude' => [ 'custom' ],
-			]
-		);
-
 		$this->add_responsive_control(
-			'image_ratio',[
-				'label' => __( 'Image Ratio', 'chambeshi' ),
+			'icon_size',[
+				'label' => __( 'Icon Size', 'chambeshi' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
-					'size' => 0.64,
+					'size' => 94,
 				],
 				'range' => [
 					'px' => [
-						'min' => 0.3,
-						'max' => 2,
-						'step' => 0.01,
+						'min' => 10,
+						'max' => 200,
+						'step' => 1,
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--featured .bt-cover-image' => 'padding-bottom: calc( {{SIZE}} * 100% );',
+					'{{WRAPPER}} .bt-post--icon-lively img' => 'max-width: {{SIZE}}px;',
 				],
 			]
 		);
@@ -87,7 +75,7 @@ class Widget_ServiceLoopItem extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--featured .bt-cover-image' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .bt-post--icon-lively img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -103,7 +91,7 @@ class Widget_ServiceLoopItem extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Css_Filter::get_type(),[
 				'name' => 'thumbnail_filters',
-				'selector' => '{{WRAPPER}} .bt-post--featured img',
+				'selector' => '{{WRAPPER}} .bt-post--icon-lively img',
 			]
 		);
 
@@ -117,7 +105,7 @@ class Widget_ServiceLoopItem extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Css_Filter::get_type(),[
 				'name'     => 'thumbnail_hover_filters',
-				'selector' => '{{WRAPPER}} .bt-post:hover .bt-post--featured img',
+				'selector' => '{{WRAPPER}} .bt-post:hover .bt-post--icon-lively img',
 			]
 		);
 
@@ -139,7 +127,7 @@ class Widget_ServiceLoopItem extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--content' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--inner' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -193,7 +181,7 @@ class Widget_ServiceLoopItem extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--description' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--excerpt' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -203,46 +191,35 @@ class Widget_ServiceLoopItem extends Widget_Base {
 				'name'     => 'description_typography',
 				'label'    => esc_html__( 'Typography', 'chambeshi' ),
 				'default'  => '',
-				'selector' => '{{WRAPPER}} .bt-post--description',
+				'selector' => '{{WRAPPER}} .bt-post--excerpt',
 			]
 		);
 		$this->add_control(
-			'price_style',[
-				'label' => esc_html__( 'Price', 'chambeshi' ),
+			'listinfo_style',[
+				'label' => esc_html__( 'List Info', 'chambeshi' ),
 				'type'  => Controls_Manager::HEADING,
 			]
 		);
 
 		$this->add_control(
-			'price_color',[
+			'listinfo_color',[
 				'label'     => esc_html__( 'Color', 'chambeshi' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--price' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'price_background',[
-				'label'     => esc_html__( 'Background', 'chambeshi' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-post--price' => 'background: {{VALUE}};',
-					'{{WRAPPER}} .bt-post--price:before' => 'border-top-color: {{VALUE}};',
-					'{{WRAPPER}} .bt-post--price:after' => 'border-bottom-color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--listinfo' => 'color: {{VALUE}};',
 				],
 			]
 		);
 
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'price_typography',
+				'name'     => 'listinfo_typography',
 				'label'    => esc_html__( 'Typography', 'chambeshi' ),
 				'default'  => '',
-				'selector' => '{{WRAPPER}} .bt-post--price',
+				'selector' => '{{WRAPPER}} .bt-post--listinfo',
 			]
 		);
 		$this->add_control(
@@ -266,7 +243,7 @@ class Widget_ServiceLoopItem extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--button-booknow a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--button a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -278,7 +255,7 @@ class Widget_ServiceLoopItem extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--button-booknow a' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--button a' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -298,7 +275,7 @@ class Widget_ServiceLoopItem extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--button-booknow a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--button a:hover' => 'color: {{VALUE}} !important;',
 				],
 			]
 		);
@@ -310,7 +287,7 @@ class Widget_ServiceLoopItem extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--button-booknow a:hover' => 'background-color: {{VALUE}}; border-color: {{VALUE}};',
+					'{{WRAPPER}} .bt-button-hover-secondary a::before' => 'background-color: {{VALUE}}; border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -324,7 +301,7 @@ class Widget_ServiceLoopItem extends Widget_Base {
 				'name'     => 'button_typography',
 				'label'    => esc_html__( 'Typography', 'chambeshi' ),
 				'default'  => '',
-				'selector' => '{{WRAPPER}} .bt-post--button-booknow a',
+				'selector' => '{{WRAPPER}} .bt-post--button a',
 			]
 		);
 
@@ -341,7 +318,7 @@ class Widget_ServiceLoopItem extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 		?>
 			<div class="bt-elwg-service-loop-item--default bt-image-effect">
-				<?php get_template_part( 'framework/templates/service', 'style', array('image-size' => $settings['thumbnail_size'])); ?>
+				<?php get_template_part( 'framework/templates/service', 'style'); ?>
 	    	</div>
 		<?php
 	}
