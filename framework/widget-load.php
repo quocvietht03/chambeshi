@@ -82,6 +82,7 @@ class ElementorWidgets
 			'location-list',
 			'account-login',
 			'project-grid',
+			'project-loop-item',
 			'graph-progress'
 		);
 
@@ -198,6 +199,7 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ServiceLoopItem\Widget_ServiceLoopItem());
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ProjectGrid\Widget_ProjectGrid());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ProjectLoopItem\Widget_ProjectLoopItem());
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\OrbitCircle\Widget_OrbitCircle());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PatternBackground\Widget_PatternBackground());

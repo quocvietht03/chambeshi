@@ -2226,3 +2226,8 @@
     }
   }
 }
+.bt-elwg-project-loop-item {
+  &--default {
+    @extend .__bt-project-style-default;
+  }
+}

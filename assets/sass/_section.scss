@@ -674,14 +674,14 @@ body {
             > .e-con-inner {
                 position: relative;
                 @media (max-width: $break-lg) and (min-width: $break-tl) {
-                    > .elementor-element{
-                        &:first-child{
+                    > .elementor-element {
+                        &:first-child {
                             width: 48%;
                         }
-                        &:nth-child(2){
+                        &:nth-child(2) {
                             width: 52%;
                         }
-                        &:last-child{
+                        &:last-child {
                             left: 15%;
                         }
                     }
@@ -703,9 +703,22 @@ body {
                         display: grid;
                         grid-gap: 18px;
                         grid-template-columns: repeat(2, 1fr);
-                        @media(max-width:$break-xs){
+                        @media (max-width: $break-xs) {
                             grid-gap: 5px;
                             grid-template-columns: 1fr;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bt-section-service-home2 {
+        > .e-con-inner {
+            > .elementor-element {
+                &:last-child {
+                    .elementor-loop-container {
+                        @media (max-width: $break-lg) and (min-width: $break-tl) {
+                            grid-template-columns: repeat(3, 1fr);
                         }
                     }
                 }
