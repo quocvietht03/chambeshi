@@ -1,30 +1,30 @@
 <?php
 /*
- * Therapist CPT
+ * Team CPT
  */
 
-function chambeshi_therapist_register() {
+function chambeshi_team_register() {
 
-	$cpt_slug = get_theme_mod('chambeshi_therapist_slug');
+	$cpt_slug = get_theme_mod('chambeshi_team_slug');
 
 	if(isset($cpt_slug) && $cpt_slug != ''){
 		$cpt_slug = $cpt_slug;
 	} else {
-		$cpt_slug = 'therapist';
+		$cpt_slug = 'team';
 	}
 
 	$labels = array(
-		'name'               => esc_html__( 'Therapists', 'chambeshi' ),
-		'singular_name'      => esc_html__( 'Therapist', 'chambeshi' ),
+		'name'               => esc_html__( 'Teams', 'chambeshi' ),
+		'singular_name'      => esc_html__( 'Team', 'chambeshi' ),
 		'add_new'            => esc_html__( 'Add New', 'chambeshi' ),
-		'add_new_item'       => esc_html__( 'Add New Therapist', 'chambeshi' ),
-		'all_items'          => esc_html__( 'All Therapist', 'chambeshi' ),
-		'edit_item'          => esc_html__( 'Edit Therapist', 'chambeshi' ),
-		'new_item'           => esc_html__( 'Add New Therapist', 'chambeshi' ),
+		'add_new_item'       => esc_html__( 'Add New Team', 'chambeshi' ),
+		'all_items'          => esc_html__( 'All Team', 'chambeshi' ),
+		'edit_item'          => esc_html__( 'Edit Team', 'chambeshi' ),
+		'new_item'           => esc_html__( 'Add New Team', 'chambeshi' ),
 		'view_item'          => esc_html__( 'View Item', 'chambeshi' ),
-		'search_items'       => esc_html__( 'Search Therapist', 'chambeshi' ),
-		'not_found'          => esc_html__( 'No therapist(s) found', 'chambeshi' ),
-		'not_found_in_trash' => esc_html__( 'No therapist(s) found in trash', 'chambeshi' )
+		'search_items'       => esc_html__( 'Search Team', 'chambeshi' ),
+		'not_found'          => esc_html__( 'No team(s) found', 'chambeshi' ),
+		'not_found_in_trash' => esc_html__( 'No team(s) found in trash', 'chambeshi' )
 	);
 
   $args = array(
@@ -40,18 +40,18 @@ function chambeshi_therapist_register() {
 		'supports'        => array('title', 'editor', 'thumbnail', 'comments')
   );
 
-  add_filter( 'enter_title_here',  'chambeshi_therapist_change_default_title');
+  add_filter( 'enter_title_here',  'chambeshi_team_change_default_title');
 
-  register_post_type( 'therapist' , $args );
+  register_post_type( 'team' , $args );
 }
-add_action('init', 'chambeshi_therapist_register', 1);
+add_action('init', 'chambeshi_team_register', 1);
 
 
-function chambeshi_therapist_taxonomy() {
+function chambeshi_team_taxonomy() {
 
 	register_taxonomy(
-		"therapist_categories",
-		array("therapist"),
+		"team_categories",
+		array("team"),
 		array(
 			"hierarchical"   => true,
 			"label"          => "Categories",
@@ -61,8 +61,8 @@ function chambeshi_therapist_taxonomy() {
 	);
 
 	register_taxonomy(
-        'therapist_tag',
-        'therapist',
+        'team_tag',
+        'team',
         array(
             'hierarchical'  => false,
             'label'         => __( 'Tags', 'chambeshi' ),
@@ -73,34 +73,34 @@ function chambeshi_therapist_taxonomy() {
     );
 
 }
-add_action('init', 'chambeshi_therapist_taxonomy', 1);
+add_action('init', 'chambeshi_team_taxonomy', 1);
 
 
-function chambeshi_therapist_change_default_title( $title ) {
+function chambeshi_team_change_default_title( $title ) {
 	$screen = get_current_screen();
 
-	if ( 'therapist' == $screen->post_type )
-		$title = esc_html__( "Enter the therapist's name here", 'chambeshi' );
+	if ( 'team' == $screen->post_type )
+		$title = esc_html__( "Enter the team's name here", 'chambeshi' );
 
 	return $title;
 }
 
 
-function chambeshi_therapist_edit_columns( $therapist_columns ) {
-	$therapist_columns = array(
+function chambeshi_team_edit_columns( $team_columns ) {
+	$team_columns = array(
 		"cb"                     => "<input type=\"checkbox\" />",
 		"title"                  => esc_html__('Title', 'chambeshi'),
 		"thumbnail"              => esc_html__('Thumbnail', 'chambeshi'),
-		"therapist_categories" 			 => esc_html__('Categories', 'chambeshi'),
+		"team_categories" 			 => esc_html__('Categories', 'chambeshi'),
 		"date"                   => esc_html__('Date', 'chambeshi'),
 	);
-	return $therapist_columns;
+	return $team_columns;
 }
-add_filter( 'manage_edit-therapist_columns', 'chambeshi_therapist_edit_columns' );
+add_filter( 'manage_edit-team_columns', 'chambeshi_team_edit_columns' );
 
-function chambeshi_therapist_column_display( $therapist_columns, $post_id ) {
+function chambeshi_team_column_display( $team_columns, $post_id ) {
 
-	switch ( $therapist_columns ) {
+	switch ( $team_columns ) {
 
 		// Display the thumbnail in the column view
 		case "thumbnail":
@@ -119,10 +119,10 @@ function chambeshi_therapist_column_display( $therapist_columns, $post_id ) {
 			}
 			break;
 
-		// Display the therapist tags in the column view
-		case "therapist_categories":
+		// Display the team tags in the column view
+		case "team_categories":
 
-		if ( $category_list = get_the_term_list( $post_id, 'therapist_categories', '', ', ', '' ) ) {
+		if ( $category_list = get_the_term_list( $post_id, 'team_categories', '', ', ', '' ) ) {
 			echo wp_kses_post( $category_list );
 		} else {
 			echo esc_html__('None', 'chambeshi');
@@ -130,4 +130,4 @@ function chambeshi_therapist_column_display( $therapist_columns, $post_id ) {
 		break;
 	}
 }
-add_action( 'manage_therapist_posts_custom_column', 'chambeshi_therapist_column_display', 10, 2 );
+add_action( 'manage_team_posts_custom_column', 'chambeshi_team_column_display', 10, 2 );

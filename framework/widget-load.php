@@ -73,7 +73,7 @@ class ElementorWidgets
 			'pricing-item',
 			'pricing-item-style-1',
 			'time-list',
-			'therapist-loop-item',
+			'team-loop-item',
 			'services-list',
 			'popular-service-style-1',
 			'service-loop-item',
@@ -191,7 +191,7 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TestimonialLoopItemStyle1\Widget_TestimonialLoopItemStyle1());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TestimonialLoopItemStyle2\Widget_TestimonialLoopItemStyle2());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\CompanyLoopItem\Widget_CompanyLoopItem());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TherapistLoopItem\Widget_TherapistLoopItem());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TeamLoopItem\Widget_TeamLoopItem());
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PopularServices\Widget_PopularServices());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PopularServicesStyle1\Widget_PopularServicesStyle1());

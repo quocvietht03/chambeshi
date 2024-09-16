@@ -104,7 +104,7 @@ require_once get_template_directory() . '/install/plugin-required.php';
 require_once get_template_directory() . '/install/import-pack/import-functions.php';
 
 /* CPT Load */
-require_once get_template_directory() . '/framework/cpt-therapist.php';
+require_once get_template_directory() . '/framework/cpt-team.php';
 require_once get_template_directory() . '/framework/cpt-service.php';
 require_once get_template_directory() . '/framework/cpt-project.php';
 require_once get_template_directory() . '/framework/cpt-company.php';
@@ -175,7 +175,7 @@ function bt_custom_posts_per_page($query) {
 		$query->set( 'posts_per_page', 12 );
 	}
 
-	if ( $query->is_post_type_archive( 'therapist' ) && $query->is_main_query() && ! is_admin() ) {
+	if ( $query->is_post_type_archive( 'team' ) && $query->is_main_query() && ! is_admin() ) {
 		$query->set( 'posts_per_page', 12 );
 	}
 };

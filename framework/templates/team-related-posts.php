@@ -1,5 +1,5 @@
 <?php
-$related_posts = get_field('therapist_related_posts', 'options');
+$related_posts = get_field('team_related_posts', 'options');
 
 $post_id = get_the_ID();
 $cat_ids = array();
@@ -44,7 +44,7 @@ if($list_posts->have_posts()) {
         <div class="bt-related-posts-ss--list bt-image-effect">
           <?php
             while($list_posts->have_posts()): $list_posts->the_post();
-              get_template_part( 'framework/templates/therapist', 'style', array('image-size' => 'medium_large') );
+              get_template_part( 'framework/templates/team', 'style', array('image-size' => 'medium_large') );
             endwhile; wp_reset_postdata();
           ?>
         </div>

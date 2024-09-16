@@ -1,4 +1,4 @@
-.__bt-therapist-style-default {
+.__bt-team-style-default {
   .bt-post {
     &--inner {
       position: relative;
@@ -6,55 +6,83 @@
     }
     &--thumbnail {
       line-height: 0;
+      position: relative;
       .bt-cover-image {
-        padding-bottom: calc(1.185 * 100%);
         box-sizing: border-box;
         border-radius: 20px 20px 0 0;
-        min-height: 394px;
+        min-height: 340px;
         @media (max-width: $break-lg) and (min-width: $break-tl) {
           min-height: 290px;
         }
       }
     }
     &--infor {
-      padding: 31px 50px 31px;
-      background: #f7f4ef;
+      padding: 31px 15px 29px;
+      border-radius: 0px 0px 20px 20px;
+      background: #F0F7F3;
       position: relative;
-      border-radius: 0px 0px 100px 20px;
-      @media(max-width:$break-xs){
-        border-radius: 0px 0px 65px 15px;
-      }
+      text-align: center;
     }
     &--title {
-      color: #222;
+      color: $color-primary;
       font-family: $secondary-font;
-      font-size: 30px;
-      font-weight: 500;
-      text-transform: capitalize;
-      margin: 0;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      margin: 0 0 6px 0;
       @media (max-width: $break-lg) and (min-width: $break-tl) {
-        font-size: 25px;
+        font-size: 20px;
       }
     }
     &--job {
-      font-size: 15px;
-      background: $color-accent;
-      padding: 6px 15px;
-      font-weight: 500;
-      color: #fff;
-      line-height: 1.4;
+      color: $color-accent;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400; 
+      line-height: normal;
+    }
+    &--overlay-social {
       position: absolute;
-      top: -17px;
-      left: 50px;
-      width: max-content;
-      border-radius: 5px;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      background: #fff;
+      border-radius: 10px;
+      max-width: fit-content;
+      padding: 5px 20px 6px;
+      margin: 0 auto;
+      align-items: center;
+      gap: 3px;
+      a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        svg{
+          height: 18px;
+          width: 18px;
+        }
+        &:hover{
+          background-color: $color-accent;
+          svg{
+            fill: #fff;
+          }
+        }
+      }
     }
   }
 }
 
-.post-type-archive-therapist {
+.post-type-archive-team {
   .bt-grid-post {
-    @extend .__bt-therapist-style-default;
+    @extend .__bt-team-style-default;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -73,7 +101,7 @@
   }
 }
 
-.single-therapist {
+.single-team {
   .bt-main-detail-ss {
     padding: 100px 0;
     background-image: url("../images/bg-single-therapist-min.jpg");
@@ -290,7 +318,7 @@
       }
     }
     &--list {
-      @extend .__bt-therapist-style-default;
+      @extend .__bt-team-style-default;
       display: flex;
       flex-wrap: wrap;
       gap: 30px;

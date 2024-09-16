@@ -169,7 +169,7 @@ $feature_section = get_field('feature_section', 'options');
 		endwhile;
 		?>
 	</div>
-	<?php get_template_part('framework/templates/therapist', 'related-posts'); ?>
+	<?php get_template_part('framework/templates/team', 'related-posts'); ?>
 	<?php
 	if (!empty($feature_section['shortcode_feature'])) {
 		$id_template = $feature_section['shortcode_feature']->ID;

@@ -713,7 +713,7 @@
         },
         {
             "key": "field_6530f0658c230",
-            "label": "Therapist",
+            "label": "Team",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -732,7 +732,7 @@
         {
             "key": "field_6539eb81df4cd",
             "label": "Related Posts",
-            "name": "therapist_related_posts",
+            "name": "team_related_posts",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -1266,5 +1266,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724985632
+    "modified": 1726449664
 }

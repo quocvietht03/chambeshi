@@ -1,6 +1,6 @@
 {
     "key": "group_6528a2eecfa5c",
-    "title": "Therapists Options",
+    "title": "Team Options",
     "fields": [
         {
             "key": "field_6528a2ef02aa5",
@@ -122,7 +122,7 @@
                         "facebook": "Facebook",
                         "linkedin": "Linkedin",
                         "twitter": "Twitter",
-                        "google": "Google"
+                        "instagram": "Instagram"
                     },
                     "default_value": false,
                     "return_format": "value",
@@ -162,7 +162,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "therapist"
+                "value": "team"
             }
         ]
     ],
@@ -175,5 +175,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1720146406
+    "modified": 1726452784
 }

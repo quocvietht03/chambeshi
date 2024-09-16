@@ -12,7 +12,7 @@ get_template_part( 'framework/templates/site', 'titlebar');
                         <div class="bt-grid-post bt-image-effect">
                             <?php
                                 while ( have_posts() ) : the_post();
-                                    get_template_part( 'framework/templates/therapist', 'style', array('image-size' => 'medium_large') );
+                                    get_template_part( 'framework/templates/team', 'style', array('image-size' => 'medium_large') );
                                 endwhile;
                             ?>
                         </div>

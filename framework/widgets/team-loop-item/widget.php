@@ -1,5 +1,5 @@
 <?php
-namespace ChambeshiElementorWidgets\Widgets\TherapistLoopItem;
+namespace ChambeshiElementorWidgets\Widgets\TeamLoopItem;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -9,15 +9,15 @@ use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 
-class Widget_TherapistLoopItem extends Widget_Base {
+class Widget_TeamLoopItem extends Widget_Base {
 
 
 	public function get_name() {
-		return 'bt-therapist-loop-item';
+		return 'bt-team-loop-item';
 	}
 
 	public function get_title() {
-		return __( 'Therapist Loop Item', 'chambeshi' );
+		return __( 'Team Loop Item', 'chambeshi' );
 	}
 
 	public function get_icon() {
@@ -52,7 +52,7 @@ class Widget_TherapistLoopItem extends Widget_Base {
 				'label' => __( 'Image Ratio', 'chambeshi' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
-					'size' => 1.18,
+					'size' => 0.5,
 				],
 				'range' => [
 					'px' => [
@@ -133,7 +133,16 @@ class Widget_TherapistLoopItem extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
+		$this->add_control(
+			'content_background',[
+				'label'     => esc_html__( 'Background Content', 'chambeshi' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-post--infor' => 'background: {{VALUE}};',
+				],
+			]
+		);
 		$this->add_control(
 			'title_style',[
 				'label' => esc_html__( 'Title', 'chambeshi' ),
@@ -162,16 +171,7 @@ class Widget_TherapistLoopItem extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'title_background',[
-				'label'     => esc_html__( 'Background Title', 'chambeshi' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-post--infor' => 'background: {{VALUE}};',
-				],
-			]
-		);
+
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),[
@@ -199,21 +199,10 @@ class Widget_TherapistLoopItem extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'job_background',[
-				'label'     => esc_html__( 'Background Job', 'chambeshi' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-post--job' => 'background: {{VALUE}};',
-				],
-			]
-		);
-
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'meta_typography',
+				'name'     => 'job_typography',
 				'label'    => esc_html__( 'Typography', 'chambeshi' ),
 				'default'  => '',
 				'selector' => '{{WRAPPER}} .bt-post--job',
@@ -232,8 +221,8 @@ class Widget_TherapistLoopItem extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		?>
-			<div class="bt-elwg-therapist-loop-item--default bt-image-effect">
-				<?php get_template_part( 'framework/templates/therapist', 'style', array('image-size' => $settings['thumbnail_size'])); ?>
+			<div class="bt-elwg-team-loop-item--default bt-image-effect">
+				<?php get_template_part( 'framework/templates/team', 'style', array('image-size' => $settings['thumbnail_size'])); ?>
 	    	</div>
 		<?php
 	}
