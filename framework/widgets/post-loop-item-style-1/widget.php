@@ -52,7 +52,7 @@ class Widget_PostLoopItemStyle1 extends Widget_Base {
 				'label' => __( 'Image Ratio', 'chambeshi' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
-					'size' => 0.86,
+					'size' => 0.5,
 				],
 				'range' => [
 					'px' => [

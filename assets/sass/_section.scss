@@ -725,4 +725,77 @@ body {
             }
         }
     }
+    &.bt-section-blog-home-2 {
+        > .elementor-element {
+            &:first-child {
+                @media (min-width: 2500px) {
+                    width: 40%;
+                }
+                @media (max-width: 1500px) and (min-width: $break-tl) {
+                    width: 30%;
+                }
+                @media (max-width: $break-lg) and (min-width: $break-tl) {
+                    width: 26%;
+                }
+            }
+            &:last-child {
+                position: initial;
+                padding-right: 15px;
+                > .elementor-element {
+                    position: initial;
+                    .swiper-pagination-bullets {
+                        position: absolute;
+                        left: 15px;
+                        bottom: auto;
+                        top: auto;
+                        display: flex;
+                        align-items: center;
+                        gap: 9px;
+                        @media (min-width: 1450px) {
+                            left: calc((var(--width-body) + 5px - var(--container-max-width)) / 2);
+                        }
+                        @media (max-width: $break-tl) {
+                            bottom: -30px;
+                            position: relative;
+                            left: auto;
+                            width: 100%;
+                            justify-content: center;
+                        }
+                        .swiper-pagination-bullet {
+                            margin: 0;
+                            height: 8px;
+                            border-radius: 10px;
+                            &.swiper-pagination-bullet-active {
+                                background: $color-accent;
+                            }
+                        }
+                    }
+                }
+                @media (min-width: 2500px) {
+                    width: 60%;
+                }
+                @media (min-width: 1807px) {
+                    &.bt-col-container-right {
+                        padding-right: calc((var(--width-body) + 5px - 1777px) / 2);
+                    }
+                }
+                @media (max-width: 1500px) and (min-width: $break-tl) {
+                    width: 70%;
+                }
+                @media (max-width: $break-lg) and (min-width: $break-tl) {
+                    width: 74%;
+                    > .elementor-element {
+                        .bt-elwg-post-loop-item--style-1 {
+                            .bt-cover-image {
+                                min-height: 240px;
+                            }
+                            .bt-post--content {
+                                padding: 45px 15px 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -165,7 +165,31 @@ if (!function_exists('chambeshi_post_publish_render')) {
     return ob_get_clean();
   }
 }
+if (!function_exists('chambeshi_post_publish_render_style2')) {
+  function chambeshi_post_publish_render_style2()
+  {
+    ob_start();
 
+  ?>
+    <div class="bt-post--publish">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M8 14.5C8.55228 14.5 9 14.0523 9 13.5C9 12.9477 8.55228 12.5 8 12.5C7.44772 12.5 7 12.9477 7 13.5C7 14.0523 7.44772 14.5 8 14.5Z" fill="#4F6A35" />
+        <path d="M8 18.5C8.55228 18.5 9 18.0523 9 17.5C9 16.9477 8.55228 16.5 8 16.5C7.44772 16.5 7 16.9477 7 17.5C7 18.0523 7.44772 18.5 8 18.5Z" fill="#4F6A35" />
+        <path d="M12 14.5C12.5523 14.5 13 14.0523 13 13.5C13 12.9477 12.5523 12.5 12 12.5C11.4477 12.5 11 12.9477 11 13.5C11 14.0523 11.4477 14.5 12 14.5Z" fill="#4F6A35" />
+        <path d="M12 18.5C12.5523 18.5 13 18.0523 13 17.5C13 16.9477 12.5523 16.5 12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5Z" fill="#4F6A35" />
+        <path d="M16 14.5C16.5523 14.5 17 14.0523 17 13.5C17 12.9477 16.5523 12.5 16 12.5C15.4477 12.5 15 12.9477 15 13.5C15 14.0523 15.4477 14.5 16 14.5Z" fill="#4F6A35" />
+        <path d="M16 18.5C16.5523 18.5 17 18.0523 17 17.5C17 16.9477 16.5523 16.5 16 16.5C15.4477 16.5 15 16.9477 15 17.5C15 18.0523 15.4477 18.5 16 18.5Z" fill="#4F6A35" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 19.5V6.5C1.25 5.505 1.645 4.552 2.348 3.848C3.052 3.145 4.005 2.75 5 2.75H8.25V5.5C8.25 5.914 8.586 6.25 9 6.25C9.414 6.25 9.75 5.914 9.75 5.5V2.75H16.25V5.5C16.25 5.914 16.586 6.25 17 6.25C17.414 6.25 17.75 5.914 17.75 5.5V2.75H19C19.995 2.75 20.948 3.145 21.652 3.848C22.355 4.552 22.75 5.505 22.75 6.5V19.5C22.75 20.495 22.355 21.448 21.652 22.152C20.948 22.855 19.995 23.25 19 23.25H5C4.005 23.25 3.052 22.855 2.348 22.152C1.645 21.448 1.25 20.495 1.25 19.5ZM2.75 9.75V19.5C2.75 20.097 2.987 20.669 3.409 21.091C3.831 21.513 4.403 21.75 5 21.75H19C19.597 21.75 20.169 21.513 20.591 21.091C21.013 20.669 21.25 20.097 21.25 19.5V9.75H2.75Z" fill="#4F6A35" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.25 1.5C15.25 1.086 15.586 0.75 16 0.75C16.414 0.75 16.75 1.086 16.75 1.5V5.5C16.75 5.914 16.414 6.25 16 6.25C15.586 6.25 15.25 5.914 15.25 5.5V1.5Z" fill="#4F6A35" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.25 1.5C7.25 1.086 7.586 0.75 8 0.75C8.414 0.75 8.75 1.086 8.75 1.5V5.5C8.75 5.914 8.414 6.25 8 6.25C7.586 6.25 7.25 5.914 7.25 5.5V1.5Z" fill="#4F6A35" />
+      </svg>
+      <?php echo get_the_date(get_option('date_format')); ?>
+    </div>
+  <?php
+
+    return ob_get_clean();
+  }
+}
 /* Post Short Meta */
 if (!function_exists('chambeshi_post_short_meta_render')) {
   function chambeshi_post_short_meta_render()
@@ -368,8 +392,8 @@ if (!function_exists('chambeshi_post_button_render')) {
     <div class="bt-post--button">
       <a href="<?php echo esc_url(get_permalink()) ?>">
         <span> <?php echo esc_html($text) ?> </span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M4 12H20M20 12L16 8M20 12L16 16" stroke="#1FBECD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+          <path d="M19.8686 9.88137L13.7436 3.75637C13.5786 3.59698 13.3576 3.50878 13.1281 3.51078C12.8987 3.51277 12.6793 3.60479 12.517 3.76702C12.3548 3.92926 12.2628 4.14872 12.2608 4.37814C12.2588 4.60756 12.347 4.82859 12.5064 4.99362L17.1378 9.62499H1.75C1.51794 9.62499 1.29538 9.71718 1.13128 9.88127C0.967187 10.0454 0.875 10.2679 0.875 10.5C0.875 10.7321 0.967187 10.9546 1.13128 11.1187C1.29538 11.2828 1.51794 11.375 1.75 11.375H17.1378L12.5064 16.0064C12.4228 16.0871 12.3561 16.1836 12.3103 16.2904C12.2644 16.3971 12.2403 16.512 12.2393 16.6281C12.2383 16.7443 12.2604 16.8595 12.3044 16.9671C12.3484 17.0746 12.4134 17.1723 12.4955 17.2545C12.5777 17.3366 12.6754 17.4016 12.7829 17.4456C12.8905 17.4896 13.0057 17.5117 13.1219 17.5107C13.238 17.5097 13.3529 17.4856 13.4596 17.4397C13.5664 17.3938 13.6629 17.3272 13.7436 17.2436L19.8686 11.1186C20.0327 10.9545 20.1248 10.732 20.1248 10.5C20.1248 10.268 20.0327 10.0455 19.8686 9.88137Z" fill="#4F6A35" />
         </svg>
       </a>
     </div>
@@ -444,6 +468,31 @@ if (!function_exists('chambeshi_author_w_avatar')) {
       </div>
 
       <h4 class="bt-post-author-w-avatar--name"> <span><?php echo esc_html__('By ', 'chambeshi') ?></span> <?php the_author(); ?> </h4>
+    </div>
+  <?php }
+}
+if (!function_exists('chambeshi_author_w_avatar_style2')) {
+  function chambeshi_author_w_avatar_style2()
+  {
+    $author_id = get_the_author_meta('ID');
+    if (function_exists('get_field')) {
+      $avatar = get_field('avatar', 'user_' . $author_id);
+    } else {
+      $avatar = array();
+    }
+  ?>
+    <div class="bt-post-author-w-avatar">
+      <div class="bt-post-author-w-avatar--thumbnail">
+        <?php
+        if (!empty($avatar)) {
+          echo '<img src="' . esc_url($avatar['url']) . '" alt="' . esc_attr($avatar['title']) . '" />';
+        } else {
+          echo get_avatar($author_id, 150);
+        }
+        ?>
+      </div>
+
+      <h4 class="bt-post-author-w-avatar--name"> <span><?php echo esc_html__('Posted by ', 'chambeshi') ?></span> <?php the_author(); ?> </h4>
     </div>
   <?php }
 }

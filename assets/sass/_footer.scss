@@ -25,86 +25,24 @@
   &.bt-site-footer-style1 {
     > .e-con-inner {
       > .elementor-element {
-        > .elementor-element {
-          &:first-child {
-            .bt-elwg-site-social {
-              .bt-google {
-                border: 1px solid #c6c6c6;
-              }
-            }
-          }
-          @media (max-width: $break-lg) and (min-width: $break-tl) {
-            &:first-child {
-              .elementor-element {
-                &:nth-child(2) {
-                  > .elementor-widget-container {
-                    margin-bottom: 20px;
+          &:first-child{
+            > .elementor-element {
+              &:last-child{
+                .tnp-subscription-minimal{
+                  input.tnp-email{
+                    background-color: #fff;
+                    border-radius: 20px;
+                    max-width: 100%;
+                  }
+                  input.tnp-submit{
+                    right: 13px;
+                    background: $color-accent;
+                    color: #fff;
                   }
                 }
               }
-            }
-            &:last-child {
-              width: 30%;
-              padding-left: 15px;
-            }
-            &:nth-child(2) {
-              width: 21%;
-            }
           }
-        }
-        .tnp-subscription-minimal {
-          .tnp-privacy-field {
-            display: none;
           }
-        }
-      }
-    }
-  }
-  &.bt-site-footer-style2 {
-    > .elementor-element {
-      @media (max-width: $break-lg) and (min-width: $break-tl) {
-        &:first-child {
-          width: 24%;
-        }
-        &:nth-child(2) {
-          width: 21%;
-        }
-        &:nth-child(3) {
-          .bt-time--hours {
-            max-width: 170px;
-          }
-        }
-        &:last-child {
-          padding-left: 15px;
-        }
-      }
-      .bt-elwg-time-list--default {
-        .bt-time--item {
-          &::not(:last-child) {
-            padding-bottom: 22px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(69, 77, 95, 1);
-          }
-        }
-      }
-      .tnp-subscription-minimal {
-        .tnp-privacy-field {
-          display: none;
-        }
-      }
-    }
-  }
-  &.bt-copyright-footer-style2 {
-    > .e-con-inner {
-      > .elementor-element {
-        &:last-child {
-          @media (max-width: 1100px) and (min-width: $break-tl) {
-            column-gap: 40px;
-            .elementor-icon-list-item > a {
-              font-size: 20px;
-            }
-          }
-        }
       }
     }
   }
