@@ -176,7 +176,17 @@ class Widget_SiteInformation extends Widget_Base
 				],
 			]
 		);
-
+		$this->add_control(
+			'sub_text_color',
+			[
+				'label' => __('Sub Text Color', 'chambeshi'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-elwg-site-infor--item strong' => 'color: {{VALUE}};',
+				],
+			]
+		);
 		$this->add_control(
 			'text_color',
 			[
