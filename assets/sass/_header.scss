@@ -711,6 +711,18 @@
           &:last-child{
             .elementor-widget-icon-box{
               > .elementor-widget-container{
+                .elementor-icon-box-title{
+                  a{
+                    position: relative;
+                    padding-bottom: 30px;
+                    display: block;
+                  }
+                }
+                .elementor-icon-box-description{
+                  text-underline-offset:3px;
+                  text-decoration-thickness: 1px;
+                  margin-top: -30px;
+                }
                 @media (max-width: 1265px) and (min-width: $break-tl) {
                   margin: 0px 0px 0px 25px;
                   .elementor-icon{
@@ -718,6 +730,7 @@
                   }
                   .elementor-icon-box-description{
                     font-size: 18px;
+                    
                   }
                 }
               }
