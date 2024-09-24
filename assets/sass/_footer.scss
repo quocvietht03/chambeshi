@@ -11,38 +11,51 @@
   &.bt-site-footer-main {
     > .e-con-inner {
       > .elementor-element {
-          &:nth-child(2){
-            .elementor-icon-box-wrapper{
-              align-items: center;
-              .elementor-icon-box-icon{
-                display: flex;
-              }
+        &:nth-child(2) {
+          .elementor-icon-box-wrapper {
+            align-items: center;
+            .elementor-icon-box-icon {
+              display: flex;
             }
           }
+        }
       }
     }
   }
   &.bt-site-footer-style1 {
     > .e-con-inner {
       > .elementor-element {
-          &:first-child{
-            > .elementor-element {
-              &:last-child{
-                .tnp-subscription-minimal{
-                  input.tnp-email{
-                    background-color: #fff;
-                    border-radius: 20px;
-                    max-width: 100%;
-                  }
-                  input.tnp-submit{
-                    right: 13px;
-                    background: $color-accent;
-                    color: #fff;
-                  }
+        &:first-child {
+          > .elementor-element {
+            &:last-child {
+              .elementor-icon-box-wrapper {
+                align-items: center;
+                .elementor-icon-box-icon {
+                  display: flex;
                 }
               }
+              .tnp-subscription-minimal {
+                input.tnp-email {
+                  background-color: #fff;
+                  border-radius: 20px;
+                  max-width: 100%;
+                }
+                input.tnp-submit {
+                  right: 13px;
+                  background: $color-accent;
+                  color: #fff;
+                }
+              }
+            }
           }
+        }
+        &:last-child {
+          .bt-elwg-site-copyright {
+            a {
+              color: $color-secondary;
+            }
           }
+        }
       }
     }
   }
