@@ -798,4 +798,108 @@ body {
             }
         }
     }
+    &.bt-section-featured {
+        @media (max-width: $break-lg) and (min-width: $break-tl) {
+            margin-top: 0 !important;
+            .elementor-widget-counter {
+                > .elementor-widget-container {
+                    padding: 20px 15px !important;
+                }
+            }
+        }
+    }
+    &.bt-section-about-home3 {
+        > .e-con-inner {
+            > .elementor-element {
+                &:last-child {
+                    @media (max-width: $break-lg) and (min-width: $break-tl) {
+                        padding-left: 30px;
+                    }
+                }
+                .bt-col-view-report {
+                    @media (max-width: $break-lg) and (min-width: $break-tl) {
+                        margin-top: -80px;
+                    }
+                    .elementor-widget-icon {
+                        > .elementor-widget-container {
+                            position: relative;
+                            overflow: hidden;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                                width: 100%;
+                                height: 100%;
+                                background: $color-accent;
+                                border-radius: 50%;
+                                transform: translate(-50%, 50%) scale(0);
+                                transition: transform 0.9s ease;
+                            }
+                            &:hover {
+                                &::before {
+                                    transform: translate(-50%, 50%) scale(3);
+                                }
+                                svg {
+                                    fill: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bt-section-service-home3 {
+        > .elementor-element {
+            > .e-con-inner {
+                > .elementor-element {
+                    &:last-child {
+                        .bt-button-view-more {
+                            .elementor-button-wrapper {
+                                .elementor-button {
+                                    position: relative;
+                                    overflow: hidden;
+                                    .elementor-button-content-wrapper {
+                                        flex-direction: column-reverse;
+                                        gap: 11px;
+                                        flex-wrap: wrap;
+                                        position: relative;
+                                        z-index: 1;
+                                        .elementor-button-icon {
+                                            justify-content: center;
+                                        }
+                                    }
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        left: 0;
+                                        bottom: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        background: $color-secondary;
+                                        border-radius: 50%;
+                                        transform: translate(-50%, 50%) scale(0);
+                                        transition: transform 0.9s ease;
+                                    }
+                                    &:hover {
+                                        &::before {
+                                            transform: translate(-50%, 50%) scale(3);
+                                        }
+                                    }
+                                    @media (max-width: $break-xs) {
+                                        padding: 39px 24px 38px 25px;
+                                        font-size: 14px;
+                                        .elementor-button-icon svg {
+                                            width: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

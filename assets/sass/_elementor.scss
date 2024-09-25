@@ -1211,6 +1211,9 @@
   &--default {
     @extend .__bt-service-style-default;
   }
+  &--style1{
+    @extend .__bt-service-style-style1;
+  }
 }
 .bt-elwg-company-loop-item {
   &--default {

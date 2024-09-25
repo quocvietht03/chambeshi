@@ -77,6 +77,7 @@ class ElementorWidgets
 			'services-list',
 			'popular-service-style-1',
 			'service-loop-item',
+			'service-loop-item-style-1',
 			'page-title-bar',
 			'site-box-phone',
 			'location-list',
@@ -197,6 +198,7 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PopularServicesStyle1\Widget_PopularServicesStyle1());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ServicesList\Widget_ServicesList());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ServiceLoopItem\Widget_ServiceLoopItem());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ServiceLoopItemStyle1\Widget_ServiceLoopItemStyle1());
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ProjectGrid\Widget_ProjectGrid());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ProjectLoopItem\Widget_ProjectLoopItem());
