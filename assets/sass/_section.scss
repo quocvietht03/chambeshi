@@ -466,7 +466,7 @@ body {
     }
     &.bt-section-hero-home2 {
         > .elementor-element {
-            &:first-child {
+            &.bt-col-content {
                 @media (min-width: $break-tl) {
                     clip-path: polygon(0 0, 100% 0, 68% 100%, 0% 100%);
                 }
@@ -482,7 +482,7 @@ body {
                     }
                 }
             }
-            &:last-child {
+            &.bt-col-image {
                 @media (min-width: $break-tl) {
                     clip-path: polygon(46% 0, 100% 0, 100% 100%, 0 100%);
                 }

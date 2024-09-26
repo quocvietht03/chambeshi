@@ -10774,21 +10774,21 @@ body {
   color: var(--e-global-color-accent, #4F6A35);
 }
 @media (min-width: 1024.98px) {
-  .elementor-element.bt-section-hero-home2 > .elementor-element:first-child {
+  .elementor-element.bt-section-hero-home2 > .elementor-element.bt-col-content {
     clip-path: polygon(0 0, 100% 0, 68% 100%, 0% 100%);
   }
 }
 @media (max-width: 1199.98px) and (min-width: 1024.98px) {
-  .elementor-element.bt-section-hero-home2 > .elementor-element:first-child > .elementor-element > .elementor-element .elementor-widget-text-editor > .elementor-widget-container {
+  .elementor-element.bt-section-hero-home2 > .elementor-element.bt-col-content > .elementor-element > .elementor-element .elementor-widget-text-editor > .elementor-widget-container {
     max-width: 581px;
   }
 }
 @media (min-width: 1024.98px) {
-  .elementor-element.bt-section-hero-home2 > .elementor-element:last-child {
+  .elementor-element.bt-section-hero-home2 > .elementor-element.bt-col-image {
     clip-path: polygon(46% 0, 100% 0, 100% 100%, 0 100%);
   }
 }
-.elementor-element.bt-section-hero-home2 > .elementor-element:last-child .elementor-widget-image {
+.elementor-element.bt-section-hero-home2 > .elementor-element.bt-col-image .elementor-widget-image {
   height: 100%;
 }
 .elementor-element.bt-section-view-report > .e-con-inner > .elementor-element:nth-child(2) .elementor-widget-counter .elementor-counter {
