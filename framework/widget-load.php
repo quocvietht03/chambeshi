@@ -71,7 +71,6 @@ class ElementorWidgets
 			'highlighted-heading',
 			'popular-services',
 			'pricing-item',
-			'pricing-item-style-1',
 			'time-list',
 			'team-loop-item',
 			'services-list',
@@ -84,7 +83,8 @@ class ElementorWidgets
 			'account-login',
 			'project-grid',
 			'project-loop-item',
-			'graph-progress'
+			'graph-progress',
+			'solution-item'
 		);
 
 		return $this->widgets;
@@ -211,13 +211,13 @@ class ElementorWidgets
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\HighlightedHeading\Widget_HighlightedHeading());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PricingItem\Widget_PricingItem());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PricingItemStyle1\Widget_PricingItemStyle1());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TimeList\Widget_TimeList());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\SiteBoxPhone\Widget_SiteBoxPhone());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PageTitleBar\Widget_PageTitleBar());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\LocationList\Widget_LocationList());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\AccountLogin\Widget_AccountLogin());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\GraphProgress\Widget_GraphProgress());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\SolutionItem\Widget_SolutionItem());
 	}
 
 	/**

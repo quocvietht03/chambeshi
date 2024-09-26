@@ -902,4 +902,32 @@ body {
             }
         }
     }
+    &.bt-section-solutions-home3{
+        .bt-elwg-solution-item--default{
+            .bt-solution{
+                @media (max-width: 1270px) and (min-width: $break-tl) {
+                    padding: 30px 20px 0;
+                    &--description{
+                        font-size: 16px;
+                        br{
+                            display: none;
+                        }
+                    }
+                    &--button{
+                        font-size: 14px;
+                    }
+                }
+                @media(max-width:860px) and (min-width: $break-sm){
+                    padding: 30px 20px 0;
+                }
+            }
+        }
+    }
+    &.bt-section-company-home3{
+        .bt-elwg-highlighted-heading{
+            .__text-highlighted span{
+                font-weight: 700;
+            }
+        } 
+    }
 }

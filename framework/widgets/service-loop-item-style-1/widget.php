@@ -35,22 +35,32 @@ class Widget_ServiceLoopItemStyle1 extends Widget_Base {
 				'label' => __( 'Content', 'chambeshi' ),
 			]
 		);
+		$this->add_group_control(
+			Group_Control_Image_Size::get_type(),
+			[
+				'name' => 'thumbnail',
+				'label' => __( 'Image Size', 'chambeshi' ),
+				'show_label' => true,
+				'default' => 'medium',
+				'exclude' => [ 'custom' ],
+			]
+		);
 		$this->add_responsive_control(
-			'icon_size',[
-				'label' => __( 'Icon Size', 'chambeshi' ),
+			'image_ratio',[
+				'label' => __( 'Image Ratio', 'chambeshi' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
-					'size' => 62,
+					'size' => 0.64,
 				],
 				'range' => [
 					'px' => [
-						'min' => 10,
-						'max' => 200,
-						'step' => 1,
+						'min' => 0.3,
+						'max' => 2,
+						'step' => 0.01,
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--icon-lively img' => 'max-width: {{SIZE}}px;',
+					'{{WRAPPER}} .bt-post--featured .bt-cover-image' => 'padding-bottom: calc( {{SIZE}} * 100% );',
 				],
 			]
 		);
@@ -75,7 +85,7 @@ class Widget_ServiceLoopItemStyle1 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--icon-lively img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .bt-post--featured .bt-cover-image' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -91,7 +101,7 @@ class Widget_ServiceLoopItemStyle1 extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Css_Filter::get_type(),[
 				'name' => 'thumbnail_filters',
-				'selector' => '{{WRAPPER}} .bt-post--icon-lively img',
+				'selector' => '{{WRAPPER}} .bt-post--featured .bt-cover-image',
 			]
 		);
 
@@ -105,7 +115,7 @@ class Widget_ServiceLoopItemStyle1 extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Css_Filter::get_type(),[
 				'name'     => 'thumbnail_hover_filters',
-				'selector' => '{{WRAPPER}} .bt-post:hover .bt-post--icon-lively img',
+				'selector' => '{{WRAPPER}} .bt-post:hover .bt-post--featured .bt-cover-image',
 			]
 		);
 
@@ -127,7 +137,8 @@ class Widget_ServiceLoopItemStyle1 extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--inner' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--infor' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--icon-lively' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -194,34 +205,7 @@ class Widget_ServiceLoopItemStyle1 extends Widget_Base {
 				'selector' => '{{WRAPPER}} .bt-post--excerpt',
 			]
 		);
-		$this->add_control(
-			'listinfo_style',[
-				'label' => esc_html__( 'List Info', 'chambeshi' ),
-				'type'  => Controls_Manager::HEADING,
-			]
-		);
 
-		$this->add_control(
-			'listinfo_color',[
-				'label'     => esc_html__( 'Color', 'chambeshi' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-post--listinfo' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name'     => 'listinfo_typography',
-				'label'    => esc_html__( 'Typography', 'chambeshi' ),
-				'default'  => '',
-				'selector' => '{{WRAPPER}} .bt-post--listinfo',
-			]
-		);
 		$this->add_control(
 			'button_style',[
 				'label' => esc_html__( 'Button', 'chambeshi' ),
@@ -244,18 +228,7 @@ class Widget_ServiceLoopItemStyle1 extends Widget_Base {
 				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .bt-post--button a' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'button_bg_color',
-			[
-				'label' => __( 'Background Color', 'chambeshi' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-post--button a' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--button a svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -276,21 +249,11 @@ class Widget_ServiceLoopItemStyle1 extends Widget_Base {
 				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .bt-post--button a:hover' => 'color: {{VALUE}} !important;',
+					'{{WRAPPER}} .bt-post--button a:hover svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
 
-		$this->add_control(
-			'button_bg_color_hover',
-			[
-				'label' => __( 'Background Color', 'chambeshi' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-button-hover-secondary a::before' => 'background-color: {{VALUE}}; border-color: {{VALUE}};',
-				],
-			]
-		);
 
 		$this->end_controls_tab();
 
@@ -318,7 +281,7 @@ class Widget_ServiceLoopItemStyle1 extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 		?>
 			<div class="bt-elwg-service-loop-item--style1 bt-image-effect">
-				<?php get_template_part( 'framework/templates/service', 'style1'); ?>
+				<?php get_template_part( 'framework/templates/service', 'style1', array('image-size' => $settings['thumbnail_size'])); ?>
 	    	</div>
 		<?php
 	}
