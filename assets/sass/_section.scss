@@ -902,32 +902,128 @@ body {
             }
         }
     }
-    &.bt-section-solutions-home3{
-        .bt-elwg-solution-item--default{
-            .bt-solution{
+    &.bt-section-solutions-home3 {
+        .bt-elwg-solution-item--default {
+            .bt-solution {
                 @media (max-width: 1270px) and (min-width: $break-tl) {
                     padding: 30px 20px 0;
-                    &--description{
+                    &--description {
                         font-size: 16px;
-                        br{
+                        br {
                             display: none;
                         }
                     }
-                    &--button{
+                    &--button {
                         font-size: 14px;
                     }
                 }
-                @media(max-width:860px) and (min-width: $break-sm){
+                @media (max-width: 860px) and (min-width: $break-sm) {
                     padding: 30px 20px 0;
                 }
             }
         }
     }
-    &.bt-section-company-home3{
-        .bt-elwg-highlighted-heading{
-            .__text-highlighted span{
+    &.bt-section-company-home3 {
+        .bt-elwg-highlighted-heading {
+            .__text-highlighted span {
                 font-weight: 700;
             }
-        } 
+        }
+    }
+    &.bt-section-consultation {
+        > .elementor-element {
+            > .e-con-inner {
+                > .elementor-element {
+                    .gform_wrapper {
+                        .gform_heading {
+                            display: none;
+                        }
+                        .gform_confirmation_message{
+                            margin-bottom: 100px;
+                        }
+                    }
+                    .elementor-widget-icon-box {
+                        > .elementor-widget-container {
+                            .elementor-icon-box-title {
+                                a {
+                                    position: relative;
+                                    padding-bottom: 30px;
+                                    display: block;
+                                }
+                            }
+                            .elementor-icon-box-description {
+                                text-underline-offset: 3px;
+                                text-decoration-thickness: 1px;
+                                margin-top: -30px;
+                            }
+                        }
+                        @media (max-width: 1310px) and (min-width: $break-tl) {
+                            --align-self: initial;
+                            > .elementor-widget-container {
+                                margin-top: 20px;
+                                .elementor-icon {
+                                    font-size: 50px;
+                                }
+                                .elementor-icon-box-description {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                    @media (max-width: $break-lg) and (min-width: $break-tl) {
+                        &:nth-child(2) {
+                            > .elementor-element {
+                                width: auto;
+                                padding: 30px;
+                            }
+                        }
+                        &:first-child {
+                            > .elementor-element {
+                                &:last-child {
+                                    width: auto;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            left: 8%;
+                        }
+                    }
+                    @media (max-width: 870px) and (min-width: $break-sm) {
+                        &:nth-child(2) {
+                            > .elementor-element {
+                                width: 100%;
+                            }
+                        }
+                        &:last-child {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bt-section-report-home3 {
+        > .e-con-inner {
+            > .elementor-element {
+                &:first-child {
+                    > .elementor-element {
+                        &:last-child {
+                            > .elementor-element {
+                                @media (max-width: $break-lg) and (min-width: $break-tl) {
+                                    padding: 35px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bt-section-pricing-home3{
+        .bt-elwg-highlighted-heading {
+            .__text-highlighted span {
+                font-weight: inherit;
+            }
+        }
     }
 }

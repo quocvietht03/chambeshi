@@ -1547,130 +1547,128 @@
 .bt-elwg-pricing-item {
   &--default {
     .bt-pricing {
-      &--featured {
-        position: relative;
+      &-item {
+        border-radius: 20px;
+        background: #fff;
       }
-      &--wrap-image {
-        position: absolute;
-        bottom: 0;
-        padding: 53px 20px 41px;
-        text-align: center;
-        width: 100%;
-        background: rgba(34, 34, 34, 0.8);
-        top: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        svg {
-          width: 70px;
-        }
+      &--header {
+        padding: 35px 40px 26px;
       }
       &--heading {
-        color: #fff;
+        color: $color-primary;
         font-family: $secondary-font;
-        font-size: 33px;
+        font-size: 26px;
         font-style: normal;
-        font-weight: 700;
-        line-height: 40px;
-        max-width: 200px;
-        margin: 13px auto;
-      }
-      &--price {
-        color: $color-accent;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 700;
+        font-weight: 600;
         line-height: normal;
       }
-      &--price-after {
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-      }
-      &--time {
-        color: #fff;
-        font-size: 16px;
+      &--description {
+        color: $color-text;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        background: $color-accent;
-        padding: 6px 14px 5px 13px;
-        position: absolute;
-        left: 50%;
-        width: max-content;
-        bottom: -16px;
-        transform: translateX(-50%);
+      }
+      &--box-price {
+        padding: 14px 40px;
+        background: $color-secondary;
+      }
+      &--price-before {
+        color: $color-primary;
+        font-family: $secondary-font;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 2;
+        display: inline-block;
+      }
+      &--price {
+        color: $color-accent;
+        font-family: $secondary-font;
+        font-size: 33px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+      &--price-after {
+        color: $color-accent;
+        font-family: $secondary-font;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 600;
       }
       &--infor {
-        padding: 45px 44px 40px 38px;
-        background: #fff;
-        border: 5px solid #f7f4ef;
-        border-top: none;
-        @media (max-width: $break-lg) and (min-width: $break-tl) {
-          padding: 40px 25px;
-        }
-        @media (max-width: $break-xs) {
-          padding: 40px 20px 30px;
-        }
+        padding: 24px 40px 30px;
       }
       &--info {
         padding: 0;
-        margin-bottom: 32px;
+        margin-bottom: 28px;
         li {
           display: flex;
           grid-gap: 8px;
-          align-items: baseline;
+          align-items: center;
           color: $color-text;
-          font-size: 17px;
+          font-size: 18px;
           font-style: normal;
           font-weight: 400;
-          line-height: 24px;
+          line-height: 40px;
           svg {
-            width: 18px;
+            width: 20px;
             flex-grow: 1;
             flex-shrink: 0;
-            max-width: 18px;
-          }
-          &:not(:last-child) {
-            padding-bottom: 14px;
-            margin-bottom: 16px;
-            border-bottom: 1px dashed #aaaaaa;
+            max-width: 20px;
           }
         }
       }
-      &--box-button {
+      &--button-wrapper {
         align-items: center;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 9px;
       }
       &--button {
         color: #fff;
         font-size: 18px;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 600;
         line-height: normal;
-        text-transform: uppercase;
-        padding: 16px 46px;
+        padding: 15px 46px;
         background: $color-accent;
         display: inline-block;
         border-radius: 10px;
-        border: 2px solid $color-accent;
-        @media (max-width: $break-xs) {
-          padding: 15px 30px;
+        border: 1px solid $color-accent;
+        font-family: $secondary-font;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          background: $color-secondary;
+          border-radius: 50%;
+          transform: translate(-50%, 50%) scale(0);
+          transition: transform 0.9s ease;
+          z-index: -1;
+        }
+        &:hover {
+          color: $color-primary !important;
+          &::before {
+            transform: translate(-50%, 50%) scale(1.8);
+          }
         }
       }
-      &--button-more {
+      &--text-after-button {
         color: $color-text;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
-        line-height: 30px;
-        a {
-          color: $color-accent;
-          text-decoration-line: underline;
-        }
+        line-height: 36px;
       }
     }
   }

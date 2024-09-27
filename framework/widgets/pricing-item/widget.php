@@ -42,55 +42,7 @@ class Widget_PricingItem extends Widget_Base
 				'label' => __('Content', 'chambeshi'),
 			]
 		);
-		$this->add_control(
-			'pricing_image',
-			[
-				'label' => esc_html__('Images', 'chambeshi'),
-				'type' => Controls_Manager::MEDIA,
-				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Image_Size::get_type(),
-			[
-				'name' => 'pricing_image',
-				'label' => __('Image Size', 'chambeshi'),
-				'show_label' => true,
-				'default' => 'medium',
-				'exclude' => ['custom'],
-			]
-		);
 
-		$this->add_responsive_control(
-			'image_ratio',
-			[
-				'label' => __('Image Ratio', 'chambeshi'),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => 0.832,
-				],
-				'range' => [
-					'px' => [
-						'min' => 0.3,
-						'max' => 2,
-						'step' => 0.01,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--featured .bt-cover-image' => 'padding-bottom: calc( {{SIZE}} * 100% );',
-				],
-			]
-		);
-		$this->add_control(
-			'pricing_svg',
-			[
-				'label' => esc_html__('Icon Pricing', 'chambeshi'),
-				'type' => Controls_Manager::MEDIA,
-				'media_types' => ['svg'],
-			]
-		);
 		$this->add_control(
 			'heading',
 			[
@@ -100,7 +52,15 @@ class Widget_PricingItem extends Widget_Base
 				'default' => esc_html__('This is the heading', 'chambeshi'),
 			]
 		);
-
+		$this->add_control(
+			'description',
+			[
+				'label' => esc_html__('Description', 'chambeshi'),
+				'type' => Controls_Manager::TEXTAREA,
+				'label_block' => true,
+				'default' => esc_html__('Great for private individuals', 'chambeshi'),
+			]
+		);
 		$this->add_control(
 			'price',
 			[
@@ -111,21 +71,21 @@ class Widget_PricingItem extends Widget_Base
 			]
 		);
 		$this->add_control(
+			'price_before',
+			[
+				'label' => esc_html__('Price Before', 'chambeshi'),
+				'type' => Controls_Manager::TEXT,
+				'label_block' => true,
+				'default' => esc_html__('Starting at', 'chambeshi'),
+			]
+		);
+		$this->add_control(
 			'price_after',
 			[
 				'label' => esc_html__('Price After', 'chambeshi'),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__(' / Monthly', 'chambeshi'),
-			]
-		);
-		$this->add_control(
-			'time',
-			[
-				'label' => esc_html__('Time', 'chambeshi'),
-				'type' => Controls_Manager::TEXT,
-				'label_block' => true,
-				'default' => esc_html__('60 Mins', 'chambeshi'),
+				'default' => esc_html__(' /mo', 'chambeshi'),
 			]
 		);
 
@@ -149,16 +109,16 @@ class Widget_PricingItem extends Widget_Base
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'list_content' => esc_html__('90-Minute Swedish Massage', 'chambeshi')
+						'list_content' => esc_html__('Up to 10 individual users', 'chambeshi')
 					],
 					[
-						'list_content' => esc_html__('60-Minute Classic Facial', 'chambeshi')
+						'list_content' => esc_html__('Basic reporting & analytics', 'chambeshi')
 					],
 					[
-						'list_content' => esc_html__('45-Minute Full Body Scrub', 'chambeshi')
+						'list_content' => esc_html__('Project Management', 'chambeshi')
 					],
 					[
-						'list_content' => esc_html__('Aromatherapy Session', 'chambeshi')
+						'list_content' => esc_html__('20GB individual data', 'chambeshi')
 					],
 				],
 				'title_field' => '{{{ list_content }}}',
@@ -170,7 +130,7 @@ class Widget_PricingItem extends Widget_Base
 				'label' => esc_html__('Button Text', 'chambeshi'),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__('Subscribe Now', 'chambeshi'),
+				'default' => esc_html__('Try For Free', 'chambeshi'),
 			]
 		);
 
@@ -190,28 +150,12 @@ class Widget_PricingItem extends Widget_Base
 			]
 		);
 		$this->add_control(
-			'button_more',
+			'text_after_button',
 			[
-				'label' => esc_html__('Button More', 'chambeshi'),
+				'label' => esc_html__('Text After Button', 'chambeshi'),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__('pay per session.', 'chambeshi'),
-			]
-		);
-
-		$this->add_control(
-			'button_more_url',
-			[
-				'label' => esc_html__('Button More Url', 'chambeshi'),
-				'type' => Controls_Manager::URL,
-				'options' => ['url', 'is_external', 'nofollow'],
-				'default' => [
-					'url' => '',
-					'is_external' => false,
-					'nofollow' => false,
-					'custom_attributes' => '',
-				],
-				'label_block' => true,
+				'default' => esc_html__('Free forever & can be upgraded.', 'chambeshi'),
 			]
 		);
 		$this->end_controls_section();
@@ -237,9 +181,6 @@ class Widget_PricingItem extends Widget_Base
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--featured .bt-cover-image' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} 0 0;',
-					'{{WRAPPER}} .bt-pricing--wrap-image' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} 0 0;',
-					'{{WRAPPER}} .bt-pricing--infor' => 'border-radius: 0 0 {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .bt-pricing-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
@@ -260,61 +201,32 @@ class Widget_PricingItem extends Widget_Base
 
 	protected function register_style_content_section_controls()
 	{
-
 		$this->start_controls_section(
-			'section_style_content_image',
+			'section_style_content',
 			[
-				'label' => esc_html__('Content Image', 'chambeshi'),
+				'label' => esc_html__('Content', 'chambeshi'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
 		$this->add_control(
-			'background_content_image',
+			'background_content',
 			[
-				'label' => __('Background Content Image', 'chambeshi'),
+				'label' => __('Background Content', 'chambeshi'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--wrap-image' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .bt-pricing-item' => 'background: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
-			'icon_image_pricing',
+			'background_box_price',
 			[
-				'label' => __('Icon', 'chambeshi'),
-				'type' => Controls_Manager::HEADING,
-			]
-		);
-		$this->add_responsive_control(
-			'icon_image_ratio',
-			[
-				'label' => __('Icon Width', 'chambeshi'),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => 70,
-				],
-				'range' => [
-					'px' => [
-						'min' => 1,
-						'max' => 100,
-						'step' => 1,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--wrap-image svg ' => 'width: {{SIZE}}px;',
-				],
-			]
-		);
-		$this->add_control(
-			'icon_image_color',
-			[
-				'label' => __('Color', 'chambeshi'),
+				'label' => __('Background Box Price', 'chambeshi'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--wrap-image svg path' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .bt-pricing--box-price' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -357,6 +269,33 @@ class Widget_PricingItem extends Widget_Base
 			]
 		);
 		$this->add_control(
+			'description_pricing',
+			[
+				'label' => __('Description', 'chambeshi'),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'description_color',
+			[
+				'label' => __('Description Color', 'chambeshi'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-pricing--description' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'description_typography',
+				'label' => __('Description Typography', 'chambeshi'),
+				'default' => '',
+				'selector' => '{{WRAPPER}} .bt-pricing--description',
+			]
+		);
+		$this->add_control(
 			'price_pricing',
 			[
 				'label' => __('Price', 'chambeshi'),
@@ -381,6 +320,33 @@ class Widget_PricingItem extends Widget_Base
 				'label' => __('Price Typography', 'chambeshi'),
 				'default' => '',
 				'selector' => '{{WRAPPER}} .bt-pricing--price',
+			]
+		);
+		$this->add_control(
+			'price_before_pricing',
+			[
+				'label' => __('Price Before', 'chambeshi'),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'price_before_color',
+			[
+				'label' => __('Price Before Color', 'chambeshi'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-pricing--price-before' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'price_before_typography',
+				'label' => __('Price Before Typography', 'chambeshi'),
+				'default' => '',
+				'selector' => '{{WRAPPER}} .bt-pricing--price-before',
 			]
 		);
 		$this->add_control(
@@ -410,99 +376,23 @@ class Widget_PricingItem extends Widget_Base
 				'selector' => '{{WRAPPER}} .bt-pricing--price-after',
 			]
 		);
-		$this->add_control(
-			'time_pricing',
-			[
-				'label' => __('Time', 'chambeshi'),
-				'type' => Controls_Manager::HEADING,
-			]
-		);
-		$this->add_control(
-			'time_color',
-			[
-				'label' => __('Time Color', 'chambeshi'),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--time' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'time_background',
-			[
-				'label' => __('Time Background', 'chambeshi'),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--time' => 'background: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'time_typography',
-				'label' => __('Heading Typography', 'chambeshi'),
-				'default' => '',
-				'selector' => '{{WRAPPER}} .bt-pricing--time',
-			]
-		);
-		$this->end_controls_section();
-		$this->start_controls_section(
-			'section_style_content',
-			[
-				'label' => esc_html__('Content', 'chambeshi'),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-		$this->add_control(
-			'background_content',
-			[
-				'label' => __('Background Content', 'chambeshi'),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--infor' => 'background: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'border_width_content_ratio',
-			[
-				'label' => __('Border Content Width', 'chambeshi'),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => 5,
-				],
-				'range' => [
-					'px' => [
-						'min' => 1,
-						'max' => 100,
-						'step' => 1,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--infor' => 'border-width: {{SIZE}}px;',
-				],
-			]
-		);
-		$this->add_control(
-			'border_color_content',
-			[
-				'label' => __('Border Content Color', 'chambeshi'),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--infor' => 'border-color: {{VALUE}};',
-				],
-			]
-		);
+
 		$this->add_control(
 			'list_info_pricing',
 			[
 				'label' => __('List Info', 'chambeshi'),
 				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'icon_info_color',
+			[
+				'label' => __('Icon Info Color', 'chambeshi'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-pricing--info li svg path' => 'fill: {{VALUE}};',
+				],
 			]
 		);
 		$this->add_control(
@@ -523,26 +413,6 @@ class Widget_PricingItem extends Widget_Base
 				'label' => __('Info Typography', 'chambeshi'),
 				'default' => '',
 				'selector' => '{{WRAPPER}} .bt-pricing--info li',
-			]
-		);
-		$this->add_responsive_control(
-			'info_ratio',
-			[
-				'label' => __('Margin Bottom', 'chambeshi'),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => 32,
-				],
-				'range' => [
-					'px' => [
-						'min' => 1,
-						'max' => 100,
-						'step' => 1,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--info ' => 'margin-bottom: {{SIZE}}px;',
-				],
 			]
 		);
 		$this->add_control(
@@ -580,38 +450,7 @@ class Widget_PricingItem extends Widget_Base
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--button' => 'background-color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'button_border_width_ratio',
-			[
-				'label' => __('Border Width', 'chambeshi'),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => 2,
-				],
-				'range' => [
-					'px' => [
-						'min' => 1,
-						'max' => 100,
-						'step' => 1,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--button' => 'border-width: {{SIZE}}px;',
-				],
-			]
-		);
-		$this->add_control(
-			'button_border_color',
-			[
-				'label' => __('Border Color', 'chambeshi'),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--button' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .bt-pricing--button' => 'background-color: {{VALUE}}; border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -631,7 +470,7 @@ class Widget_PricingItem extends Widget_Base
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--button:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .bt-pricing--button:hover' => 'color: {{VALUE}} !important;',
 				],
 			]
 		);
@@ -643,38 +482,7 @@ class Widget_PricingItem extends Widget_Base
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--button:hover' => 'background-color: {{VALUE}}; border-color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'button_border_width_ratio_hover',
-			[
-				'label' => __('Border Width Hover', 'chambeshi'),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => 2,
-				],
-				'range' => [
-					'px' => [
-						'min' => 1,
-						'max' => 100,
-						'step' => 1,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--button:hover' => 'border-width: {{SIZE}}px;',
-				],
-			]
-		);
-		$this->add_control(
-			'button_border_color_hover',
-			[
-				'label' => __('Border Color Hover', 'chambeshi'),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--button:hover' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .bt-pricing--button:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -692,30 +500,30 @@ class Widget_PricingItem extends Widget_Base
 			]
 		);
 		$this->add_control(
-			'button_more_pricing',
+			'text_after_button_pricing',
 			[
-				'label' => __('Button More', 'chambeshi'),
+				'label' => __('Text After Button', 'chambeshi'),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
 		$this->add_control(
-			'button_more_color',
+			'text_after_button_color',
 			[
-				'label' => __('Button More Color', 'chambeshi'),
+				'label' => __('Text After Button Color', 'chambeshi'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-pricing--button-more a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .bt-pricing--text-after-button' => 'color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'button_more_typography',
-				'label' => __('Button More Typography', 'chambeshi'),
+				'name' => 'text_after_button_typography',
+				'label' => __('Text After Button Typography', 'chambeshi'),
 				'default' => '',
-				'selector' => '{{WRAPPER}} .bt-pricing--button-more',
+				'selector' => '{{WRAPPER}} .bt-pricing--text-after-button',
 			]
 		);
 
@@ -731,69 +539,51 @@ class Widget_PricingItem extends Widget_Base
 	protected function render()
 	{
 		$settings = $this->get_settings_for_display();
-		$svg_url = $settings['pricing_svg']['url'];
-
 
 ?>
 		<div class="bt-elwg-pricing-item--default">
 			<div class="bt-pricing-item ">
-				<div class="bt-pricing--featured">
-					<?php if (!empty($settings['pricing_image'])) {
-						$image = $settings['pricing_image'];
-						$image_url = Group_Control_Image_Size::get_attachment_image_src($image['id'], 'pricing_image', $settings);
-						if (!$image_url) {
-							$image_url = $image['url'];
-						}
+				<div class="bt-pricing--header">
+					<?php
+					if (!empty($settings['heading'])) {
+						echo '<h3 class="bt-pricing--heading">' . esc_html($settings['heading']) . '</h3>';
+					}
 					?>
-						<div class="bt-cover-image">
-							<img src="<?php echo esc_url($image_url) ?>" alt="" />
-						</div>
-
-					<?php } ?>
-					<div class="bt-pricing--wrap-image">
-						<?php
-						if (!empty($svg_url) && 'svg' === pathinfo($svg_url, PATHINFO_EXTENSION)) {
-							echo file_get_contents($svg_url);
-						}
-						if (!empty($settings['heading'])) {
-							echo '<h3 class="bt-pricing--heading">' . esc_html($settings['heading']) . '</h3>';
-						}
-						?>
-						<div class="bt-pricing--price-time">
-							<div class="bt-pricing--price">
-								<?php
-								if (!empty($settings['price'])) {
-									echo esc_html($settings['price']);
-								}
-								if (!empty($settings['price_after'])) {
-									echo '<span class="bt-pricing--price-after">' . esc_html($settings['price_after']) . '</span>';
-								}
-								?>
-							</div>
-							<div class="bt-pricing--time">
-								<?php
-								if (!empty($settings['time'])) {
-									echo esc_html($settings['time']);
-								}
-								?>
-							</div>
-						</div>
-					</div>
+					<?php
+					if (!empty($settings['description'])) {
+						echo '<div class="bt-pricing--description">' . esc_html($settings['description']) . '</div>';
+					}
+					?>
+				</div>
+				<div class="bt-pricing--box-price">
+					<?php
+					if (!empty($settings['price_before'])) {
+						echo '<span class="bt-pricing--price-before">' . esc_html($settings['price_before']) . '</span>';
+					}
+					echo '<div class="bt-pricing--price">';
+					if (!empty($settings['price'])) {
+						echo esc_html($settings['price']);
+					}
+					if (!empty($settings['price_after'])) {
+						echo '<span class="bt-pricing--price-after">' . esc_html($settings['price_after']) . '</span>';
+					}
+					echo '</div>';
+					?>
 				</div>
 				<div class="bt-pricing--infor">
 					<?php if (!empty($settings['list_info'])) { ?>
 						<ul class="bt-pricing--info">
 							<?php foreach ($settings['list_info'] as $item) { ?>
 								<li>
-									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-										<path d="M2.75 8.33383C2.43934 8.3347 2.13528 8.42351 1.87299 8.58997C1.6107 8.75644 1.4009 8.99377 1.26787 9.2745C1.13483 9.55523 1.084 9.86789 1.12124 10.1763C1.15849 10.4847 1.28229 10.7763 1.47833 11.0173L5.65745 16.1367C5.80645 16.3217 5.99746 16.4685 6.21459 16.5649C6.43172 16.6613 6.66872 16.7045 6.90589 16.6908C7.41314 16.6636 7.8711 16.3923 8.16308 15.9461L16.8442 1.96522C16.8456 1.9629 16.8471 1.96058 16.8486 1.9583C16.9301 1.83323 16.9036 1.58538 16.7355 1.42968C16.6893 1.38693 16.6349 1.35408 16.5755 1.33316C16.5162 1.31224 16.4531 1.3037 16.3904 1.30805C16.3276 1.31241 16.2663 1.32957 16.2104 1.35848C16.1545 1.3874 16.1051 1.42745 16.0653 1.47617C16.0622 1.48 16.059 1.48378 16.0557 1.48749L7.30068 11.3793C7.26736 11.417 7.2269 11.4476 7.18164 11.4695C7.13638 11.4914 7.08723 11.504 7.03704 11.5067C6.98685 11.5095 6.93661 11.5022 6.88926 11.4853C6.84191 11.4684 6.79837 11.4423 6.7612 11.4085L3.85558 8.76437C3.55381 8.48774 3.15938 8.33414 2.75 8.33383Z" fill="#C2A74E" />
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+										<path d="M3.05534 9.25979C2.71016 9.26076 2.37232 9.35944 2.08089 9.5444C1.78945 9.72937 1.55634 9.99307 1.40853 10.305C1.26071 10.6169 1.20422 10.9643 1.24561 11.307C1.28699 11.6497 1.42455 11.9736 1.64238 12.2414L6.28584 17.9296C6.4514 18.1352 6.66362 18.2983 6.90488 18.4054C7.14614 18.5125 7.40947 18.5605 7.67299 18.5454C8.23661 18.5151 8.74545 18.2136 9.06988 17.7179L18.7155 2.18356C18.7171 2.18099 18.7188 2.17841 18.7205 2.17587C18.811 2.03691 18.7816 1.76152 18.5948 1.58852C18.5435 1.54102 18.483 1.50452 18.417 1.48127C18.3511 1.45803 18.2811 1.44854 18.2113 1.45338C18.1415 1.45822 18.0735 1.47729 18.0114 1.50941C17.9493 1.54154 17.8944 1.58604 17.8501 1.64018C17.8466 1.64444 17.8431 1.64863 17.8394 1.65276L8.11164 12.6437C8.07463 12.6855 8.02967 12.7196 7.97939 12.7439C7.9291 12.7682 7.87448 12.7822 7.81871 12.7852C7.76294 12.7883 7.70713 12.7802 7.65451 12.7614C7.6019 12.7427 7.55353 12.7137 7.51222 12.6761L4.28376 9.73818C3.94846 9.43081 3.51021 9.26014 3.05534 9.25979Z" fill="#4F6A35" />
 									</svg><?php echo esc_html($item['list_content']); ?>
 								</li>
 							<?php } ?>
 						</ul>
 					<?php
 					}
-					echo '<div class="bt-pricing--box-button">';
+					echo '<div class="bt-pricing--button-wrapper">';
 					if (!empty($settings['button_url']['url'])) {
 						$this->add_link_attributes('button_url', $settings['button_url']);
 					}
@@ -801,12 +591,9 @@ class Widget_PricingItem extends Widget_Base
 					if (!empty($settings['button_text'])) {
 						echo '<a class="bt-pricing--button bt-button-effect" ' . $this->get_render_attribute_string('button_url') . '>' . esc_html($settings['button_text']) . '</a>';
 					}
-					if (!empty($settings['button_more_url']['url'])) {
-						$this->add_link_attributes('button_more_url', $settings['button_more_url']);
-					}
 
-					if (!empty($settings['button_more'])) {
-						echo '<div class="bt-pricing--button-more">or <a ' . $this->get_render_attribute_string('button_more_url') . ' >' . esc_html($settings['button_more']) . '</a></div>';
+					if (!empty($settings['text_after_button'])) {
+						echo '<span class="bt-pricing--text-after-button">' . esc_html($settings['text_after_button']) . '</span>';
 					}
 					echo '</div>';
 					?>
@@ -816,7 +603,5 @@ class Widget_PricingItem extends Widget_Base
 <?php
 	}
 
-	protected function content_template()
-	{
-	}
+	protected function content_template() {}
 }
