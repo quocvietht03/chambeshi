@@ -1553,6 +1553,10 @@
       }
       &--header {
         padding: 35px 40px 26px;
+        @media(max-width:$break-xs){
+          padding-left: 20px;
+          padding-right: 20px;
+        }
       }
       &--heading {
         color: $color-primary;
@@ -1572,6 +1576,10 @@
       &--box-price {
         padding: 14px 40px;
         background: $color-secondary;
+        @media(max-width:$break-xs){
+          padding-left: 20px;
+          padding-right: 20px;
+        }
       }
       &--price-before {
         color: $color-primary;
@@ -1599,6 +1607,10 @@
       }
       &--infor {
         padding: 24px 40px 30px;
+        @media(max-width:$break-xs){
+          padding-left: 20px;
+          padding-right: 20px;
+        }
       }
       &--info {
         padding: 0;
