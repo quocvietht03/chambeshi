@@ -880,7 +880,128 @@
     }
   }
 }
+.__bt-post-style-2 {
+  .bt-post {
+    &--inner {
+      position: relative;
+      overflow: hidden;
+    }
+    &--featured {
+      position: relative;
+      overflow: hidden;
+      a {
+        display: block;
+        line-height: 0;
+      }
+      .bt-cover-image {
+        min-height: 304px;
+        border-radius: 20px;
+      }
+    }
 
+    &--category {
+      position: absolute;
+      top: 22px;
+      left: 25px;
+      a {
+        background-color: $color-accent;
+        font-family: $accent-font;
+        color: #fff;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding: 6px 15px;
+        border-radius: 5px;
+        display: inline-block;
+      }
+    }
+    &--content {
+      position: relative;
+      padding: 45px 31px 24px 32px;
+      background: #fff;
+      border-radius: 0 0 20px 20px;
+    }
+    .bt-post-author-w-avatar {
+      position: absolute;
+      top: -43px;
+      background: $color-secondary;
+      left: 0;
+      padding: 17px 34px 15px 21px;
+      border-radius: 0px 10px 10px 0px;
+      display: flex;
+      gap: 7px;
+      &--thumbnail {
+        img {
+          height: 32px;
+          width: 32px;
+        }
+      }
+      &--name {
+        display: flex;
+        flex-direction: column;
+        color: $color-primary;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: capitalize;
+        span {
+          color: $color-accent;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+      }
+    }
+    &--publish {
+      color: $color-primary;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    &--title {
+      color: $color-primary;
+      font-family: $secondary-font;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 30px;
+      text-transform: capitalize;
+      word-break: break-word;
+      margin-bottom: 11px;
+      a {
+        @extend .__bt-max-line-ellipsis;
+      }
+    }
+    &--line-ellipse{
+      margin-bottom: 14.75px;
+      margin-top: 20px;
+      display: flex;
+      svg{
+        width: 100%;
+      }
+    }
+    &--button{
+      a{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $color-accent;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+    }
+  }
+}
 .bt-related-posts {
   margin-top: 75px;
   &--heading {

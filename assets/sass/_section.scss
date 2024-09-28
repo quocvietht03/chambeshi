@@ -938,7 +938,7 @@ body {
                         .gform_heading {
                             display: none;
                         }
-                        .gform_confirmation_message{
+                        .gform_confirmation_message {
                             margin-bottom: 100px;
                         }
                     }
@@ -1019,10 +1019,39 @@ body {
             }
         }
     }
-    &.bt-section-pricing-home3{
+    &.bt-section-pricing-home3 {
         .bt-elwg-highlighted-heading {
             .__text-highlighted span {
                 font-weight: inherit;
+            }
+        }
+    }
+    &.bt-data-visualization {
+        .elementor-progress-wrapper {
+            overflow: visible !important;
+            .elementor-progress-bar {
+                position: relative;
+                border-radius: 20px 0 0 20px;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 1px;
+                    height: 64px;
+                    top: 0;
+                    right: 0;
+                    background: #abe4a3;
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border-right: 10px solid transparent;
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid #abe4a3;
+                    right: -10px;
+                    bottom: -23px;
+                }
             }
         }
     }
