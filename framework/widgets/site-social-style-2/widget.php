@@ -157,6 +157,18 @@ class Widget_SiteSocialStyle2 extends Widget_Base
 			]
 		);
 
+		$this->add_control(
+			'icon_background_hv',
+			[
+				'label'     => esc_html__('Background Hover', 'chambeshi'),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-elwg-site-social-style-2 a:hover' => 'background: {{VALUE}} !important;',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 	}
 

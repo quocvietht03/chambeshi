@@ -59,4 +59,65 @@
       }
     }
   }
+  &.bt-site-footer-style2 {
+    > .e-con-inner {
+      > .elementor-element {
+        &:last-child {
+          @media(max-width:$break-lg) and (min-width:$break-tl){
+            padding-left: 20px;
+          }
+          > .elementor-element {
+            &:first-child {
+              @media(max-width:$break-lg) and (min-width:$break-tl){
+                padding-bottom: 45px;
+              }
+              .elementor-icon-box-wrapper {
+                align-items: center;
+                .elementor-icon-box-icon {
+                  display: flex;
+                }
+                @media(max-width:$break-lg) and (min-width:$break-tl){
+                  .elementor-icon-box-title{
+                    line-height: 26px;
+                  }
+                }
+              }
+              .tnp-subscription-minimal {
+                input.tnp-email {
+                  background-color: #fff;
+                  border-radius: 10px;
+                  max-width: 100%;
+                  padding-right: 20px;
+                  @media(max-width:$break-xs){
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    height: 55px;                
+                  }
+                }
+                input.tnp-submit {
+                  right: auto;
+                  background: $color-accent;
+                  color: #fff;
+                  position: relative;
+                  top: auto;
+                  transform: none;
+                  margin-top: 17px;
+                  @media(max-width:$break-xs){
+                    width: auto;
+                    padding: 0 30px;
+                  }
+                }
+               
+              }
+            }
+            &:last-child{
+              .bt-elwg-site-copyright a{
+                color: $color-secondary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

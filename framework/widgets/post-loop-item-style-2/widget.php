@@ -137,47 +137,7 @@ class Widget_PostLoopItemStyle2 extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		$this->add_control(
-			'category_style',
-			[
-				'label' => __( 'Category', 'chambeshi' ),
-				'type' => Controls_Manager::HEADING,
-			]
-		);
-
-		$this->add_control(
-			'category_color',
-			[
-				'label' => __( 'Color', 'chambeshi' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-post--category a' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'category_bg_color',
-			[
-				'label' => __( 'Background Color', 'chambeshi' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-post--category a' => 'background-color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'category_typography',
-				'label' => __( 'Typography', 'chambeshi' ),
-				'default' => '',
-				'selector' => '{{WRAPPER}} .bt-post--category a',
-			]
-		);
+		
 
 		$this->add_control(
 			'date_style',
@@ -263,7 +223,35 @@ class Widget_PostLoopItemStyle2 extends Widget_Base {
 				'selector' => '{{WRAPPER}} .bt-post--title',
 			]
 		);
+		$this->add_control(
+			'excerpt_style',
+			[
+				'label' => __( 'Excerpt', 'chambeshi' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
 
+		$this->add_control(
+			'excerpt_color',
+			[
+				'label' => __( 'Color', 'chambeshi' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-post--excerpt' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'excerpt_typography',
+				'label' => __( 'Typography', 'chambeshi' ),
+				'default' => '',
+				'selector' => '{{WRAPPER}} .bt-post--excerpt',
+			]
+		);
 		$this->add_control(
 			'author_style',
 			[
@@ -279,7 +267,7 @@ class Widget_PostLoopItemStyle2 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post-author .bt-post-author--name' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post-author-w-avatar .bt-post-author-w-avatar--name' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -290,7 +278,7 @@ class Widget_PostLoopItemStyle2 extends Widget_Base {
 				'name' => 'author_typography',
 				'label' => __( 'Typography', 'chambeshi' ),
 				'default' => '',
-				'selector' => '{{WRAPPER}} .bt-post-author .bt-post-author--name',
+				'selector' => '{{WRAPPER}} .bt-post-author-w-avatar .bt-post-author-w-avatar--name',
 			]
 		);
 
