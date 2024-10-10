@@ -338,6 +338,28 @@
 }
 
 .bt-elwg-page-breadcrumb {
+  position: relative;
+  padding: 16px 32px 16px 45px;
+  border-radius: 10px;
+  background: #FFE17F;
+  .icon-breadcrumb{
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #4F6A35;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    img{
+      width: 19px;
+      height: 19px;
+      object-fit: cover;
+    }
+  }
   .bt-page-breadcrumb {
     position: relative;
     z-index: 3;
@@ -352,10 +374,23 @@
     display: flex;
     justify-content: center;
     grid-gap: 10px;
+
     @media (max-width: $break-sm) {
       font-size: 16px;
       grid-gap: 6px;
       flex-wrap: wrap;
+    }
+  }
+  @media (max-width: $break-sm){
+    padding: 12px 24px 12px 32px;
+    .icon-breadcrumb{
+      width: 36px;
+      height: 36px;
+      left: -14px;
+      img{
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 }

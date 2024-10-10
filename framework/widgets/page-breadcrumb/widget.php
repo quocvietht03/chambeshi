@@ -47,13 +47,48 @@ class Widget_PageBreadcrumb extends Widget_Base
 		);
 
 		$this->add_control(
+			'icon_breadcrumb',
+			[
+				'label' => esc_html__( 'Choose Home Image', 'textdomain' ),
+				'type' => Controls_Manager::MEDIA,
+				'default' => [
+					'url' => Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+
+		$this->add_control(
+			'icon_color',
+			[
+				'label' => __('Background Color Home Image', 'chambeshi'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .icon-breadcrumb' => 'background: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
 			'icon_color',
 			[
 				'label' => __('Icon Color', 'chambeshi'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-page-breadcrumb svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .bt-page-breadcrumb .bt-deli' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'bg_color_breadcrumb',
+			[
+				'label' => __('Background Color', 'chambeshi'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-elwg-page-breadcrumb' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -107,10 +142,16 @@ class Widget_PageBreadcrumb extends Widget_Base
 
 ?>
 		<div class="bt-elwg-page-breadcrumb">
+			<?php if ( !empty($settings['icon_breadcrumb']) ) { ?>
+				<div class="icon-breadcrumb">
+					<img src="<?php echo $settings['icon_breadcrumb']['url'];?>" />
+				</div>
+			<?php } ?>
+			
 			<div class="bt-page-breadcrumb">
 				<?php
 				$home_text = esc_html__('Home', 'chambeshi');
-				$delimiter = '|';
+				$delimiter = '>';
 				echo chambeshi_page_breadcrumb($home_text, $delimiter);
 				?>
 			</div>
