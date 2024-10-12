@@ -51,6 +51,7 @@
         border-radius: 50%;
         transform: translate(50%, 50%) scale(0);
         transition: transform 0.7s ease;
+        opacity: .7;
       }
     }
     &--category {
@@ -79,6 +80,11 @@
       line-height: 1;
       position: relative;
       z-index: 1;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4; /* number of lines to show */
+              line-clamp: 4; 
+      -webkit-box-orient: vertical;
       a {
         color: #fff;
         font-family: $secondary-font;
@@ -134,7 +140,7 @@
       .bt-post {
         width: calc(25% - 15px);
         @media (min-width: $break-tl) {
-          &:first-child {
+          &:first-child, &:nth-child(6), &:nth-child(7), &:nth-child(12), &:nth-child(13), &:nth-child(18){
             width: calc(50% - 13.33px);
           }
           &:nth-child(2),
@@ -301,6 +307,76 @@
         }
         @media (max-width: $break-xs) {
           width: 100%;
+        }
+      }
+      .bt-post-normal{
+        width: calc(20% - 16px);
+        &:hover{
+          .bt-post--content{
+            opacity: 1;
+          }
+          .bt-post--featured .bt-cover-image::before{
+            opacity: 1;
+          }
+        }
+        .bt-post--featured {
+          height: 380px;
+          .bt-cover-image{
+            height: 380px;
+            &:before{
+              background: rgba(34, 34, 34, 0.70);
+              opacity: 0;
+            }
+          }
+        }
+        .bt-post--category a{
+          margin-top: 0;
+          color: #222;
+          background: #FFE17F;
+          margin-bottom: 22px;
+        }
+        .bt-post--content{
+          padding: 25px 25px 32px 25px;
+          transition: opacity .5s ease;
+          opacity: 0;
+        }
+        .bt-post--title{
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 4; /* number of lines to show */
+                  line-clamp: 4; 
+          -webkit-box-orient: vertical;
+        }
+        .bt-post--button{
+          position: unset;
+          opacity: 1;
+          bottom: inherit;
+          right: inherit;
+          margin-top: 26px;      
+        }
+        @media (max-width: $break-lg){
+          width: calc(33.333% - 14px);
+          .bt-post--content{
+            padding: 20px 15px 32px 15px;
+          }
+        }
+        @media (max-width: $break-sm){
+          width: calc(50% - 10px);
+          .bt-post--category a{
+            margin-bottom: 12px;
+          }
+          .bt-post--button{
+            margin-top: 12px;
+          }
+        }
+        @media (max-width: $break-xs){
+          width: 100%;
+          .bt-post--featured{
+            height: 330px;
+            .bt-cover-image{
+              height: 330px;
+            }
+          }
         }
       }
     }

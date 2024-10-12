@@ -60,7 +60,7 @@ class Widget_ProjectGrid extends Widget_Base
 			'taxonomy' => 'project_categories',
 			'hide_empty' => false,
 		));
-		if (!empty($categories)  && !is_wp_error($categories)) {
+		if (!empty($categories) && !is_wp_error($categories)) {
 			foreach ($categories as $category) {
 				$supported_taxonomies[$category->term_id] = $category->name;
 			}
@@ -95,27 +95,6 @@ class Widget_ProjectGrid extends Widget_Base
 				'show_label' => true,
 				'default' => 'medium',
 				'exclude' => ['custom'],
-			]
-		);
-
-		$this->add_responsive_control(
-			'image_ratio',
-			[
-				'label' => __('Image Ratio', 'chambeshi'),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => 0.66,
-				],
-				'range' => [
-					'px' => [
-						'min' => 0.3,
-						'max' => 2,
-						'step' => 0.01,
-					],
-				],
-				'selectors' => [
-					//'{{WRAPPER}} .bt-post--featured .bt-cover-image' => 'padding-bottom: calc( {{SIZE}} * 100% );',
-				],
 			]
 		);
 
@@ -554,10 +533,10 @@ class Widget_ProjectGrid extends Widget_Base
 		if (!empty($settings['category'])) {
 			$args['tax_query'] = array(
 				array(
-					'taxonomy' 		=> 'project_categories',
-					'terms' 		=> $settings['category'],
-					'field' 		=> 'term_id',
-					'operator' 		=> 'IN'
+					'taxonomy' => 'project_categories',
+					'terms' => $settings['category'],
+					'field' => 'term_id',
+					'operator' => 'IN'
 				)
 			);
 		}
@@ -565,10 +544,10 @@ class Widget_ProjectGrid extends Widget_Base
 		if (!empty($settings['category_exclude'])) {
 			$args['tax_query'] = array(
 				array(
-					'taxonomy' 		=> 'project_categories',
-					'terms' 		=> $settings['category_exclude'],
-					'field' 		=> 'term_id',
-					'operator' 		=> 'NOT IN'
+					'taxonomy' => 'project_categories',
+					'terms' => $settings['category_exclude'],
+					'field' => 'term_id',
+					'operator' => 'NOT IN'
 				)
 			);
 		}
@@ -585,19 +564,20 @@ class Widget_ProjectGrid extends Widget_Base
 		$settings = $this->get_settings_for_display();
 		$query = $this->query_posts();
 
-?>
+		?>
 		<div class="bt-elwg-project-grid--default">
 			<?php
 			if ($query->have_posts()) {
-			?>
+				?>
 				<div class="bt-project-grid">
 					<?php
-					while ($query->have_posts()) : $query->the_post();
+					while ($query->have_posts()):
+						$query->the_post();
 						get_template_part('framework/templates/project-grid', 'style', array('image-size' => $settings['thumbnail_size'], 'layout' => 'default'));
 					endwhile;
 					?>
 				</div>
-			<?php
+				<?php
 				if ($settings['show_pagination'] == 'yes') {
 					chambeshi_paginate_links($query);
 				}
@@ -606,7 +586,7 @@ class Widget_ProjectGrid extends Widget_Base
 			}
 			?>
 		</div>
-<?php
+		<?php
 		wp_reset_postdata();
 	}
 

@@ -8,6 +8,7 @@ use Elementor\Group_Control_Css_Filter;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
+use Elementor\Utils;
 
 class Widget_ProjectLoopItem extends Widget_Base {
 
@@ -68,6 +69,7 @@ class Widget_ProjectLoopItem extends Widget_Base {
 		);
 
 		$this->end_controls_section();
+
 	}
 
 	protected function register_style_section_controls() {
@@ -134,12 +136,12 @@ class Widget_ProjectLoopItem extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'background_content',[
-				'label'     => esc_html__( 'Background Content', 'chambeshi' ),
+			'background_hover',[
+				'label'     => esc_html__( 'Background Hover', 'chambeshi' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--content' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--content::before' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -216,34 +218,80 @@ class Widget_ProjectLoopItem extends Widget_Base {
 				'selector' => '{{WRAPPER}} .bt-post--category a',
 			]
 		);
+
 		$this->add_control(
-			'meta_style',[
-				'label' => esc_html__( 'Meta', 'chambeshi' ),
+			'button_style',[
+				'label' => esc_html__( 'Button', 'chambeshi' ),
 				'type'  => Controls_Manager::HEADING,
 			]
 		);
 
+		$this->start_controls_tabs( 'button_style_tabs' );
+
+		$this->start_controls_tab( 'style_button_normal',
+			[
+				'label' => __( 'Normal', 'chambeshi' ),
+			]
+		);
+
 		$this->add_control(
-			'meta_color',[
-				'label'     => esc_html__( 'Color', 'chambeshi' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
+			'button_background_color',
+			[
+				'label' => __( 'Background Color', 'chambeshi' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--publish span' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .bt-post-author--name' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--button' => 'background: {{VALUE}};',
 				],
 			]
 		);
 
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
+		$this->add_control(
+			'button_icon_color',
 			[
-				'name'     => 'meta_typography',
-				'label'    => esc_html__( 'Typography', 'chambeshi' ),
-				'default'  => '',
-				'selector' => '{{WRAPPER}} .bt-post-author--name, {{WRAPPER}} .bt-post--publish span',
+				'label' => __( 'Icon Color', 'chambeshi' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-post--button svg' => 'fill: {{VALUE}};',
+				],
 			]
 		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab( 'style_hover_button_normal',
+			[
+				'label' => __( 'Hover', 'chambeshi' ),
+			]
+		);
+
+		$this->add_control(
+			'button_icon_color_hover',
+			[
+				'label' => __( 'Background Color', 'chambeshi' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-post--button:hover' => 'background: {{VALUE}} !important;',
+				],
+			]
+		);
+
+		$this->add_control(
+			'button_bg_color_hover',
+			[
+				'label' => __( 'Icon Color', 'chambeshi' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-post--button:hover svg' => 'fill: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+		$this->end_controls_tabs();
 
 		$this->end_controls_section();
 

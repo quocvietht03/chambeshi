@@ -54,6 +54,7 @@ class Widget_PageBreadcrumb extends Widget_Base
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
 				],
+				'media_types' => ['svg'],
 			]
 		);
 
@@ -140,11 +141,12 @@ class Widget_PageBreadcrumb extends Widget_Base
 	{
 		$settings = $this->get_settings_for_display();
 
+		$svg_url = $settings['icon_breadcrumb']['url'];
 ?>
 		<div class="bt-elwg-page-breadcrumb">
-			<?php if ( !empty($settings['icon_breadcrumb']) ) { ?>
+			<?php if ( !empty($svg_url) && 'svg' === pathinfo($svg_url, PATHINFO_EXTENSION) ) { ?>
 				<div class="icon-breadcrumb">
-					<img src="<?php echo $settings['icon_breadcrumb']['url'];?>" />
+					<?php echo file_get_contents($svg_url); ?>
 				</div>
 			<?php } ?>
 			

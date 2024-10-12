@@ -354,7 +354,7 @@
     left: -18px;
     top: 50%;
     transform: translateY(-50%);
-    img{
+    img, svg{
       width: 19px;
       height: 19px;
       object-fit: cover;
@@ -387,7 +387,7 @@
       width: 36px;
       height: 36px;
       left: -14px;
-      img{
+      img, svg{
         width: 16px;
         height: 16px;
       }

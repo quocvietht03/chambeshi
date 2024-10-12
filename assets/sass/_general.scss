@@ -596,7 +596,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 36px;
+    width: 42px;
     height: 42px;
     font-family: $primary-font;
     font-size: 18px;
@@ -615,19 +615,22 @@
     }
     &.current {
       width: 42px;
-      color: #ffffff;
-      background: $color-accent;
+      color: #222222;
+      background: $color-secondary;
     }
     &.prev,
     &.next {
       width: 42px;
       font-size: 0;
+      svg{
+        fill: #4F6A35;
+      }
     }
     &.prev {
-      margin-right: 20px;
+      // margin-right: 20px;
     }
     &.next {
-      margin-left: 20px;
+      // margin-left: 20px;
     }
     &.dots {
       width: auto;
