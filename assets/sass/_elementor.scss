@@ -382,15 +382,21 @@
     }
   }
   @media (max-width: $break-sm){
-    padding: 12px 24px 12px 32px;
+    // padding: 12px 24px 12px 32px;
+    background: transparent !important;
+    padding: 0 0 0 18px;
     .icon-breadcrumb{
-      width: 36px;
-      height: 36px;
-      left: -14px;
+      width: auto;
+      height: auto;
+      background: transparent !important;
+      left: -8px;
       img, svg{
         width: 16px;
         height: 16px;
       }
+    }
+    .bt-page-breadcrumb{
+      color: #fff !important;
     }
   }
 }
