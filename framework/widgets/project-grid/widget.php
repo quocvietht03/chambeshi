@@ -299,6 +299,18 @@ class Widget_ProjectGrid extends Widget_Base
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
+		
+		$this->add_control(
+			'date_color',
+			[
+				'label' => __('Background Hover Content', 'chambeshi'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-post--content:before' => 'background: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->add_control(
 			'date_style',
