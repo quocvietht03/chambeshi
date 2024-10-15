@@ -38,7 +38,7 @@ function chambeshi_project_register() {
 		'rewrite'         => array('slug' => $cpt_slug), // Permalinks format
 		'show_in_rest' 		=> true,
 		'taxonomies'      => array('project_categories', 'project_tag'),
-		'supports'        => array('title', 'editor', 'excerpt', 'thumbnail', 'comments')
+		'supports'        => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'author')
   );
 
   add_filter( 'enter_title_here',  'chambeshi_project_change_default_title');

@@ -3,6 +3,7 @@ del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, 
 dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
     margin: 0;
     border: 0;
+    box-sizing: border-box;
 }
 body,
 html :where(.editor-styles-wrapper) {

@@ -18,11 +18,12 @@ if (function_exists('get_field')) {
 }
 
 ?>
-<section class="bt-site-titlebar<?php if ($distance) {
-                                  echo ' bt-has-distance';
-                                } ?>" style="<?php if (!empty($bg_image)) {
-                                                echo 'background-image: url(' . $bg_image . ')';
-                                              } ?>">
+<section class="bt-site-titlebar 
+  <?php if ($distance) {
+    echo ' bt-has-distance';
+  } ?>" style="<?php if (!empty($bg_image)) {
+    echo 'background-image: url(' . $bg_image . ')';
+  } ?>">
   <?php
   if (!empty($ovl_color)) {
     echo '<div class="bt-site-titlebar--overlay" style="background: ' . $ovl_color . '; opacity: ' . $ovl_opacity . '%;"></div>';
@@ -36,7 +37,7 @@ if (function_exists('get_field')) {
         <div class="bt-page-titlebar--breadcrumb">
           <?php
           $home_text = 'Home';
-          $delimiter = '|';
+          $delimiter = '>';
           echo chambeshi_page_breadcrumb($home_text, $delimiter);
           ?>
         </div>

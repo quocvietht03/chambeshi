@@ -183,7 +183,7 @@ $testimonials_section = get_field('testimonials_section', 'options');
 									}
 									?>
 								</div>
-								<?php echo chambeshi_service_button_book_now_render('Book Now'); ?>
+								<?php //echo chambeshi_service_button_book_now_render('Book Now'); ?>
 							</div>
 							<div class="bt-post--content">
 								<?php the_content(); ?>

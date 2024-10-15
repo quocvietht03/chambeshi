@@ -351,47 +351,70 @@
     margin-bottom: 0 !important;
   }
   h2 {
-    font-size: 30px;
-    margin: 32px 0 16px;
     color: $color-primary;
     font-family: $secondary-font;
+    font-size: 40px;
+    font-style: normal;
     font-weight: 600;
-    line-height: 120%;
-    text-transform: capitalize;
+    line-height: 162.5%; /* 162.5% */
+    margin-bottom: 16px;
+    @media (max-width: $break-sm){
+      font-size: 32px;
+    }
   }
   h3 {
-    font-size: 24px;
-    margin: 24px 0 12px;
     color: $color-primary;
     font-family: $secondary-font;
+    font-size: 28px;
+    font-style: normal;
     font-weight: 600;
-    line-height: 120%;
-    text-transform: capitalize;
+    line-height: 125%;
+  }
+  h4{
+    color: $color-primary;
+    font-family: $secondary-font;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+  }
+  h5{
+    color: $color-primary;
+    font-family: $secondary-font;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+  }
+  h6{
+    color: $color-primary;
+    font-family: $secondary-font;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
   }
   .wp-block-media-text__media {
     img {
-      border-radius: 20px 20px 20px 80px;
-      @media (max-width: 600px) {
-        border-radius: 15px 15px 15px 60px;
-      }
+      border-radius: 20px;
     }
   }
   blockquote {
     position: relative;
-    background: #f1f1f1;
-    padding: 62px 62px 47px 129px;
-    margin-left: 55px;
-    margin-right: 55px;
-    background: #f7f4ef;
+    background: #e7efec;
+    padding: 48px;
     border: none;
     color: $color-text;
     font-family: $secondary-font;
     font-size: 24px;
     font-weight: 500;
     line-height: 30px;
-    border-radius: 20px 20px 80px 20px;
+    border-radius: 20px 20px 20px 20px;
     > *:first-child {
       margin-top: 0 !important;
+    }
+    > *:last-child {
+      margin-bottom: 0 !important;
     }
     @media (max-width: 1100px) and (min-width: 992px) {
       margin-left: 15px;
@@ -438,15 +461,24 @@
   ul {
     list-style: none;
     padding-left: 43px;
-    @media (max-width: $break-xs) {
-      padding-left: 15px;
-    }
     li {
       position: relative;
-      padding-left: 26px;
+      padding-left: 54px;
       margin-bottom: 10px;
       &:not(:last-child) {
         margin-bottom: 15px;
+      }
+      &:before{
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNMy4wNTQzNiA5LjI1OTc5QzIuNzA5MTkgOS4yNjA3NiAyLjM3MTM0IDkuMzU5NDQgMi4wNzk5MSA5LjU0NDRDMS43ODg0OCA5LjcyOTM3IDEuNTU1MzcgOS45OTMwNyAxLjQwNzU1IDEwLjMwNUMxLjI1OTczIDEwLjYxNjkgMS4yMDMyNSAxMC45NjQzIDEuMjQ0NjMgMTEuMzA3QzEuMjg2MDIgMTEuNjQ5NyAxLjQyMzU4IDExLjk3MzYgMS42NDE0IDEyLjI0MTRMNi4yODQ4NiAxNy45Mjk2QzYuNDUwNDIgMTguMTM1MiA2LjY2MjY1IDE4LjI5ODMgNi45MDM5IDE4LjQwNTRDNy4xNDUxNiAxOC41MTI1IDcuNDA4NDkgMTguNTYwNSA3LjY3MjAxIDE4LjU0NTRDOC4yMzU2MyAxOC41MTUxIDguNzQ0NDggMTguMjEzNiA5LjA2ODkgMTcuNzE3OUwxOC43MTQ2IDIuMTgzNTZDMTguNzE2MSAyLjE4MDk5IDE4LjcxNzggMi4xNzg0MSAxOC43MTk1IDIuMTc1ODdDMTguODEgMi4wMzY5MSAxOC43ODA2IDEuNzYxNTIgMTguNTkzOCAxLjU4ODUyQzE4LjU0MjUgMS41NDEwMiAxOC40ODIgMS41MDQ1MiAxOC40MTYgMS40ODEyN0MxOC4zNTAxIDEuNDU4MDMgMTguMjgwMSAxLjQ0ODU0IDE4LjIxMDMgMS40NTMzOEMxOC4xNDA1IDEuNDU4MjIgMTguMDcyNSAxLjQ3NzI5IDE4LjAxMDQgMS41MDk0MUMxNy45NDgzIDEuNTQxNTQgMTcuODkzNCAxLjU4NjA0IDE3Ljg0OTEgMS42NDAxOEMxNy44NDU3IDEuNjQ0NDQgMTcuODQyMSAxLjY0ODYzIDE3LjgzODQgMS42NTI3Nkw4LjExMDY3IDEyLjY0MzdDOC4wNzM2NSAxMi42ODU1IDguMDI4NyAxMi43MTk2IDcuOTc4NDEgMTIuNzQzOUM3LjkyODEyIDEyLjc2ODIgNy44NzM1MSAxMi43ODIyIDcuODE3NzQgMTIuNzg1MkM3Ljc2MTk3IDEyLjc4ODMgNy43MDYxNSAxMi43ODAyIDcuNjUzNTQgMTIuNzYxNEM3LjYwMDkyIDEyLjc0MjcgNy41NTI1NiAxMi43MTM3IDcuNTExMjUgMTIuNjc2MUw0LjI4Mjc4IDkuNzM4MThDMy45NDc0OCA5LjQzMDgxIDMuNTA5MjMgOS4yNjAxNCAzLjA1NDM2IDkuMjU5NzlaIiBmaWxsPSIjNEY2QTM1Ii8+Cjwvc3ZnPg==');
+        background-position: center;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 24px;
+        top: 3px;
       }
       .bt-ul-icon {
         position: absolute;
@@ -456,13 +488,19 @@
         color: $color-accent;
       }
     }
+    @media (max-width: $break-lg){
+      li{
+        padding-left: 32px;
+        &:before{
+          left: 8px;
+        }
+      }
+    }
   }
   .wp-block-media-text {
-    margin-top: 52px;
-    gap: 30px;
-    @media (max-width: 600px) {
-      margin-top: 32px;
-    }
+    margin: 32px 0;
+    gap: 40px;
+    grid-template-columns: 1fr 52%;
     &__media {
       overflow: hidden;
       img {
@@ -480,6 +518,37 @@
       ul,
       ol {
         padding-left: 0;
+      }
+    }
+    @media (max-width: $break-lg){
+      grid-template-columns: 1fr;
+      &__media{
+        grid-column: 1;
+        grid-row: 1;
+      }
+      &__content{
+        grid-column: 1;
+        grid-row: 2;
+      }
+    }
+    @media (max-width: 600px) {
+      margin-top: 32px;
+    }
+  }
+  p{
+    color: $color-text;
+    font-family: $text-font;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 166.667% */
+  }
+  .wp-block-table{
+    @media (max-width: $break-sm){
+      overflow-y: auto;
+      table tr td{
+        min-width: 200px;
+        width: 200px;
       }
     }
   }
