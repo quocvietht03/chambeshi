@@ -1,9 +1,13 @@
 .bt-block-recent-posts {
   display: flex;
   flex-direction: column;
-  gap: 30px;
   padding: 0;
   .bt-post {
+    &:not(:last-child) {
+      padding-bottom: 26px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #b4b4b4;
+    }
     a {
       display: flex;
       gap: 15px;
@@ -11,7 +15,7 @@
     }
     .bt-cover-image {
       padding-bottom: 100%;
-      border-radius: 10px 10px 40px 10px;
+      border-radius: 20px;
     }
     &--thumbnail {
       width: 100px;
@@ -22,29 +26,34 @@
     &--date {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      line-height: 150%;
+      gap: 7px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 18px;
       color: $color-accent;
       margin-bottom: 8px;
-      text-transform: uppercase;
+      color: $color-text;
     }
     &--title {
       @extend .__bt-max-line-ellipsis;
       word-break: break-word;
-      margin: 0 0 11px;
+      margin: 0 0 10px;
       color: $color-primary;
       font-family: $secondary-font;
-      font-size: 20px;
+      font-size: 17px;
       font-weight: 500;
+      line-height: 26px;
     }
     &--author {
-      font-size: 16px;
-      line-height: 150%;
-      color: $color-text;
+      color: $color-accent;
       display: flex;
-      gap: 6px;
+      gap: 7px;
       align-items: center;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: capitalize;
     }
   }
 }

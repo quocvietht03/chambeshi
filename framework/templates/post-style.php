@@ -1,6 +1,6 @@
 <?php
 $post_id = get_the_ID();
-$category = get_the_terms($post_id, 'category');
+$tags = get_the_terms($post_id, 'post_tag');
 ?>
 <article <?php post_class('bt-post'); ?>>
   <div class="bt-post--inner">
@@ -10,11 +10,11 @@ $category = get_the_terms($post_id, 'category');
 
       <div class="bt-post--infor">
         <div class="bt-post--info">
-          <div class="bt-post--category">
+          <div class="bt-post--tags">
             <?php
-            if (!empty($category)) {
-              echo  '<a href="' . get_category_link($category[0]->term_id) . '">' . $category[0]->name . '</a>';
-            }
+              if (!empty($tags)) {
+                echo  '<a href="' . get_tag_link($tags[0]->term_id) . '">' . $tags[0]->name . '</a>';
+              }
             ?>
           </div>
           <?php echo chambeshi_reading_time_render(); ?>

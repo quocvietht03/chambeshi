@@ -1,25 +1,55 @@
 .widget {
   &:not(:last-child) {
-    margin-bottom: 30px;
+    padding-bottom: 30px;
   }
   .wp-block-group {
     margin: 0;
-    background: #f7f4ef;
-    padding: 40px;
-    border-radius: 15px 15px 60px 15px;
+    border-radius: 15px;
+    background: #f0f7f3;
+    padding: 60px 35px 40px 35px;
+    position: relative;
+    margin-top: 35px;
     @media (max-width: $break-lg) and (min-width: $break-md) {
-      padding: 30px 15px;
-      border-radius: 10px 10px 40px 10px;
+      margin-top: 28px;
+      padding: 52px 15px 30px;
     }
     @media (max-width: $break-xs) {
-      padding: 30px 15px;
-      border-radius: 10px 10px 40px 10px;
+      margin-top: 28px;
+      padding: 52px 15px 30px;
     }
   }
   .wp-block-heading,
   .wg-title,
   .widget-title {
     @extend .__bt-block-heading-style;
+    border-radius: 20px 20px 20px 0px;
+    background: $color-secondary;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 20px 20px 20px 30px;
+    position: absolute;
+    top: -35px;
+    left: 0;
+    width: 90%;
+    &::before {
+      content: "";
+      background-image: url("../images/icon-title-siderbar.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+    @media (max-width: $break-lg) and (min-width: $break-md) {
+      padding: 13px 15px 13px 15px;
+      top: -28px;
+    }
+    @media (max-width: $break-xs) {
+      padding: 13px 15px 13px 15px;
+      top: -28px;
+    }
   }
   ul,
   ol {
@@ -49,15 +79,28 @@
   &.widget_recent_entries ul {
     li {
       position: relative;
-      padding-left: 20px;
-      &:before {
-        content: "";
-        position: absolute;
-        top: 14px;
-        left: 0;
-        width: 12px;
-        height: 2px;
-        background: $color-accent;
+      &:not(:last-child) {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #b6b6b6;
+      }
+      a {
+        color: $color-primary;
+        font-family: $secondary-font;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        gap: 19px;
+        &::after {
+          content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMiIgaGVpZ2h0PSIyMiIgdmlld0JveD0iMCAwIDIyIDIyIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMjAuODE0NiAxMC4zNTJMMTQuMzk3OSAzLjkzNTNDMTQuMjI1IDMuNzY4MzIgMTMuOTkzNSAzLjY3NTkyIDEzLjc1MzEgMy42NzgwMUMxMy41MTI4IDMuNjgwMSAxMy4yODI5IDMuNzc2NTEgMTMuMTEyOSAzLjk0NjQ2QzEyLjk0MzAgNC4xMTY0MiAxMi44NDY2IDQuMzQ2MzMgMTIuODQ0NSA0LjU4NjY4QzEyLjg0MjQgNC44MjcwMyAxMi45MzQ4IDUuMDU4NTggMTMuMTAxOCA1LjIzMTQ2TDE3Ljk1MzcgMTAuMDgzNEgxLjgzMzE3QzEuNTkwNiAxMC4wODM0IDEuMzU2OSAxMC4xODAwMCAxLjE4NDk5IDEwLjM1MTlDMS4wMTMwOCAxMC41MjM4IDAuOTE2NTA0IDEwLjc1NjkgMC45MTY1MDQgMTFDMC45MTY1MDQgMTEuMjQzMiAxLjAxMzA4IDExLjQ3NjMgMS4xODQ5OSAxMS42NDgyQzEuMzU2OSAxMS44MjAxIDEuNTkwNiAxMS45MTY3IDEuODMzMTcgMTEuOTE2N0gxNy45NTM3TDEzLjEwMTggMTYuNzY4NkMxMy4wMTQyIDE2Ljg1MzIgMTIuOTQ0NCAxNi45NTQzIDEyLjg5NjMgMTcuMDY2MkMxMi44NDgzIDE3LjE3ODAgMTIuODIzIDE3LjI5ODMgMTIuODIxOSAxNy40MkMxMi44MjA5IDE3LjU0MTcgMTIuODQ0MSAxNy42NjI0IDEyLjg5MDIgMTcuNzc1MUMxMi45MzYzIDE3Ljg4NzcgMTMuMDA0MyAxNy45OTAxIDEzLjA5MDQgMTguMDc2MkMxMy4xNzY1IDE4LjE2MjIgMTMuMjc4OCAxOC4yMzAzIDEzLjM5MTUgMTguMjc2NEMxMy41MDQxIDE4LjMyMjUgMTMuNjI0OCAxOC4zNDU3IDEzLjc0NjUgMTguMzQ0NkMxMy44NjgzIDE4LjM0MzYgMTMuOTg4NSAxOC4zMTgzIDE0LjEwMDQgMTguMjcwMkMxNC4yMTIyIDE4LjIyMjIgMTQuMzEzNCAxOC4xNTIzIDE0LjM5NzkgMTguMDY0OEwyMC44MTQ2IDExLjY0ODEzQzIwLjk4NjQgMTEuNDc2MiAyMS4wODMwMCAxMS4yNDMxIDIxLjA4MzAwIDExQzIxLjA4MzAwIDEwLjc1NyAyMC45ODY0IDEwLjUyMzkgMjAuODE0NiAxMC4zNTJaIiBmaWxsPSIjNEY2QTM1Ii8+PC9zdmc+");
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+        }
       }
     }
   }
@@ -173,6 +216,16 @@
     }
   }
   .wp-block-search {
+    &__label {
+      color: $color-primary;
+      font-family: $primary-font;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 30px;
+      text-transform: uppercase;
+      margin-bottom: 11px;
+    }
     &__button {
       padding: 16px;
       border-radius: 0;
@@ -184,10 +237,13 @@
     }
     &__input {
       width: 100%;
-      padding: 18px 24px;
+      padding: 15px 24px;
       border-radius: 0;
       font-family: $primary-font;
-      border-radius: 10px;
+      border-radius: 15px;
+      border: 1px solid #b4b4b4;
+      font-size: 16px;
+      font-weight: 500;
     }
     &__icon-button {
       .wp-block-search {
@@ -251,7 +307,8 @@
           color: #fff;
           background: $color-accent;
           margin: 0;
-          border-radius: 0 10px 10px 0;
+          padding: 16px 21px;
+          border-radius: 0 15px 15px 0;
           svg {
             fill: currentColor;
           }
@@ -287,23 +344,21 @@
   .tagcloud {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 10px 11px;
     a {
       display: inline-block;
-      font-family: $primary-font;
-      font-size: 12px !important;
-      font-weight: 700;
-      text-transform: uppercase;
-      line-height: 20px;
-      color: $color-primary;
-      background: #f5f5f5;
-      padding: 4px 10px;
-      border: 1px solid #c7c7c7;
-      border-radius: 8px;
+      font-size: 16px !important;
+      font-style: normal;
+      font-weight: 400;
+      text-transform: capitalize;
+      line-height: normal;
+      color: $color-text;
+      padding: 7px 12px;
+      border-radius: 10px;
+      background: #fff;
       &:hover {
         color: #ffffff;
         background: $color-accent;
-        border-color: $color-accent;
       }
     }
   }
