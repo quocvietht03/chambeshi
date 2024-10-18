@@ -182,38 +182,38 @@ class Widget_PostLoopItem extends Widget_Base {
 		);
 
 		$this->add_control(
-			'category_style',[
-				'label' => esc_html__( 'Category', 'chambeshi' ),
+			'tags_style',[
+				'label' => esc_html__( 'Tags', 'chambeshi' ),
 				'type'  => Controls_Manager::HEADING,
 			]
 		);
 		$this->add_control(
-			'category_color',[
+			'tags_color',[
 				'label'     => esc_html__( 'Color', 'chambeshi' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--category a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--tags a' => 'color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
-			'category_background',[
+			'tags_background',[
 				'label'     => esc_html__( 'Background', 'chambeshi' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--category a' => 'Background: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--tags a' => 'Background: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'category_typography',
+				'name'     => 'tags_typography',
 				'label'    => esc_html__( 'Typography', 'chambeshi' ),
 				'default'  => '',
-				'selector' => '{{WRAPPER}} .bt-post--category a',
+				'selector' => '{{WRAPPER}} .bt-post--tags a',
 			]
 		);
 		$this->add_control(

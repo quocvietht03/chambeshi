@@ -148,33 +148,33 @@ class Widget_PostLoopItemStyle1 extends Widget_Base
 			]
 		);
 		$this->add_control(
-			'category_style',
+			'tags_style',
 			[
-				'label' => __('Category', 'chambeshi'),
+				'label' => __('Tags', 'chambeshi'),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
 
 		$this->add_control(
-			'category_color',
+			'tags_color',
 			[
 				'label' => __('Color', 'chambeshi'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--category a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--tags a' => 'color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->add_control(
-			'category_bg_color',
+			'tags_bg_color',
 			[
 				'label' => __('Background Color', 'chambeshi'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--category a' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--tags a' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -182,10 +182,10 @@ class Widget_PostLoopItemStyle1 extends Widget_Base
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'category_typography',
+				'name' => 'tags_typography',
 				'label' => __('Typography', 'chambeshi'),
 				'default' => '',
-				'selector' => '{{WRAPPER}} .bt-post--category a',
+				'selector' => '{{WRAPPER}} .bt-post--tags a',
 			]
 		);
 

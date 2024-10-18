@@ -968,6 +968,9 @@
         width: 100px;
         height: 1px;
         margin-left: 15px;
+        @media(max-width: 370px){
+          width: 75px;
+        }
       }
     }
 
@@ -1101,6 +1104,13 @@
       display: flex;
       align-items: center;
       gap: 7px;
+      @media(max-width: 370px){
+        font-size: 14px;
+        gap: 5px;
+        svg{
+          width: 18px;
+        }
+      }
     }
 
     &--title {
@@ -1155,6 +1165,13 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+        @media(max-width: 370px){
+          font-size: 14px;
+          gap: 5px;
+          svg{
+            width: 18px;
+          }
+        }
       }
     }
   }

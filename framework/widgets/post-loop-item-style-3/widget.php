@@ -1,4 +1,5 @@
 <?php
+
 namespace ChambeshiElementorWidgets\Widgets\PostLoopItemStyle3;
 
 use Elementor\Widget_Base;
@@ -9,29 +10,35 @@ use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 
-class Widget_PostLoopItemStyle3 extends Widget_Base {
+class Widget_PostLoopItemStyle3 extends Widget_Base
+{
 
-	public function get_name() {
+	public function get_name()
+	{
 		return 'bt-post-loop-item-style-3';
 	}
 
-	public function get_title() {
-		return __( 'Post Loop Item Style 3', 'chambeshi' );
+	public function get_title()
+	{
+		return __('Post Loop Item Style 3', 'chambeshi');
 	}
 
-	public function get_icon() {
+	public function get_icon()
+	{
 		return 'eicon-posts-ticker';
 	}
 
-	public function get_categories() {
-		return [ 'chambeshi' ];
+	public function get_categories()
+	{
+		return ['chambeshi'];
 	}
 
-	protected function register_layout_section_controls() {
+	protected function register_layout_section_controls()
+	{
 		$this->start_controls_section(
 			'section_content',
 			[
-				'label' => __( 'Content', 'chambeshi' ),
+				'label' => __('Content', 'chambeshi'),
 			]
 		);
 
@@ -39,17 +46,17 @@ class Widget_PostLoopItemStyle3 extends Widget_Base {
 			Group_Control_Image_Size::get_type(),
 			[
 				'name' => 'thumbnail',
-				'label' => __( 'Image Size', 'chambeshi' ),
+				'label' => __('Image Size', 'chambeshi'),
 				'show_label' => true,
 				'default' => 'medium',
-				'exclude' => [ 'custom' ],
+				'exclude' => ['custom'],
 			]
 		);
 
 		$this->add_responsive_control(
 			'image_ratio',
 			[
-				'label' => __( 'Image Ratio', 'chambeshi' ),
+				'label' => __('Image Ratio', 'chambeshi'),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 0.5,
@@ -70,12 +77,13 @@ class Widget_PostLoopItemStyle3 extends Widget_Base {
 		$this->end_controls_section();
 	}
 
-	protected function register_style_section_controls() {
-	
+	protected function register_style_section_controls()
+	{
+
 		$this->start_controls_section(
 			'section_style_image',
 			[
-				'label' => esc_html__( 'Image', 'chambeshi' ),
+				'label' => esc_html__('Image', 'chambeshi'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -83,20 +91,21 @@ class Widget_PostLoopItemStyle3 extends Widget_Base {
 		$this->add_control(
 			'img_border_radius',
 			[
-				'label' => __( 'Border Radius', 'chambeshi' ),
+				'label' => __('Border Radius', 'chambeshi'),
 				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%' ],
+				'size_units' => ['px', '%'],
 				'selectors' => [
 					'{{WRAPPER}} .bt-post--featured .bt-cover-image' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
 
-		$this->start_controls_tabs( 'thumbnail_effects_tabs' );
+		$this->start_controls_tabs('thumbnail_effects_tabs');
 
-		$this->start_controls_tab( 'thumbnail_tab_normal',
+		$this->start_controls_tab(
+			'thumbnail_tab_normal',
 			[
-				'label' => __( 'Normal', 'chambeshi' ),
+				'label' => __('Normal', 'chambeshi'),
 			]
 		);
 
@@ -110,9 +119,10 @@ class Widget_PostLoopItemStyle3 extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'thumbnail_tab_hover',
+		$this->start_controls_tab(
+			'thumbnail_tab_hover',
 			[
-				'label' => __( 'Hover', 'chambeshi' ),
+				'label' => __('Hover', 'chambeshi'),
 			]
 		);
 
@@ -133,41 +143,38 @@ class Widget_PostLoopItemStyle3 extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_content',
 			[
-				'label' => esc_html__( 'Content', 'chambeshi' ),
+				'label' => esc_html__('Content', 'chambeshi'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		
-
 		$this->add_control(
-			'date_style',
+			'tags_style',
 			[
-				'label' => __( 'Date', 'chambeshi' ),
+				'label' => __('Tags', 'chambeshi'),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
 
 		$this->add_control(
-			'date_color',
+			'tags_color',
 			[
-				'label' => __( 'Color', 'chambeshi' ),
+				'label' => __('Color', 'chambeshi'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--publish' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .bt-post--publish svg path' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--tags a' => 'color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->add_control(
-			'date_bg_color',
+			'tags_bg_color',
 			[
-				'label' => __( 'Background Color', 'chambeshi' ),
+				'label' => __('Background Color', 'chambeshi'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post--publish' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--tags a' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -175,17 +182,55 @@ class Widget_PostLoopItemStyle3 extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'date_typography',
-				'label' => __( 'Typography', 'chambeshi' ),
+				'name' => 'tags_typography',
+				'label' => __('Typography', 'chambeshi'),
 				'default' => '',
-				'selector' => '{{WRAPPER}} .bt-post--publish',
+				'selector' => '{{WRAPPER}} .bt-post--tags a',
+			]
+		);
+		$this->add_control(
+			'author_style',
+			[
+				'label' => __('Author', 'chambeshi'),
+				'type' => Controls_Manager::HEADING,
 			]
 		);
 
 		$this->add_control(
+			'author_color',
+			[
+				'label' => __('Color', 'chambeshi'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-post-author-w-avatar .bt-post-author-w-avatar--name' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'author_bg_color',
+			[
+				'label' => __('Background Color', 'chambeshi'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-post-author-w-avatar' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'author_typography',
+				'label' => __('Typography', 'chambeshi'),
+				'default' => '',
+				'selector' => '{{WRAPPER}} .bt-post-author-w-avatar .bt-post-author-w-avatar--name',
+			]
+		);
+		$this->add_control(
 			'title_style',
 			[
-				'label' => __( 'Title', 'chambeshi' ),
+				'label' => __('Title', 'chambeshi'),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -193,7 +238,7 @@ class Widget_PostLoopItemStyle3 extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Color', 'chambeshi' ),
+				'label' => __('Color', 'chambeshi'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -205,7 +250,7 @@ class Widget_PostLoopItemStyle3 extends Widget_Base {
 		$this->add_control(
 			'title_color_hover',
 			[
-				'label' => __( 'Color Hover', 'chambeshi' ),
+				'label' => __('Color Hover', 'chambeshi'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -218,7 +263,7 @@ class Widget_PostLoopItemStyle3 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
-				'label' => __( 'Typography', 'chambeshi' ),
+				'label' => __('Typography', 'chambeshi'),
 				'default' => '',
 				'selector' => '{{WRAPPER}} .bt-post--title',
 			]
@@ -252,22 +297,68 @@ class Widget_PostLoopItemStyle3 extends Widget_Base {
 				'selector' => '{{WRAPPER}} .bt-post--excerpt',
 			]
 		);
+
 		$this->add_control(
-			'author_style',
+			'date_style',
 			[
-				'label' => __( 'Author', 'chambeshi' ),
+				'label' => __('Date', 'chambeshi'),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
 
 		$this->add_control(
-			'author_color',
+			'date_color',
 			[
-				'label' => __( 'Color', 'chambeshi' ),
+				'label' => __('Color', 'chambeshi'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .bt-post-author-w-avatar .bt-post-author-w-avatar--name' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--publish' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--publish svg path' => 'fill: {{VALUE}};',
+				],
+			]
+		);
+
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'date_typography',
+				'label' => __('Typography', 'chambeshi'),
+				'default' => '',
+				'selector' => '{{WRAPPER}} .bt-post--publish',
+			]
+		);
+		$this->add_control(
+			'button_style',
+			[
+				'label' => __('Read More', 'chambeshi'),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'button_color',
+			[
+				'label' => __('Color', 'chambeshi'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-post--button a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--button a svg path' => 'fill: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'button_color_hover',
+			[
+				'label' => __('Color Hover', 'chambeshi'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-post--button a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .bt-post--button a:hover svg path' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -275,32 +366,31 @@ class Widget_PostLoopItemStyle3 extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'author_typography',
-				'label' => __( 'Typography', 'chambeshi' ),
+				'name' => 'button_typography',
+				'label' => __('Typography', 'chambeshi'),
 				'default' => '',
-				'selector' => '{{WRAPPER}} .bt-post-author-w-avatar .bt-post-author-w-avatar--name',
+				'selector' => '{{WRAPPER}} .bt-post--button a',
 			]
 		);
-
 		$this->end_controls_section();
-
 	}
 
-	protected function register_controls() {
+
+	protected function register_controls()
+	{
 		$this->register_layout_section_controls();
 		$this->register_style_section_controls();
 	}
 
-	protected function render() {
+	protected function render()
+	{
 		$settings = $this->get_settings_for_display();
-		?>
-			<div class="bt-elwg-post-loop-item--style-3 bt-image-effect">
-				<?php get_template_part( 'framework/templates/post', 'style3', array('image-size' => $settings['thumbnail_size'])); ?>
-	    </div>
-		<?php
+?>
+		<div class="bt-elwg-post-loop-item--style-3 bt-image-effect">
+			<?php get_template_part('framework/templates/post', 'style3', array('image-size' => $settings['thumbnail_size'])); ?>
+		</div>
+<?php
 	}
 
-	protected function content_template() {
-
-	}
+	protected function content_template() {}
 }
