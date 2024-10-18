@@ -222,16 +222,13 @@ if (!function_exists('chambeshi_page_breadcrumb')) {
 					$slug = $post_type->rewrite;
 					if ($post_type->rewrite) {
 						echo '<a href="' . esc_url(home_url('/')) . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-						echo ' <span class="bt-deli">' . $delimiter . '</span> ';
 					}
-					echo '<span class="current">' . get_the_title() . '</span>';
 				}
 			} else {
 				$cat = get_the_category();
 				$cat = $cat[0];
-				$cats = get_category_parents($cat, TRUE, ' <span class="bt-deli">' . $delimiter . '</span> ');
+				$cats = get_category_parents($cat, TRUE, '');
 				echo '' . $cats;
-				echo '<span class="current">' . get_the_title() . '</span>';
 			}
 		} elseif (!is_single() && !is_page() && get_post_type() != 'post' && !is_404()) {
 			$post_type = get_post_type_object(get_post_type());

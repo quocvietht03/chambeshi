@@ -23,10 +23,10 @@
       font-size: 50px;
       font-style: normal;
       font-weight: 600;
-      line-height: 140%; /* 140% */
+      line-height: 1.2;
       word-break: break-word;
       margin: 0;
-      padding-right: 24px;
+      padding-right: 40px;
       @media (max-width: $break-lg) {
         font-size: 40px;
       }
@@ -72,13 +72,6 @@
         top: 50%;
         transform: translateY(-50%);
       }
-      .current{
-        display: inline-block;
-        width: 170px;
-        white-space: nowrap;
-        overflow: hidden !important;
-        text-overflow: ellipsis;
-      }
       @media (max-width: $break-tl){
         margin-left: 15px;
       }
@@ -120,7 +113,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 68px 0;
+  padding: 72px 0;
   text-align: center;
   @extend .__bt-page-titlebar-style;
   &.bt-has-distance {

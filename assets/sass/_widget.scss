@@ -32,6 +32,8 @@
     top: -35px;
     left: 0;
     width: 90%;
+    margin: 0;
+    box-sizing: border-box;
     &::before {
       content: "";
       background-image: url("../images/icon-title-siderbar.svg");
