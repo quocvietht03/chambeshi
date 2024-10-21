@@ -8,7 +8,7 @@ $icon_lively = get_field('icon_lively_service', $post_id);
 $thumb = '';
 if (!empty($icon_svg)) {
     $thumb = $icon_svg['url'];
-} else {
+} elseif( !empty($icon_lively) ) {
     $thumb = $icon_lively['url'];
 }
 ?>

@@ -320,7 +320,7 @@ class Widget_ServiceLoopItemStyle2 extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .bt-post--button:hover svg path' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .bt-post--button .bt-post--icon:hover svg path' => 'fill: {{VALUE}};',
                 ],
             ]
         );
