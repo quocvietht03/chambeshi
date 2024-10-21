@@ -267,6 +267,59 @@
     }
   }
 }
+.__bt-service-style-style2{
+
+}
+.bt-elwg-service-loop-item{
+  &--style2{
+    .bt-post{
+      &--inner{
+        padding: 48px 55px 36px 55px;
+        @media (max-width: $break-sm){
+          padding: 24px;
+        }
+      }
+      &--title{
+        font-family: $secondary-font;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 133.2%; /* 26.64px */
+        margin: 16px 0 5px;
+        transition: .3s ease all;
+      }
+      &--icon-lively{
+        svg, img{
+          vertical-align: middle;
+        }
+      }
+      &--excerpt{
+        color: $color-text;
+        font-family: $text-font;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px; /* 166.667% */
+      }
+      &--button{
+        margin-top: 24px;
+        .bt-post--icon{
+          width: 42px;
+          height: 42px;
+          background: #4F6A35;
+          border-radius: 50%;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          transition: .3s ease all;
+          &:before{display: none;}
+          &:hover{
+            background-color: #FFE17F;
+          }
+        }
+      }
+    }
+  }
+}
+
 .post-type-archive-service {
   .bt-grid-post {
     @extend .__bt-service-style-default;
