@@ -10,14 +10,14 @@ $tags = get_the_terms($post_id, 'post_tag');
 
       <div class="bt-post--infor">
         <div class="bt-post--info">
-          <div class="bt-post--tags">
-            <?php
-              if (!empty($tags)) {
-                echo  '<a href="' . get_tag_link($tags[0]->term_id) . '">' . $tags[0]->name . '</a>';
-              }
-            ?>
-          </div>
-          <?php echo chambeshi_reading_time_render(); ?>
+          <?php
+          if (!empty($tags)) {
+            $first_tag = array_shift($tags);
+            echo '<div class="bt-post--tags">';
+            echo '<a href="' . get_tag_link($first_tag->term_id) . '">' . $first_tag->name . '</a>';
+            echo '</div>';
+          }
+          echo chambeshi_reading_time_render(); ?>
         </div>
         <?php echo chambeshi_post_title_render();
         echo chambeshi_author_w_avatar();

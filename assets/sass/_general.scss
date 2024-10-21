@@ -416,10 +416,6 @@
     > *:last-child {
       margin-bottom: 0 !important;
     }
-    @media (max-width: 1100px) and (min-width: 992px) {
-      margin-left: 15px;
-      margin-right: 15px;
-    }
     cite {
       color: $color-accent;
       font-size: 18px;
@@ -436,10 +432,14 @@
     @media (max-width: 600px) {
       margin-left: 0;
       margin-right: 0;
-      padding: 30px 30px 30px 70px;
-      font-size: 20px;
-      line-height: 1.4;
-      border-radius: 15px 15px 60px 15px;
+      padding: 30px 20px 30px 57px;
+      font-size: 18px;
+      line-height: 1.5;
+      border-radius:10px;
+      &::before{
+        top: 35px;
+        left: 10px;
+      }
       cite {
         font-size: 16px;
       }
@@ -449,12 +449,17 @@
   ul {
     list-style: none;
     padding-left: 59px;
+    @media(max-width:$break-lg){
+      padding-left: 20px;
+    }
+    @media(max-width:$break-xs){
+      padding-left: 0;
+    }
     li {
       position: relative;
       padding-left: 31px;
-      margin-bottom: 10px;
       &:not(:last-child) {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
       }
       &:before{
         content: "";
@@ -469,18 +474,10 @@
         top: 3px;
       }
     }
-    @media (max-width: $break-lg){
-      li{
-        padding-left: 32px;
-        &:before{
-          left: 8px;
-        }
-      }
-    }
   }
   .wp-block-media-text {
     margin: 32px 0;
-    gap: 40px;
+    gap: 20px;
     grid-template-columns: 1fr 52%;
     &__media {
       overflow: hidden;
@@ -498,11 +495,11 @@
       }
       ul,
       ol {
-        padding-left: 0;
+        padding-left: 23px;
       }
     }
     @media (max-width: $break-lg){
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr !important;
       &__media{
         grid-column: 1;
         grid-row: 1;
@@ -515,14 +512,6 @@
     @media (max-width: 600px) {
       margin-top: 32px;
     }
-  }
-  p{
-    color: $color-text;
-    font-family: $text-font;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px; /* 166.667% */
   }
   .wp-block-table{
     @media (max-width: $break-sm){

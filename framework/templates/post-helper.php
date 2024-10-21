@@ -312,13 +312,10 @@ if (!function_exists('chambeshi_tags_render')) {
     if (has_tag()) {
     ?>
       <div class="bt-post-tags">
-        <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5.65527 3.85714C5.65527 3.06473 5.01911 2.42857 4.2267 2.42857C3.43429 2.42857 2.79813 3.06473 2.79813 3.85714C2.79813 4.64955 3.43429 5.28571 4.2267 5.28571C5.01911 5.28571 5.65527 4.64955 5.65527 3.85714ZM17.5638 10.2857C17.5638 10.6652 17.4075 11.0335 17.1508 11.2902L11.6709 16.7812C11.403 17.0379 11.0347 17.1942 10.6553 17.1942C10.2758 17.1942 9.90751 17.0379 9.65081 16.7812L1.6709 8.79018C1.1017 8.23214 0.655273 7.14955 0.655273 6.35714V1.71429C0.655273 0.933035 1.30259 0.285713 2.08384 0.285713H6.7267C7.51911 0.285713 8.6017 0.732143 9.1709 1.30134L17.1508 9.27009C17.4075 9.53795 17.5638 9.90625 17.5638 10.2857ZM21.8495 10.2857C21.8495 10.6652 21.6932 11.0335 21.4365 11.2902L15.9566 16.7812C15.6888 17.0379 15.3205 17.1942 14.941 17.1942C14.3606 17.1942 14.0705 16.9263 13.691 16.5357L18.9365 11.2902C19.1932 11.0335 19.3495 10.6652 19.3495 10.2857C19.3495 9.90625 19.1932 9.53795 18.9365 9.27009L10.9566 1.30134C10.3874 0.732143 9.30483 0.285713 8.51242 0.285713H11.0124C11.8048 0.285713 12.8874 0.732143 13.4566 1.30134L21.4365 9.27009C21.6932 9.53795 21.8495 9.90625 21.8495 10.2857Z" fill="#C2A74E" />
-        </svg>
-
+        <span><?php echo esc_html__('Tags:', 'chambeshi'); ?></span>
         <?php
         if (has_tag()) {
-          the_tags('', '|', '');
+          the_tags('', '', '');
         }
         ?>
       </div>
@@ -335,6 +332,20 @@ if (!function_exists('chambeshi_share_render')) {
 
     $social_item = array();
     $social_item[] = '<li>
+                      <a target="_blank" data-btIcon="fa fa-facebook" data-toggle="tooltip" title="' . esc_attr__('Facebook', 'chambeshi') . '" href="https://www.facebook.com/sharer/sharer.php?u=' . get_the_permalink() . '">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                          <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+                        </svg>
+                      </a>
+                    </li>';
+    $social_item[] = '<li>
+                    <a target="_blank" data-btIcon="fa fa-twitter" data-toggle="tooltip" title="' . esc_attr__('Twitter', 'chambeshi') . '" href="https://twitter.com/share?url=' . get_the_permalink() . '">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                        <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
+                      </svg>
+                    </a>
+                  </li>';
+    $social_item[] = '<li>
                         <a target="_blank" data-btIcon="fa fa-linkedin" data-toggle="tooltip" title="' . esc_attr__('Linkedin', 'chambeshi') . '" href="https://www.linkedin.com/shareArticle?url=' . get_the_permalink() . '">
                           <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                             <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>
@@ -342,27 +353,13 @@ if (!function_exists('chambeshi_share_render')) {
                         </a>
                       </li>';
     $social_item[] = '<li>
-                        <a target="_blank" data-btIcon="fa fa-facebook" data-toggle="tooltip" title="' . esc_attr__('Facebook', 'chambeshi') . '" href="https://www.facebook.com/sharer/sharer.php?u=' . get_the_permalink() . '">
-                          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
-                            <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
-                          </svg>
-                        </a>
-                      </li>';
-
-    $social_item[] = '<li>
                         <a target="_blank" data-btIcon="fa fa-google-plus" data-toggle="tooltip" title="' . esc_attr__('Google Plus', 'chambeshi') . '" href="https://plus.google.com/share?url=' . get_the_permalink() . '">
                           <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 488 512">
                             <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
                           </svg>
                         </a>
                       </li>';
-    $social_item[] = '<li>
-                      <a target="_blank" data-btIcon="fa fa-twitter" data-toggle="tooltip" title="' . esc_attr__('Twitter', 'chambeshi') . '" href="https://twitter.com/share?url=' . get_the_permalink() . '">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-                          <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
-                        </svg>
-                      </a>
-                    </li>';
+
 
 
     ob_start();
@@ -622,8 +619,8 @@ if (!function_exists('chambeshi_related_posts')) {
     ?>
       <div class="bt-related-posts">
         <div class="bt-related-posts--heading">
-          <h4 class="bt-sub"><?php esc_html_e('From The Blog', 'chambeshi'); ?></h4>
-          <h2 class="bt-head"><?php esc_html_e('Related News ', 'chambeshi'); ?><span><?php esc_html_e('& Articles', 'chambeshi'); ?></span></h2>
+          <h2 class="bt-head"><?php esc_html_e('Related Blog ', 'chambeshi'); ?></h2>
+          <span><?php esc_html_e('News & Articals', 'chambeshi'); ?></span>
         </div>
         <div class="bt-related-posts--list bt-image-effect">
           <?php
@@ -699,7 +696,7 @@ if (!function_exists('chambeshi_custom_comment')) {
             <?php echo get_comment_author(get_comment_ID()); ?>
           </h5>
           <div class="bt-date">
-            <?php echo get_comment_date(); ?>
+            <?php echo get_comment_date('F j, Y \a\t g:i a'); ?>
           </div>
           <?php if ($comment->comment_approved == '0') : ?>
             <em class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.', 'chambeshi'); ?></em>

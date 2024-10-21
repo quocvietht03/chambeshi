@@ -1,6 +1,6 @@
 <?php
 $post_id = get_the_ID();
-$tags = get_the_terms($post_id, 'post_tag');
+$categories = get_the_terms($post_id, 'category');
 ?>
 <article <?php post_class('bt-post'); ?>>
 	<?php echo chambeshi_post_featured_render('full');
@@ -9,10 +9,10 @@ $tags = get_the_terms($post_id, 'post_tag');
 		<?php echo chambeshi_post_publish_render(); ?>
 		<div class="bt-post--inner">
 			<?php
-			if ($tags && !is_wp_error($tags)) {
-				echo '<div class="bt-post--tags">';
-				foreach ($tags as $tag) {
-					echo '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a> ';
+			if ($categories && !is_wp_error($categories)) {
+				echo '<div class="bt-post--category">';
+				foreach ($categories as $cat) {
+					echo '<a href="' . get_tag_link($cat->term_id) . '">' . $cat->name . '</a> ';
 				}
 				echo '</div>';
 			}

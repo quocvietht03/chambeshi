@@ -6,14 +6,14 @@ $tags = get_the_terms($post_id, 'post_tag');
 <article <?php post_class('bt-post'); ?>>
   <div class="bt-post--inner">
     <div class="bt-post--image-wrap">
-      <?php echo chambeshi_post_cover_featured_render($args['image-size']); ?>
-      <div class="bt-post--tags">
-        <?php
+      <?php echo chambeshi_post_cover_featured_render($args['image-size']);
         if (!empty($tags)) {
-          echo  '<a href="' . get_tag_link($tags[0]->term_id) . '">' . $tags[0]->name . '</a>';
+          $first_tag = array_shift($tags);
+          echo '<div class="bt-post--tags">';
+          echo '<a href="' . get_tag_link($first_tag->term_id) . '">' . $first_tag->name . '</a>';
+          echo '</div>';
         }
-        ?>
-      </div>
+      ?>
       <?php echo chambeshi_author_w_avatar_style2(); ?>
     </div>
     <div class="bt-post--content">
