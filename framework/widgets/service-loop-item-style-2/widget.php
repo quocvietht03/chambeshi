@@ -57,7 +57,7 @@ class Widget_ServiceLoopItemStyle2 extends Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .bt-post--icon-lively img, {{WRAPPER}} .bt-post--icon-lively svg' => 'max-width: {{SIZE}}px;',
+                    '{{WRAPPER}} .bt-post--icon img, {{WRAPPER}} .bt-post--icon svg' => 'max-width: {{SIZE}}px;',
                 ],
             ]
         );
@@ -93,66 +93,6 @@ class Widget_ServiceLoopItemStyle2 extends Widget_Base
 
     protected function register_style_section_controls()
     {
-
-        $this->start_controls_section(
-            'section_style_image',
-            [
-                'label' => esc_html__('Image', 'chambeshi'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'img_border_radius',
-            [
-                'label' => __('Border Radius', 'chambeshi'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%'],
-                'selectors' => [
-                    '{{WRAPPER}} .bt-post--icon-lively img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->start_controls_tabs('thumbnail_effects_tabs');
-
-        $this->start_controls_tab(
-            'thumbnail_tab_normal',
-            [
-                'label' => __('Normal', 'chambeshi'),
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Css_Filter::get_type(),
-            [
-                'name' => 'thumbnail_filters',
-                'selector' => '{{WRAPPER}} .bt-post--icon-lively img',
-            ]
-        );
-
-        $this->end_controls_tab();
-
-        $this->start_controls_tab(
-            'thumbnail_tab_hover',
-            [
-                'label' => __('Hover', 'chambeshi'),
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Css_Filter::get_type(),
-            [
-                'name' => 'thumbnail_hover_filters',
-                'selector' => '{{WRAPPER}} .bt-post:hover .bt-post--icon-lively img',
-            ]
-        );
-
-        $this->end_controls_tab();
-
-        $this->end_controls_tabs();
-
-        $this->end_controls_section();
 
         $this->start_controls_section(
             'section_style_content',
@@ -276,7 +216,7 @@ class Widget_ServiceLoopItemStyle2 extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .bt-post--button .bt-post--icon' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .bt-post--button .bt-post--link' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -308,7 +248,7 @@ class Widget_ServiceLoopItemStyle2 extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .bt-post--icon:hover' => 'background-color: {{VALUE}}; border-color: {{VALUE}};',
+                    '{{WRAPPER}} .bt-post--link:hover' => 'background-color: {{VALUE}}; border-color: {{VALUE}};',
                 ],
             ]
         );
@@ -320,7 +260,7 @@ class Widget_ServiceLoopItemStyle2 extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .bt-post--button:hover svg path' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .bt-post--button .bt-post--link:hover svg path' => 'fill: {{VALUE}};',
                 ],
             ]
         );
