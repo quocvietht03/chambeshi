@@ -355,6 +355,19 @@
   }
 }
 .single-service {
+  .bt-main-post-row{
+    @media (max-width: $break-lg){
+      flex-direction: column-reverse;
+      max-width: 800px;
+      margin: 0 auto;
+      .bt-main-post-col{
+        width: 100%;
+      }
+      .bt-sidebar-col{
+        width: 100%;
+      }
+    }
+  }
   .bt-main-content-ss {
     @media (max-width: $break-md) {
       .bt-main-post-row {
@@ -373,10 +386,18 @@
         margin-top: -64px;
         text-align: right;
         padding-right: 58px;
+        @media (max-width: $break-sm){
+          margin-top: -32px;
+          padding-right: 24px;
+        }
         img{
           width: 62px;
           height: 62px;
           object-fit: contain;
+          @media (max-width: $break-sm){
+            width: 32px;
+            height: 32px;
+          }
         }
       }
       &--info {
@@ -388,6 +409,11 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        @media (max-width: $break-sm){
+          width: 64px;
+          height: 64px;
+          border-width: 2px;
+        }
       }
       &--price {
         position: absolute;
@@ -461,6 +487,9 @@
       &--content {
         margin-top: 16px;
         padding-left: 60px;
+        @media (max-width: $break-lg){
+          padding-left: 0;
+        }
         @extend .__bt-format-post-content;
         &:after {
           content: "";
@@ -470,6 +499,12 @@
         ul {
 
         }
+      }
+    }
+    .bt-cta-free-consultation{
+      padding-left: 60px;
+      @media (max-width: $break-lg){
+        padding-left: 0;
       }
     }
     .bt-sidebar-wrap {
@@ -489,6 +524,17 @@
           background: #3E5825;
           border-radius: 20px 20px 0px 0px;
           margin: 0;
+          @media (max-width: 1500px){
+            padding: 21px 32px;
+          }
+          @media (max-width: $break-lg){
+            font-size: 24px;
+            line-height: 125%;
+          }
+          @media (max-width: $break-xs){
+            font-size: 20px;
+            padding: 16px;
+          }
         }
         .bt-service-list {
           background: #4F6A35;
@@ -496,6 +542,12 @@
           list-style: none;
           margin: 0;
           border-radius: 0 0 20px 20px;
+          @media (max-width: 1500px){
+            padding: 20px 32px;
+          }
+          @media (max-width: $break-xs){
+            padding: 12px 16px;
+          }
           &--item {
             align-items: center;
             transition: all 0.5s ease-in-out;
@@ -519,6 +571,12 @@
               gap: 20px;
               border-bottom: 1px solid #B6B6B6;
               transition: .3s ease all;
+              @media (max-width: $break-lg){
+                padding: 16px 0;
+              }
+              @media (max-width: $break-xs){
+                padding: 12px 0;
+              }
             }
           }
           &--icon {
@@ -536,6 +594,12 @@
               line-height: normal;
               text-transform: capitalize;
               transition: .3s ease all;
+              @media (max-width: $break-lg){
+                font-size: 20px;
+              }
+              @media (max-width: $break-xs){
+                font-size: 16px;
+              }
               a{
                 color: #FFF;
               }
@@ -548,10 +612,23 @@
           background-size: cover;
           padding: 48px 95px 65px;
           border-radius: 20px;
+          @media (max-width: 1500px){
+            padding: 48px 48px 48px;
+          }
+          @media (max-width: $break-lg){
+            padding: 32px;
+          }
+          @media (max-width: $break-xs){
+            padding: 24px;
+          }
           .bt-opening-hours {
             text-align: center;
             > svg {
               vertical-align: middle;
+              @media (max-width: $break-xs){
+                width: 48px;
+                height: 48px;
+              }
             }
             &--sub-head {
               color: #fff;
