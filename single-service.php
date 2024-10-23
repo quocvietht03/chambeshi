@@ -6,22 +6,38 @@
 get_header();
 get_template_part('framework/templates/site', 'titlebar');
 $post_id = get_the_ID();
+
 $top_service = get_field('top_services', 'options');
 $make_appointment = get_field('make_appointment', 'options');
 $opening_hours_sidebar = get_field('opening_hours_sidebar', 'options');
 $site_information = get_field('site_information', 'options');
-$description = get_field('description_service', $post_id);
-$price = get_field('price_service', $post_id);
 $testimonials_section = get_field('testimonials_section', 'options');
+$phone_sv = get_field('phone_sv', 'option');
+$consultation_cta = $site_information['get_free_consultation_cta'];
+
+$thumb = '';
+$icon_lively = get_field('icon_lively_service', $post_id);
+$icon_service = get_field('icon_service', $post_id);
+
+if (!empty($icon_lively)) {
+	$thumb = $icon_lively['url'];
+} elseif (!empty($icon_service)) {
+	$thumb = $icon_service['url'];
+}
+
+$id_elementor = '';
+if ( function_exists('get_field') ) {
+    $id_elementor = get_field('service_templates_elementor', 'option');
+}
 ?>
 <main id="bt_main" class="bt-site-main">
 	<div class="bt-main-content-ss">
 		<div class="bt-container">
-			<?php while (have_posts()) : the_post(); ?>
+			<?php while (have_posts()):
+				the_post(); ?>
 				<div class="bt-main-post-row">
 					<div class="bt-sidebar-col">
 						<div class="bt-sidebar-wrap">
-
 							<div class="bt-sidebar-block bt-top-service-block">
 								<h3 class="bt-block-heading">
 									<?php
@@ -37,7 +53,7 @@ $testimonials_section = get_field('testimonials_section', 'options');
 									$args = array(
 										'post_type' => 'service',
 										'posts_per_page' => -1,
-										'posts_per_page'  => !empty($top_service['number_posts']) ? $top_service['number_posts'] : -1,
+										'posts_per_page' => !empty($top_service['number_posts']) ? $top_service['number_posts'] : -1,
 									);
 									$popular_services = $top_service['popular_service'];
 									if ($popular_services) {
@@ -51,20 +67,24 @@ $testimonials_section = get_field('testimonials_section', 'options');
 									if ($query->have_posts()) {
 										while ($query->have_posts()) {
 											$query->the_post();
-									?>
+											?>
 											<li class="bt-service-list--item <?php if ($post_id == get_the_ID()) {
-																					echo 'active';
-																				} ?>">
-												<div class="bt-service-list--icon">
-													<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-														<path fill-rule="evenodd" clip-rule="evenodd" d="M18.3333 9.95818C18.3333 10.4582 18.0833 10.9582 17.6666 11.2915L11.1667 16.3749C11 16.5415 10.8334 16.6249 10.6667 16.6249C10.25 16.6249 9.91668 16.2915 9.83336 15.8749L9.58336 13.2082C9.58336 12.7915 9.25004 12.5415 8.83336 12.4582L3.41668 11.8749C3.16668 11.8749 3.08336 11.8749 3 11.7915C2.25 11.6249 1.66668 11.0415 1.66668 10.2915V9.87486V9.45818C1.75 8.70818 2.25 8.12486 3 7.95818C3.08332 7.95818 3.16668 7.95818 3.41668 7.87486L8.83336 7.29154C9.25004 7.29154 9.50004 6.95822 9.58336 6.54154L9.83336 3.87486C9.91668 3.45818 10.25 3.12486 10.6667 3.12486C10.8334 3.12486 11 3.20818 11.1667 3.29154L17.6667 8.37486C18.0833 8.95818 18.3333 9.45818 18.3333 9.95818ZM18.6667 12.6249C19.5 11.9582 20 10.9582 20 9.95818C20 8.87486 19.5 7.95818 18.6667 7.2915L12.1667 2.20818C11.75 1.87486 11.1667 1.70818 10.5834 1.70818C9.33336 1.70818 8.25004 2.70818 8.08336 3.95818L7.91668 5.95818L3.16668 6.45818C3 6.45818 2.83336 6.45818 2.66668 6.5415C1.16668 6.7915 0.0833588 8.0415 0 9.5415C0 9.70818 0 9.7915 0 10.0415V9.95818C0 10.1249 0 10.2915 0 10.4582C0.0833206 11.9582 1.25 13.2082 2.66668 13.4582C2.83336 13.4582 2.91668 13.4582 3.16668 13.5415L7.91668 14.0415L8.08336 16.0415C8.33336 17.2915 9.41668 18.2915 10.6667 18.2915C11.25 18.2915 11.75 18.1249 12.25 17.7915L18.6667 12.6249Z" fill="#C2A74E" />
-													</svg>
-												</div>
-												<div class="bt-service-list--content">
-													<?php echo chambeshi_post_title_render(); ?>
-												</div>
+												echo 'active';
+											} ?>">
+												<a href="<?php echo get_the_permalink(get_the_ID()); ?>"
+													class="bt-service-list--content">
+													<h3 class="bt-post--title"><?php echo get_the_title(get_the_ID()); ?></h3>
+													<div class="bt-service-list--icon">
+														<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+															viewBox="0 0 22 22" fill="none">
+															<path
+																d="M20.8146 10.352L14.3979 3.9353C14.225 3.76832 13.9935 3.67592 13.7531 3.67801C13.5128 3.6801 13.2829 3.77651 13.1129 3.94646C12.943 4.11642 12.8466 4.34633 12.8445 4.58668C12.8424 4.82703 12.9348 5.05858 13.1018 5.23146L17.9537 10.0834H1.83317C1.59006 10.0834 1.3569 10.18 1.18499 10.3519C1.01308 10.5238 0.916504 10.7569 0.916504 11C0.916504 11.2432 1.01308 11.4763 1.18499 11.6482C1.3569 11.8201 1.59006 11.9167 1.83317 11.9167H17.9537L13.1018 16.7686C13.0142 16.8532 12.9444 16.9543 12.8963 17.0662C12.8483 17.178 12.823 17.2983 12.8219 17.42C12.8209 17.5417 12.8441 17.6624 12.8902 17.7751C12.9363 17.8877 13.0043 17.9901 13.0904 18.0762C13.1765 18.1622 13.2788 18.2303 13.3915 18.2764C13.5041 18.3225 13.6248 18.3457 13.7465 18.3446C13.8683 18.3436 13.9885 18.3183 14.1004 18.2702C14.2122 18.2222 14.3134 18.1523 14.3979 18.0648L20.8146 11.6481C20.9864 11.4762 21.083 11.2431 21.083 11C21.083 10.757 20.9864 10.5239 20.8146 10.352Z"
+																fill="#FFE17F" />
+														</svg>
+													</div>
+												</a>
 											</li>
-									<?php
+											<?php
 										}
 
 										wp_reset_postdata();
@@ -72,40 +92,46 @@ $testimonials_section = get_field('testimonials_section', 'options');
 									?>
 								</ul>
 							</div>
-							<div class="bt-sidebar-block bt-make-appointment-block">
-								<div class="bt-make-appointment">
-									<?php
-									if (!empty($make_appointment['sub_heading'])) {
-										echo '<span class="bt-make-appointment--sub-head">' . $make_appointment['sub_heading'] . '</span>';
-									}
-									if (!empty($make_appointment['heading'])) {
-										echo '<h3 class="bt-make-appointment--head">' . $make_appointment['heading'] . '</h3>';
-									}
-
-									if (!empty($make_appointment['text_heading'])) {
-										echo '<div class="bt-make-appointment--desc">' . $make_appointment['text_heading'] . '</div>';
-									}
-
-									if (!empty($make_appointment['button'])) {
-										echo '<a class="bt-make-appointment--button bt-button-effect" href="' . esc_url($make_appointment['button']['url']) . '" target="' . esc_attr($make_appointment['button']['target']) . '">' . $make_appointment['button']['title'] . '</a>';
-									}
-									?>
-								</div>
-							</div>
 							<div class="bt-sidebar-block bt-opening-hours-block">
 								<div class="bt-opening-hours">
-									<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
-										<path d="M53.4514 20.9016C53.4348 20.8843 53.411 20.8786 53.3938 20.8634C48.9442 16.4383 42.8191 13.6973 36.0655 13.6879C36.0533 13.6879 36.0418 13.6843 36.0295 13.6843C36.0166 13.6843 36.0043 13.6879 35.9914 13.6879C29.2478 13.6994 23.1322 16.434 18.6854 20.849C18.661 20.8699 18.63 20.8786 18.607 20.9016C18.5832 20.9254 18.5753 20.9563 18.5544 20.9808C14.1509 25.4189 11.4214 31.5173 11.3998 38.2428C11.3976 38.2694 11.3918 38.2954 11.3918 38.322C11.3918 38.3486 11.3976 38.3746 11.3998 38.4012C11.4214 45.1246 14.1494 51.2215 18.5508 55.6589C18.5731 55.6855 18.5825 55.7186 18.6077 55.7438C18.6329 55.769 18.666 55.7777 18.6926 55.8C23.1372 60.21 29.2493 62.9424 35.9878 62.9554C36.0029 62.9554 36.0166 62.9597 36.031 62.9597C36.0454 62.9597 36.0583 62.9561 36.072 62.9554C42.8213 62.9453 48.942 60.2064 53.3902 55.7856C53.4096 55.7691 53.4348 55.7618 53.4535 55.7431C53.4722 55.7244 53.4787 55.6992 53.4953 55.6805C57.9262 51.2237 60.6694 45.0871 60.6694 38.3213C60.6694 31.5533 57.9247 25.4146 53.4917 20.9578C53.4744 20.9412 53.4686 20.9182 53.4514 20.9016ZM55.9937 39.4027H58.4798C58.2235 44.7876 56.065 49.6829 52.6608 53.4276L50.9098 51.6766C50.4879 51.2554 49.8038 51.2554 49.3819 51.6766C48.9607 52.0985 48.9607 52.7825 49.3819 53.2044L51.133 54.9547C47.3882 58.3582 42.493 60.5153 37.1088 60.7702V58.2876C37.1088 57.6907 36.6257 57.2076 36.0288 57.2076C35.4319 57.2076 34.9488 57.6907 34.9488 58.2876V60.7702C29.5646 60.5131 24.6715 58.3553 20.9275 54.9511L22.675 53.2044C23.0969 52.7825 23.0969 52.0985 22.675 51.6766C22.253 51.2547 21.569 51.2554 21.1471 51.6766L19.4004 53.424C15.9977 49.68 13.8398 44.7862 13.5842 39.4027H16.0639C16.6608 39.4027 17.1439 38.9196 17.1439 38.3227C17.1439 37.7258 16.6608 37.2427 16.0639 37.2427H13.5842C13.8398 31.8593 15.9977 26.9662 19.3997 23.2222L21.1478 24.9703C21.3588 25.1806 21.6353 25.2864 21.9118 25.2864C22.1882 25.2864 22.4647 25.1813 22.6757 24.9703C23.0969 24.5484 23.0969 23.8644 22.6757 23.4425L20.9275 21.6943C24.6715 18.2902 29.5654 16.1316 34.9495 15.8746V18.3586C34.9495 18.9554 35.4326 19.4386 36.0295 19.4386C36.6264 19.4386 37.1095 18.9554 37.1095 18.3586V15.8746C42.4944 16.1294 47.3897 18.2873 51.1344 21.6907L49.3826 23.4418C48.9607 23.8637 48.9607 24.5477 49.3826 24.9696C49.5936 25.1806 49.8701 25.2857 50.1466 25.2857C50.423 25.2857 50.6995 25.1806 50.9105 24.9696L52.6622 23.2178C56.0664 26.9626 58.2242 31.8571 58.4806 37.242H55.9944C55.3975 37.242 54.9144 37.7251 54.9144 38.322C54.9144 38.9189 55.3968 39.4027 55.9937 39.4027Z" fill="#C2A74E" />
-										<path d="M48.0074 37.2428H39.8555C39.4804 35.9172 38.435 34.8725 37.1095 34.4981V22.351C37.1095 21.7541 36.6263 21.271 36.0295 21.271C35.4326 21.271 34.9495 21.7541 34.9495 22.351V34.4996C33.2827 34.9726 32.0558 36.5055 32.0558 38.3228C32.0558 40.5152 33.8392 42.2986 36.0316 42.2986C37.8496 42.2986 39.3832 41.071 39.8555 39.4028H48.0074C48.6043 39.4028 49.0874 38.9196 49.0874 38.3228C49.0874 37.7259 48.6043 37.2428 48.0074 37.2428ZM37.8446 38.3624C37.823 39.3452 37.0202 40.1386 36.0316 40.1386C35.0301 40.1386 34.2158 39.3243 34.2158 38.3228C34.2158 37.3313 35.015 36.5249 36.0021 36.5091C36.0115 36.5091 36.0194 36.512 36.0287 36.512C36.0388 36.512 36.0482 36.5091 36.0583 36.5091C37.0339 36.5235 37.823 37.309 37.8439 38.2824C37.8439 38.2961 37.8403 38.3091 37.8403 38.3228C37.8403 38.3364 37.8439 38.3487 37.8446 38.3624Z" fill="#C2A74E" />
-										<path d="M21.0894 61.0898L16.4512 65.7791C16.0314 66.2032 16.035 66.8872 16.4598 67.3063C16.6701 67.5143 16.9444 67.6187 17.2194 67.6187C17.4981 67.6187 17.776 67.5122 17.987 67.2983L22.6252 62.609C23.045 62.1849 23.0414 61.5009 22.6166 61.0819C22.1918 60.6614 21.5085 60.6643 21.0894 61.0898Z" fill="#C2A74E" />
-										<path d="M50.8968 61.0674C50.4749 60.6455 49.7916 60.6455 49.3697 61.0674C48.9477 61.4886 48.9477 62.1726 49.3697 62.5945L54.0763 67.3012C54.2873 67.5121 54.5637 67.6173 54.8402 67.6173C55.1167 67.6173 55.3932 67.5121 55.6041 67.3012C56.0261 66.88 56.0261 66.196 55.6041 65.7741L50.8968 61.0674Z" fill="#C2A74E" />
-										<path d="M52.9502 4.38184C48.2637 4.38184 44.0834 7.1812 42.3 11.5134C42.1754 11.8158 42.1949 12.1593 42.3533 12.4458C42.5109 12.7324 42.791 12.9318 43.1136 12.988C47.6741 13.7829 51.8256 15.9436 55.1181 19.2362C56.6093 20.728 57.8801 22.4178 58.8953 24.2589C59.0529 24.5454 59.3323 24.7449 59.6548 24.801C59.7168 24.8118 59.7787 24.8169 59.8406 24.8169C60.1005 24.8169 60.3547 24.7226 60.5534 24.5483C63.0396 22.3631 64.4659 19.2095 64.4659 15.8968C64.4659 9.54784 59.2999 4.38184 52.9502 4.38184ZM60.0588 21.983C59.0853 20.4386 57.942 19.0058 56.6453 17.709C53.3765 14.4402 49.3351 12.1895 44.8869 11.1462C46.5508 8.3116 49.5907 6.54112 52.9502 6.54112C58.109 6.54112 62.3059 10.738 62.3059 15.8968C62.3059 18.1439 61.4995 20.2989 60.0588 21.983Z" fill="#C2A74E" />
-										<path d="M12.1593 24.8176C12.2213 24.8176 12.2832 24.8126 12.3451 24.8018C12.6677 24.7456 12.947 24.5462 13.1047 24.2596C14.1192 22.4186 15.39 20.7295 16.8818 19.2369C20.1751 15.9443 24.3259 13.7836 28.8864 12.9887C29.2089 12.9326 29.489 12.7331 29.6467 12.4466C29.8051 12.16 29.8245 11.8166 29.7 11.5142C27.9165 7.18193 23.7362 4.38257 19.0497 4.38257C12.7001 4.38257 7.53406 9.54857 7.53406 15.8982C7.53406 19.211 8.95966 22.3638 11.4465 24.5498C11.6453 24.7233 11.8994 24.8176 12.1593 24.8176ZM9.69406 15.8975C9.69406 10.7387 13.8909 6.54185 19.0497 6.54185C22.4093 6.54185 25.4491 8.31233 27.113 11.147C22.6649 12.1902 18.6228 14.441 15.3547 17.7098C14.058 19.0065 12.9139 20.4393 11.9412 21.9837C10.5005 20.2989 9.69406 18.1439 9.69406 15.8975Z" fill="#C2A74E" />
+									<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70"
+										fill="none">
+										<g clip-path="url(#clip0_23_3761)">
+											<path
+												d="M17.6417 0C16.8866 0 16.2744 0.612363 16.2744 1.36732C16.2744 2.12242 16.8866 2.73465 17.6417 2.73465C25.3654 2.73465 31.649 9.18135 31.649 17.1058C31.649 17.8609 32.2613 18.4732 33.0163 18.4732C33.7714 18.4732 34.3836 17.8608 34.3836 17.1058C34.3838 7.67361 26.8733 0 17.6417 0Z"
+												fill="#4F6A35" />
+											<path
+												d="M17.6373 6.48682C16.8822 6.48682 16.27 7.09918 16.27 7.85414C16.27 8.60924 16.8822 9.22146 17.6373 9.22146C21.8667 9.22146 25.3075 12.7582 25.3075 17.1055C25.3075 17.8606 25.9199 18.4728 26.6749 18.4728C27.43 18.4728 28.0422 17.8604 28.0422 17.1055C28.0423 11.2504 23.3746 6.48682 17.6373 6.48682Z"
+												fill="#4F6A35" />
+											<path
+												d="M17.6637 12.4626C16.9085 12.4626 16.2964 13.0747 16.2964 13.83C16.2964 14.5851 16.9088 15.1973 17.6637 15.1973C18.6518 15.1973 19.4554 16.0346 19.4554 17.0638C19.4554 17.8189 20.0676 18.4311 20.8227 18.4311C21.5778 18.4311 22.1901 17.8187 22.1901 17.0638C22.1902 14.5267 20.1595 12.4626 17.6637 12.4626Z"
+												fill="#4F6A35" />
+											<path
+												d="M62.6839 10.8369H59.653C58.8979 10.8369 58.2856 11.4491 58.2856 12.2042C58.2856 12.9593 58.8979 13.5716 59.653 13.5716H62.6839C65.2096 13.5716 67.2645 15.6264 67.2645 18.1522V36.713C67.2645 38.1673 66.5824 39.4643 65.5224 40.304V36.7283C65.5224 33.9387 63.532 31.5427 60.7896 31.0312L59.9058 30.8665C60.1029 30.2622 60.2108 29.6182 60.2108 28.949V25.8069C60.2108 22.3905 57.4313 19.611 54.0148 19.611C50.5984 19.611 47.819 22.3905 47.819 25.8069V28.949C47.819 29.6182 47.927 30.2622 48.124 30.8665L47.2401 31.0312C44.4977 31.5426 42.5073 33.9386 42.5073 36.7283V40.6922C41.1254 39.9026 40.1912 38.4153 40.1912 36.713V18.1522C40.1912 15.6264 42.2461 13.5716 44.7718 13.5716H48.0306C48.7857 13.5716 49.398 12.9593 49.398 12.2042C49.398 11.4491 48.7856 10.8369 48.0306 10.8369H44.7718C40.7382 10.8369 37.4565 14.1186 37.4565 18.1522V36.713C37.4565 40.7466 40.7382 44.0283 44.7718 44.0283H51.6523V47.9596C51.6523 48.5118 51.9846 49.01 52.4944 49.2219C52.6642 49.2926 52.8425 49.3269 53.0194 49.3269C53.3737 49.3269 53.7222 49.1891 53.9835 48.9296L58.9158 44.0283H62.6839C66.7175 44.0283 69.9992 40.7466 69.9992 36.713V18.1522C69.9992 14.1186 66.7175 10.8369 62.6839 10.8369ZM50.5535 25.8069C50.5535 23.8983 52.1061 22.3456 54.0147 22.3456C55.9233 22.3456 57.476 23.8983 57.476 25.8069V28.949C57.476 30.8576 55.9233 32.4103 54.0147 32.4103C52.1061 32.4103 50.5535 30.8576 50.5535 28.949V25.8069ZM62.7874 41.2907C62.7528 41.2916 62.7185 41.2933 62.6836 41.2933H58.352V41.2936C57.9907 41.2936 57.6443 41.4365 57.3881 41.6909L54.387 44.6733V42.6608C54.387 41.9057 53.7746 41.2935 53.0196 41.2935H45.2421V36.7282C45.2421 35.255 46.2934 33.9896 47.7415 33.7194L49.6691 33.36C50.7883 34.4629 52.3231 35.1448 54.0148 35.1448C55.7064 35.1448 57.2415 34.4626 58.3607 33.3598L60.2884 33.7193C61.7367 33.9894 62.7878 35.2547 62.7878 36.7282V41.2907H62.7874Z"
+												fill="#4F6A35" />
+											<path
+												d="M54.1474 11.2382C53.8932 10.9826 53.5404 10.8376 53.1808 10.8376C52.8212 10.8376 52.4684 10.9826 52.2141 11.2382C51.9598 11.4913 51.8135 11.8442 51.8135 12.205C51.8135 12.5645 51.9596 12.9174 52.2141 13.1717C52.4684 13.4259 52.8211 13.5723 53.1808 13.5723C53.5404 13.5723 53.8932 13.426 54.1474 13.1717C54.4017 12.916 54.5481 12.5647 54.5481 12.205C54.5481 11.844 54.4018 11.4925 54.1474 11.2382Z"
+												fill="#4F6A35" />
+											<path
+												d="M25.4132 45.9973C25.1589 45.743 24.8075 45.5967 24.4464 45.5967C24.0869 45.5967 23.734 45.743 23.4798 45.9973C23.2255 46.2516 23.0791 46.6043 23.0791 46.964C23.0791 47.3249 23.2254 47.6764 23.4798 47.9307C23.7354 48.1864 24.0869 48.3326 24.4464 48.3326C24.806 48.3326 25.1589 48.1864 25.4132 47.9307C25.6688 47.6764 25.8137 47.3248 25.8137 46.964C25.8137 46.6044 25.6688 46.2517 25.4132 45.9973Z"
+												fill="#4F6A35" />
+											<path
+												d="M55.3418 58.3612L44.8664 47.8857C43.4718 46.4912 41.278 46.2872 39.6505 47.4002L32.9647 51.9718C32.4221 52.3427 31.6912 52.2748 31.2262 51.8098L29.0153 49.5988C28.4816 49.0652 27.616 49.065 27.0814 49.5988C26.5476 50.1327 26.5476 50.9984 27.0814 51.5327L29.2923 53.7437C30.6869 55.1381 32.8804 55.3425 34.5081 54.2292L41.194 49.6577C41.7363 49.2868 42.4675 49.3546 42.9325 49.8196L53.408 60.2951C53.9411 60.828 53.9409 61.6957 53.4079 62.229C46.6906 68.9463 35.7606 68.9463 29.0434 62.229L7.77238 40.9578C4.5182 37.7037 2.72636 33.3774 2.72636 28.7754C2.72636 24.1735 4.51833 19.847 7.77251 16.5928C8.03078 16.3346 8.37408 16.1925 8.73925 16.1925C9.10457 16.1925 9.448 16.3347 9.70613 16.593L20.1815 27.0685C20.6462 27.5332 20.7143 28.2645 20.3435 28.807L15.7722 35.4928C14.6589 37.1205 14.8632 39.314 16.2576 40.7087L19.5809 44.032C20.1149 44.5658 20.9805 44.5658 21.5148 44.032C22.0487 43.4981 22.0487 42.6323 21.5148 42.0981L18.1914 38.7748C17.7267 38.3101 17.6586 37.5789 18.0296 37.0364L22.601 30.3506C23.7141 28.7228 23.5098 26.5291 22.1154 25.1347L11.64 14.6592C10.0407 13.0599 7.43824 13.0599 5.83863 14.6592C-1.94491 22.4429 -1.94491 35.1078 5.83863 42.8915L27.1096 64.1623C31.0014 68.0542 36.1135 70.0001 41.2255 70.0001C46.3377 70 51.4498 68.054 55.3416 64.1623C56.941 62.563 56.941 59.9607 55.3418 58.3612Z"
+												fill="#4F6A35" />
+											<path
+												d="M18.4199 33.6216L10.1312 25.3329C9.59702 24.7992 8.73145 24.7992 8.19729 25.3329C7.6634 25.867 7.6634 26.7328 8.19729 27.2668L16.4861 35.5555C16.7531 35.8224 17.1029 35.956 17.453 35.956C17.8029 35.956 18.1529 35.8224 18.4199 35.5555C18.9538 35.0215 18.9538 34.1557 18.4199 33.6216Z"
+												fill="#4F6A35" />
+											<path
+												d="M50.1433 65.3451L41.4222 56.6239C40.888 56.0902 40.0225 56.0902 39.4883 56.6239C38.9544 57.158 38.9544 58.0238 39.4883 58.5578L48.2095 67.279C48.4765 67.5459 48.8262 67.6794 49.1763 67.6794C49.5262 67.6794 49.8762 67.5459 50.1433 67.279C50.6772 66.7448 50.6772 65.8791 50.1433 65.3451Z"
+												fill="#4F6A35" />
+										</g>
+										<defs>
+											<clipPath id="clip0_23_3761">
+												<rect width="70" height="70" fill="white" />
+											</clipPath>
+										</defs>
 									</svg>
 									<?php
-									if (!empty($opening_hours_sidebar['sub_heading'])) {
-										echo '<span class="bt-opening-hours--sub-head">' . $opening_hours_sidebar['sub_heading'] . '</span>';
-									}
 									if (!empty($opening_hours_sidebar['heading'])) {
 										echo '<h3 class="bt-opening-hours--head">' . $opening_hours_sidebar['heading'] . '</h3>';
 									}
@@ -114,42 +140,48 @@ $testimonials_section = get_field('testimonials_section', 'options');
 										echo '<div class="bt-opening-hours--desc">' . $opening_hours_sidebar['text_heading'] . '</div>';
 									}
 									?>
-									<ul class="bt-opening-hours--time-list">
-										<?php
-										if (!empty($site_information['opening_hours'])) {
-											foreach ($site_information['opening_hours'] as $item) { ?>
-												<li class="bt-opening-hours--time-item">
-													<div class="bt-label"><?php echo esc_html($item['heading']) ?></div>
-													<div class="bt-hours"><?php echo esc_html($item['hours']) ?></div>
-												</li>
+									<?php
+									if (!empty($site_information['opening_hours'])) {
+										echo '<ul class="bt-opening-hours--time-list">';
+										foreach ($site_information['opening_hours'] as $item) { ?>
+											<li class="bt-opening-hours--time-item">
+												<div class="bt-label"><?php echo esc_html($item['heading']) ?></div>
+												<div class="bt-hours"><?php echo esc_html($item['hours']) ?></div>
+											</li>
 										<?php }
-										}
-										?>
-									</ul>
+										echo '</ul>';
+									}
+									?>
 									<div class="bt-opening-hours--phone">
-										<a href="<?php echo esc_url('tel:' . preg_replace('/[^0-9]+/', '', $site_information['site_phone'])); ?>">
-											<div class="bt-opening-hours--phone-icon">
-												<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
-													<g clip-path="url(#clip0_19_2362)">
-														<path d="M47.4297 41.2344H38.2891V26H47.4297C49.1125 26 50.4766 27.3641 50.4766 29.0469V38.1875C50.4766 39.8703 49.1125 41.2344 47.4297 41.2344Z" stroke="#C2A74E" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-														<path d="M13.7109 41.2344H4.57031C2.88752 41.2344 1.52344 39.8703 1.52344 38.1875V29.0469C1.52344 27.3641 2.88752 26 4.57031 26H13.7109V41.2344Z" stroke="#C2A74E" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-														<path d="M7.61719 41.2344V19.8047C7.61719 9.70826 15.9036 1.52344 26 1.52344C36.0964 1.52344 44.3828 9.70826 44.3828 19.8047V41.2344" stroke="#C2A74E" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-														<path d="M44.3828 19.8047H47.4297" stroke="#C2A74E" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-														<path d="M4.57031 19.8047H7.61719" stroke="#C2A74E" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-														<path d="M32.0938 47.4297H41.3359C43.0187 47.4297 44.3828 46.0656 44.3828 44.3828V41.2344" stroke="#C2A74E" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-														<path d="M29.0469 50.4766H22.9531C21.2703 50.4766 19.9062 49.1125 19.9062 47.4297C19.9062 45.7469 21.2703 44.3828 22.9531 44.3828H29.0469C30.7297 44.3828 32.0938 45.7469 32.0938 47.4297C32.0938 49.1125 30.7297 50.4766 29.0469 50.4766Z" stroke="#C2A74E" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-													</g>
-													<defs>
-														<clipPath id="clip0_19_2362">
-															<rect width="52" height="52" fill="white" />
-														</clipPath>
-													</defs>
-												</svg>
-											</div>
-
+										<a
+											href="<?php echo esc_url('tel:' . preg_replace('/[^0-9]+/', '', $site_information['site_phone'])); ?>">
 											<div class="bt-opening-hours--phone-infor">
-												<div class="bt-label"><?php echo esc_html__('Chat Us Anytime', 'chambeshi') ?></div>
-												<div class="bt-head"><?php echo esc_html($site_information['site_phone']); ?> </div>
+												<div class="bt-label">
+													<?php
+													if (!empty($phone_sv['label'])) {
+														echo $phone_sv['label'];
+													} else {
+														echo esc_html__('Any questions?', 'chambeshi');
+													}
+													?>
+												</div>
+												<div class="bt-sub-label">
+													<?php
+													if (!empty($phone_sv['sub_label'])) {
+														echo $phone_sv['sub_label'];
+													} else {
+														echo esc_html__('Please call us at the number provided below.', 'chambeshi');
+													}
+													?>
+												</div>
+												<div class="bt-head">
+													<?php echo esc_html($site_information['site_phone']); ?>
+												</div>
+												<?php
+												if (!empty($phone_sv['cta_text']) && !empty($phone_sv['cta_url'])) {
+													echo '<a class="bt-cta" href="' . $phone_sv['cta_url'] . '">' . $phone_sv['cta_text'] . '</a>';
+												}
+												?>
 											</div>
 										</a>
 									</div>
@@ -168,26 +200,45 @@ $testimonials_section = get_field('testimonials_section', 'options');
 									?>
 								</div>
 							</div>
-							<div class="bt-post--infor">
-								<div class="bt-post--info">
-									<?php
-									if (!empty($price)) {
-										$price = number_format($price, 2);
-										echo '<div class="bt-post--price">$' . $price . '</div>';
-									}
-									?>
-									<?php echo chambeshi_single_post_title_render(); ?>
-									<?php
-									if (!empty($description)) {
-										echo '<div class="bt-post--description">' . $description . '</div>';
-									}
-									?>
+
+							<?php if (!empty($thumb)) { ?>
+								<div class="bt-post--infor">
+									<div class="bt-post--info">
+										<img src="<?php echo $thumb; ?>" alt="<?php echo get_the_title($post_id); ?>">
+									</div>
 								</div>
-								<?php //echo chambeshi_service_button_book_now_render('Book Now'); ?>
-							</div>
+							<?php } ?>
+
 							<div class="bt-post--content">
 								<?php the_content(); ?>
 							</div>
+
+							<?php if (!empty($consultation_cta['heading']) || $consultation_cta['description']) { ?>
+								<div class="bt-post--cta-bottom">
+									<div class="bt-flex" <?php echo !empty($consultation_cta['background_image']) ? 'style="background-image: url(' . $consultation_cta['background_image'] . ')"' : ''; ?>>
+										<div class="bt-col-left">
+											<?php
+											if (!empty($consultation_cta['heading'])) {
+												echo '<h3 class="bt-col-left--title">' . $consultation_cta['heading'] . '</h3>';
+											}
+											if (!empty($consultation_cta['description'])) {
+												echo '<p class="bt-col-left--des">' . $consultation_cta['description'] . '</p>';
+											}
+											?>
+										</div>
+										<div class="bt-col-right">
+											<?php
+											if (!empty($consultation_cta['cta_text']) && !empty($consultation_cta['cta_url']) ) {
+												echo '<a class="bt-cta" href="'.$consultation_cta['cta_url'].'"><span>' . $consultation_cta['cta_text'] . '</span></a>';
+											}
+											?>
+										</div>
+									</div>
+
+								</div>
+							<?php } ?>
+
+
 						</div>
 					</div>
 
@@ -196,12 +247,14 @@ $testimonials_section = get_field('testimonials_section', 'options');
 			<?php endwhile; ?>
 		</div>
 	</div>
-	<?php
-	if (!empty($testimonials_section['shortcode_testimonials'])) {
-		$id_template = $testimonials_section['shortcode_testimonials']->ID;
-		echo do_shortcode('[elementor-template id="' . $id_template . '"]');
-	}
-	?>
+	<?php 
+    if (!empty( $id_elementor)) {
+        foreach ($id_elementor as $key => $e) {
+            $id_template = $e->ID;
+            echo do_shortcode('[elementor-template id="' . $id_template . '"]');   
+        }
+    }
+    ?>
 </main><!-- #main -->
 
 <?php get_footer(); ?>

@@ -36,8 +36,9 @@ function chambeshi_service_register() {
 		'has_archive'     => true,
 		'menu_icon'       => 'dashicons-admin-post',
 		'rewrite'         => array('slug' => $cpt_slug), // Permalinks format
-		'show_in_rest' 		=> true,
-		'supports'        => array('title', 'editor', 'excerpt', 'thumbnail', 'comments')
+		'show_in_rest' 	  => true,
+		'taxonomies'      => array('service_categories', 'service_tag'),
+		'supports'        => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'author')
   );
 
   add_filter( 'enter_title_here',  'chambeshi_service_change_default_title');
@@ -56,6 +57,7 @@ function chambeshi_service_taxonomy() {
 			"hierarchical"   => true,
 			"label"          => "Categories",
 			"singular_label" => "Category",
+			'show_in_rest' 		=> true,
 			"rewrite"        => true
 		)
 	);
@@ -67,6 +69,7 @@ function chambeshi_service_taxonomy() {
             'hierarchical'  => false,
             'label'         => __( 'Tags', 'chambeshi' ),
             'singular_name' => __( 'Tag', 'chambeshi' ),
+			'show_in_rest' 		=> true,
             'rewrite'       => true,
             'query_var'     => true
         )

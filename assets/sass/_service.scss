@@ -301,7 +301,7 @@
       }
       &--button{
         margin-top: 24px;
-        .bt-post--icon{
+        .bt-post--link{
           width: 42px;
           height: 42px;
           background: #4F6A35;
@@ -365,36 +365,29 @@
       &--thumbnail {
         .bt-cover-image {
           padding-bottom: 54%;
-          border-radius: 20px 20px 80px 20px;
-          @media (max-width: 600px) {
-            padding-bottom: 75%;
-            border-radius: 20px 20px 0 0;
-          }
+          border-radius: 20px;
         }
       }
       &--infor {
         position: relative;
-        max-width: 600px;
-        margin: -95px 50px 50px 50px;
-        @media (max-width: 600px) {
-          margin: 0 0 30px;
+        margin-top: -64px;
+        text-align: right;
+        padding-right: 58px;
+        img{
+          width: 62px;
+          height: 62px;
+          object-fit: contain;
         }
       }
       &--info {
-        padding: 38px 47px 28px;
-        background: #f7f4ef;
-        border-radius: 20px 0 0 0;
-        @media (max-width: 1100px) and (min-width: $break-tl) {
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-        @media (max-width: 600px) {
-          border-radius: 0;
-        }
-        @media (max-width: 400px) {
-          padding-left: 20px;
-          padding-right: 20px;
-        }
+        background-color: #FFE17F;
+        width: 128px;
+        height: 128px;
+        border-radius: 50%;
+        border: 6px solid #FFFFFF;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
       }
       &--price {
         position: absolute;
@@ -466,61 +459,94 @@
         }
       }
       &--content {
+        margin-top: 16px;
+        padding-left: 60px;
         @extend .__bt-format-post-content;
         &:after {
           content: "";
           display: block;
           clear: both;
         }
-        a {
-          text-decoration: underline;
-        }
-        .page-links {
-          margin-top: 40px;
-        }
-        h2 {
-          font-size: 36px;
-        }
-        h3 {
-          font-size: 26px;
-        }
         ul {
-          padding-left: 21px;
-          &.bt-list-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0 20px;
-            @media (max-width: 600px) {
-              grid-template-columns: 1fr;
-            }
-          }
+
         }
-        .wp-block-image {
-          img {
-            border-radius: 20px 20px 20px 80px;
-          }
-        }
-        .wp-block-columns {
-          .wp-block-column {
-            > *:first-child {
+      }
+      &--cta-bottom{
+        margin-top: 70px;
+        padding-left: 60px;
+        .bt-flex{
+          display: flex;
+          align-items: center;
+          background-color: #4F6A35;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          padding: 36px 65px;
+          border-radius: 20px;
+          .bt-col-left{
+            width: calc(100% - 270px);
+            padding-right: 16px;
+            &--title{
+              color: #FFF;
+              font-family: $secondary-font;
+              font-size: 24px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 125%; /* 125% */
+              text-transform: capitalize;
               margin-top: 0;
+              margin-bottom: 8px;
             }
-            > *:last-child {
-              margin-bottom: 0;
+            &--des{
+              color: #FFF;
+              font-family: $text-font;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 133.333%; /* 133.333% */
+              margin: 0;
             }
-            &:last-child {
-              .wp-block-image {
-                img {
-                  border-radius: 20px 80px 20px 20px;
+          }
+          .bt-col-right{
+            width: 270px;
+            .bt-cta{
+              border: 2px solid $color-secondary;
+              border-radius: 10px;
+              background: $color-secondary;
+              color: $color-primary;
+              font-family: $secondary-font;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              padding: 16px;
+              text-align: center;
+              display: block;
+              position: relative;
+              overflow: hidden;
+              &:hover{
+                color: #FFFFFF;
+                &:before{
+                  transform: translate(-50%, 50%) scale(1.8);
                 }
               }
-            }
-          }
-        }
-        @media (max-width: 600px) {
-          .wp-block-image {
-            img {
-              border-radius: 10px 10px 40px 10px !important;
+              &:before{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                aspect-ratio: 1;
+                background: $color-accent;
+                border-radius: 50%;
+                transform: translate(-50%, 50%) scale(0);
+                transition: transform 0.9s ease;
+              }
+              span{
+                position: relative;
+                z-index: 1;
+                transition: transform 0.9s ease;
+              }
             }
           }
         }
@@ -532,53 +558,47 @@
       gap: 30px;
       .bt-sidebar-block {
         .bt-block-heading {
-          color: #fff;
+          color: #FFF;
           font-family: $secondary-font;
           font-size: 30px;
           font-style: normal;
           font-weight: 600;
-          letter-spacing: 0.2px;
-          background: $color-accent;
-          padding: 20px 40px;
+          line-height: 216%; /* 216.667% */
+          text-transform: uppercase;
+          padding: 21px 65px;
+          background: #3E5825;
+          border-radius: 20px 20px 0px 0px;
           margin: 0;
-          border-radius: 20px 20px 0 0;
-          @media (max-width: $break-lg) and (min-width: $break-md) {
-            padding: 15px 30px;
-            border-radius: 10px 10px 0 0;
-          }
-          @media (max-width: $break-xs) {
-            padding: 15px 30px;
-            border-radius: 10px 10px 0 0;
-          }
         }
         .bt-service-list {
-          background: #f7f4ef;
-          padding: 31px 23px 40px 25px;
+          background: #4F6A35;
+          padding: 20px 60px;
           list-style: none;
           margin: 0;
-          border-radius: 0 0 80px 20px;
-          @media (max-width: $break-lg) and (min-width: $break-md) {
-            padding: 20px 20px 25px 20px;
-            border-radius: 0 0 40px 10px;
-          }
-          @media (max-width: $break-xs) {
-            padding: 20px 20px 25px 20px;
-            border-radius: 0 0 40px 10px;
-          }
+          border-radius: 0 0 20px 20px;
           &--item {
-            display: flex;
-            gap: 8px;
             align-items: center;
-            padding: 15px;
             transition: all 0.5s ease-in-out;
             border-radius: 20px;
-            @media (max-width: $break-lg) and (min-width: $break-md) {
-              border-radius: 15px;
+            &:last-child{
+              a{border:none;}
             }
-            &:hover,
-            &.active {
-              background: #fff;
-              padding-left: 30px;
+            &:hover{
+              .bt-service-list--content .bt-post--title{
+                color: #FFE17F;
+              }
+              a{
+                border-width: 3px;
+                border-color: #FFE17F;
+              }
+            }
+            a{
+              padding: 22px 0;
+              display: flex;
+              align-items: center;
+              gap: 20px;
+              border-bottom: 1px solid #B6B6B6;
+              transition: .3s ease all;
             }
           }
           &--icon {
@@ -586,13 +606,19 @@
             display: flex;
           }
           &--content {
-            width: calc(100% - 28px);
             .bt-post--title {
               margin: 0;
-              color: $color-primary;
+              color: #FFF;
               font-family: $secondary-font;
               font-size: 22px;
-              font-weight: 500;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              text-transform: capitalize;
+              transition: .3s ease all;
+              a{
+                color: #FFF;
+              }
             }
           }
         }
@@ -601,23 +627,15 @@
           background-image: url("../images/bg-appoinment-form-widget.png");
         }
         &.bt-opening-hours-block {
-          background-image: url("../images/bg-opening-hours-sidebar-min.jpg");
+          background-color: $color-secondary;
           background-repeat: no-repeat;
           background-size: cover;
-          padding: 57px 52px 59px 56px;
-          box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.1);
-          border-radius: 20px 20px 80px 20px;
-          @media (max-width: $break-lg) and (min-width: $break-md) {
-            padding: 30px 15px;
-            border-radius: 10px 10px 40px 10px;
-          }
-          @media (max-width: $break-xs) {
-            padding: 30px 15px;
-            border-radius: 10px 10px 40px 10px;
-          }
+          padding: 48px 95px 65px;
+          border-radius: 20px;
           .bt-opening-hours {
+            text-align: center;
             > svg {
-              display: block;
+              vertical-align: middle;
             }
             &--sub-head {
               color: #fff;
@@ -681,19 +699,10 @@
               }
             }
             &--phone {
-              background: #fff;
-              padding: 30px;
-              border-radius: 15px;
-              box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.1);
-              @media (max-width: $break-lg) and (min-width: $break-md) {
-                padding: 15px;
-              }
-              @media (max-width: $break-xs) {
-                padding: 15px;
-              }
               > a {
                 display: flex;
                 align-items: center;
+                justify-content: center;
               }
               &-icon {
                 width: 52px;
@@ -703,34 +712,47 @@
                 }
               }
               &-infor {
-                width: calc(100% - 52px);
-                padding-left: 18px;
                 .bt-label {
-                  color: $color-accent;
+                  color: $color-primary;
+                  text-align: center;
+                  font-family: $secondary-font;
+                  font-size: 26px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: 133.2%; /* 34.632px */
+                  margin: 24px 0 12px;
+                }
+                .bt-sub-label{
+                  color: $color-text;
+                  text-align: center;
+                  font-family: $text-font;
                   font-size: 18px;
-                  font-weight: 500;
-                  text-transform: capitalize;
-                  margin: 0 0 8px 0;
-                  line-height: normal;
-                  @media (max-width: $break-lg) and (min-width: $break-md) {
-                    font-size: 16px;
-                    margin: 0 0 4px 0;
-                  }
-                  @media (max-width: $break-xs) {
-                    font-size: 16px;
-                    margin: 0 0 4px 0;
-                  }
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 144%; /* 144.444% */
                 }
                 .bt-head {
-                  color: $color-primary;
-                  font-size: 26px;
+                  color: #4F6A35;
+                  font-family: $text-font;
+                  font-size: 18px;
+                  font-style: normal;
                   font-weight: 700;
-                  @media (max-width: $break-lg) and (min-width: $break-md) {
-                    font-size: 21px;
-                  }
-                  @media (max-width: $break-xs) {
-                    font-size: 24px;
-                  }
+                  line-height: 40px;
+                  margin-top: 12px;
+                }
+                .bt-cta{
+                  border-radius: 10px;
+                  background: $color-accent;
+                  color: #FFF;
+                  font-family: $secondary-font;
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: normal;
+                  padding: 17px 32px;
+                  margin-top: 24px;
+                  display: block;
+                  text-align: center;
                 }
               }
             }
