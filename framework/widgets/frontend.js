@@ -125,16 +125,13 @@
 					const percentage = $bar.data('percentage');
 
 					if (!$bar.hasClass('animated')) {
-						setTimeout(() => {
-							$bar.css('height', percentage + '%');
-							$bar.addClass('animated');
-							if (percentage > 3) {
-								setTimeout(function() {
-									$bar.addClass('show-text');
-								}, 500); 
-							}
-						}, 1);
-
+						$bar.css('height', percentage + '%');
+						$bar.addClass('animated');
+						if (percentage > 3) {
+							setTimeout(function () {
+								$bar.addClass('show-text');
+							}, 500);
+						}
 						observer.unobserve(entry.target);
 					}
 				}

@@ -341,12 +341,12 @@
   position: relative;
   padding: 16px 32px 16px 45px;
   border-radius: 10px;
-  background: #FFE17F;
-  .icon-breadcrumb{
+  background: #ffe17f;
+  .icon-breadcrumb {
     width: 48px;
     height: 48px;
     border-radius: 10px;
-    background: #4F6A35;
+    background: #4f6a35;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -354,7 +354,8 @@
     left: -18px;
     top: 50%;
     transform: translateY(-50%);
-    img, svg{
+    img,
+    svg {
       width: 19px;
       height: 19px;
       object-fit: cover;
@@ -381,21 +382,22 @@
       flex-wrap: wrap;
     }
   }
-  @media (max-width: $break-sm){
+  @media (max-width: $break-sm) {
     // padding: 12px 24px 12px 32px;
     background: transparent !important;
     padding: 0 0 0 18px;
-    .icon-breadcrumb{
+    .icon-breadcrumb {
       width: auto;
       height: auto;
       background: transparent !important;
       left: -8px;
-      img, svg{
+      img,
+      svg {
         width: 16px;
         height: 16px;
       }
     }
-    .bt-page-breadcrumb{
+    .bt-page-breadcrumb {
       color: #fff !important;
     }
   }
@@ -688,10 +690,10 @@
   &--style-1 {
     @extend .__bt-post-style-1;
   }
-  &--style-2{
+  &--style-2 {
     @extend .__bt-post-style-2;
   }
-  &--style-3{
+  &--style-3 {
     @extend .__bt-post-style-3;
   }
 }
@@ -1600,7 +1602,7 @@
       }
       &--header {
         padding: 35px 40px 26px;
-        @media(max-width:$break-xs){
+        @media (max-width: $break-xs) {
           padding-left: 30px;
           padding-right: 30px;
         }
@@ -1623,7 +1625,7 @@
       &--box-price {
         padding: 14px 40px;
         background: $color-secondary;
-        @media(max-width:$break-xs){
+        @media (max-width: $break-xs) {
           padding-left: 30px;
           padding-right: 30px;
         }
@@ -1654,7 +1656,7 @@
       }
       &--infor {
         padding: 24px 40px 30px;
-        @media(max-width:$break-xs){
+        @media (max-width: $break-xs) {
           padding-left: 30px;
           padding-right: 30px;
         }
@@ -2207,5 +2209,100 @@
 .bt-elwg-project-loop-item {
   &--default {
     @extend .__bt-project-style-default;
+  }
+}
+.bt-cta-free-consultation {
+  margin-top: 67px;
+  @media(max-width: $break-md){
+    margin-top: 35px;
+  }
+  .bt-consultation{
+    display: flex;
+    align-items: center;
+    background-color: #4f6a35;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 39px 54px 36px 65px;
+    border-radius: 20px;
+    @media(max-width:$break-lg) and (min-width:$break-md){
+      padding: 35px 15px;
+    }
+    @media(max-width:$break-sm){
+      padding: 30px 15px;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    &--infor {
+      width: calc(100% - 270px);
+      padding-right: 20px;
+      @media(max-width:$break-sm){
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+    &--title {
+      color: #fff;
+      font-family: $secondary-font;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 125%;
+      text-transform: capitalize;
+      margin-top: 0;
+      margin-bottom: 8px;
+      max-width: 290px;
+    }
+    &--des {
+      color: #fff;
+      font-family: $text-font;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 133.333%;
+      margin: 0;
+    }
+    &--button {
+      a {
+        border: 2px solid $color-secondary;
+        border-radius: 10px;
+        background: $color-secondary;
+        color: $color-primary;
+        font-family: $secondary-font;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding: 15px 34px 14px 34px;
+        text-align: center;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        &:hover {
+          color: #ffffff;
+          &:before {
+            transform: translate(-50%, 50%) scale(1.8);
+          }
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          aspect-ratio: 1;
+          background: $color-accent;
+          border-radius: 50%;
+          transform: translate(-50%, 50%) scale(0);
+          transition: transform 0.9s ease;
+        }
+        span {
+          position: relative;
+          z-index: 1;
+          transition: transform 0.9s ease;
+        }
+      }
+    }
   }
 }

@@ -180,7 +180,7 @@ $featured = get_field('featured', get_the_ID());
 					</div>
 					<div class="bt-main-post-col">
 						<div class="bt-post">
-							<h2 class="bt-post--head-info"><?php echo esc_html__('Profile Info:','chambeshi') ?></h2>
+							<h2 class="bt-post--head-info"><?php echo esc_html__('Profile Info:', 'chambeshi') ?></h2>
 							<div class="bt-post--content">
 								<?php the_content(); ?>
 							</div>
@@ -201,6 +201,7 @@ $featured = get_field('featured', get_the_ID());
 								}
 								?>
 							</div>
+							<?php echo chambeshi_cta_free_consultation(); ?>
 						</div>
 					</div>
 				</div>

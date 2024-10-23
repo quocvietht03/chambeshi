@@ -586,7 +586,46 @@ if (!function_exists('chambeshi_author_render')) {
     return ob_get_clean();
   }
 }
+/* CTA - Free Consultation */
+if (!function_exists('chambeshi_cta_free_consultation')) {
+  function chambeshi_cta_free_consultation()
+  {
+   ob_start();
+    if (function_exists('get_field')) {
+      $site_information = get_field('site_information', 'options');
+      
+      if (!empty($site_information) && isset($site_information['get_free_consultation_cta'])) {
+        $consultation_cta = $site_information['get_free_consultation_cta'];
+        $background_image = !empty($consultation_cta['background_image']) ? $consultation_cta['background_image'] : '';
+        $heading = !empty($consultation_cta['heading']) ? $consultation_cta['heading'] : '';
+        $description = !empty($consultation_cta['description']) ? $consultation_cta['description'] : '';
+        $button = !empty($consultation_cta['button']) ? $consultation_cta['button'] : '';
 
+        ?>
+        <div class="bt-cta-free-consultation">
+          <div class="bt-consultation" <?php echo !empty($background_image) ? 'style="background-image: url(' . esc_url($background_image) . ')"' : ''; ?>>
+            <div class="bt-consultation--infor">
+              <?php if (!empty($heading)) : ?>
+                <h3 class="bt-consultation--title"><?php echo esc_html($heading); ?></h3>
+              <?php endif; ?>
+              
+              <?php if (!empty($description)) : ?>
+                <p class="bt-consultation--des"><?php echo esc_html($description); ?></p>
+              <?php endif; ?>
+            </div>
+            <div class="bt-consultation--button">
+              <?php if (!empty($button)) : ?>
+                <a href="<?php echo esc_url($button['url']); ?>"><span><?php echo esc_html($button['title']); ?></span></a>
+              <?php endif; ?>
+            </div>
+          </div>
+        </div>
+        <?php
+      }
+    }
+   return ob_get_clean();
+  }
+}
 
 /* Related posts */
 if (!function_exists('chambeshi_related_posts')) {

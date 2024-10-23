@@ -363,44 +363,20 @@
                             "new_lines": ""
                         },
                         {
-                            "key": "field_67172735360a0",
-                            "label": "CTA Text",
-                            "name": "cta_text",
+                            "key": "field_6718540ceaac0",
+                            "label": "Button",
+                            "name": "button",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "link",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "50",
+                                "width": "",
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
-                        },
-                        {
-                            "key": "field_67172740360a1",
-                            "label": "CTA Url",
-                            "name": "cta_url",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
+                            "return_format": "array"
                         }
                     ]
                 }
@@ -1443,5 +1419,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729579492
+    "modified": 1729647653
 }

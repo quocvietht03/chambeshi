@@ -13,7 +13,6 @@ $opening_hours_sidebar = get_field('opening_hours_sidebar', 'options');
 $site_information = get_field('site_information', 'options');
 $testimonials_section = get_field('testimonials_section', 'options');
 $phone_sv = get_field('phone_sv', 'option');
-$consultation_cta = $site_information['get_free_consultation_cta'];
 
 $thumb = '';
 $icon_lively = get_field('icon_lively_service', $post_id);
@@ -213,30 +212,7 @@ if ( function_exists('get_field') ) {
 								<?php the_content(); ?>
 							</div>
 
-							<?php if (!empty($consultation_cta['heading']) || $consultation_cta['description']) { ?>
-								<div class="bt-post--cta-bottom">
-									<div class="bt-flex" <?php echo !empty($consultation_cta['background_image']) ? 'style="background-image: url(' . $consultation_cta['background_image'] . ')"' : ''; ?>>
-										<div class="bt-col-left">
-											<?php
-											if (!empty($consultation_cta['heading'])) {
-												echo '<h3 class="bt-col-left--title">' . $consultation_cta['heading'] . '</h3>';
-											}
-											if (!empty($consultation_cta['description'])) {
-												echo '<p class="bt-col-left--des">' . $consultation_cta['description'] . '</p>';
-											}
-											?>
-										</div>
-										<div class="bt-col-right">
-											<?php
-											if (!empty($consultation_cta['cta_text']) && !empty($consultation_cta['cta_url']) ) {
-												echo '<a class="bt-cta" href="'.$consultation_cta['cta_url'].'"><span>' . $consultation_cta['cta_text'] . '</span></a>';
-											}
-											?>
-										</div>
-									</div>
-
-								</div>
-							<?php } ?>
+							<?php echo chambeshi_cta_free_consultation(); ?>
 
 
 						</div>
