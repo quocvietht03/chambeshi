@@ -133,7 +133,7 @@
 									$bar.addClass('show-text');
 								}, 500); 
 							}
-						}, 100);
+						}, 1);
 
 						observer.unobserve(entry.target);
 					}

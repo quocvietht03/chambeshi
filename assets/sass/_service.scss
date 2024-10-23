@@ -596,10 +596,6 @@
             }
           }
         }
-        &.bt-make-appointment-block {
-          @extend .__make-appointment-style;
-          background-image: url("../images/bg-appoinment-form-widget.png");
-        }
         &.bt-opening-hours-block {
           background-image: url("../images/bg-opening-hours-sidebar-min.jpg");
           background-repeat: no-repeat;

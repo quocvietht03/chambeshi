@@ -182,12 +182,35 @@
 		}
 	};
 	/* Get width body */
-	function updateBodyWidthVariable() {
+	function ChambeshiUpdateBodyWidthVariable() {
 		var widthBody = $(window).width();
 		$('.bt-col-container-left').css('--width-body', widthBody + 'px');
 		$('.bt-col-container-right').css('--width-body', widthBody + 'px');
 	}
-
+	/* Counter Run */
+	function ChambeshiCounter() {
+		if ($('.bt-post--counter').length) {
+			$('.bt-counter').each(function () {
+				var $number = $(this).find('.bt-number');
+				var countTo = $number.data('count');
+	
+				$({ countNum: 0 }).animate({
+					countNum: countTo
+				},
+				{
+					duration: 3000,
+					easing: 'swing',
+					step: function () {
+						$number.text(Math.floor(this.countNum));
+					},
+					complete: function () {
+						$number.text(this.countNum);
+					}
+				});
+			});
+		}
+	}
+	
 	jQuery(document).ready(function ($) {
 		ChambeshiSubmenuAuto();
 		ChambeshiToggleMenuMobile();
@@ -199,7 +222,8 @@
 		ChambeshiUnitsCustom();
 		ChambeshiCheckboxCustom();
 		ChambeshiBorderTop();
-		updateBodyWidthVariable();
+		ChambeshiUpdateBodyWidthVariable();
+		ChambeshiCounter();
 	});
 
 	jQuery(window).on('resize', function () {

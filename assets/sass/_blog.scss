@@ -265,6 +265,7 @@
     &--category {
       display: flex;
       gap: 4px;
+      flex-wrap: wrap;
       a {
         background-color: $color-accent;
         color: #fff;
