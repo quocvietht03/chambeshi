@@ -91,8 +91,8 @@ if ( function_exists('get_field') ) {
 									?>
 								</ul>
 							</div>
-							<div class="bt-sidebar-block bt-opening-hours-block">
-								<div class="bt-opening-hours">
+							<div class="bt-sidebar-block bt-calling-us-block">
+								<div class="bt-calling-us">
 									<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70"
 										fill="none">
 										<g clip-path="url(#clip0_23_3761)">
@@ -130,31 +130,10 @@ if ( function_exists('get_field') ) {
 											</clipPath>
 										</defs>
 									</svg>
-									<?php
-									if (!empty($opening_hours_sidebar['heading'])) {
-										echo '<h3 class="bt-opening-hours--head">' . $opening_hours_sidebar['heading'] . '</h3>';
-									}
-
-									if (!empty($opening_hours_sidebar['text_heading'])) {
-										echo '<div class="bt-opening-hours--desc">' . $opening_hours_sidebar['text_heading'] . '</div>';
-									}
-									?>
-									<?php
-									if (!empty($site_information['opening_hours'])) {
-										echo '<ul class="bt-opening-hours--time-list">';
-										foreach ($site_information['opening_hours'] as $item) { ?>
-											<li class="bt-opening-hours--time-item">
-												<div class="bt-label"><?php echo esc_html($item['heading']) ?></div>
-												<div class="bt-hours"><?php echo esc_html($item['hours']) ?></div>
-											</li>
-										<?php }
-										echo '</ul>';
-									}
-									?>
-									<div class="bt-opening-hours--phone">
+									<div class="bt-calling-us--phone">
 										<a
 											href="<?php echo esc_url('tel:' . preg_replace('/[^0-9]+/', '', $site_information['site_phone'])); ?>">
-											<div class="bt-opening-hours--phone-infor">
+											<div class="bt-calling-us--phone-infor">
 												<div class="bt-label">
 													<?php
 													if (!empty($phone_sv['label'])) {
