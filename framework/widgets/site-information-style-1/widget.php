@@ -87,7 +87,7 @@ class Widget_SiteInformationStyle1 extends Widget_Base {
 				'label' => __( 'Space Between', 'chambeshi' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
-					'size' => 40,
+					'size' => 30,
 				],
 				'range' => [
 					'px' => [

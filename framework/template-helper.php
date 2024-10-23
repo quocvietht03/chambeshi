@@ -223,6 +223,7 @@ if (!function_exists('chambeshi_page_breadcrumb')) {
 					if ($post_type->rewrite) {
 						echo '<a href="' . esc_url(home_url('/')) . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
 					}
+					echo '<span class="current">' . get_the_title() . '</span>';
 				}
 			} else {
 				$cat = get_the_category();

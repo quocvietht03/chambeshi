@@ -229,51 +229,63 @@
   }
 
   &--style-1 {
-    row-gap: 40px;
+    row-gap: 30px;
     .bt-elwg-site-infor {
-      &--item {
-        > a {
+      &--item{
+        width: calc(33.33% - 20px);
+        > a,&.address{
           display: flex;
           align-items: center;
-          gap: 18px;
+          gap: 16px;
+          background: #fff;
+          border-radius: 20px;
+          padding: 47px 20px 39px 20px;
+          flex-direction: column;
         }
-
         &-icon {
-          min-width: 67px;
-          min-height: 67px;
-          background-color: $color-accent;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 10px 10px 10px 25px;
           svg {
             width: 100%;
             height: auto;
-            max-width: 30px;
+            max-width: 70px;
             margin: 0;
+            display: block;
+            @media (max-width: $break-lg) and (min-width: $break-md) {
+              max-width: 45px;
+            }
           }
         }
         &-content {
+          text-align: center;
+          max-width: 287px;
           h4 {
             color: $color-primary;
             font-family: $secondary-font;
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 33px;
-            margin-bottom: 5px;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 133.2%;
+            margin-bottom: 9px;
+            display: block;
+          }
+          p {
+            color: $color-text;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px;
+            display: block;
+            margin: 0 0 7px 0;
           }
           span {
-            color: $color-text;
+            color: $color-accent;
             font-size: 18px;
+            font-style: normal;
             font-weight: 400;
-            line-height: 24px;
+            line-height: 30px;
+            display: block;
+            min-width: auto;
+            width: 100%;
           }
-        }
-
-        &.address {
-          display: flex;
-          align-items: center;
-          gap: 18px;
         }
       }
     }
@@ -364,13 +376,13 @@
   .bt-page-breadcrumb {
     position: relative;
     z-index: 3;
-    color: #fff;
+    color: $color-text;
     text-align: center;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    text-transform: uppercase;
+   text-transform: capitalize;
     word-break: break-word;
     display: flex;
     justify-content: center;

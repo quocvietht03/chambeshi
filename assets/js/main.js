@@ -229,7 +229,7 @@
 	jQuery(window).on('resize', function () {
 		ChambeshiSubmenuAuto();
 		ChambeshiBorderTop();
-		updateBodyWidthVariable();
+		ChambeshiUpdateBodyWidthVariable();
 	});
 
 	jQuery(window).on('scroll', function () {
