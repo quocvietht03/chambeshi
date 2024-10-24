@@ -260,7 +260,7 @@ if (!function_exists('chambeshi_page_breadcrumb')) {
 			$userdata = get_userdata($author);
 			echo '<span class="current">' . esc_html__('Articles posted by ', 'chambeshi') . $userdata->display_name . '</span>';
 		} elseif (is_404()) {
-			echo '<span class="current">' . esc_html__('Error 404', 'chambeshi') . '</span>';
+			echo '<span class="current">' . esc_html__('404 Error', 'chambeshi') . '</span>';
 		}
 
 		if (get_query_var('paged')) {

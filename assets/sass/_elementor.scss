@@ -229,10 +229,21 @@
   }
 
   &--style-1 {
-    row-gap: 30px;
+    row-gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @media(max-width:850px) and (min-width: $break-sm){
+      column-gap: 15px;
+    }
+    @media(max-width:$break-sm) and (min-width: $break-xs){
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 15px;
+    }
+    @media(max-width: $break-xs){
+      grid-template-columns: repeat(1, 1fr);
+    }
     .bt-elwg-site-infor {
       &--item{
-        width: calc(33.33% - 20px);
         > a,&.address{
           display: flex;
           align-items: center;
@@ -241,6 +252,12 @@
           border-radius: 20px;
           padding: 47px 20px 39px 20px;
           flex-direction: column;
+          @media(max-width:850px) and (min-width: $break-sm){
+            padding: 30px 15px;
+          }
+          @media(max-width:$break-sm) and (min-width: $break-xs){
+            padding: 30px 15px;
+          }
         }
         &-icon {
           svg {
@@ -250,7 +267,10 @@
             margin: 0;
             display: block;
             @media (max-width: $break-lg) and (min-width: $break-md) {
-              max-width: 45px;
+              max-width: 55px;
+            }
+            @media(max-width:$break-sm) {
+              max-width: 55px;
             }
           }
         }
@@ -275,6 +295,9 @@
             line-height: 26px;
             display: block;
             margin: 0 0 7px 0;
+            @media(max-width:850px){
+              font-size: 15px;
+            }
           }
           span {
             color: $color-accent;

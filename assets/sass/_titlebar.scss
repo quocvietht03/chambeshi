@@ -7,7 +7,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      @media (max-width: $break-tl){
+      @media (max-width: $break-tl) {
         flex-direction: column-reverse;
         align-items: flex-start;
       }
@@ -24,14 +24,19 @@
       margin: 0;
       padding-right: 40px;
       @media (max-width: $break-lg) {
-        font-size: 40px;
+        .single & {
+          font-size: 40px;
+        }
       }
-      @media (max-width: $break-tl){
-        margin-top: 8px;
+      @media (max-width: $break-tl) {
+        margin-top: 16px;
         padding-right: 0;
       }
-      @media (max-width: $break-sm){
-        font-size: 32px;
+      @media (max-width: $break-sm) {
+        margin-top: 8px;
+        .single &{
+          font-size: 36px;
+        }
       }
     }
     &--breadcrumb {
@@ -46,17 +51,17 @@
       display: flex;
       justify-content: center;
       grid-gap: 10px;
-      background: #FFE17F;
+      background: #ffe17f;
       padding: 16px 32px 16px 45px;
       position: relative;
       border-radius: 10px;
       white-space: nowrap;
-      &:before{
+      &:before {
         content: "";
         width: 48px;
         height: 48px;
         border-radius: 10px;
-        background-color: #4F6A35;
+        background-color: #4f6a35;
         background-image: url(../images/icon-home.svg);
         background-position: center;
         background-size: 19px;
@@ -69,7 +74,7 @@
         top: 50%;
         transform: translateY(-50%);
       }
-      @media (max-width: $break-tl){
+      @media (max-width: $break-tl) {
         margin-left: 15px;
       }
       @media (max-width: $break-sm) {
@@ -82,7 +87,7 @@
         display: block;
         text-align: left;
         white-space: none;
-        &:before{
+        &:before {
           width: 16px;
           height: 16px;
           border-radius: 0;
@@ -92,10 +97,10 @@
           top: 1px;
           transform: inherit;
         }
-        .bt-home{
-          padding-left: 32px;
+        .bt-home {
+          padding-left: 26px;
         }
-        .current{
+        .current {
           width: inherit;
           display: inline;
           white-space: pre-wrap;
