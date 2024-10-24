@@ -25,8 +25,8 @@ if (!empty($icon_lively)) {
 }
 
 $id_elementor = '';
-if ( function_exists('get_field') ) {
-    $id_elementor = get_field('service_templates_elementor', 'option');
+if (function_exists('get_field')) {
+	$id_elementor = get_field('service_templates_elementor', 'option');
 }
 ?>
 <main id="bt_main" class="bt-site-main">
@@ -66,10 +66,10 @@ if ( function_exists('get_field') ) {
 									if ($query->have_posts()) {
 										while ($query->have_posts()) {
 											$query->the_post();
-											?>
+									?>
 											<li class="bt-service-list--item <?php if ($post_id == get_the_ID()) {
-												echo 'active';
-											} ?>">
+																					echo 'active';
+																				} ?>">
 												<a href="<?php echo get_the_permalink(get_the_ID()); ?>"
 													class="bt-service-list--content">
 													<h3 class="bt-post--title"><?php echo get_the_title(get_the_ID()); ?></h3>
@@ -83,7 +83,7 @@ if ( function_exists('get_field') ) {
 													</div>
 												</a>
 											</li>
-											<?php
+									<?php
 										}
 
 										wp_reset_postdata();
@@ -190,10 +190,7 @@ if ( function_exists('get_field') ) {
 							<div class="bt-post--content">
 								<?php the_content(); ?>
 							</div>
-
 							<?php echo chambeshi_cta_free_consultation(); ?>
-
-
 						</div>
 					</div>
 
@@ -202,14 +199,14 @@ if ( function_exists('get_field') ) {
 			<?php endwhile; ?>
 		</div>
 	</div>
-	<?php 
-    if (!empty( $id_elementor)) {
-        foreach ($id_elementor as $key => $e) {
-            $id_template = $e->ID;
-            echo do_shortcode('[elementor-template id="' . $id_template . '"]');   
-        }
-    }
-    ?>
+	<?php
+	if (!empty($id_elementor)) {
+		foreach ($id_elementor as $key => $e) {
+			$id_template = $e->ID;
+			echo do_shortcode('[elementor-template id="' . $id_template . '"]');
+		}
+	}
+	?>
 </main><!-- #main -->
 
 <?php get_footer(); ?>

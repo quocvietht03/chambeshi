@@ -970,7 +970,7 @@ body {
                             }
                         }
                     }
-                    @media (max-width: $break-lg) and (min-width: $break-tl) {
+                    @media (max-width: 1260px) and (min-width: $break-tl) {
                         &:nth-child(2) {
                             > .elementor-element {
                                 width: auto;
@@ -1051,6 +1051,71 @@ body {
                     border-bottom: 10px solid #abe4a3;
                     right: -10px;
                     bottom: -23px;
+                }
+            }
+        }
+    }
+    &.bt-section-contact {
+        position: relative;
+        @media (min-width: $break-tl) {
+            &::before {
+                content: "";
+                background: $color-accent;
+                width: 36%;
+                left: auto;
+                right: 0;
+                height: 100%;
+                display: block;
+                position: absolute;
+                top: 0;
+            }
+        }
+        .gform_wrapper {
+            .gform_heading {
+                display: none;
+            }
+            .gform-body {
+                input:not([type="checkbox"], [type="radio"]),
+                select,
+                textarea {
+                    background: #fff;
+                }
+                .select2-container--default .select2-selection--single {
+                    background: #fff;
+                }
+            }
+        }
+        > .e-con-inner {
+            > .elementor-element {
+                &:last-child {
+                    @media (max-width: 1260px) and (min-width: $break-tl) {
+                        padding-left: 0;
+                        padding-right: 0;
+                        > .elementor-element {
+                            &:last-child {
+                                > .elementor-element {
+                                    width: auto;
+                                    padding: 30px;
+                                }
+                            }
+                            &:first-child {
+                                > .elementor-element {
+                                    &:last-child {
+                                        width: auto;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    @media (max-width: 870px) and (min-width: $break-sm) {
+                        > .elementor-element {
+                            &:last-child {
+                                > .elementor-element {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

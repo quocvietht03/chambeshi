@@ -223,6 +223,7 @@ if (!function_exists('chambeshi_page_breadcrumb')) {
 					if ($post_type->rewrite) {
 						echo '<a href="' . esc_url(home_url('/')) . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
 					}
+					echo '<span class="current">' . get_the_title() . '</span>';
 				}
 			} else {
 				$cat = get_the_category();
@@ -259,7 +260,7 @@ if (!function_exists('chambeshi_page_breadcrumb')) {
 			$userdata = get_userdata($author);
 			echo '<span class="current">' . esc_html__('Articles posted by ', 'chambeshi') . $userdata->display_name . '</span>';
 		} elseif (is_404()) {
-			echo '<span class="current">' . esc_html__('Error 404', 'chambeshi') . '</span>';
+			echo '<span class="current">' . esc_html__('404 Error', 'chambeshi') . '</span>';
 		}
 
 		if (get_query_var('paged')) {
