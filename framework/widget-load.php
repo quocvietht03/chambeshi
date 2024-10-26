@@ -87,7 +87,8 @@ class ElementorWidgets
 			'project-grid',
 			'project-loop-item',
 			'graph-progress',
-			'solution-item'
+			'solution-item',
+			'open-jobs'
 		);
 
 		return $this->widgets;
@@ -224,6 +225,8 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\AccountLogin\Widget_AccountLogin());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\GraphProgress\Widget_GraphProgress());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\SolutionItem\Widget_SolutionItem());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\OpenJobs\Widget_OpenJobs());
+		
 	}
 
 	/**

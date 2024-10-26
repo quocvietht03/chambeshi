@@ -55,7 +55,6 @@ if (!function_exists('chambeshi_enqueue_scripts')) {
 		wp_enqueue_style('select2', get_template_directory_uri() . '/assets/libs/select2/select2.min.css', array(), false);
 
 		/* Fonts */
-		wp_enqueue_style('chambeshi-fonts', chambeshi_fonts_url(), false);
 		wp_enqueue_style('chambeshi-main', get_template_directory_uri() . '/assets/css/main.css',  array(), false);
 		wp_enqueue_style('chambeshi-style', get_template_directory_uri() . '/style.css',  array(), false);
 		wp_enqueue_script('chambeshi-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '', true);
