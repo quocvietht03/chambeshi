@@ -143,7 +143,17 @@ class Widget_SolutionItem extends Widget_Base
 			]
 		);
 
-
+		$this->add_control(
+			'backgroud_box',
+			[
+				'label' => __('Background', 'chambeshi'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-solution' => 'background: {{VALUE}};',
+				],
+			]
+		);
 		$this->add_control(
 			'box_border_radius',
 			[
