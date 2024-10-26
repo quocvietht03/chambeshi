@@ -88,7 +88,7 @@ class ElementorWidgets
 			'project-loop-item',
 			'graph-progress',
 			'solution-item',
-			'open-jobs'
+			'open-jobs',
 			'list-faq'
 		);
 
@@ -227,8 +227,6 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\GraphProgress\Widget_GraphProgress());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\SolutionItem\Widget_SolutionItem());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\OpenJobs\Widget_OpenJobs());
-		
-	
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ListFaq\Widget_ListFaq() );
 	}
 
