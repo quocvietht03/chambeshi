@@ -88,11 +88,8 @@ class ElementorWidgets
 			'project-loop-item',
 			'graph-progress',
 			'solution-item',
-<<<<<<< HEAD
 			'open-jobs'
-=======
 			'list-faq'
->>>>>>> 6207064bc62c2efbbf2ad16827b68927585a5763
 		);
 
 		return $this->widgets;
@@ -229,13 +226,10 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\AccountLogin\Widget_AccountLogin());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\GraphProgress\Widget_GraphProgress());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\SolutionItem\Widget_SolutionItem());
-<<<<<<< HEAD
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\OpenJobs\Widget_OpenJobs());
 		
-=======
 	
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ListFaq\Widget_ListFaq() );
->>>>>>> 6207064bc62c2efbbf2ad16827b68927585a5763
 	}
 
 	/**
