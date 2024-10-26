@@ -49,11 +49,11 @@ if (!function_exists('chambeshi_single_post_title_render')) {
   function chambeshi_single_post_title_render()
   {
     ob_start();
-?>
+    ?>
     <h3 class="bt-post--title">
       <?php the_title(); ?>
     </h3>
-  <?php
+    <?php
 
     return ob_get_clean();
   }
@@ -64,7 +64,7 @@ if (!function_exists('chambeshi_post_title_render')) {
   function chambeshi_post_title_render()
   {
     ob_start();
-  ?>
+    ?>
     <h3 class="bt-post--title">
       <a href="<?php the_permalink(); ?>">
         <?php the_title(); ?>
@@ -83,7 +83,7 @@ if (!function_exists('chambeshi_post_featured_render')) {
     ob_start();
 
     if (is_single()) {
-    ?>
+      ?>
       <div class="bt-post--featured">
         <div class="bt-cover-image">
           <?php if (has_post_thumbnail()) {
@@ -91,9 +91,9 @@ if (!function_exists('chambeshi_post_featured_render')) {
           } ?>
         </div>
       </div>
-    <?php
+      <?php
     } else {
-    ?>
+      ?>
       <div class="bt-post--featured">
         <a href="<?php the_permalink(); ?>">
           <div class="bt-cover-image">
@@ -103,7 +103,7 @@ if (!function_exists('chambeshi_post_featured_render')) {
           </div>
         </a>
       </div>
-    <?php
+      <?php
 
     }
 
@@ -128,7 +128,7 @@ if (!function_exists('chambeshi_post_cover_featured_render')) {
         </div>
       </a>
     </div>
-  <?php
+    <?php
 
     return ob_get_clean();
   }
@@ -140,19 +140,37 @@ if (!function_exists('chambeshi_post_publish_render')) {
   {
     ob_start();
 
-  ?>
+    ?>
     <div class="bt-post--publish">
       <div class="bt-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M8 14.5C8.55228 14.5 9 14.0523 9 13.5C9 12.9477 8.55228 12.5 8 12.5C7.44772 12.5 7 12.9477 7 13.5C7 14.0523 7.44772 14.5 8 14.5Z" fill="#4F6A35" />
-          <path d="M8 18.5C8.55228 18.5 9 18.0523 9 17.5C9 16.9477 8.55228 16.5 8 16.5C7.44772 16.5 7 16.9477 7 17.5C7 18.0523 7.44772 18.5 8 18.5Z" fill="#4F6A35" />
-          <path d="M12 14.5C12.5523 14.5 13 14.0523 13 13.5C13 12.9477 12.5523 12.5 12 12.5C11.4477 12.5 11 12.9477 11 13.5C11 14.0523 11.4477 14.5 12 14.5Z" fill="#4F6A35" />
-          <path d="M12 18.5C12.5523 18.5 13 18.0523 13 17.5C13 16.9477 12.5523 16.5 12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5Z" fill="#4F6A35" />
-          <path d="M16 14.5C16.5523 14.5 17 14.0523 17 13.5C17 12.9477 16.5523 12.5 16 12.5C15.4477 12.5 15 12.9477 15 13.5C15 14.0523 15.4477 14.5 16 14.5Z" fill="#4F6A35" />
-          <path d="M16 18.5C16.5523 18.5 17 18.0523 17 17.5C17 16.9477 16.5523 16.5 16 16.5C15.4477 16.5 15 16.9477 15 17.5C15 18.0523 15.4477 18.5 16 18.5Z" fill="#4F6A35" />
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 19.5V6.5C1.25 5.505 1.645 4.552 2.348 3.848C3.052 3.145 4.005 2.75 5 2.75H8.25V5.5C8.25 5.914 8.586 6.25 9 6.25C9.414 6.25 9.75 5.914 9.75 5.5V2.75H16.25V5.5C16.25 5.914 16.586 6.25 17 6.25C17.414 6.25 17.75 5.914 17.75 5.5V2.75H19C19.995 2.75 20.948 3.145 21.652 3.848C22.355 4.552 22.75 5.505 22.75 6.5V19.5C22.75 20.495 22.355 21.448 21.652 22.152C20.948 22.855 19.995 23.25 19 23.25H5C4.005 23.25 3.052 22.855 2.348 22.152C1.645 21.448 1.25 20.495 1.25 19.5ZM2.75 9.75V19.5C2.75 20.097 2.987 20.669 3.409 21.091C3.831 21.513 4.403 21.75 5 21.75H19C19.597 21.75 20.169 21.513 20.591 21.091C21.013 20.669 21.25 20.097 21.25 19.5V9.75H2.75Z" fill="#4F6A35" />
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M15.25 1.5C15.25 1.086 15.586 0.75 16 0.75C16.414 0.75 16.75 1.086 16.75 1.5V5.5C16.75 5.914 16.414 6.25 16 6.25C15.586 6.25 15.25 5.914 15.25 5.5V1.5Z" fill="#4F6A35" />
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.25 1.5C7.25 1.086 7.586 0.75 8 0.75C8.414 0.75 8.75 1.086 8.75 1.5V5.5C8.75 5.914 8.414 6.25 8 6.25C7.586 6.25 7.25 5.914 7.25 5.5V1.5Z" fill="#4F6A35" />
+          <path
+            d="M8 14.5C8.55228 14.5 9 14.0523 9 13.5C9 12.9477 8.55228 12.5 8 12.5C7.44772 12.5 7 12.9477 7 13.5C7 14.0523 7.44772 14.5 8 14.5Z"
+            fill="#4F6A35" />
+          <path
+            d="M8 18.5C8.55228 18.5 9 18.0523 9 17.5C9 16.9477 8.55228 16.5 8 16.5C7.44772 16.5 7 16.9477 7 17.5C7 18.0523 7.44772 18.5 8 18.5Z"
+            fill="#4F6A35" />
+          <path
+            d="M12 14.5C12.5523 14.5 13 14.0523 13 13.5C13 12.9477 12.5523 12.5 12 12.5C11.4477 12.5 11 12.9477 11 13.5C11 14.0523 11.4477 14.5 12 14.5Z"
+            fill="#4F6A35" />
+          <path
+            d="M12 18.5C12.5523 18.5 13 18.0523 13 17.5C13 16.9477 12.5523 16.5 12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5Z"
+            fill="#4F6A35" />
+          <path
+            d="M16 14.5C16.5523 14.5 17 14.0523 17 13.5C17 12.9477 16.5523 12.5 16 12.5C15.4477 12.5 15 12.9477 15 13.5C15 14.0523 15.4477 14.5 16 14.5Z"
+            fill="#4F6A35" />
+          <path
+            d="M16 18.5C16.5523 18.5 17 18.0523 17 17.5C17 16.9477 16.5523 16.5 16 16.5C15.4477 16.5 15 16.9477 15 17.5C15 18.0523 15.4477 18.5 16 18.5Z"
+            fill="#4F6A35" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M1.25 19.5V6.5C1.25 5.505 1.645 4.552 2.348 3.848C3.052 3.145 4.005 2.75 5 2.75H8.25V5.5C8.25 5.914 8.586 6.25 9 6.25C9.414 6.25 9.75 5.914 9.75 5.5V2.75H16.25V5.5C16.25 5.914 16.586 6.25 17 6.25C17.414 6.25 17.75 5.914 17.75 5.5V2.75H19C19.995 2.75 20.948 3.145 21.652 3.848C22.355 4.552 22.75 5.505 22.75 6.5V19.5C22.75 20.495 22.355 21.448 21.652 22.152C20.948 22.855 19.995 23.25 19 23.25H5C4.005 23.25 3.052 22.855 2.348 22.152C1.645 21.448 1.25 20.495 1.25 19.5ZM2.75 9.75V19.5C2.75 20.097 2.987 20.669 3.409 21.091C3.831 21.513 4.403 21.75 5 21.75H19C19.597 21.75 20.169 21.513 20.591 21.091C21.013 20.669 21.25 20.097 21.25 19.5V9.75H2.75Z"
+            fill="#4F6A35" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M15.25 1.5C15.25 1.086 15.586 0.75 16 0.75C16.414 0.75 16.75 1.086 16.75 1.5V5.5C16.75 5.914 16.414 6.25 16 6.25C15.586 6.25 15.25 5.914 15.25 5.5V1.5Z"
+            fill="#4F6A35" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M7.25 1.5C7.25 1.086 7.586 0.75 8 0.75C8.414 0.75 8.75 1.086 8.75 1.5V5.5C8.75 5.914 8.414 6.25 8 6.25C7.586 6.25 7.25 5.914 7.25 5.5V1.5Z"
+            fill="#4F6A35" />
         </svg>
       </div>
       <div class="bt-date">
@@ -160,7 +178,7 @@ if (!function_exists('chambeshi_post_publish_render')) {
         <span><?php echo get_the_date('M, Y'); ?></span>
       </div>
     </div>
-  <?php
+    <?php
 
     return ob_get_clean();
   }
@@ -170,22 +188,40 @@ if (!function_exists('chambeshi_post_publish_render_style2')) {
   {
     ob_start();
 
-  ?>
+    ?>
     <div class="bt-post--publish">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M8 14.5C8.55228 14.5 9 14.0523 9 13.5C9 12.9477 8.55228 12.5 8 12.5C7.44772 12.5 7 12.9477 7 13.5C7 14.0523 7.44772 14.5 8 14.5Z" fill="#4F6A35" />
-        <path d="M8 18.5C8.55228 18.5 9 18.0523 9 17.5C9 16.9477 8.55228 16.5 8 16.5C7.44772 16.5 7 16.9477 7 17.5C7 18.0523 7.44772 18.5 8 18.5Z" fill="#4F6A35" />
-        <path d="M12 14.5C12.5523 14.5 13 14.0523 13 13.5C13 12.9477 12.5523 12.5 12 12.5C11.4477 12.5 11 12.9477 11 13.5C11 14.0523 11.4477 14.5 12 14.5Z" fill="#4F6A35" />
-        <path d="M12 18.5C12.5523 18.5 13 18.0523 13 17.5C13 16.9477 12.5523 16.5 12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5Z" fill="#4F6A35" />
-        <path d="M16 14.5C16.5523 14.5 17 14.0523 17 13.5C17 12.9477 16.5523 12.5 16 12.5C15.4477 12.5 15 12.9477 15 13.5C15 14.0523 15.4477 14.5 16 14.5Z" fill="#4F6A35" />
-        <path d="M16 18.5C16.5523 18.5 17 18.0523 17 17.5C17 16.9477 16.5523 16.5 16 16.5C15.4477 16.5 15 16.9477 15 17.5C15 18.0523 15.4477 18.5 16 18.5Z" fill="#4F6A35" />
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 19.5V6.5C1.25 5.505 1.645 4.552 2.348 3.848C3.052 3.145 4.005 2.75 5 2.75H8.25V5.5C8.25 5.914 8.586 6.25 9 6.25C9.414 6.25 9.75 5.914 9.75 5.5V2.75H16.25V5.5C16.25 5.914 16.586 6.25 17 6.25C17.414 6.25 17.75 5.914 17.75 5.5V2.75H19C19.995 2.75 20.948 3.145 21.652 3.848C22.355 4.552 22.75 5.505 22.75 6.5V19.5C22.75 20.495 22.355 21.448 21.652 22.152C20.948 22.855 19.995 23.25 19 23.25H5C4.005 23.25 3.052 22.855 2.348 22.152C1.645 21.448 1.25 20.495 1.25 19.5ZM2.75 9.75V19.5C2.75 20.097 2.987 20.669 3.409 21.091C3.831 21.513 4.403 21.75 5 21.75H19C19.597 21.75 20.169 21.513 20.591 21.091C21.013 20.669 21.25 20.097 21.25 19.5V9.75H2.75Z" fill="#4F6A35" />
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.25 1.5C15.25 1.086 15.586 0.75 16 0.75C16.414 0.75 16.75 1.086 16.75 1.5V5.5C16.75 5.914 16.414 6.25 16 6.25C15.586 6.25 15.25 5.914 15.25 5.5V1.5Z" fill="#4F6A35" />
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.25 1.5C7.25 1.086 7.586 0.75 8 0.75C8.414 0.75 8.75 1.086 8.75 1.5V5.5C8.75 5.914 8.414 6.25 8 6.25C7.586 6.25 7.25 5.914 7.25 5.5V1.5Z" fill="#4F6A35" />
+        <path
+          d="M8 14.5C8.55228 14.5 9 14.0523 9 13.5C9 12.9477 8.55228 12.5 8 12.5C7.44772 12.5 7 12.9477 7 13.5C7 14.0523 7.44772 14.5 8 14.5Z"
+          fill="#4F6A35" />
+        <path
+          d="M8 18.5C8.55228 18.5 9 18.0523 9 17.5C9 16.9477 8.55228 16.5 8 16.5C7.44772 16.5 7 16.9477 7 17.5C7 18.0523 7.44772 18.5 8 18.5Z"
+          fill="#4F6A35" />
+        <path
+          d="M12 14.5C12.5523 14.5 13 14.0523 13 13.5C13 12.9477 12.5523 12.5 12 12.5C11.4477 12.5 11 12.9477 11 13.5C11 14.0523 11.4477 14.5 12 14.5Z"
+          fill="#4F6A35" />
+        <path
+          d="M12 18.5C12.5523 18.5 13 18.0523 13 17.5C13 16.9477 12.5523 16.5 12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5Z"
+          fill="#4F6A35" />
+        <path
+          d="M16 14.5C16.5523 14.5 17 14.0523 17 13.5C17 12.9477 16.5523 12.5 16 12.5C15.4477 12.5 15 12.9477 15 13.5C15 14.0523 15.4477 14.5 16 14.5Z"
+          fill="#4F6A35" />
+        <path
+          d="M16 18.5C16.5523 18.5 17 18.0523 17 17.5C17 16.9477 16.5523 16.5 16 16.5C15.4477 16.5 15 16.9477 15 17.5C15 18.0523 15.4477 18.5 16 18.5Z"
+          fill="#4F6A35" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M1.25 19.5V6.5C1.25 5.505 1.645 4.552 2.348 3.848C3.052 3.145 4.005 2.75 5 2.75H8.25V5.5C8.25 5.914 8.586 6.25 9 6.25C9.414 6.25 9.75 5.914 9.75 5.5V2.75H16.25V5.5C16.25 5.914 16.586 6.25 17 6.25C17.414 6.25 17.75 5.914 17.75 5.5V2.75H19C19.995 2.75 20.948 3.145 21.652 3.848C22.355 4.552 22.75 5.505 22.75 6.5V19.5C22.75 20.495 22.355 21.448 21.652 22.152C20.948 22.855 19.995 23.25 19 23.25H5C4.005 23.25 3.052 22.855 2.348 22.152C1.645 21.448 1.25 20.495 1.25 19.5ZM2.75 9.75V19.5C2.75 20.097 2.987 20.669 3.409 21.091C3.831 21.513 4.403 21.75 5 21.75H19C19.597 21.75 20.169 21.513 20.591 21.091C21.013 20.669 21.25 20.097 21.25 19.5V9.75H2.75Z"
+          fill="#4F6A35" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M15.25 1.5C15.25 1.086 15.586 0.75 16 0.75C16.414 0.75 16.75 1.086 16.75 1.5V5.5C16.75 5.914 16.414 6.25 16 6.25C15.586 6.25 15.25 5.914 15.25 5.5V1.5Z"
+          fill="#4F6A35" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M7.25 1.5C7.25 1.086 7.586 0.75 8 0.75C8.414 0.75 8.75 1.086 8.75 1.5V5.5C8.75 5.914 8.414 6.25 8 6.25C7.586 6.25 7.25 5.914 7.25 5.5V1.5Z"
+          fill="#4F6A35" />
       </svg>
       <?php echo get_the_date(get_option('date_format')); ?>
     </div>
-  <?php
+    <?php
 
     return ob_get_clean();
   }
@@ -196,14 +232,14 @@ if (!function_exists('chambeshi_post_short_meta_render')) {
   {
     ob_start();
 
-  ?>
+    ?>
     <div class="bt-post--meta">
       <?php
       the_terms(get_the_ID(), 'category', '<div class="bt-post-cat">', ', ', '</div>');
       echo chambeshi_reading_time_render();
       ?>
     </div>
-  <?php
+    <?php
 
     return ob_get_clean();
   }
@@ -220,7 +256,7 @@ if (!function_exists('chambeshi_post_meta_render')) {
     } else {
       $avatar = array();
     }
-  ?>
+    ?>
     <ul class="bt-post--meta">
       <li class="bt-meta bt-meta--author">
         <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
@@ -242,7 +278,8 @@ if (!function_exists('chambeshi_post_meta_render')) {
       <li class="bt-meta bt-meta--comment">
         <a href="<?php comments_link(); ?>">
           <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-            <path d="M160 368c26.5 0 48 21.5 48 48v16l72.5-54.4c8.3-6.2 18.4-9.6 28.8-9.6H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16V352c0 8.8 7.2 16 16 16h96zm48 124l-.2 .2-5.1 3.8-17.1 12.8c-4.8 3.6-11.3 4.2-16.8 1.5s-8.8-8.2-8.8-14.3V474.7v-6.4V468v-4V416H112 64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0H448c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H309.3L208 492z" />
+            <path
+              d="M160 368c26.5 0 48 21.5 48 48v16l72.5-54.4c8.3-6.2 18.4-9.6 28.8-9.6H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16V352c0 8.8 7.2 16 16 16h96zm48 124l-.2 .2-5.1 3.8-17.1 12.8c-4.8 3.6-11.3 4.2-16.8 1.5s-8.8-8.2-8.8-14.3V474.7v-6.4V468v-4V416H112 64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0H448c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H309.3L208 492z" />
           </svg>
           <?php comments_number(esc_html__('0 Comments', 'chambeshi'), esc_html__('1 Comment', 'chambeshi'), esc_html__('% Comments', 'chambeshi')); ?>
         </a>
@@ -260,7 +297,7 @@ if (!function_exists('chambeshi_post_category_render')) {
     $post_id = get_the_ID();
     $categorys = get_the_terms($post_id, 'category');
     if ($categorys && !is_wp_error($categorys)) {
-    ?>
+      ?>
       <div class="bt-post--category">
         <?php
         foreach ($categorys as $category) {
@@ -268,7 +305,7 @@ if (!function_exists('chambeshi_post_category_render')) {
         }
         ?>
       </div>
-    <?php
+      <?php
     }
   }
 }
@@ -281,7 +318,7 @@ if (!function_exists('chambeshi_post_content_render')) {
     ob_start();
 
     if (is_single()) {
-    ?>
+      ?>
       <div class="bt-post--content">
         <?php
         the_content();
@@ -291,13 +328,13 @@ if (!function_exists('chambeshi_post_content_render')) {
         ));
         ?>
       </div>
-    <?php
+      <?php
     } else {
-    ?>
+      ?>
       <div class="bt-post--excerpt">
         <?php echo get_the_excerpt(); ?>
       </div>
-    <?php
+      <?php
     }
 
     return ob_get_clean();
@@ -310,7 +347,7 @@ if (!function_exists('chambeshi_tags_render')) {
   {
     ob_start();
     if (has_tag()) {
-    ?>
+      ?>
       <div class="bt-post-tags">
         <span><?php echo esc_html__('Tags:', 'chambeshi'); ?></span>
         <?php
@@ -319,7 +356,7 @@ if (!function_exists('chambeshi_tags_render')) {
         }
         ?>
       </div>
-    <?php
+      <?php
     }
     return ob_get_clean();
   }
@@ -390,7 +427,9 @@ if (!function_exists('chambeshi_post_button_render')) {
       <a href="<?php echo esc_url(get_permalink()) ?>">
         <span> <?php echo esc_html($text) ?> </span>
         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
-          <path d="M19.8686 9.88137L13.7436 3.75637C13.5786 3.59698 13.3576 3.50878 13.1281 3.51078C12.8987 3.51277 12.6793 3.60479 12.517 3.76702C12.3548 3.92926 12.2628 4.14872 12.2608 4.37814C12.2588 4.60756 12.347 4.82859 12.5064 4.99362L17.1378 9.62499H1.75C1.51794 9.62499 1.29538 9.71718 1.13128 9.88127C0.967187 10.0454 0.875 10.2679 0.875 10.5C0.875 10.7321 0.967187 10.9546 1.13128 11.1187C1.29538 11.2828 1.51794 11.375 1.75 11.375H17.1378L12.5064 16.0064C12.4228 16.0871 12.3561 16.1836 12.3103 16.2904C12.2644 16.3971 12.2403 16.512 12.2393 16.6281C12.2383 16.7443 12.2604 16.8595 12.3044 16.9671C12.3484 17.0746 12.4134 17.1723 12.4955 17.2545C12.5777 17.3366 12.6754 17.4016 12.7829 17.4456C12.8905 17.4896 13.0057 17.5117 13.1219 17.5107C13.238 17.5097 13.3529 17.4856 13.4596 17.4397C13.5664 17.3938 13.6629 17.3272 13.7436 17.2436L19.8686 11.1186C20.0327 10.9545 20.1248 10.732 20.1248 10.5C20.1248 10.268 20.0327 10.0455 19.8686 9.88137Z" fill="#4F6A35" />
+          <path
+            d="M19.8686 9.88137L13.7436 3.75637C13.5786 3.59698 13.3576 3.50878 13.1281 3.51078C12.8987 3.51277 12.6793 3.60479 12.517 3.76702C12.3548 3.92926 12.2628 4.14872 12.2608 4.37814C12.2588 4.60756 12.347 4.82859 12.5064 4.99362L17.1378 9.62499H1.75C1.51794 9.62499 1.29538 9.71718 1.13128 9.88127C0.967187 10.0454 0.875 10.2679 0.875 10.5C0.875 10.7321 0.967187 10.9546 1.13128 11.1187C1.29538 11.2828 1.51794 11.375 1.75 11.375H17.1378L12.5064 16.0064C12.4228 16.0871 12.3561 16.1836 12.3103 16.2904C12.2644 16.3971 12.2403 16.512 12.2393 16.6281C12.2383 16.7443 12.2604 16.8595 12.3044 16.9671C12.3484 17.0746 12.4134 17.1723 12.4955 17.2545C12.5777 17.3366 12.6754 17.4016 12.7829 17.4456C12.8905 17.4896 13.0057 17.5117 13.1219 17.5107C13.238 17.5097 13.3529 17.4856 13.4596 17.4397C13.5664 17.3938 13.6629 17.3272 13.7436 17.2436L19.8686 11.1186C20.0327 10.9545 20.1248 10.732 20.1248 10.5C20.1248 10.268 20.0327 10.0455 19.8686 9.88137Z"
+            fill="#4F6A35" />
         </svg>
       </a>
     </div>
@@ -405,8 +444,10 @@ if (!function_exists('chambeshi_service_button_render')) {
         <span> <?php echo esc_html($text) ?> </span>
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="#FFE17F">
           <g clip-path="url(#clip0_23_10128)">
-            <path d="M10.9999 0C4.92482 0 0 4.92482 0 10.9999C0 17.075 4.92482 22.0001 10.9999 22.0001C17.075 22.0001 22.0001 17.075 22.0001 10.9999C21.9932 4.92764 17.0724 0.00684812 10.9999 0ZM10.9999 20.8999C5.53229 20.8999 1.09993 16.4676 1.09993 10.9999C1.09993 5.53229 5.53229 1.09993 10.9999 1.09993C16.4676 1.09993 20.8999 5.53229 20.8999 10.9999C20.8937 16.465 16.465 20.8937 10.9999 20.8999Z" />
-            <path d="M9.71117 6.73596C9.48236 6.53596 9.13492 6.55932 8.93492 6.78793C8.73511 7.01674 8.75848 7.36418 8.98708 7.56419L12.9139 10.9999L8.98688 14.4359C8.75807 14.6359 8.73491 14.9833 8.93471 15.212C9.13472 15.4408 9.48216 15.4641 9.71097 15.2641L14.1109 11.4141C14.2303 11.3097 14.2988 11.1587 14.2988 10.9999C14.2988 10.8412 14.2303 10.6904 14.1109 10.5858L9.71117 6.73596Z" />
+            <path
+              d="M10.9999 0C4.92482 0 0 4.92482 0 10.9999C0 17.075 4.92482 22.0001 10.9999 22.0001C17.075 22.0001 22.0001 17.075 22.0001 10.9999C21.9932 4.92764 17.0724 0.00684812 10.9999 0ZM10.9999 20.8999C5.53229 20.8999 1.09993 16.4676 1.09993 10.9999C1.09993 5.53229 5.53229 1.09993 10.9999 1.09993C16.4676 1.09993 20.8999 5.53229 20.8999 10.9999C20.8937 16.465 16.465 20.8937 10.9999 20.8999Z" />
+            <path
+              d="M9.71117 6.73596C9.48236 6.53596 9.13492 6.55932 8.93492 6.78793C8.73511 7.01674 8.75848 7.36418 8.98708 7.56419L12.9139 10.9999L8.98688 14.4359C8.75807 14.6359 8.73491 14.9833 8.93471 15.212C9.13472 15.4408 9.48216 15.4641 9.71097 15.2641L14.1109 11.4141C14.2303 11.3097 14.2988 11.1587 14.2988 10.9999C14.2988 10.8412 14.2303 10.6904 14.1109 10.5858L9.71117 6.73596Z" />
           </g>
           <defs>
             <clipPath id="clip0_23_10128">
@@ -424,7 +465,8 @@ if (!function_exists('chambeshi_project_button_render')) {
   { ?>
     <a href="<?php echo esc_url(get_permalink()) ?>" class="bt-post--button">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="white">
-        <path d="M20.8141 10.3519L14.3974 3.93525C14.2245 3.76827 13.993 3.67588 13.7526 3.67797C13.5123 3.68006 13.2824 3.77646 13.1124 3.94642C12.9425 4.11638 12.8461 4.34629 12.844 4.58663C12.8419 4.82698 12.9343 5.05853 13.1013 5.23142L17.9532 10.0833H1.83268C1.58957 10.0833 1.35641 10.1799 1.1845 10.3518C1.01259 10.5237 0.916016 10.7569 0.916016 11C0.916016 11.2431 1.01259 11.4763 1.1845 11.6482C1.35641 11.8201 1.58957 11.9167 1.83268 11.9167H17.9532L13.1013 16.7686C13.0137 16.8531 12.9439 16.9543 12.8958 17.0661C12.8478 17.178 12.8225 17.2983 12.8215 17.42C12.8204 17.5417 12.8436 17.6624 12.8897 17.775C12.9358 17.8877 13.0038 17.99 13.0899 18.0761C13.176 18.1622 13.2783 18.2302 13.391 18.2763C13.5036 18.3224 13.6243 18.3456 13.746 18.3446C13.8678 18.3435 13.988 18.3182 14.0999 18.2702C14.2117 18.2221 14.3129 18.1523 14.3974 18.0648L20.8141 11.6481C20.9859 11.4762 21.0825 11.2431 21.0825 11C21.0825 10.7569 20.9859 10.5238 20.8141 10.3519Z" />
+        <path
+          d="M20.8141 10.3519L14.3974 3.93525C14.2245 3.76827 13.993 3.67588 13.7526 3.67797C13.5123 3.68006 13.2824 3.77646 13.1124 3.94642C12.9425 4.11638 12.8461 4.34629 12.844 4.58663C12.8419 4.82698 12.9343 5.05853 13.1013 5.23142L17.9532 10.0833H1.83268C1.58957 10.0833 1.35641 10.1799 1.1845 10.3518C1.01259 10.5237 0.916016 10.7569 0.916016 11C0.916016 11.2431 1.01259 11.4763 1.1845 11.6482C1.35641 11.8201 1.58957 11.9167 1.83268 11.9167H17.9532L13.1013 16.7686C13.0137 16.8531 12.9439 16.9543 12.8958 17.0661C12.8478 17.178 12.8225 17.2983 12.8215 17.42C12.8204 17.5417 12.8436 17.6624 12.8897 17.775C12.9358 17.8877 13.0038 17.99 13.0899 18.0761C13.176 18.1622 13.2783 18.2302 13.391 18.2763C13.5036 18.3224 13.6243 18.3456 13.746 18.3446C13.8678 18.3435 13.988 18.3182 14.0999 18.2702C14.2117 18.2221 14.3129 18.1523 14.3974 18.0648L20.8141 11.6481C20.9859 11.4762 21.0825 11.2431 21.0825 11C21.0825 10.7569 20.9859 10.5238 20.8141 10.3519Z" />
       </svg>
     </a>
   <?php }
@@ -435,8 +477,12 @@ if (!function_exists('chambeshi_author_icon_render')) {
   { ?>
     <div class="bt-post-author-icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path d="M6.66634 5.83333C6.66634 7.67428 8.15876 9.16667 9.99967 9.16667C11.8406 9.16667 13.333 7.67428 13.333 5.83333C13.333 3.99238 11.8406 2.5 9.99967 2.5C8.15876 2.5 6.66634 3.99238 6.66634 5.83333Z" stroke="#C2A74E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M9.99967 11.6667C13.2213 11.6667 15.833 14.2784 15.833 17.5001H4.16634C4.16634 14.2784 6.77801 11.6667 9.99967 11.6667Z" stroke="#C2A74E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+          d="M6.66634 5.83333C6.66634 7.67428 8.15876 9.16667 9.99967 9.16667C11.8406 9.16667 13.333 7.67428 13.333 5.83333C13.333 3.99238 11.8406 2.5 9.99967 2.5C8.15876 2.5 6.66634 3.99238 6.66634 5.83333Z"
+          stroke="#C2A74E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+          d="M9.99967 11.6667C13.2213 11.6667 15.833 14.2784 15.833 17.5001H4.16634C4.16634 14.2784 6.77801 11.6667 9.99967 11.6667Z"
+          stroke="#C2A74E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
       <h4 class="bt-post-author-icon--name"> <?php echo esc_html__('By', 'chambeshi') . ' ' . get_the_author(); ?> </h4>
     </div>
@@ -452,7 +498,7 @@ if (!function_exists('chambeshi_author_w_avatar')) {
     } else {
       $avatar = array();
     }
-  ?>
+    ?>
     <div class="bt-post-author-w-avatar">
       <div class="bt-post-author-w-avatar--thumbnail">
         <?php
@@ -464,7 +510,8 @@ if (!function_exists('chambeshi_author_w_avatar')) {
         ?>
       </div>
 
-      <h4 class="bt-post-author-w-avatar--name"> <span><?php echo esc_html__('By ', 'chambeshi') ?></span> <?php the_author(); ?> </h4>
+      <h4 class="bt-post-author-w-avatar--name"> <span><?php echo esc_html__('By ', 'chambeshi') ?></span>
+        <?php the_author(); ?> </h4>
     </div>
   <?php }
 }
@@ -477,7 +524,7 @@ if (!function_exists('chambeshi_author_w_avatar_style2')) {
     } else {
       $avatar = array();
     }
-  ?>
+    ?>
     <div class="bt-post-author-w-avatar">
       <div class="bt-post-author-w-avatar--thumbnail">
         <?php
@@ -489,7 +536,8 @@ if (!function_exists('chambeshi_author_w_avatar_style2')) {
         ?>
       </div>
 
-      <h4 class="bt-post-author-w-avatar--name"> <span><?php echo esc_html__('Posted by ', 'chambeshi') ?></span> <?php the_author(); ?> </h4>
+      <h4 class="bt-post-author-w-avatar--name"> <span><?php echo esc_html__('Posted by ', 'chambeshi') ?></span>
+        <?php the_author(); ?> </h4>
     </div>
   <?php }
 }
@@ -511,7 +559,7 @@ if (!function_exists('chambeshi_author_render')) {
     }
 
     ob_start();
-  ?>
+    ?>
     <div class="bt-post-author">
       <div class="bt-post-author--avatar">
         <?php
@@ -539,7 +587,7 @@ if (!function_exists('chambeshi_author_render')) {
         }
 
         if (!empty($socials)) {
-        ?>
+          ?>
           <div class="bt-post-author--socials">
             <?php
             foreach ($socials as $item) {
@@ -577,7 +625,7 @@ if (!function_exists('chambeshi_author_render')) {
             }
             ?>
           </div>
-        <?php
+          <?php
         }
         ?>
       </div>
@@ -590,10 +638,10 @@ if (!function_exists('chambeshi_author_render')) {
 if (!function_exists('chambeshi_cta_free_consultation')) {
   function chambeshi_cta_free_consultation()
   {
-   ob_start();
+    ob_start();
     if (function_exists('get_field')) {
       $site_information = get_field('site_information', 'options');
-      
+
       if (!empty($site_information) && isset($site_information['get_free_consultation_cta'])) {
         $consultation_cta = $site_information['get_free_consultation_cta'];
         $background_image = !empty($consultation_cta['background_image']) ? $consultation_cta['background_image'] : '';
@@ -605,16 +653,16 @@ if (!function_exists('chambeshi_cta_free_consultation')) {
         <div class="bt-cta-free-consultation">
           <div class="bt-consultation" <?php echo !empty($background_image) ? 'style="background-image: url(' . esc_url($background_image) . ')"' : ''; ?>>
             <div class="bt-consultation--infor">
-              <?php if (!empty($heading)) : ?>
+              <?php if (!empty($heading)): ?>
                 <h3 class="bt-consultation--title"><?php echo esc_html($heading); ?></h3>
               <?php endif; ?>
-              
-              <?php if (!empty($description)) : ?>
+
+              <?php if (!empty($description)): ?>
                 <p class="bt-consultation--des"><?php echo esc_html($description); ?></p>
               <?php endif; ?>
             </div>
             <div class="bt-consultation--button">
-              <?php if (!empty($button)) : ?>
+              <?php if (!empty($button)): ?>
                 <a href="<?php echo esc_url($button['url']); ?>"><span><?php echo esc_html($button['title']); ?></span></a>
               <?php endif; ?>
             </div>
@@ -623,7 +671,7 @@ if (!function_exists('chambeshi_cta_free_consultation')) {
         <?php
       }
     }
-   return ob_get_clean();
+    return ob_get_clean();
   }
 }
 
@@ -644,10 +692,10 @@ if (!function_exists('chambeshi_related_posts')) {
     $current_post_type = get_post_type($post_id);
 
     $query_args = array(
-      'category__in'   => $cat_ids,
-      'post_type'      => $current_post_type,
-      'post__not_in'    => array($post_id),
-      'posts_per_page'  => 2,
+      'category__in' => $cat_ids,
+      'post_type' => $current_post_type,
+      'post__not_in' => array($post_id),
+      'posts_per_page' => 2,
     );
 
     $list_posts = new WP_Query($query_args);
@@ -655,7 +703,7 @@ if (!function_exists('chambeshi_related_posts')) {
     ob_start();
 
     if ($list_posts->have_posts()) {
-    ?>
+      ?>
       <div class="bt-related-posts">
         <div class="bt-related-posts--heading">
           <h2 class="bt-head"><?php esc_html_e('Related Blog ', 'chambeshi'); ?></h2>
@@ -663,14 +711,15 @@ if (!function_exists('chambeshi_related_posts')) {
         </div>
         <div class="bt-related-posts--list bt-image-effect">
           <?php
-          while ($list_posts->have_posts()) : $list_posts->the_post();
+          while ($list_posts->have_posts()):
+            $list_posts->the_post();
             get_template_part('framework/templates/post', 'related');
           endwhile;
           wp_reset_postdata();
           ?>
         </div>
       </div>
-    <?php
+      <?php
     }
     return ob_get_clean();
   }
@@ -712,7 +761,9 @@ if (!function_exists('chambeshi_custom_comment')) {
       $add_below = 'div-comment';
     }
     ?>
-    <<?php echo esc_html($tag); ?> <?php comment_class(empty($args['has_children']) ? 'bt-comment-item clearfix' : 'bt-comment-item parent clearfix') ?> id="comment-<?php comment_ID() ?>">
+    <<?php echo esc_html($tag); ?>
+      <?php comment_class(empty($args['has_children']) ? 'bt-comment-item clearfix' : 'bt-comment-item parent clearfix') ?>
+      id="comment-<?php comment_ID() ?>">
       <div class="bt-comment">
         <div class="bt-avatar">
           <?php
@@ -724,7 +775,8 @@ if (!function_exists('chambeshi_custom_comment')) {
           if (!empty($avatar)) {
             echo '<img src="' . esc_url($avatar['url']) . '" alt="' . esc_attr($avatar['title']) . '" />';
           } else {
-            if ($args['avatar_size'] != 0) echo get_avatar($comment, $args['avatar_size']);
+            if ($args['avatar_size'] != 0)
+              echo get_avatar($comment, $args['avatar_size']);
           }
 
 
@@ -737,8 +789,9 @@ if (!function_exists('chambeshi_custom_comment')) {
           <div class="bt-date">
             <?php echo get_comment_date('F j, Y \a\t g:i a'); ?>
           </div>
-          <?php if ($comment->comment_approved == '0') : ?>
-            <em class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.', 'chambeshi'); ?></em>
+          <?php if ($comment->comment_approved == '0'): ?>
+            <em
+              class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.', 'chambeshi'); ?></em>
           <?php endif; ?>
           <div class="bt-text">
             <?php comment_text(); ?>
@@ -746,6 +799,41 @@ if (!function_exists('chambeshi_custom_comment')) {
           <?php comment_reply_link(array_merge($args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
         </div>
       </div>
-  <?php
+      <?php
   }
+}
+
+if (!function_exists('chambeshi_shortcode_featured_project')) {
+  function chambeshi_shortcode_featured_project()
+  {
+    $project_ID = get_the_ID();
+    $featured = get_field('featured', $project_ID);
+
+    ob_start();
+    if (!empty($featured)) {
+      ?>
+        <div class="bt-post--counter">
+          <?php
+          foreach ($featured as $item) {
+            ?>
+            <div class="bt-counter">
+              <h3 class="bt-head"><?php echo esc_attr($item['top_label']) ?></h3>
+              <div class="bt-number-wrapper">
+                <span class="bt-before-number"><?php echo esc_attr($item['before_number']) ?></span>
+                <span class="bt-number"
+                  data-count="<?php echo esc_attr($item['number']) ?>"><?php echo esc_attr(number_format($item['number'])) ?></span>
+                <span class="bt-affter-number"><?php echo esc_attr($item['after_number']) ?></span>
+              </div>
+              <h3 class="bt-head-bottom"><?php echo esc_attr($item['bottom_label']) ?></h3>
+            </div>
+            <?php
+          }
+          ?>
+        </div>
+        <?php
+    }
+    return ob_get_clean();
+
+  }
+  add_shortcode('featured_project', 'chambeshi_shortcode_featured_project');
 }

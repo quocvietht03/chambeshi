@@ -201,10 +201,10 @@
 					duration: 3000,
 					easing: 'swing',
 					step: function () {
-						$number.text(Math.floor(this.countNum));
+						$number.text(Math.floor(this.countNum).toLocaleString());
 					},
 					complete: function () {
-						$number.text(this.countNum);
+						$number.text(this.countNum.toLocaleString());
 					}
 				});
 			});
