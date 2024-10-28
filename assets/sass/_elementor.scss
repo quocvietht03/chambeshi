@@ -732,6 +732,39 @@
   &--style-3 {
     @extend .__bt-post-style-3;
   }
+  &--menu{
+    .bt-post{
+      &--inner{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      &--featured{
+        .bt-cover-image{
+          width: 100px;
+          min-height: 100px;
+          height: 100px;
+          padding: 0;
+          border-radius: 15px;
+        }
+      }
+      &--content{
+        width: calc(100% - 115px);
+      }
+      &--title{
+        font-family: $secondary-font;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: normal;
+      }
+      &--excerpt{
+        font-size: 16px;
+        line-height: 1.4;
+        color: $color-text;
+        @extend .__bt-max-line-ellipsis;
+      }
+    }
+  }
 }
 
 .bt-elwg-team-loop-item {
@@ -1298,6 +1331,54 @@
   }
   &--style1 {
     @extend .__bt-service-style-style1;
+  }
+  &--style2 {
+    @extend .__bt-service-style-style2;
+  }
+  &--menu {
+    .bt-post {
+      &--inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        &:hover{
+          .bt-post--title{
+            color: $color-accent;
+          }
+        }
+      }
+      &--icon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        img {
+          display: block;
+          max-width: 38px;
+        }
+      }
+      &--infor {
+        width: calc(100% - 75px);
+        text-align: left;
+      }
+      &--title {
+        margin: 0;
+        text-align: left;
+        font-family: "Poppins", Sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 133.2%;
+      }
+      &--excerpt {
+        color: $color-text;
+        font-size: 14px;
+        line-height: 1.4;
+        @extend .__bt-max-line-ellipsis;
+      }
+    }
   }
 }
 .bt-elwg-company-loop-item {
@@ -2343,61 +2424,61 @@
     }
   }
 }
-.bt-elwg-list-faq-inner{
-  .item-faq{
-    .item-faq-inner{
+.bt-elwg-list-faq-inner {
+  .item-faq {
+    .item-faq-inner {
       border-radius: 20px;
       overflow: hidden;
       border: 1px solid transparent;
-      background-color: #F0F7F3;
-      &.active{
-        border-color: #E1E1E1;
+      background-color: #f0f7f3;
+      &.active {
+        border-color: #e1e1e1;
       }
     }
-    .bt-item-title{
+    .bt-item-title {
       padding: 21px 40px 21px 35px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
       cursor: pointer;
-      transition: .3s ease all;
-      @media (max-width: $break-md){
+      transition: 0.3s ease all;
+      @media (max-width: $break-md) {
         padding: 21px 24px 21px 24px;
       }
-      @media (max-width: $break-sm){
+      @media (max-width: $break-sm) {
         padding: 12px 16px 12px 16px;
       }
-      &.active{
+      &.active {
         background: $color-accent;
-        &:hover h3{
-          color: #FFFFFF !important;
+        &:hover h3 {
+          color: #ffffff !important;
         }
-        h3{
-          color: #FFFFFF !important;
+        h3 {
+          color: #ffffff !important;
         }
         svg {
           transform: rotate(180deg);
-          path{
+          path {
             fill: #ffffff;
           }
         }
       }
-      h3{
+      h3 {
         color: $color-primary;
         font-family: $secondary-font;
         font-size: 18px;
         font-weight: 500;
         line-height: 133.2%;
       }
-      svg{
+      svg {
         width: 32px;
         height: 32px;
         min-width: 32px;
-        transition: .3s ease all;
+        transition: 0.3s ease all;
       }
     }
-    .bt-item-content{
+    .bt-item-content {
       display: none;
       padding: 28px 48px 32px;
       color: $color-text;
@@ -2405,10 +2486,10 @@
       font-size: 18px;
       font-weight: 400;
       line-height: 30px;
-      @media (max-width: $break-md){
+      @media (max-width: $break-md) {
         padding: 24px;
       }
-      @media (max-width: $break-sm){
+      @media (max-width: $break-sm) {
         padding: 16px;
       }
     }
@@ -2441,11 +2522,11 @@
         justify-content: center;
         width: 120px;
         border-radius: 20px 0px 0px 20px;
-        @media(max-width:$break-md){
+        @media (max-width: $break-md) {
           padding: 30px;
           width: 95px;
         }
-        @media(max-width:700px){
+        @media (max-width: 700px) {
           width: 70px;
         }
       }
@@ -2458,23 +2539,23 @@
         justify-content: space-between;
         align-items: center;
         gap: 15px;
-        @media(max-width:$break-md){
+        @media (max-width: $break-md) {
           padding: 30px;
           width: calc(100% - 95px);
         }
-        @media(max-width:700px){
+        @media (max-width: 700px) {
           width: calc(100% - 70px);
           padding: 30px 15px;
           flex-direction: column;
           align-items: flex-start;
         }
       }
-      &--info{
+      &--info {
         width: calc(100% - 185px);
-        @media(max-width:$break-md){
+        @media (max-width: $break-md) {
           width: calc(100% - 156px);
         }
-        @media(max-width:700px){
+        @media (max-width: 700px) {
           width: 100%;
         }
       }
@@ -2486,7 +2567,7 @@
         font-weight: 600;
         line-height: normal;
         margin-bottom: 4px;
-        @media(max-width:$break-md){
+        @media (max-width: $break-md) {
           font-size: 20px;
         }
       }
@@ -2496,7 +2577,7 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        @media(max-width:$break-md){
+        @media (max-width: $break-md) {
           font-size: 16px;
         }
       }
@@ -2513,11 +2594,11 @@
         border: 2px solid $color-accent;
         position: relative;
         overflow: hidden;
-        @media(max-width:$break-md){
+        @media (max-width: $break-md) {
           font-size: 16px;
           padding: 12px 25px 12px 25px;
         }
-        @media(max-width:700px){
+        @media (max-width: 700px) {
           font-size: 14px;
           padding: 8px 25px 8px 25px;
         }

@@ -61,6 +61,7 @@ class ElementorWidgets
 			'post-loop-item-style-1',
 			'post-loop-item-style-2',
 			'post-loop-item-style-3',
+			'post-loop-item-style-megamenu',
 			'testimonial-slider',
 			'testimonial-loop-item',
 			'testimonial-loop-item-style-1',
@@ -80,6 +81,7 @@ class ElementorWidgets
 			'service-loop-item',
 			'service-loop-item-style-1',
 			'service-loop-item-style-2',
+			'service-loop-item-megamenu',
 			'page-title-bar',
 			'site-box-phone',
 			'location-list',
@@ -193,6 +195,7 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PostLoopItemStyle1\Widget_PostLoopItemStyle1());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PostLoopItemStyle2\Widget_PostLoopItemStyle2());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PostLoopItemStyle3\Widget_PostLoopItemStyle3());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PostLoopItemMenu\Widget_PostLoopItemMenu());
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TestimonialSlider\Widget_TestimonialSlider());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TestimonialLoopItem\Widget_TestimonialLoopItem());
@@ -207,6 +210,7 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ServiceLoopItem\Widget_ServiceLoopItem());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ServiceLoopItemStyle1\Widget_ServiceLoopItemStyle1());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ServiceLoopItemStyle2\Widget_ServiceLoopItemStyle2() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ServiceLoopItemMenu\Widget_ServiceLoopItemMenu() );
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ProjectGrid\Widget_ProjectGrid());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ProjectLoopItem\Widget_ProjectLoopItem());
