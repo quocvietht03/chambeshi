@@ -551,6 +551,15 @@
                 --width: 60px;
               }
             }
+            @media (max-width: 1110px) and (min-width: $break-tl) {
+                .elementor-widget-theme-site-logo{
+                  > .elementor-widget-container{
+                    img{
+                      max-width: 220px;
+                    }
+                  }
+                }
+            }
             .elementor-widget-nav-menu {
               .elementor-nav-menu {
                 .menu-item {
@@ -839,14 +848,16 @@ body.admin-bar .dialog-type-lightbox {
         position: relative;
         padding-left: 50px;
         font-family: $text-font !important;
-        font-size: 16px !important;
+        font-size: 17px !important;
         font-weight: 500 !important;
         color: $color-primary;
         border: none;
+        padding-top: 12px;
+        padding-bottom: 12px;
         &:before {
           content: "";
           position: absolute;
-          top: 25px;
+          top: 21px;
           left: 20px;
           width: 18px;
           height: 1px;
@@ -1015,6 +1026,94 @@ body.admin-bar .dialog-type-lightbox {
         .elementor-widget-n-menu {
           .e-n-menu-title {
             padding: 9px 20px 9px 20px;
+          }
+        }
+      }
+    }
+  }
+  &.bt-mega-menu-style1 {
+    &.elementor-widget-n-menu {
+      .e-n-menu-item {
+        &:last-child {
+          .e-n-menu-title {
+            padding-right: 3px;
+          }
+        }
+        .e-n-menu-title {
+          a {
+            span {
+              position: relative;
+              &::before {
+                content: "";
+                position: absolute;
+                top: calc(50% + 18px);
+                left: 0;
+                background: $color-secondary;
+                height: 5px;
+                width: 0;
+                opacity: 1;
+                transform: translateY(-50%);
+                transition: 0.5s all;
+              }
+              &:hover {
+                &::before {
+                  width: 28px;
+                }
+              }
+            }
+          }
+        }
+        .elementor-widget-n-menu {
+          .e-n-menu-item {
+            &:last-child {
+              .e-n-menu-title {
+                padding-right: 3px;
+              }
+            }
+            .e-n-menu-title {
+              a {
+                span {
+                  &::before {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 1400px) and (min-width: $break-tl) {
+      &.elementor-widget-n-menu {
+        .e-n-menu-item {
+          .e-n-menu-title {
+            padding-left:12px;
+            padding-right:12px;
+          }
+          .elementor-widget-n-menu {
+            .e-n-menu-title {
+              padding-left:20px;
+              padding-right:20px;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 1110px) and (min-width: $break-tl) {
+      &.elementor-widget-n-menu {
+        > .elementor-widget-container {
+          padding-right: 0 !important;
+        }
+        .e-n-menu-item {
+          .e-n-menu-title {
+            padding-left:10px;
+            padding-right:10px;
+          }
+          .elementor-widget-n-menu {
+            .e-n-menu-title {
+              padding-left:20px;
+              padding-right:20px;
+            }
           }
         }
       }
