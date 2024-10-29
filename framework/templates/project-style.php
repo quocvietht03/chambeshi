@@ -8,8 +8,9 @@ $category = get_the_terms($post_id, 'project_categories');
     <div class="bt-post--content">
       <?php
       if (!empty($category)) {
+        $first_category = array_shift($category);
         echo '<div class="bt-post--category">';
-        echo  '<a href="' . get_category_link($category[0]->term_id) . '">' . $category[0]->name . '</a>';
+        echo  '<a href="' . get_category_link($first_category->term_id) . '">' . $first_category->name . '</a>';
         echo '</div>';
       }
       ?>

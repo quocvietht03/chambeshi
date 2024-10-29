@@ -4,15 +4,15 @@ get_template_part( 'framework/templates/site', 'titlebar');
 
 ?>
 <main id="bt_main" class="bt-site-main">
-	<div class="bt-main-content-ss">
+	<div class="bt-main-content-ss bt-elwg-project-grid--default">
 		<div class="bt-container">
             <?php
                 if( have_posts() ) {
                     ?>
-                        <div class="bt-grid-post bt-image-effect">
+                        <div class="bt-project-grid bt-image-effect">
                             <?php
                                 while ( have_posts() ) : the_post();
-                                    get_template_part( 'framework/templates/service', 'style1', array('image-size' => 'medium_large') );
+                                    get_template_part( 'framework/templates/project-grid', 'style', array('image-size' => 'medium_large') );
                                 endwhile;
                             ?>
                         </div>

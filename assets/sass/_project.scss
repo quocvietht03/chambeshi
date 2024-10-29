@@ -184,7 +184,7 @@
           width: 100%;
           &::before {
             content: "";
-            background: #fff;
+            background: #F0F7F3;
             bottom: 0;
             right: 0;
             position: absolute;
@@ -385,7 +385,6 @@
 }
 
 .single-project{
-
   &.logged-in{
     .bt-main-content .col-right .sticky-box{
       top: 144px;

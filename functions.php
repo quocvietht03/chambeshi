@@ -171,9 +171,14 @@ if (function_exists('get_field')) {
 add_action('pre_get_posts', 'bt_custom_posts_per_page');
 function bt_custom_posts_per_page($query) {
 	if ( $query->is_post_type_archive( 'service' ) && $query->is_main_query() && ! is_admin() ) {
-		$query->set( 'posts_per_page', 12 );
+		$query->set( 'posts_per_page', 8 );
 	}
-
+	if ( $query->is_post_type_archive( 'project' ) && $query->is_main_query() && ! is_admin() ) {
+		$query->set( 'posts_per_page', 6 );
+	}
+	if ( $query->is_tax( 'project_categories' ) && $query->is_main_query() && ! is_admin() ) {
+		$query->set( 'posts_per_page', 6 );
+	}
 	if ( $query->is_post_type_archive( 'team' ) && $query->is_main_query() && ! is_admin() ) {
 		$query->set( 'posts_per_page', 12 );
 	}

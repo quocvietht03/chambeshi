@@ -130,7 +130,7 @@
     }
   }
 }
-.__bt-service-style-style1 {
+.__bt-service-style-1 {
   .bt-post {
     &:hover {
       .bt-post {
@@ -200,7 +200,7 @@
       color: $color-primary;
       font-family: $secondary-font;
       font-weight: 600;
-      margin-bottom: 6px;
+      margin: 0 0 6px 0;
       font-size: 22px;
       line-height: normal;
       position: relative;
@@ -267,7 +267,7 @@
     }
   }
 }
-.__bt-service-style-style2{
+.__bt-service-style-2{
   .bt-post{
     &--inner{
       padding: 48px 55px 36px 55px;
@@ -316,7 +316,7 @@
 }
 .post-type-archive-service {
   .bt-grid-post {
-    @extend .__bt-service-style-default;
+    @extend .__bt-service-style-1;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -333,7 +333,7 @@
 }
 .tax-service_categories {
   .bt-grid-post {
-    @extend .__bt-service-style-default;
+    @extend .__bt-service-style-1;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;

@@ -129,8 +129,12 @@ if (!function_exists('chambeshi_page_title')) {
 		} elseif (is_archive()) {
 			if (is_category()) {
 				single_cat_title();
-			} elseif (get_post_type() == 'service' || get_post_type() == 'team') {
-				single_term_title();
+			} elseif (get_post_type() == 'service' || get_post_type() == 'project') {
+				if (!is_tax()) {
+					echo post_type_archive_title();
+				 }else{
+					single_cat_title();
+				 }
 			} elseif (get_post_type() == 'product') {
 				if (wc_get_page_id('shop')) {
 					echo get_the_title(wc_get_page_id('shop'));
