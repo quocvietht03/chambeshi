@@ -732,15 +732,15 @@
   &--style-3 {
     @extend .__bt-post-style-3;
   }
-  &--menu{
-    .bt-post{
-      &--inner{
+  &--menu {
+    .bt-post {
+      &--inner {
         display: flex;
         align-items: center;
         gap: 15px;
       }
-      &--featured{
-        .bt-cover-image{
+      &--featured {
+        .bt-cover-image {
           width: 100px;
           min-height: 100px;
           height: 100px;
@@ -748,20 +748,49 @@
           border-radius: 15px;
         }
       }
-      &--content{
+      &--content {
         width: calc(100% - 115px);
       }
-      &--title{
+      &--title {
         font-family: $secondary-font;
         font-size: 18px;
         font-weight: 600;
         line-height: normal;
       }
-      &--excerpt{
-        font-size: 16px;
-        line-height: 1.4;
-        color: $color-text;
-        @extend .__bt-max-line-ellipsis;
+      &--infor {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        row-gap: 5px;
+        .bt-post-author-icon {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          padding-right: 10px;
+          margin-right: 10px;
+          border-right: 1px solid #ccc;
+          h4 {
+            font-size: 15px;
+            font-weight: 400;
+            margin: 0;
+            color: #555;
+            line-height: normal;
+          }
+        }
+      }
+      &--publish {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        font-size: 15px;
+        font-weight: 400;
+        color: #555;
+        line-height: normal;
+        svg {
+          width: 17px;
+          height: 17px;
+        }
       }
     }
   }
@@ -1340,9 +1369,9 @@
       &--inner {
         display: flex;
         flex-wrap: wrap;
-        gap: 15px;
-        &:hover{
-          .bt-post--title{
+        gap: 20px;
+        &:hover {
+          .bt-post--title {
             color: $color-accent;
           }
         }
@@ -1361,7 +1390,7 @@
         }
       }
       &--infor {
-        width: calc(100% - 75px);
+        width: calc(100% - 80px);
         text-align: left;
       }
       &--title {
@@ -1371,10 +1400,11 @@
         font-size: 18px;
         font-weight: 500;
         line-height: 133.2%;
+        margin-bottom: 3px;
       }
       &--excerpt {
         color: $color-text;
-        font-size: 14px;
+        font-size: 15px;
         line-height: 1.4;
         @extend .__bt-max-line-ellipsis;
       }

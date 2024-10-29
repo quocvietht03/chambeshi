@@ -210,7 +210,12 @@
 			});
 		}
 	}
-	
+	/* mega menu add class custom */
+	function ChambeshiMegaMenuAddClass() {
+		jQuery('.bt-mega-menu-sub').each(function() {
+			jQuery(this).parent().parent().addClass('bt-submenu-content');
+		});
+	}
 	jQuery(document).ready(function ($) {
 		ChambeshiSubmenuAuto();
 		ChambeshiToggleMenuMobile();
@@ -224,6 +229,7 @@
 		ChambeshiBorderTop();
 		ChambeshiUpdateBodyWidthVariable();
 		ChambeshiCounter();
+		ChambeshiMegaMenuAddClass();
 	});
 
 	jQuery(window).on('resize', function () {

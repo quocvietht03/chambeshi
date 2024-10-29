@@ -197,6 +197,15 @@ body {
         > .elementor-element {
             > .e-con-inner {
                 > .elementor-element {
+                    &:first-child {
+                        > .elementor-element {
+                            &:nth-last-child(2) {
+                                > .elementor-widget-container {
+                                    overflow: hidden;
+                                }
+                            }
+                        }
+                    }
                     @media (max-width: $break-lg) and (min-width: $break-tl) {
                         &:first-child {
                             .bt-elwg-testimonial-loop-item--default .bt-post {
@@ -1176,10 +1185,10 @@ body {
             }
         }
     }
-    &.bt-section-open-job{
-        .bt-elwg-highlighted-heading{
-            h3{
-                span{
+    &.bt-section-open-job {
+        .bt-elwg-highlighted-heading {
+            h3 {
+                span {
                     color: $color-accent;
                     font-weight: 400;
                 }

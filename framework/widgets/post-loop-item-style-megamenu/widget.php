@@ -394,8 +394,10 @@ class Widget_PostLoopItemMenu extends Widget_Base
 						<?php
 						echo chambeshi_post_title_render();
 						?>
-						<div class="bt-post--excerpt">
-							<?php echo get_the_excerpt(); ?>
+						<div class="bt-post--infor">
+							<?php 
+							echo chambeshi_author_icon_render();
+							echo chambeshi_post_publish_render_style2(); ?>
 						</div>
 					</div>
 

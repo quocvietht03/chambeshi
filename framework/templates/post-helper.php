@@ -49,11 +49,11 @@ if (!function_exists('chambeshi_single_post_title_render')) {
   function chambeshi_single_post_title_render()
   {
     ob_start();
-    ?>
+?>
     <h3 class="bt-post--title">
       <?php the_title(); ?>
     </h3>
-    <?php
+  <?php
 
     return ob_get_clean();
   }
@@ -64,7 +64,7 @@ if (!function_exists('chambeshi_post_title_render')) {
   function chambeshi_post_title_render()
   {
     ob_start();
-    ?>
+  ?>
     <h3 class="bt-post--title">
       <a href="<?php the_permalink(); ?>">
         <?php the_title(); ?>
@@ -83,7 +83,7 @@ if (!function_exists('chambeshi_post_featured_render')) {
     ob_start();
 
     if (is_single()) {
-      ?>
+    ?>
       <div class="bt-post--featured">
         <div class="bt-cover-image">
           <?php if (has_post_thumbnail()) {
@@ -91,9 +91,9 @@ if (!function_exists('chambeshi_post_featured_render')) {
           } ?>
         </div>
       </div>
-      <?php
+    <?php
     } else {
-      ?>
+    ?>
       <div class="bt-post--featured">
         <a href="<?php the_permalink(); ?>">
           <div class="bt-cover-image">
@@ -103,7 +103,7 @@ if (!function_exists('chambeshi_post_featured_render')) {
           </div>
         </a>
       </div>
-      <?php
+    <?php
 
     }
 
@@ -128,7 +128,7 @@ if (!function_exists('chambeshi_post_cover_featured_render')) {
         </div>
       </a>
     </div>
-    <?php
+  <?php
 
     return ob_get_clean();
   }
@@ -140,7 +140,7 @@ if (!function_exists('chambeshi_post_publish_render')) {
   {
     ob_start();
 
-    ?>
+  ?>
     <div class="bt-post--publish">
       <div class="bt-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -178,7 +178,7 @@ if (!function_exists('chambeshi_post_publish_render')) {
         <span><?php echo get_the_date('M, Y'); ?></span>
       </div>
     </div>
-    <?php
+  <?php
 
     return ob_get_clean();
   }
@@ -188,7 +188,7 @@ if (!function_exists('chambeshi_post_publish_render_style2')) {
   {
     ob_start();
 
-    ?>
+  ?>
     <div class="bt-post--publish">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path
@@ -221,7 +221,7 @@ if (!function_exists('chambeshi_post_publish_render_style2')) {
       </svg>
       <?php echo get_the_date(get_option('date_format')); ?>
     </div>
-    <?php
+  <?php
 
     return ob_get_clean();
   }
@@ -232,14 +232,14 @@ if (!function_exists('chambeshi_post_short_meta_render')) {
   {
     ob_start();
 
-    ?>
+  ?>
     <div class="bt-post--meta">
       <?php
       the_terms(get_the_ID(), 'category', '<div class="bt-post-cat">', ', ', '</div>');
       echo chambeshi_reading_time_render();
       ?>
     </div>
-    <?php
+  <?php
 
     return ob_get_clean();
   }
@@ -256,7 +256,7 @@ if (!function_exists('chambeshi_post_meta_render')) {
     } else {
       $avatar = array();
     }
-    ?>
+  ?>
     <ul class="bt-post--meta">
       <li class="bt-meta bt-meta--author">
         <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
@@ -297,7 +297,7 @@ if (!function_exists('chambeshi_post_category_render')) {
     $post_id = get_the_ID();
     $categorys = get_the_terms($post_id, 'category');
     if ($categorys && !is_wp_error($categorys)) {
-      ?>
+    ?>
       <div class="bt-post--category">
         <?php
         foreach ($categorys as $category) {
@@ -305,7 +305,7 @@ if (!function_exists('chambeshi_post_category_render')) {
         }
         ?>
       </div>
-      <?php
+    <?php
     }
   }
 }
@@ -318,7 +318,7 @@ if (!function_exists('chambeshi_post_content_render')) {
     ob_start();
 
     if (is_single()) {
-      ?>
+    ?>
       <div class="bt-post--content">
         <?php
         the_content();
@@ -328,13 +328,13 @@ if (!function_exists('chambeshi_post_content_render')) {
         ));
         ?>
       </div>
-      <?php
+    <?php
     } else {
-      ?>
+    ?>
       <div class="bt-post--excerpt">
         <?php echo get_the_excerpt(); ?>
       </div>
-      <?php
+    <?php
     }
 
     return ob_get_clean();
@@ -347,7 +347,7 @@ if (!function_exists('chambeshi_tags_render')) {
   {
     ob_start();
     if (has_tag()) {
-      ?>
+    ?>
       <div class="bt-post-tags">
         <span><?php echo esc_html__('Tags:', 'chambeshi'); ?></span>
         <?php
@@ -356,7 +356,7 @@ if (!function_exists('chambeshi_tags_render')) {
         }
         ?>
       </div>
-      <?php
+    <?php
     }
     return ob_get_clean();
   }
@@ -476,13 +476,16 @@ if (!function_exists('chambeshi_author_icon_render')) {
   function chambeshi_author_icon_render()
   { ?>
     <div class="bt-post-author-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path
-          d="M6.66634 5.83333C6.66634 7.67428 8.15876 9.16667 9.99967 9.16667C11.8406 9.16667 13.333 7.67428 13.333 5.83333C13.333 3.99238 11.8406 2.5 9.99967 2.5C8.15876 2.5 6.66634 3.99238 6.66634 5.83333Z"
-          stroke="#C2A74E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        <path
-          d="M9.99967 11.6667C13.2213 11.6667 15.833 14.2784 15.833 17.5001H4.16634C4.16634 14.2784 6.77801 11.6667 9.99967 11.6667Z"
-          stroke="#C2A74E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+        <g clip-path="url(#clip0_23_6567)">
+          <path d="M5.31106 7.61845C5.49458 7.93356 5.73005 8.23481 6.01745 8.48759C6.30139 8.74037 6.63727 8.94466 6.99393 9.06932C7.39907 9.21822 7.78689 9.22514 8.04659 9.1732C8.30629 9.10395 8.44826 8.99314 8.42056 8.83386C8.37208 8.53607 7.90116 8.35601 7.37483 8.0963C6.89351 7.86084 6.54724 7.44532 6.31871 6.93976C6.08671 6.43421 5.96897 5.85248 5.90318 5.26035C5.87548 5.02143 5.86163 4.77904 5.85817 4.53665C5.8547 4.41546 5.8547 4.29426 5.85817 4.17653L5.86509 3.99993L5.87894 3.7991L5.90664 3.45283C5.91011 3.33509 5.9482 3.23121 5.96551 3.11694L5.99668 2.95073L6.04862 2.79491C6.08671 2.69103 6.10748 2.58023 6.16288 2.4902C6.33602 2.09545 6.61303 1.76649 6.97316 1.53449C7.32981 1.29556 7.7765 1.16052 8.22665 1.1155C8.63179 1.13974 9.04385 1.22977 9.39704 1.3856C9.7537 1.54142 10.055 1.7561 10.28 2.02966C10.5086 2.30321 10.6609 2.63909 10.7648 3.00614C10.7925 3.19312 10.8479 3.32817 10.8618 3.59133L10.8964 3.94453C10.9033 4.0311 10.9102 4.14537 10.9137 4.24925C10.9379 5.108 10.841 6.00137 10.5224 6.72508C10.4428 6.90514 10.3493 7.07135 10.2419 7.2237C10.1346 7.3726 10.0134 7.50072 9.87836 7.61499C9.60827 7.82621 9.27931 7.97511 8.92265 8.02012C8.89495 8.02359 8.86379 8.03398 8.82916 8.05129C8.79453 8.0686 8.76683 8.09284 8.71489 8.11708C8.6214 8.1621 8.53483 8.2175 8.49674 8.26251C8.34092 8.43565 8.56599 8.58108 8.88456 8.6538C9.14773 8.71613 9.44552 8.71613 9.75024 8.66072C10.0584 8.60532 10.3701 8.46335 10.6505 8.26251C11.2184 7.85392 11.6097 7.19254 11.8209 6.52078C12.0772 5.70358 12.1637 4.87253 12.1499 4.0311C12.1499 3.93068 12.1395 3.80256 12.1326 3.71253L12.1118 3.4182C12.1118 3.23814 12.0529 2.9819 12.0114 2.75682C11.9941 2.63909 11.9525 2.53175 11.9179 2.42094C11.8798 2.31014 11.8486 2.20279 11.8036 2.09199C11.6963 1.88076 11.6062 1.66261 11.4573 1.4687C11.1873 1.07049 10.8167 0.72422 10.3943 0.492219C9.97531 0.256756 9.51824 0.10786 9.06116 0.0455311C8.83262 0.0109041 8.60062 -0.00294671 8.37555 0.000515993C8.13316 0.00397869 7.90808 0.0316803 7.67954 0.0766953C7.22593 0.166725 6.77232 0.336398 6.37065 0.603025C5.96205 0.845414 5.58461 1.17437 5.31799 1.57951C4.88169 2.21318 4.69816 2.94727 4.64276 3.63635L4.62891 3.76793L4.62198 3.83372C4.61852 3.86835 4.62545 3.78871 4.62545 3.79563V3.7991V3.80256V3.80948L4.62198 3.8268L4.61852 3.86489C4.6116 3.95492 4.60467 4.03802 4.60121 4.12459C4.59428 4.29426 4.59082 4.46047 4.59082 4.62668C4.59428 4.96256 4.61852 5.29498 4.667 5.63086C4.76049 6.30263 4.94402 6.98478 5.31106 7.61845Z" fill="#4F6A35" />
+          <path d="M15.7926 13.259C15.7857 13.0616 15.7683 12.8538 15.7406 12.6426C15.6818 12.2202 15.5571 11.7631 15.2801 11.3337C15.0031 10.9043 14.546 10.565 14.0785 10.4092L14.0716 10.4057C14.0578 10.4022 14.0405 10.3953 14.0266 10.3919C13.2475 10.191 12.4822 9.85168 11.7759 9.4327C11.6062 9.33574 11.2841 9.27341 11.1595 9.29073C11.1006 9.30111 11.0591 9.32189 11.0383 9.35652C11.0175 9.39114 11.0175 9.43616 11.0314 9.4881C11.0625 9.59544 11.1664 9.73741 11.3119 9.88284C11.9178 10.5061 12.7523 11.0705 13.7669 11.4237L13.7357 11.4133C14.1443 11.6073 14.3902 11.9328 14.5079 12.4002C14.6049 12.7499 14.6118 13.1655 14.6049 13.5879C14.598 13.7957 14.5841 14.0104 14.5633 14.2112C14.5529 14.3116 14.5391 14.412 14.5183 14.5021C14.5148 14.5159 14.5148 14.5263 14.5114 14.5367C14.4941 14.5471 14.4768 14.554 14.4629 14.5609C14.3833 14.599 14.3071 14.6406 14.2274 14.6752C14.0682 14.7514 13.9019 14.8172 13.7392 14.8864C13.4068 15.018 13.0674 15.1357 12.7212 15.2362C12.0321 15.4405 11.3222 15.5893 10.6055 15.6863C10.4289 15.7175 10.2453 15.7279 10.0653 15.7486C9.88522 15.7729 9.70516 15.7833 9.5251 15.7936C9.34504 15.804 9.16498 15.8213 8.98145 15.8213L8.45166 15.8352C8.07423 15.8283 7.68641 15.8283 7.34014 15.804L7.07351 15.7902L6.80342 15.7659C6.62336 15.7486 6.43983 15.7382 6.25977 15.7105C6.03124 15.6655 5.8027 15.6274 5.57762 15.5686L5.23828 15.4889L4.9024 15.3954C4.4384 15.2639 3.98132 15.115 3.53809 14.9314C3.31648 14.8414 3.09833 14.7445 2.88711 14.644C2.78323 14.5921 2.67588 14.5402 2.57546 14.4847C2.55815 14.4744 2.5443 14.4674 2.52699 14.457C2.52006 14.4051 2.51314 14.3532 2.50621 14.2978C2.4889 14.1419 2.48197 13.9723 2.47505 13.8026C2.46466 13.4702 2.47851 13.117 2.51314 12.8227C2.55123 12.5214 2.63087 12.2617 2.7486 12.0713C2.86979 11.8843 3.02215 11.7562 3.24723 11.6627L3.19529 11.6765C3.82896 11.4965 4.42454 11.2437 4.9855 10.9459C5.79924 10.5131 6.34634 9.94171 6.10742 9.7201C5.89273 9.51926 5.29022 9.68201 4.50072 10.0179C3.98132 10.2395 3.4446 10.4161 2.90442 10.5338C2.89749 10.5338 2.89057 10.5373 2.88364 10.5408L2.86287 10.5477C2.55469 10.6481 2.24651 10.8178 1.99719 11.0602C1.74788 11.2991 1.57128 11.5969 1.45355 11.8912C1.33582 12.189 1.27349 12.4868 1.23886 12.7742C1.22155 12.9196 1.21116 13.0581 1.20424 13.1966L1.19731 13.394L1.19385 13.491V13.6052C1.19731 13.8372 1.20424 14.0692 1.22847 14.3082C1.23886 14.4293 1.25271 14.5471 1.27695 14.6787C1.30119 14.8102 1.32543 14.9384 1.39122 15.1115L1.39468 15.1184C1.43624 15.2223 1.50549 15.3123 1.60937 15.3747C1.68901 15.4231 1.74788 15.4578 1.81367 15.4924C1.87946 15.5305 1.94179 15.5616 2.00758 15.5963C2.1357 15.6655 2.26728 15.7209 2.3954 15.7833C2.65511 15.8975 2.91827 16.0049 3.1849 16.1018C3.71469 16.2923 4.25487 16.4516 4.80198 16.5693C5.07553 16.6351 5.34908 16.6766 5.6261 16.732C5.90312 16.7667 6.17667 16.8186 6.45715 16.8428C6.73416 16.8705 7.01118 16.8982 7.29512 16.9086L7.71757 16.9294L8.12271 16.9329C8.10193 16.9225 8.08115 16.9086 8.06038 16.8982C8.08115 16.9086 8.10193 16.9225 8.12271 16.9329C8.72868 17.0021 9.33465 17.009 9.94755 16.9917C10.557 16.9571 11.1733 16.8982 11.7828 16.777C12.3922 16.6593 12.9947 16.5035 13.5868 16.2957C13.8812 16.1919 14.1755 16.0776 14.4664 15.946C14.6118 15.8837 14.7538 15.811 14.8992 15.7382C14.9719 15.7002 15.0412 15.6655 15.1139 15.624C15.1901 15.5824 15.2524 15.5478 15.3459 15.4889L15.3563 15.482C15.4705 15.4093 15.564 15.3019 15.6125 15.1634C15.7233 14.8553 15.7406 14.6579 15.7649 14.4467C15.7857 14.2389 15.796 14.0415 15.803 13.8442C15.8064 13.7472 15.8064 13.6502 15.8064 13.5464L15.7926 13.259Z" fill="#4F6A35" />
+        </g>
+        <defs>
+          <clipPath id="clip0_23_6567">
+            <rect width="17" height="17" fill="white" />
+          </clipPath>
+        </defs>
       </svg>
       <h4 class="bt-post-author-icon--name"> <?php echo esc_html__('By', 'chambeshi') . ' ' . get_the_author(); ?> </h4>
     </div>
@@ -498,7 +501,7 @@ if (!function_exists('chambeshi_author_w_avatar')) {
     } else {
       $avatar = array();
     }
-    ?>
+  ?>
     <div class="bt-post-author-w-avatar">
       <div class="bt-post-author-w-avatar--thumbnail">
         <?php
@@ -524,7 +527,7 @@ if (!function_exists('chambeshi_author_w_avatar_style2')) {
     } else {
       $avatar = array();
     }
-    ?>
+  ?>
     <div class="bt-post-author-w-avatar">
       <div class="bt-post-author-w-avatar--thumbnail">
         <?php
@@ -559,7 +562,7 @@ if (!function_exists('chambeshi_author_render')) {
     }
 
     ob_start();
-    ?>
+  ?>
     <div class="bt-post-author">
       <div class="bt-post-author--avatar">
         <?php
@@ -587,7 +590,7 @@ if (!function_exists('chambeshi_author_render')) {
         }
 
         if (!empty($socials)) {
-          ?>
+        ?>
           <div class="bt-post-author--socials">
             <?php
             foreach ($socials as $item) {
@@ -625,7 +628,7 @@ if (!function_exists('chambeshi_author_render')) {
             }
             ?>
           </div>
-          <?php
+        <?php
         }
         ?>
       </div>
@@ -649,7 +652,7 @@ if (!function_exists('chambeshi_cta_free_consultation')) {
         $description = !empty($consultation_cta['description']) ? $consultation_cta['description'] : '';
         $button = !empty($consultation_cta['button']) ? $consultation_cta['button'] : '';
 
-        ?>
+    ?>
         <div class="bt-cta-free-consultation">
           <div class="bt-consultation" <?php echo !empty($background_image) ? 'style="background-image: url(' . esc_url($background_image) . ')"' : ''; ?>>
             <div class="bt-consultation--infor">
@@ -668,7 +671,7 @@ if (!function_exists('chambeshi_cta_free_consultation')) {
             </div>
           </div>
         </div>
-        <?php
+      <?php
       }
     }
     return ob_get_clean();
@@ -719,7 +722,7 @@ if (!function_exists('chambeshi_related_posts')) {
           ?>
         </div>
       </div>
-      <?php
+    <?php
     }
     return ob_get_clean();
   }
@@ -800,22 +803,22 @@ if (!function_exists('chambeshi_custom_comment')) {
         </div>
       </div>
       <?php
+    }
   }
-}
 
-if (!function_exists('chambeshi_shortcode_featured_project')) {
-  function chambeshi_shortcode_featured_project()
-  {
-    $project_ID = get_the_ID();
-    $featured = get_field('featured', $project_ID);
+  if (!function_exists('chambeshi_shortcode_featured_project')) {
+    function chambeshi_shortcode_featured_project()
+    {
+      $project_ID = get_the_ID();
+      $featured = get_field('featured', $project_ID);
 
-    ob_start();
-    if (!empty($featured)) {
+      ob_start();
+      if (!empty($featured)) {
       ?>
         <div class="bt-post--counter">
           <?php
           foreach ($featured as $item) {
-            ?>
+          ?>
             <div class="bt-counter">
               <h3 class="bt-head"><?php echo esc_attr($item['top_label']) ?></h3>
               <div class="bt-number-wrapper">
@@ -826,14 +829,13 @@ if (!function_exists('chambeshi_shortcode_featured_project')) {
               </div>
               <h3 class="bt-head-bottom"><?php echo esc_attr($item['bottom_label']) ?></h3>
             </div>
-            <?php
+          <?php
           }
           ?>
         </div>
-        <?php
+  <?php
+      }
+      return ob_get_clean();
     }
-    return ob_get_clean();
-
+    add_shortcode('featured_project', 'chambeshi_shortcode_featured_project');
   }
-  add_shortcode('featured_project', 'chambeshi_shortcode_featured_project');
-}
