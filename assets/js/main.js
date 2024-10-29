@@ -216,6 +216,31 @@
 			jQuery(this).parent().parent().addClass('bt-submenu-content');
 		});
 	}
+	/* Validation form comment */
+	function ChambeshiCommentValidation() {
+		if ($('#bt_comment_form').length) {
+			jQuery('#bt_comment_form').validate({
+				rules: {
+				  author: {
+					required: true,
+					minlength: 2
+				  },
+				  email: {
+					required: true,
+					email: true
+				  },
+				  comment: {
+					required: true,
+					minlength: 20
+				  }
+				},
+				errorElement: "div",
+				errorPlacement: function(error, element) {
+				  element.after(error);
+				}
+			});
+		}
+	}
 	jQuery(document).ready(function ($) {
 		ChambeshiSubmenuAuto();
 		ChambeshiToggleMenuMobile();
@@ -230,6 +255,7 @@
 		ChambeshiUpdateBodyWidthVariable();
 		ChambeshiCounter();
 		ChambeshiMegaMenuAddClass();
+		ChambeshiCommentValidation();
 	});
 
 	jQuery(window).on('resize', function () {
