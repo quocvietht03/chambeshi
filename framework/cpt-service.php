@@ -10,7 +10,7 @@ function chambeshi_service_register() {
 	if(isset($cpt_slug) && $cpt_slug != ''){
 		$cpt_slug = $cpt_slug;
 	} else {
-		$cpt_slug = 'service';
+		$cpt_slug = 'services';
 	}
 
 	$labels = array(
