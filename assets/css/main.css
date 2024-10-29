@@ -2518,24 +2518,24 @@ img.alignright {
     font-size: 14px;
   }
 }
-.elementor-location-header .elementor-element.bt-header-nav-style-2 > .e-con-inner > .elementor-element:last-child .elementor-widget-icon-box > .elementor-widget-container .elementor-icon-box-title a {
+.elementor-location-header .elementor-element.bt-header-nav-style-2 > .e-con-inner > .elementor-element:last-child .bt-header-phone-contact > .elementor-widget-container .elementor-icon-box-title a {
   position: relative;
   padding-bottom: 30px;
   display: block;
 }
-.elementor-location-header .elementor-element.bt-header-nav-style-2 > .e-con-inner > .elementor-element:last-child .elementor-widget-icon-box > .elementor-widget-container .elementor-icon-box-description {
+.elementor-location-header .elementor-element.bt-header-nav-style-2 > .e-con-inner > .elementor-element:last-child .bt-header-phone-contact > .elementor-widget-container .elementor-icon-box-description {
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
   margin-top: -30px;
 }
 @media (max-width: 1265px) and (min-width: 1024.98px) {
-  .elementor-location-header .elementor-element.bt-header-nav-style-2 > .e-con-inner > .elementor-element:last-child .elementor-widget-icon-box > .elementor-widget-container {
+  .elementor-location-header .elementor-element.bt-header-nav-style-2 > .e-con-inner > .elementor-element:last-child .bt-header-phone-contact > .elementor-widget-container {
     margin: 0px 0px 0px 25px;
   }
-  .elementor-location-header .elementor-element.bt-header-nav-style-2 > .e-con-inner > .elementor-element:last-child .elementor-widget-icon-box > .elementor-widget-container .elementor-icon {
+  .elementor-location-header .elementor-element.bt-header-nav-style-2 > .e-con-inner > .elementor-element:last-child .bt-header-phone-contact > .elementor-widget-container .elementor-icon {
     font-size: 50px;
   }
-  .elementor-location-header .elementor-element.bt-header-nav-style-2 > .e-con-inner > .elementor-element:last-child .elementor-widget-icon-box > .elementor-widget-container .elementor-icon-box-description {
+  .elementor-location-header .elementor-element.bt-header-nav-style-2 > .e-con-inner > .elementor-element:last-child .bt-header-phone-contact > .elementor-widget-container .elementor-icon-box-description {
     font-size: 18px;
   }
 }
