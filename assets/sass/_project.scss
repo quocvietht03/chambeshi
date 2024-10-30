@@ -341,7 +341,7 @@
         .bt-post--category a {
           margin-top: 0;
           color: #222;
-          background: #ffe17f;
+          background: $color-accent;
           margin-bottom: 22px;
         }
         .bt-post--content {
@@ -352,7 +352,7 @@
         .bt-post--title {
           overflow: hidden;
           display: -webkit-box;
-          -webkit-line-clamp: 4; /* number of lines to show */
+          -webkit-line-clamp: 4;
           line-clamp: 4;
           -webkit-box-orient: vertical;
         }
@@ -751,7 +751,7 @@
     @media (max-width: $break-md) {
       margin-top: 60px;
     }
-    .subheading {
+    .bt-subheading {
       text-align: center;
       span {
         display: inline-block;
@@ -768,7 +768,7 @@
         text-align: center;
       }
     }
-    .heading {
+    .bt-heading {
       color: $color-primary;
       text-align: center;
       font-family: $secondary-font;
@@ -799,7 +799,7 @@
         margin-top: 10px;
       }
     }
-    .bottom_text {
+    .bt-bottom-text {
       margin-top: 60px;
       color: $color-text;
       text-align: center;

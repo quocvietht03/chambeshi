@@ -40,11 +40,11 @@ if ($query_project->have_posts()) {
     echo '<div class="bt-related-section">';
 
     if ( !empty($sub_heading) ) {
-        echo '<div class="subheading"><span>'. $sub_heading .'</span></div>';
+        echo '<div class="bt-subheading"><span>'. $sub_heading .'</span></div>';
     }
 
     if ( !empty($heading) ) {
-        echo '<div class="heading">'.$heading.'</div>';
+        echo '<div class="bt-heading">'.$heading.'</div>';
     }
 
     ?>
@@ -67,7 +67,7 @@ if ($query_project->have_posts()) {
     <?php
 
     if ( !empty($bottom_text) ) {
-        echo '<div class="bottom_text">'.$bottom_text.'</div>';
+        echo '<div class="bt-bottom-text">'.$bottom_text.'</div>';
     }
 
     echo '</div>';
