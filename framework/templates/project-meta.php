@@ -9,10 +9,10 @@ if (function_exists('get_field')) {
 }
 
 ?>
-<div class="sticky-box--meta">
+<div class="bt-sticky-box--meta">
     <?php if (!empty($terms)) { ?>
-        <div class="item">
-            <div class="icon">
+        <div class="bt-item">
+            <div class="bt-item--icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
                     <path
                         d="M43.8438 5.75H41.6875C39.4469 5.74965 37.2209 5.38853 35.0951 4.6805C32.9718 3.96797 30.9755 2.92179 29.1812 1.58125C29.0568 1.48794 28.9055 1.4375 28.75 1.4375C28.5945 1.4375 28.4432 1.48794 28.3188 1.58125C24.7059 4.27799 20.3208 5.73971 15.8125 5.75H13.6562C13.4656 5.75 13.2828 5.82573 13.148 5.96052C13.0132 6.09531 12.9375 6.27813 12.9375 6.46875V12.075C12.9377 13.3663 13.0432 14.6555 13.253 15.9297L14.6711 15.6953C14.4745 14.4986 14.3755 13.2878 14.375 12.075V7.1875H15.8125C20.4493 7.17649 24.9688 5.72973 28.75 3.04606C30.555 4.32911 32.5392 5.33926 34.6387 6.04397C36.9117 6.80115 39.2917 7.18727 41.6875 7.1875H43.125V12.075C43.1115 16.2824 41.9131 20.4008 39.667 23.9585C37.4209 27.5162 34.2181 30.3692 30.4254 32.1907L28.4417 33.1322L29.0583 34.4303L31.0428 33.4887C35.0804 31.5499 38.4902 28.5129 40.8813 24.7256C43.2724 20.9383 44.5482 16.5539 44.5625 12.075V6.46875C44.5625 6.27813 44.4868 6.09531 44.352 5.96052C44.2172 5.82573 44.0344 5.75 43.8438 5.75Z"
@@ -34,9 +34,9 @@ if (function_exists('get_field')) {
                     <path d="M23 20.125H21.5625V21.5625H23V20.125Z" fill="#4F6A35" />
                 </svg>
             </div>
-            <div class="main">
-                <span>Category:</span>
-                <div class="value">
+            <div class="bt-item--info">
+                <span><?php echo esc_html__( 'Category:', 'chambeshi' ) ?></span>
+                <div class="bt-value">
                     <?php foreach ($terms as $key => $term) {
                         if ($key != 0)
                             echo ', ';
@@ -47,8 +47,8 @@ if (function_exists('get_field')) {
         </div>
     <?php } ?>
 
-    <div class="item">
-        <div class="icon">
+    <div class="bt-item">
+        <div class="bt-item--icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
                 <path
                     d="M15.3327 27.7916C16.3912 27.7916 17.2493 26.9335 17.2493 25.8749C17.2493 24.8164 16.3912 23.9583 15.3327 23.9583C14.2741 23.9583 13.416 24.8164 13.416 25.8749C13.416 26.9335 14.2741 27.7916 15.3327 27.7916Z"
@@ -79,17 +79,17 @@ if (function_exists('get_field')) {
                     fill="#4F6A35" />
             </svg>
         </div>
-        <div class="main">
-            <span>Date:</span>
-            <div class="value">
+        <div class="bt-item--info">
+            <span><?php echo esc_html__( 'Date:', 'chambeshi' ) ?></span>
+            <div class="bt-value">
                 <?php echo get_the_date('j F Y'); ?>
             </div>
         </div>
     </div>
 
     <?php if (!empty($location)) { ?>
-        <div class="item">
-            <div class="icon">
+        <div class="bt-item">
+            <div class="bt-item--icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
                     <g clip-path="url(#clip0_23_7504)">
                         <path
@@ -121,9 +121,9 @@ if (function_exists('get_field')) {
                     </defs>
                 </svg>
             </div>
-            <div class="main">
-                <span>Location:</span>
-                <div class="value">
+            <div class="bt-item--info">
+                <span><?php echo esc_html__('Location:','chambeshi') ?></span>
+                <div class="bt-value">
                     <?php echo $location; ?>
                 </div>
             </div>
@@ -131,8 +131,8 @@ if (function_exists('get_field')) {
     <?php } ?>
 
     <?php if (!empty($website)) { ?>
-        <div class="item">
-            <div class="icon">
+        <div class="bt-item">
+            <div class="bt-item--icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
                 <g clip-path="url(#clip0_23_7524)">
                     <mask id="mask0_23_7524" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="46" height="46">
@@ -149,10 +149,10 @@ if (function_exists('get_field')) {
                 </defs>
                 </svg>
             </div>
-            <div class="main">
-                <span>Website:</span>
-                <div class="value">
-                    <a href="<?php echo $website; ?>" target="_blank" rel="nofollow"><?php echo $website; ?></a>
+            <div class="bt-item--info">
+                <span><?php echo esc_html__( 'Website:', 'chambeshi' ) ?></span>
+                <div class="bt-value">
+                    <a href="<?php echo esc_url($website); ?>" target="_blank" rel="nofollow"><?php echo esc_html($website); ?></a>
                 </div>
             </div>
         </div>

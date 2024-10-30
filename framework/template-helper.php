@@ -173,7 +173,11 @@ if (!function_exists('chambeshi_page_title')) {
 				esc_html_e('Archive', 'chambeshi');
 			}
 		} else {
-			echo get_the_title();
+			if(is_singular('project')) { 
+				echo esc_html__( 'Our Cases', 'chambeshi' );
+			}else{
+				echo get_the_title();
+			}
 		}
 
 		return ob_get_clean();

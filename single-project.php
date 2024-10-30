@@ -8,8 +8,8 @@ get_template_part('framework/templates/site', 'titlebar');
 
 $bottom_content = '';
 $id_elementor = '';
-if ( function_exists('get_field') ) {
-    $bottom_content = get_field('bottom_content', get_the_ID() );
+if (function_exists('get_field')) {
+    $bottom_content = get_field('bottom_content', get_the_ID());
 
     $id_elementor = get_field('project_templates_elementor', 'option');
 }
@@ -23,7 +23,7 @@ if ( function_exists('get_field') ) {
                     <?php
                     while (have_posts()):
                         the_post();
-                        ?>
+                    ?>
 
                         <div class="bt-featured-image">
                             <?php
@@ -34,13 +34,14 @@ if ( function_exists('get_field') ) {
                         </div>
 
                         <div class="bt-main-content">
-                            <div class="col-left">
+                            <div class="bt-col-left">
+                                <h2 class="bt-post-title"><?php the_title();  ?></h2>
                                 <?php the_content(); ?>
                             </div>
-                            <div class="col-right">
-                                <div class="sticky-box">
-                                    <div class="sticky-box--author">
-                                        <div class="avatar">
+                            <div class="bt-col-right">
+                                <div class="bt-sticky-box">
+                                    <div class="bt-sticky-box--author">
+                                        <div class="bt-avatar">
                                             <?php
                                             $author_id = get_the_author_meta('ID');
 
@@ -61,23 +62,23 @@ if ( function_exists('get_field') ) {
                                             }
                                             ?>
                                         </div>
-                                        <div class="name">
-                                            <span>Author:</span>
+                                        <div class="bt-name">
+                                            <span><?php echo esc_html__('Author:', 'chambeshi') ?></span>
                                             <?php the_author(); ?>
                                         </div>
                                     </div>
-                                    
+
                                     <?php get_template_part('framework/templates/project', 'meta'); ?>
-                                    
+
                                 </div>
                             </div>
                         </div>
-                        
-                        <?php if ( !empty($bottom_content) ) {
-                            echo '<div class="bt-bottom-content">'. $bottom_content .'</div>';
+
+                        <?php if (!empty($bottom_content)) {
+                            echo '<div class="bt-bottom-content">' . $bottom_content . '</div>';
                         } ?>
 
-                        <?php
+                    <?php
 
                         get_template_part('framework/templates/project', 'related');
 
@@ -88,11 +89,11 @@ if ( function_exists('get_field') ) {
         </div>
     </div>
 
-    <?php 
-    if (!empty( $id_elementor)) {
+    <?php
+    if (!empty($id_elementor)) {
         foreach ($id_elementor as $key => $e) {
             $id_template = $e->ID;
-            echo do_shortcode('[elementor-template id="' . $id_template . '"]');   
+            echo do_shortcode('[elementor-template id="' . $id_template . '"]');
         }
     }
     ?>
