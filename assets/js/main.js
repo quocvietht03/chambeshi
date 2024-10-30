@@ -193,26 +193,26 @@
 			$('.bt-counter').each(function () {
 				var $number = $(this).find('.bt-number');
 				var countTo = $number.data('count');
-	
+
 				$({ countNum: 0 }).animate({
 					countNum: countTo
 				},
-				{
-					duration: 3000,
-					easing: 'swing',
-					step: function () {
-						$number.text(Math.floor(this.countNum).toLocaleString());
-					},
-					complete: function () {
-						$number.text(this.countNum.toLocaleString());
-					}
-				});
+					{
+						duration: 3000,
+						easing: 'swing',
+						step: function () {
+							$number.text(Math.floor(this.countNum).toLocaleString());
+						},
+						complete: function () {
+							$number.text(this.countNum.toLocaleString());
+						}
+					});
 			});
 		}
 	}
 	/* mega menu add class custom */
 	function ChambeshiMegaMenuAddClass() {
-		jQuery('.bt-mega-menu-sub').each(function() {
+		jQuery('.bt-mega-menu-sub').each(function () {
 			jQuery(this).parent().parent().addClass('bt-submenu-content');
 		});
 	}
@@ -221,26 +221,41 @@
 		if ($('#bt_comment_form').length) {
 			jQuery('#bt_comment_form').validate({
 				rules: {
-				  author: {
-					required: true,
-					minlength: 2
-				  },
-				  email: {
-					required: true,
-					email: true
-				  },
-				  comment: {
-					required: true,
-					minlength: 20
-				  }
+					author: {
+						required: true,
+						minlength: 2
+					},
+					email: {
+						required: true,
+						email: true
+					},
+					comment: {
+						required: true,
+						minlength: 20
+					}
 				},
 				errorElement: "div",
-				errorPlacement: function(error, element) {
-				  element.after(error);
+				errorPlacement: function (error, element) {
+					element.after(error);
 				}
 			});
 		}
 	}
+	function Chambeshi_GF_Select2() {
+		$('.gform_wrapper').each(function () {
+			const $self = $(this);
+			$($self).find('select').select2({
+				dropdownParent: $self,
+				minimumResultsForSearch: Infinity,
+				placeholder: "Please Choose Option",
+				allowClear: true
+			});
+		})
+	}
+
+	jQuery(document).on('gform_post_render', function () {
+		Chambeshi_GF_Select2();
+	});
 	jQuery(document).ready(function ($) {
 		ChambeshiSubmenuAuto();
 		ChambeshiToggleMenuMobile();

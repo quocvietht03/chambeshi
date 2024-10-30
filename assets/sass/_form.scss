@@ -1,6 +1,6 @@
 .gform-theme--framework
   :where(
-    :not(html):not(iframe):not(canvas):not(img):not(svg):not(video)
+    :not(svg)
       :not(svg *):not(symbol *):not(.gform-theme__no-reset--el)
       :not(.gform-theme__no-reset--children *):not(.gform-theme__disable)
       :not(.gform-theme__disable *):not(.gform-theme__disable-reset)
@@ -10,13 +10,8 @@
       :not(.wp-editor-container):not(.mce-tinymce):not(.mce-tinymce *)
       :not(.wp-editor-area):not(.gfield_description > *)
       :not(.gform-field-label--type-inline > :not(span))
-  ) {
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
-  font: inherit;
-  color: inherit;
+  )
+  path {
   display: revert;
   all: revert-layer;
 }
@@ -72,6 +67,21 @@
         border-color: #d8d8d8;
         border-radius: 10px;
         background: #f0f7f3;
+        .select2-selection__clear{
+          position: absolute;
+          background: transparent !important;
+          box-shadow: none !important;
+          color: $color-primary !important;
+          right: 50px;
+          font-size: 20px !important;
+          height: 59px;
+        }
+        .select2-selection__placeholder {
+          color: $color-text;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: normal;
+        }
         .select2-selection__rendered {
           line-height: 50px;
           color: $color-text;
