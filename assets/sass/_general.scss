@@ -143,7 +143,10 @@
   overflow: hidden;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   z-index: 99999;
-  // width: max-content !important;
+  position: absolute !important;
+  display: block !important;
+  background: #fff !important;
+  border-radius: 4px !important;
 }
 
 .select2-search--dropdown,
@@ -156,7 +159,9 @@
 }
 .select2-results__option,
 .elementor-editor-active .select2-results__option {
-  padding: 8px 24px;
+  padding: 8px 24px !important;
+  font-size: 15px !important;
+  line-height: 150% !important;
 }
 
 .bt-container {
