@@ -72,7 +72,7 @@ if (function_exists('get_field')) {
 																				} ?>">
 												<a href="<?php echo get_the_permalink(get_the_ID()); ?>"
 													class="bt-service-list--content">
-													<h3 class="bt-post--title"><?php echo get_the_title(get_the_ID()); ?></h3>
+													<h3 class="bt-service-list--title"><?php echo get_the_title(get_the_ID()); ?></h3>
 													<div class="bt-service-list--icon">
 														<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
 															viewBox="0 0 22 22" fill="none">
@@ -131,37 +131,39 @@ if (function_exists('get_field')) {
 										</defs>
 									</svg>
 									<div class="bt-calling-us--phone">
-										<a
-											href="<?php echo esc_url('tel:' . preg_replace('/[^0-9]+/', '', $site_information['site_phone'])); ?>">
-											<div class="bt-calling-us--phone-infor">
-												<div class="bt-label">
-													<?php
-													if (!empty($phone_sv['label'])) {
-														echo $phone_sv['label'];
-													} else {
-														echo esc_html__('Any questions?', 'chambeshi');
-													}
-													?>
-												</div>
-												<div class="bt-sub-label">
-													<?php
-													if (!empty($phone_sv['sub_label'])) {
-														echo $phone_sv['sub_label'];
-													} else {
-														echo esc_html__('Please call us at the number provided below.', 'chambeshi');
-													}
-													?>
-												</div>
-												<div class="bt-head">
-													<?php echo esc_html($site_information['site_phone']); ?>
-												</div>
+
+										<div class="bt-calling-us--phone-infor">
+											<div class="bt-label">
 												<?php
-												if (!empty($phone_sv['cta_text']) && !empty($phone_sv['cta_url'])) {
-													echo '<a class="bt-cta" href="' . $phone_sv['cta_url'] . '">' . $phone_sv['cta_text'] . '</a>';
+												if (!empty($phone_sv['label'])) {
+													echo $phone_sv['label'];
+												} else {
+													echo esc_html__('Any questions?', 'chambeshi');
 												}
 												?>
 											</div>
-										</a>
+											<div class="bt-sub-label">
+												<?php
+												if (!empty($phone_sv['sub_label'])) {
+													echo $phone_sv['sub_label'];
+												} else {
+													echo esc_html__('Please call us at the number provided below.', 'chambeshi');
+												}
+												?>
+											</div>
+											<div class="bt-head">
+												<a
+													href="<?php echo esc_url('tel:' . preg_replace('/[^0-9]+/', '', $site_information['site_phone'])); ?>">
+													<?php echo esc_html($site_information['site_phone']); ?>
+												</a>
+											</div>
+											<?php
+											if (!empty($phone_sv['cta_text']) && !empty($phone_sv['cta_url'])) {
+												echo '<a class="bt-cta" href="' . $phone_sv['cta_url'] . '"><span>' . $phone_sv['cta_text'] . '</span></a>';
+											}
+											?>
+										</div>
+
 									</div>
 								</div>
 							</div>
@@ -186,7 +188,7 @@ if (function_exists('get_field')) {
 									</div>
 								</div>
 							<?php } ?>
-
+							<h2 class="bt-post--title"><?php the_title(); ?></h2>
 							<div class="bt-post--content">
 								<?php the_content(); ?>
 							</div>

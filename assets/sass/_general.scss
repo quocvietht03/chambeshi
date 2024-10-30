@@ -656,14 +656,8 @@
       width: 42px;
       font-size: 0;
       svg{
-        fill: #4F6A35;
+        fill: $color-accent;
       }
-    }
-    &.prev {
-      // margin-right: 20px;
-    }
-    &.next {
-      // margin-left: 20px;
     }
     &.dots {
       width: auto;
