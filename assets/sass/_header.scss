@@ -308,37 +308,56 @@
       > .e-con-inner {
         > .elementor-element {
           &:first-child {
-            @media (max-width: 1280px) and (min-width: $break-tl) {
-              width: 28%;
+            @media (max-width: $break-lg) and (min-width: $break-tl) {
+              width: 55%;
+            }
+            @media (max-width: 1110px) and (min-width: $break-tl) {
+              width: 70%;
+            }
+            @media (max-width: $break-sm) and (min-width: 600px) {
+              width: 70%;
               .bt-elwg-site-infor {
-                row-gap: 0;
-                .bt-elwg-site-infor--item:not(:last-child)::before {
-                  opacity: 0;
+                &--item {
+                  strong {
+                    display: none;
+                  }
                 }
               }
             }
-            @media (max-width: 950px) and (min-width: $break-sm) {
-              width: 40%;
+            @media (max-width: 600px) {
               .bt-elwg-site-infor {
-                row-gap: 0;
-                padding: 5px 0;
-              }
-            }
-            @media (max-width: $break-xs) {
-              .bt-elwg-site-infor {
-                row-gap: 0;
+                column-gap: 12px;
                 &--item {
-                  font-size: 14px;
+                  &::before {
+                    opacity: 0;
+                  }
+                  span {
+                    display: none;
+                  }
+                  svg {
+                    width: 24px;
+                    height: 24px;
+                  }
                 }
               }
             }
           }
           &:last-child {
-            @media (max-width: 1280px) and (min-width: $break-tl) {
-              width: 72%;
+            @media (max-width: $break-lg) and (min-width: $break-tl) {
+              width: 45%;
+              justify-content: flex-end;
+              gap: 15px;
             }
-            @media (max-width: 950px) and (min-width: $break-sm) {
-              width: 60%;
+            @media (max-width: 1110px) and (min-width: $break-tl) {
+              width: 30%;
+              > .elementor-element {
+                &:first-child {
+                  display: none;
+                }
+              }
+            }
+            @media (max-width: $break-sm) and (min-width: 600px) {
+              width: 30%;
             }
             > .elementor-element {
               &:first-child {
@@ -348,16 +367,6 @@
                   }
                   @media (max-width: 1280px) and (min-width: $break-tl) {
                     padding: 15px;
-                  }
-                }
-              }
-              &:nth-child(2) {
-                .bt-elwg-account-login-inner ul li {
-                  @media (max-width: $break-xs) {
-                    span,
-                    a {
-                      font-size: 14px;
-                    }
                   }
                 }
               }
@@ -487,38 +496,26 @@
           > .elementor-element {
             > .elementor-element {
               .bt-elwg-site-infor {
-                @media (max-width: 1315px) and (min-width: $break-tl) {
-                  max-width: min-content;
-                  gap: 0;
-                  .bt-elwg-site-infor--item {
-                    font-size: 15px;
-                    &::before {
-                      opacity: 0;
-                    }
-                  }
-                }
-                @media (max-width: 930px) and (min-width: $break-sm) {
-                  max-width: min-content;
-                  gap: 0;
-                  .bt-elwg-site-infor--item {
-                    font-size: 15px;
-                    &::before {
-                      opacity: 0;
-                    }
-                  }
-                }
-                @media (max-width: $break-xs) {
-                  row-gap: 0;
+                @media (max-width: $break-sm) and (min-width: 600px) {
                   &--item {
-                    font-size: 14px;
+                    strong {
+                      display: none;
+                    }
                   }
                 }
-              }
-              .bt-elwg-account-login-inner ul li {
-                @media (max-width: $break-xs) {
-                  span,
-                  a {
-                    font-size: 14px;
+                @media (max-width: 600px) {
+                  column-gap: 12px;
+                  &--item {
+                    &::before {
+                      opacity: 0;
+                    }
+                    span {
+                      display: none;
+                    }
+                    svg {
+                      width: 24px;
+                      height: 24px;
+                    }
                   }
                 }
               }
@@ -552,13 +549,13 @@
               }
             }
             @media (max-width: 1110px) and (min-width: $break-tl) {
-                .elementor-widget-theme-site-logo{
-                  > .elementor-widget-container{
-                    img{
-                      max-width: 220px;
-                    }
+              .elementor-widget-theme-site-logo {
+                > .elementor-widget-container {
+                  img {
+                    max-width: 220px;
                   }
                 }
+              }
             }
             .elementor-widget-nav-menu {
               .elementor-nav-menu {
@@ -678,37 +675,26 @@
           padding-right: 30px;
         }
         .bt-elwg-site-infor {
-          @media (max-width: $break-lg) and (min-width: $break-tl) {
-            max-width: min-content;
-            gap: 0;
-            .bt-elwg-site-infor--item {
-              font-size: 15px;
-              &::before {
-                opacity: 0;
-              }
-            }
-          }
-          @media (max-width: $break-tl) and (min-width: $break-sm) {
-            max-width: min-content;
-            gap: 0;
-            .bt-elwg-site-infor--item {
-              &::before {
-                opacity: 0;
-              }
-            }
-          }
-          @media (max-width: $break-xs) {
-            row-gap: 0;
+          @media (max-width: $break-sm) and (min-width: 600px) {
             &--item {
-              font-size: 14px;
+              strong {
+                display: none;
+              }
             }
           }
-        }
-        .bt-elwg-account-login-inner ul li {
-          @media (max-width: $break-xs) {
-            span,
-            a {
-              font-size: 14px;
+          @media (max-width: 600px) {
+            column-gap: 12px;
+            &--item {
+              &::before {
+                opacity: 0;
+              }
+              span {
+                display: none;
+              }
+              svg {
+                width: 24px;
+                height: 24px;
+              }
             }
           }
         }
@@ -1087,13 +1073,13 @@ body.admin-bar .dialog-type-lightbox {
       &.elementor-widget-n-menu {
         .e-n-menu-item {
           .e-n-menu-title {
-            padding-left:12px;
-            padding-right:12px;
+            padding-left: 12px;
+            padding-right: 12px;
           }
           .elementor-widget-n-menu {
             .e-n-menu-title {
-              padding-left:20px;
-              padding-right:20px;
+              padding-left: 20px;
+              padding-right: 20px;
             }
           }
         }
@@ -1106,13 +1092,13 @@ body.admin-bar .dialog-type-lightbox {
         }
         .e-n-menu-item {
           .e-n-menu-title {
-            padding-left:10px;
-            padding-right:10px;
+            padding-left: 10px;
+            padding-right: 10px;
           }
           .elementor-widget-n-menu {
             .e-n-menu-title {
-              padding-left:20px;
-              padding-right:20px;
+              padding-left: 20px;
+              padding-right: 20px;
             }
           }
         }

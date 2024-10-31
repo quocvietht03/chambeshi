@@ -6,7 +6,7 @@
 	});
 
 	jQuery(window).on('resize', function() {
-    ChambeshiSubmenuAuto();
+    	//ChambeshiSubmenuAuto();
 	});
 
 	jQuery(window).on('scroll', function() {
