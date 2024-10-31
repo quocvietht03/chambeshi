@@ -52,7 +52,6 @@ class ElementorWidgets
 			'site-social-style-2',
 			'site-copyright',
 			'instagram-posts',
-			'contact-information',
 			'page-breadcrumb',
 			'step-list',
 			'post-grid',
@@ -65,26 +64,16 @@ class ElementorWidgets
 			'testimonial-slider',
 			'testimonial-loop-item',
 			'testimonial-loop-item-style-1',
-			'testimonial-loop-item-style-2',
 			'company-loop-item',
-			'orbit-circle',
-			'pattern-background',
-			'buble-background',
-			'product-loop-item',
+			//'product-loop-item',
 			'highlighted-heading',
-			'popular-services',
 			'pricing-item',
-			'time-list',
 			'team-loop-item',
 			'services-list',
-			'popular-service-style-1',
 			'service-loop-item',
 			'service-loop-item-style-1',
 			'service-loop-item-style-2',
 			'service-loop-item-megamenu',
-			'page-title-bar',
-			'site-box-phone',
-			'location-list',
 			'account-login',
 			'project-grid',
 			'project-loop-item',
@@ -185,7 +174,6 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\SiteSocialStyle2\Widget_SiteSocialStyle2());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\SiteCopyright\Widget_SiteCopyright());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\InstagramPosts\Widget_InstagramPosts());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ContactInformation\Widget_ContactInformation());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PageBreadcrumb\Widget_PageBreadcrumb());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\StepList\Widget_StepList());
 
@@ -200,12 +188,9 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TestimonialSlider\Widget_TestimonialSlider());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TestimonialLoopItem\Widget_TestimonialLoopItem());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TestimonialLoopItemStyle1\Widget_TestimonialLoopItemStyle1());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TestimonialLoopItemStyle2\Widget_TestimonialLoopItemStyle2());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\CompanyLoopItem\Widget_CompanyLoopItem());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TeamLoopItem\Widget_TeamLoopItem());
 
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PopularServices\Widget_PopularServices());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PopularServicesStyle1\Widget_PopularServicesStyle1());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ServicesList\Widget_ServicesList());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ServiceLoopItem\Widget_ServiceLoopItem());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ServiceLoopItemStyle1\Widget_ServiceLoopItemStyle1());
@@ -215,18 +200,11 @@ class ElementorWidgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ProjectGrid\Widget_ProjectGrid());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ProjectLoopItem\Widget_ProjectLoopItem());
 
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\OrbitCircle\Widget_OrbitCircle());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PatternBackground\Widget_PatternBackground());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\BubleBackground\Widget_BubleBackground());
 
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ProductLoopItem\Widget_ProductLoopItem());
+//		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ProductLoopItem\Widget_ProductLoopItem());
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\HighlightedHeading\Widget_HighlightedHeading());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PricingItem\Widget_PricingItem());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TimeList\Widget_TimeList());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\SiteBoxPhone\Widget_SiteBoxPhone());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\PageTitleBar\Widget_PageTitleBar());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\LocationList\Widget_LocationList());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\AccountLogin\Widget_AccountLogin());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\GraphProgress\Widget_GraphProgress());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\SolutionItem\Widget_SolutionItem());

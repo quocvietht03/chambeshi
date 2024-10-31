@@ -110,7 +110,6 @@ require_once get_template_directory() . '/framework/cpt-service.php';
 require_once get_template_directory() . '/framework/cpt-project.php';
 require_once get_template_directory() . '/framework/cpt-company.php';
 require_once get_template_directory() . '/framework/cpt-testimonial.php';
-require_once get_template_directory() . '/framework/cpt-gallery.php';
 /* ACF Options */
 require_once get_template_directory() . '/framework/acf-options.php';
 
@@ -132,27 +131,13 @@ if (class_exists('Woocommerce')) {
 }
 
 if (function_exists('get_field')) {
-	/* Orbit circle effect */
 	function chambeshi_body_class($classes)
 	{
-		$orbit_circle = get_field('effect_orbit_circle', 'options');
-		$bg_pattern = get_field('effect_bg_pattern', 'options');
-		$bg_buble = get_field('effect_bg_buble', 'options');
+	
 		$bg_scroll = get_field('effect_bg_scroll', 'options');
 		$img_zoom = get_field('effect_img_zoom', 'options');
 		$button_hover = get_field('effect_button_hover', 'options');
 
-		if ($orbit_circle) {
-			$classes[] = 'bt-orbit-enable';
-		}
-
-		if ($bg_pattern) {
-			$classes[] = 'bt-bg-pattern-enable';
-		}
-
-		if ($bg_buble) {
-			$classes[] = 'bt-bg-buble-enable';
-		}
 
 		if ($bg_scroll) {
 			$classes[] = 'bt-bg-scroll-enable';

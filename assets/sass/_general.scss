@@ -750,56 +750,6 @@
   }
 }
 
-.__bt-contact-information-style {
-  .bt-contact-information {
-    background: $color-accent;
-    padding: 58px 40px;
-    border-radius: 15px;
-    &--head {
-      font-family: $secondary-font;
-      font-size: 30px;
-      color: #fff;
-      margin: 0 0 5px;
-    }
-    &--desc {
-      font-size: 18px;
-      line-height: 156%;
-      color: #ffffff;
-    }
-    &--button {
-      @extend .__bt-button-dark-style;
-      text-transform: uppercase;
-      margin-top: 32px;
-    }
-    &--social {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 16px;
-      margin-top: 46px;
-      a {
-        display: inline-block;
-        line-height: 0;
-      }
-      img {
-        width: auto;
-        height: 32px;
-      }
-    }
-  }
-  @media (max-width: $break-xs) {
-    .bt-contact-information {
-      padding: 36px 20px;
-      &--head {
-        font-size: 24px;
-      }
-      &--desc {
-        font-size: 16px;
-      }
-    }
-  }
-}
-
 .__instagram-posts-style {
   .bt-ins-posts {
     &--head {

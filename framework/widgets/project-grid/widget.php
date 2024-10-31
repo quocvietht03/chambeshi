@@ -301,7 +301,7 @@ class Widget_ProjectGrid extends Widget_Base
 		);
 		
 		$this->add_control(
-			'date_color',
+			'date_background_hover_content',
 			[
 				'label' => __('Background Hover Content', 'chambeshi'),
 				'type' => Controls_Manager::COLOR,

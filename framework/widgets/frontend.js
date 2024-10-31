@@ -92,28 +92,6 @@
 		}
 
 	};
-	/* location list toggle */
-	var LocationListHandler = function ($scope, $) {
-		var buttonMore = $scope.find('.bt-more-info');
-		var contentList = $scope.find('.bt-location-list--content');
-		if (buttonMore.length > 0) {
-			buttonMore.on('click', function (e) {
-				e.preventDefault();
-				if ($(this).hasClass('active')) {
-					$(this).parent().find('.bt-location-list--content').slideUp();
-					$(this).removeClass('active');
-					$(this).children('span').text('More Information');
-				} else {
-					contentList.slideUp();
-					buttonMore.children('span').text('More Information');
-					buttonMore.removeClass('active');
-					$(this).parent().find('.bt-location-list--content').slideDown();
-					$(this).addClass('active');
-					$(this).children('span').text('Less Information');
-				}
-			});
-		}
-	};
 	/* Graph Progress */
 	var GraphProgressHandler = function ($scope, $) {
 		const $progressBars = $scope.find('.bt-progress-bar');
@@ -164,7 +142,6 @@
 	$(window).on('elementor/frontend/init', function () {
 		elementorFrontend.hooks.addAction('frontend/element_ready/bt-testimonial-slider.default', SliderSyncingHandler);
 		elementorFrontend.hooks.addAction('frontend/element_ready/bt-step-list.default', MoreStepsHandler);
-		elementorFrontend.hooks.addAction('frontend/element_ready/bt-location-list.default', LocationListHandler);
 		elementorFrontend.hooks.addAction('frontend/element_ready/bt-graph-progress.default', GraphProgressHandler);
 		elementorFrontend.hooks.addAction('frontend/element_ready/bt-list-faq.default', FaqHandler);
 	});

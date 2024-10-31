@@ -58,49 +58,6 @@
 		});
 	}
 
-	/* Orbit effect */
-	function ChambeshiOrbitEffect() {
-		if ($('.bt-orbit-enable').length > 0) {
-			var html = '<div class="bt-orbit-effect">' +
-				'<div class="bt-orbit-wrap">' +
-				'<div class="bt-orbit red"><span></span></div>' +
-				'<div class="bt-orbit blue"><span></span></div>' +
-				'<div class="bt-orbit yellow"><span></span></div>' +
-				'<div class="bt-orbit purple"><span></span></div>' +
-				'<div class="bt-orbit green"><span></span></div>' +
-				'</div>' +
-				'</div>';
-
-			$('.bt-site-main').append(html);
-		}
-	}
-
-	/* Cursor effect */
-	function ChambeshiCursorEffect() {
-		if ($('.bt-bg-pattern-enable').length > 0) {
-			var html = '<div class="bt-bg-pattern-effect"></div>';
-
-			$('.bt-site-main').append(html);
-		}
-	}
-
-	/* Buble effect */
-	function ChambeshiBubleEffect() {
-		if ($('.bt-bg-buble-enable').length > 0) {
-			var html = '<div class="bt-bg-buble-effect">' +
-				'<div class="bt-bubles-beblow"></div>' +
-				'<div class="bt-bubles-above"></div>'
-			'</div>';
-
-			$('.bt-social-mcn-ss').append(html);
-
-			for (let i = 0; i < 40; i++) {
-				$('.bt-bubles-beblow').append('<span class="buble"></span>');
-				$('.bt-bubles-above').append('<span class="buble"></span>');
-			}
-		}
-	}
-
 	/* Shop */
 	function ChambeshiShop() {
 		if ($('.single-product').length > 0) {
@@ -150,37 +107,6 @@
 				'</svg>');
 		}
 	}
-	/* Checkbox Custom Newsletter */
-	function ChambeshiCheckboxCustom() {
-		const $itemcheckbox = $('.tnp-privacy-field .tnp-privacy')
-		if (!$itemcheckbox.length) return;
-		const $divcheckbox = '<div class="checkmark"></div>';
-		$itemcheckbox.parent().append($divcheckbox);
-
-		if ($('.bt-newsletter-no-privacy').length > 0) {
-			var privacyCheckbox = $('.bt-newsletter-no-privacy input.tnp-privacy');
-			if (privacyCheckbox.length > 0 && !privacyCheckbox.prop('checked')) {
-				privacyCheckbox.prop('checked', true);
-			}
-		}
-	}
-	/* Border Top arch */
-	function ChambeshiBorderTop() {
-		var elements = document.querySelectorAll('.bt-border-top-arch');
-		if (window.innerWidth >= 768) {
-			elements.forEach(function (element) {
-				var width = element.offsetWidth;
-				var borderRadius = width / 2 + 'px';
-				element.style.borderTopLeftRadius = borderRadius;
-				element.style.borderTopRightRadius = borderRadius;
-			});
-		} else {
-			elements.forEach(function (element) {
-				element.style.borderTopLeftRadius = '';
-				element.style.borderTopRightRadius = '';
-			});
-		}
-	};
 	/* Get width body */
 	function ChambeshiUpdateBodyWidthVariable() {
 		var widthBody = $(window).width();
@@ -260,13 +186,8 @@
 		ChambeshiSubmenuAuto();
 		ChambeshiToggleMenuMobile();
 		ChambeshiToggleSubMenuMobile();
-		ChambeshiOrbitEffect();
-		ChambeshiCursorEffect();
-		ChambeshiBubleEffect();
-		ChambeshiShop();
+		//ChambeshiShop();
 		ChambeshiUnitsCustom();
-		ChambeshiCheckboxCustom();
-		ChambeshiBorderTop();
 		ChambeshiUpdateBodyWidthVariable();
 		ChambeshiCounter();
 		ChambeshiMegaMenuAddClass();
@@ -275,7 +196,6 @@
 
 	jQuery(window).on('resize', function () {
 		ChambeshiSubmenuAuto();
-		ChambeshiBorderTop();
 		ChambeshiUpdateBodyWidthVariable();
 	});
 
