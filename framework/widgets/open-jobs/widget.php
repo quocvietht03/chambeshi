@@ -95,7 +95,7 @@ class Widget_OpenJobs extends Widget_Base
 		$this->add_control(
 			'list',
 			[
-				'label' => __('List Time', 'chambeshi'),
+				'label' => __('List Jobs', 'chambeshi'),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [

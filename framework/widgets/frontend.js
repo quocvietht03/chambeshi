@@ -137,13 +137,51 @@
 			});
 		}
 	};
+	var BrandSliderHandler = function ($scope, $) {
+		const $brandslider = $scope.find('.bt-elwg-brand-slider--default');
+		if ($brandslider.length > 0) {
+			const $item = $brandslider.data('item');
+			const $itemTablet = $brandslider.data('item-tablet');
+			const $itemMobile = $brandslider.data('item-mobile');
+			const $speed = $brandslider.data('speed');
+			const $spaceBetween = $brandslider.data('spacebetween');
 
+			const $swiper = new Swiper($brandslider[0], {
+				slidesPerView: $itemMobile,
+				loop: true,
+				spaceBetween: $spaceBetween,
+				speed: $speed,
+				freeMode:true,
+				allowTouchMove: true,
+				autoplay:
+				{
+					delay: 0,
+					disableOnInteraction: false,
+				},
+				breakpoints: {
+					1024: {
+						slidesPerView: $item,
+					},
+					768: {
+						slidesPerView: $itemTablet,
+					},
+				},
+			});
+			$brandslider[0].addEventListener('mouseenter', () => {
+				$swiper.autoplay.stop();
+			});
+			$brandslider[0].addEventListener('mouseleave', () => {
+				$swiper.autoplay.start();
+			});
+		}
+	};
 	// Make sure you run this code under Elementor.
 	$(window).on('elementor/frontend/init', function () {
 		elementorFrontend.hooks.addAction('frontend/element_ready/bt-testimonial-slider.default', SliderSyncingHandler);
 		elementorFrontend.hooks.addAction('frontend/element_ready/bt-step-list.default', MoreStepsHandler);
 		elementorFrontend.hooks.addAction('frontend/element_ready/bt-graph-progress.default', GraphProgressHandler);
 		elementorFrontend.hooks.addAction('frontend/element_ready/bt-list-faq.default', FaqHandler);
+		elementorFrontend.hooks.addAction('frontend/element_ready/bt-brand-slider.default', BrandSliderHandler);
 	});
 
 })(jQuery);
