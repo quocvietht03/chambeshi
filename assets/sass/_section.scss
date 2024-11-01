@@ -979,6 +979,16 @@ body {
                             }
                         }
                     }
+                    @media(min-width:2000px){
+                        &:last-child{
+                            left: 29%;
+                        }
+                    }
+                    @media(min-width:2280px){
+                        &:last-child{
+                            left: 32%;
+                        }
+                    }
                     @media (max-width: 1260px) and (min-width: $break-tl) {
                         &:nth-child(2) {
                             > .elementor-element {
