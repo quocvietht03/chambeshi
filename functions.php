@@ -108,7 +108,6 @@ require_once get_template_directory() . '/install/import-pack/import-functions.p
 require_once get_template_directory() . '/framework/cpt-team.php';
 require_once get_template_directory() . '/framework/cpt-service.php';
 require_once get_template_directory() . '/framework/cpt-project.php';
-require_once get_template_directory() . '/framework/cpt-company.php';
 require_once get_template_directory() . '/framework/cpt-testimonial.php';
 /* ACF Options */
 require_once get_template_directory() . '/framework/acf-options.php';
