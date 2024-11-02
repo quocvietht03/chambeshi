@@ -147,6 +147,18 @@ class Widget_PostLoopItemStyle1 extends Widget_Base
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
+
+		$this->add_control(
+			'background_content',
+			[
+				'label' => __('Background Content', 'chambeshi'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .bt-post--content' => 'background: {{VALUE}};',
+				],
+			]
+		);
 		$this->add_control(
 			'tags_style',
 			[

@@ -275,16 +275,15 @@ class Widget_BrandSlider extends Widget_Base
             return;
         }
         $slider_item_desktop = $settings['slider_item']['size'] ?? $settings['slider_item'];
-        $slider_item_tablet = $settings['slider_item_tablet'] ?? $slider_item_desktop;
-        $slider_item_mobile = $settings['slider_item_mobile'] ?? $slider_item_desktop;
-
+        $slider_item_tablet = $settings['slider_item_tablet'] ?? 4;
+        $slider_item_mobile = $settings['slider_item_mobile'] ?? 2;
         $slider_speed = $settings['slider_speed'];
         $slider_space_between = $settings['slider_spacebetween'];
         $slider_blur = $settings['slider_blur'] === 'yes' ? true : false;
 ?>
         <div class="bt-elwg-brand-slider--default swiper <?php if ($slider_blur) {
                                                                 echo 'bt-slider-blur';
-                                                            } ?>" data-item="<?php echo esc_attr($slider_item_desktop) ?>" data-item-tablet="<?php echo esc_attr($slider_item_tablet) ?>" data-item-mobile="<?php echo esc_attr($slider_item_mobile) ?>" data-speed="<?php echo esc_attr($slider_speed) ?>" data-spacebetween="<?php echo esc_attr($slider_space_between) ?>">
+                                                            } ?>" data-item="<?php echo esc_attr($slider_item_desktop) ?>" data-item-tablet="<?php echo !empty($slider_item_tablet) ? $slider_item_tablet : 4; ?>" data-item-mobile="<?php echo !empty($slider_item_mobile) ? $slider_item_mobile : 2; ?>" data-speed="<?php echo esc_attr($slider_speed) ?>" data-spacebetween="<?php echo esc_attr($slider_space_between) ?>">
             <ul class="bt-brand-slider swiper-wrapper">
                 <?php
                 foreach ($settings['list'] as $index => $item) {
