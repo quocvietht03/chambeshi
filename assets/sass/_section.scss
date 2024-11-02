@@ -414,17 +414,7 @@ body {
                                     padding: 0 15px 30px 15px;
                                 }
                             }
-                            @media (max-width: $break-xs) {
-                                &--content {
-                                    padding: 0 15px 30px 15px;
-                                }
-                                &--info {
-                                    gap: 14px 10px;
-                                    .bt-reading-time {
-                                        gap: 10px;
-                                    }
-                                }
-                            }
+                       
                         }
                     }
                 }

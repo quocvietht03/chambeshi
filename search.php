@@ -6,13 +6,16 @@ get_template_part('framework/templates/site', 'titlebar');
 <main id="bt_main" class="bt-site-main">
 	<div class="bt-main-content-ss">
 		<div class="bt-container">
+			<div class="bt-form-search">
+			<?php get_search_form(); ?>
+			</div>
 			<?php
 			if (have_posts()) {
 			?>
-				<div class="bt-list-post">
+				<div class="bt-list-post-grid">
 					<?php
 					while (have_posts()) : the_post();
-						get_template_part('framework/templates/post');
+					get_template_part( 'framework/templates/post', 'style', array('image-size' => 'large')); 
 					endwhile;
 					?>
 				</div>

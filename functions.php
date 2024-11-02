@@ -169,3 +169,10 @@ function bt_custom_posts_per_page($query) {
 		$query->set( 'posts_per_page', 12 );
 	}
 };
+/* Custom Search Post */
+function bt_custom_search_to_posts($query) {
+    if ($query->is_search() && !is_admin() && $query->is_main_query()) {
+        $query->set('post_type', 'post');
+    }
+}
+add_action('pre_get_posts', 'bt_custom_search_to_posts');
