@@ -19,6 +19,17 @@
             }
           }
         }
+        .elementor-icon-list-items{
+          .elementor-icon-list-item{
+            a{
+              &:hover{
+                span{
+                  color: $color-accent;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -53,6 +64,17 @@
           .bt-elwg-site-copyright {
             a {
               color: $color-secondary;
+            }
+          }
+        }
+        .elementor-icon-list-items{
+          .elementor-icon-list-item{
+            a{
+              &:hover{
+                span{
+                  color: $color-accent;
+                }
+              }
             }
           }
         }
@@ -113,6 +135,17 @@
             &:last-child{
               .bt-elwg-site-copyright a{
                 color: $color-secondary;
+              }
+            }
+          }
+        }
+        .elementor-icon-list-items{
+          .elementor-icon-list-item{
+            a{
+              &:hover{
+                span{
+                  color: $color-accent;
+                }
               }
             }
           }

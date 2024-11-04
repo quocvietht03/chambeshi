@@ -1424,7 +1424,7 @@
     }
     span {
       color: $color-primary;
-      font-family: $accent-font;
+      font-family: $secondary-font;
       font-size: 16px;
       font-style: normal;
       font-weight: 500;
@@ -1432,7 +1432,7 @@
       text-transform: capitalize;
       background: $color-secondary;
       border-radius: 10px;
-      padding: 9px 27px 10px;
+      padding: 8px 27px;
     }
   }
   &--list {
