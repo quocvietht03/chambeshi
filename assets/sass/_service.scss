@@ -82,7 +82,10 @@
       line-height: normal;
       a {
         color: $color-primary;
-        &:hover {
+      }
+      &:hover {
+        color: $color-accent;
+        a{
           color: $color-accent;
         }
       }
@@ -209,7 +212,10 @@
       position: relative;
       a {
         color: $color-primary;
-        &:hover {
+      }
+      &:hover {
+        color: $color-accent;
+        a{
           color: $color-accent;
         }
       }
