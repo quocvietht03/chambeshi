@@ -685,17 +685,19 @@
             &:first-child {
               > .elementor-element {
                 &:last-child {
-                  clip-path: none;
+               //   clip-path: none;
                 }
               }
             }
             &:last-child {
               &.bt-col-button-header-style-1 {
                 margin-top: 0;
+                --width: calc(23% + 50px);
+                --margin-left: -50px;
                 > .elementor-element {
                   .elementor-button-wrapper {
                     .elementor-button {
-                      clip-path: none;
+                      clip-path: polygon(50px 0, 100% 0, 100% 100%, 0 100%);
                     }
                   }
                 }
