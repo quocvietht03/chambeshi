@@ -418,6 +418,9 @@
         line-height: 1.3;
         padding-left: 60px;
         margin: 15px 0 15px 0;
+        @media (max-width: $break-lg) {
+          padding-left: 0;
+        }
         @media (max-width: $break-xs) {
           font-size: 30px;
         }
