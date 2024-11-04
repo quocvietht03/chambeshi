@@ -1454,15 +1454,7 @@
       @media (max-width: $break-sm) {
         width: 100%;
       }
-      @media (max-width: $break-xs) {
-        &--content {
-          padding-left: 15px;
-          padding-right: 15px;
-        }
-        &--infor {
-          padding-left: 15px;
-        }
-      }
+
     }
   }
   @media (max-width: $break-sm) {
