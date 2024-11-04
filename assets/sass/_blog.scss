@@ -891,24 +891,24 @@
     }
     @media (max-width: 1275px) and (min-width: $break-tl) {
       &--content {
-          padding: 0 15px 30px 15px;
+        padding: 0 15px 30px 15px;
       }
-  }
-  @media (max-width: 860px) and (min-width: $break-sm) {
+    }
+    @media (max-width: 860px) and (min-width: $break-sm) {
       &--content {
-          padding: 0 15px 30px 15px;
+        padding: 0 15px 30px 15px;
       }
-  }
+    }
     @media (max-width: $break-xs) {
       &--content {
-          padding: 0 15px 30px 15px;
-           flex-wrap: wrap;
+        padding: 0 15px 30px 15px;
+        flex-wrap: wrap;
       }
       &--info {
-          gap: 14px 10px;
-          .bt-reading-time {
-              gap: 10px;
-          }
+        gap: 14px 10px;
+        .bt-reading-time {
+          gap: 10px;
+        }
       }
       &--infor {
         width: 100%;
@@ -939,7 +939,7 @@
           height: auto;
         }
       }
-  }
+    }
   }
 }
 
@@ -1369,34 +1369,38 @@
     &--content {
       background: #f0f7f3;
     }
+    @media (max-width: $break-tl) and (min-width: $break-md) {
+      &--content {
+        padding: 0 15px 30px 15px;
+      }
+    }
   }
-  @media (min-width: $break-md) {
+  @media (min-width: $break-sm) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 .search .bt-list-post-grid {
-  @media (min-width: $break-md) {
+  @media (min-width: $break-sm) {
     grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: $break-lg) {
     grid-template-columns: repeat(3, 1fr);
   }
-
 }
-.bt-form-search{
-  form{
+.bt-form-search {
+  form {
     display: flex;
     margin-bottom: 25px;
-    label{
+    label {
       margin: 0;
       width: 100%;
-      input{
+      input {
         width: 100%;
         border-right: none;
         border-radius: 10px 0 0 10px;
       }
     }
-    input[type=submit]{
+    input[type="submit"] {
       border-radius: 0 10px 10px 0;
     }
   }
@@ -1450,7 +1454,7 @@
       @media (max-width: $break-sm) {
         width: 100%;
       }
-      @media(max-width:$break-xs){
+      @media (max-width: $break-xs) {
         &--content {
           padding-left: 15px;
           padding-right: 15px;
