@@ -889,15 +889,55 @@
       padding-top: 9px;
       margin-top: 14px;
     }
+    @media (max-width: 1275px) and (min-width: $break-tl) {
+      &--content {
+          padding: 0 15px 30px 15px;
+      }
+  }
+  @media (max-width: 860px) and (min-width: $break-sm) {
+      &--content {
+          padding: 0 15px 30px 15px;
+      }
+  }
     @media (max-width: $break-xs) {
       &--content {
           padding: 0 15px 30px 15px;
+           flex-wrap: wrap;
       }
       &--info {
           gap: 14px 10px;
           .bt-reading-time {
               gap: 10px;
           }
+      }
+      &--infor {
+        width: 100%;
+        padding: 0;
+      }
+      &--publish {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin: 15px 0 10px;
+        gap: 6px;
+        align-items: flex-start;
+        .bt-icon {
+          width: auto;
+          height: auto;
+          background: transparent;
+        }
+        .bt-date {
+          span {
+            margin: 0 !important;
+            font-size: 16px !important;
+            font-weight: 500;
+            display: inline-block;
+          }
+        }
+        svg {
+          width: 20px;
+          height: auto;
+        }
       }
   }
   }

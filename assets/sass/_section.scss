@@ -398,29 +398,6 @@ body {
             }
         }
     }
-    &.bt-section-blog-home1 {
-        > .elementor-element {
-            > .e-con-inner {
-                > .elementor-element {
-                    .bt-elwg-post-loop-item--default {
-                        .bt-post {
-                            @media (max-width: 1275px) and (min-width: $break-tl) {
-                                &--content {
-                                    padding: 0 15px 30px 15px;
-                                }
-                            }
-                            @media (max-width: 860px) and (min-width: $break-sm) {
-                                &--content {
-                                    padding: 0 15px 30px 15px;
-                                }
-                            }
-                       
-                        }
-                    }
-                }
-            }
-        }
-    }
     &.bt-grid-solutions {
         .elementor-image-box-wrapper {
             display: flex;
