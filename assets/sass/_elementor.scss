@@ -2011,3 +2011,19 @@
     }
   }
 }
+.bt-icon-box-phone {
+  > .elementor-widget-container {
+    .elementor-icon-box-title {
+      a {
+        position: relative;
+        padding-bottom: 30px;
+        display: block;
+      }
+    }
+    .elementor-icon-box-description {
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px !important;
+      margin-top: -30px;
+    }
+  }
+}
