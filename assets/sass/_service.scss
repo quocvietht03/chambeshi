@@ -82,6 +82,9 @@
       line-height: normal;
       a {
         color: $color-primary;
+        &:hover {
+          color: $color-accent;
+        }
       }
     }
     &--excerpt {
@@ -206,6 +209,9 @@
       position: relative;
       a {
         color: $color-primary;
+        &:hover {
+          color: $color-accent;
+        }
       }
     }
     &--excerpt {
@@ -373,6 +379,7 @@
         .bt-cover-image {
           padding-bottom: 53%;
           border-radius: 20px;
+          min-height: 325px;
         }
       }
       &--infor {
@@ -480,10 +487,10 @@
           margin: 0;
           border-radius: 0 0 20px 20px;
           @media (max-width: 1500px) {
-            padding: 20px 32px;
+            padding: 30px 32px;
           }
           @media (max-width: $break-xs) {
-            padding: 12px 16px;
+            padding: 25px 15px;
           }
           &--item {
             align-items: center;
@@ -567,7 +574,7 @@
           border-radius: 20px;
 
           @media (max-width: $break-lg) {
-            padding: 20px;
+            padding: 30px 15px;
           }
           .bt-calling-us {
             text-align: center;
