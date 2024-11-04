@@ -16,6 +16,11 @@
     font-weight: inherit;
     letter-spacing: inherit;
   }
+  a{
+    &:hover{
+      color: $color-accent;
+    }
+  }
 }
 .elementor-headline,
 .elementor-widget-image img {

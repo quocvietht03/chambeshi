@@ -331,12 +331,14 @@
             }
             @media (max-width: 600px) {
               .bt-elwg-site-infor {
-                column-gap: 12px;
                 &--item {
                   &::before {
                     opacity: 0;
                   }
-                  span {
+                  &.email {
+                    display: none;
+                  }
+                  strong {
                     display: none;
                   }
                   svg {
@@ -521,12 +523,14 @@
                   }
                 }
                 @media (max-width: 600px) {
-                  column-gap: 12px;
                   &--item {
                     &::before {
                       opacity: 0;
                     }
-                    span {
+                    &.email {
+                      display: none;
+                    }
+                    strong {
                       display: none;
                     }
                     svg {
@@ -685,7 +689,7 @@
             &:first-child {
               > .elementor-element {
                 &:last-child {
-               //   clip-path: none;
+                  //   clip-path: none;
                 }
               }
             }
@@ -721,12 +725,14 @@
             }
           }
           @media (max-width: 600px) {
-            column-gap: 12px;
             &--item {
               &::before {
                 opacity: 0;
               }
-              span {
+              &.email {
+                display: none;
+              }
+              strong {
                 display: none;
               }
               svg {

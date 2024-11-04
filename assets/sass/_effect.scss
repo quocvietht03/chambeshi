@@ -318,22 +318,26 @@ body {
 }
 .bt-play-btn-effect {
 	.elementor-icon-box-icon {
-		-webkit-animation: effectPlayButton 2s infinite;
-		animation: effectPlayButton 2s infinite;
-		border-radius: 50%;
-		> a {
-			display: block;
+		@media (min-width: $break-sm) {
+			-webkit-animation: effectPlayButton 2s infinite;
+			animation: effectPlayButton 2s infinite;
+			border-radius: 50%;
+			> a {
+				display: block;
+			}
 		}
 	}
 }
 .bt-play-btn-effect2 {
 	.elementor-icon-box-icon,
 	.elementor-icon {
-		-webkit-animation: effectPlayButton2 2s infinite;
-		animation: effectPlayButton2 2s infinite;
-		border-radius: 50%;
-		> a {
-			display: block;
+		@media (min-width: $break-sm) {
+			-webkit-animation: effectPlayButton2 2s infinite;
+			animation: effectPlayButton2 2s infinite;
+			border-radius: 50%;
+			> a {
+				display: block;
+			}
 		}
 	}
 }
@@ -347,7 +351,9 @@ body {
 		position: relative;
 		overflow: hidden;
 
-		.elementor-button-content-wrapper,span,svg {
+		.elementor-button-content-wrapper,
+		span,
+		svg {
 			position: relative;
 			z-index: 1;
 		}
@@ -368,7 +374,7 @@ body {
 			&::before {
 				transform: translate(-50%, 50%) scale(1.8);
 			}
-			svg{
+			svg {
 				fill: $color-accent;
 			}
 		}
@@ -383,7 +389,9 @@ body {
 		position: relative;
 		overflow: hidden;
 
-		.elementor-button-content-wrapper,span,svg {
+		.elementor-button-content-wrapper,
+		span,
+		svg {
 			position: relative;
 			z-index: 1;
 		}
@@ -404,7 +412,7 @@ body {
 			&::before {
 				transform: translate(-50%, 50%) scale(1.8);
 			}
-			svg{
+			svg {
 				fill: $color-accent;
 			}
 		}
