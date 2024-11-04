@@ -1388,9 +1388,31 @@
   }
 }
 .bt-form-search {
+  padding-bottom: 60px;
+  border-bottom: 1px solid #e6e5e6;
+  margin-bottom: 60px; 
+  @media(max-width:$break-sm){
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+  }
+  .bt-form-head{
+    color: $color-primary;
+    font-family: $secondary-font;
+    font-size: 45px;
+    font-weight: 600;
+    margin: 0 0 30px 0;
+    text-transform: capitalize;
+    @media(max-width:$break-sm){
+      font-size: 35px;
+      margin: 0 0 20px 0;
+    }
+    @media(max-width:$break-xs){
+      font-size: 32px;
+    }
+  }
   form {
     display: flex;
-    margin-bottom: 25px;
+    margin-bottom: 0;
     label {
       margin: 0;
       width: 100%;
