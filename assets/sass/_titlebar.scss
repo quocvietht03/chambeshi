@@ -38,7 +38,7 @@
         font-size: 45px;
       }
       @media (max-width: $break-sm) {
-        margin-top: 8px;
+        margin-top: 10px;
         .single &{
           font-size: 36px;
         }
@@ -61,6 +61,7 @@
       position: relative;
       border-radius: 10px;
       white-space: nowrap;
+      
       &:before {
         content: "";
         width: 48px;
@@ -89,9 +90,9 @@
         margin: 0;
         font-size: 16px;
         grid-gap: 6px;
-        display: block;
         text-align: left;
         white-space: none;
+        flex-wrap: wrap;
         &:before {
           width: 16px;
           height: 16px;

@@ -16,8 +16,8 @@
     font-weight: inherit;
     letter-spacing: inherit;
   }
-  a{
-    &:hover{
+  a {
+    &:hover {
       color: $color-accent !important;
     }
   }
@@ -414,14 +414,15 @@
     }
   }
   @media (max-width: $break-sm) {
-    // padding: 12px 24px 12px 32px;
     background: transparent !important;
-    padding: 0 0 0 18px;
+    padding: 0 0 0 26px;
     .icon-breadcrumb {
       width: auto;
       height: auto;
       background: transparent !important;
-      left: -8px;
+      left: 0;
+      transform: none;
+      top: 2px;
       img,
       svg {
         width: 16px;
@@ -1553,7 +1554,7 @@
           transform: translate(-50%, 50%) scale(0);
           transition: transform 0.9s ease;
         }
-        span{
+        span {
           position: relative;
           z-index: 1;
         }
