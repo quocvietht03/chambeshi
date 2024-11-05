@@ -70,18 +70,6 @@ class Widget_PageBreadcrumb extends Widget_Base
 		);
 
 		$this->add_control(
-			'icon_color',
-			[
-				'label' => __('Icon Color', 'chambeshi'),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .bt-page-breadcrumb .bt-deli' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
 			'bg_color_breadcrumb',
 			[
 				'label' => __('Background Color', 'chambeshi'),
