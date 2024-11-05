@@ -422,7 +422,7 @@
       background: transparent !important;
       left: 0;
       transform: none;
-      top: 2px;
+      top: 1px;
       img,
       svg {
         width: 16px;
@@ -431,6 +431,9 @@
     }
     .bt-page-breadcrumb {
       color: #fff !important;
+      .bt-deli{
+        color: #fff !important;
+      }
     }
   }
 }

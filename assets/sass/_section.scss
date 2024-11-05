@@ -384,6 +384,9 @@ body {
                                     border-bottom: 6px solid transparent;
                                     &.elementor-active {
                                         border-color: #fff;
+                                        @media (max-width: 650px) {
+                                            color: $color-secondary;
+                                        }
                                     }
                                 }
                             }
