@@ -406,7 +406,9 @@
     word-break: break-word;
     display: flex;
     grid-gap: 10px;
-
+    .bt-deli{
+      color: currentcolor !important;
+    }
     @media (max-width: $break-sm) {
       font-size: 16px;
       grid-gap: 6px;
