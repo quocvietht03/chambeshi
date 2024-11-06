@@ -160,7 +160,7 @@
 .select2-results__option,
 .elementor-editor-active .select2-results__option {
   padding: 8px 24px !important;
-  font-size: 15px !important;
+  font-size: 18px !important;
   line-height: 150% !important;
 }
 
@@ -882,7 +882,7 @@
       height: 79px;
 
       @media (max-width: 1024.98px) {
-        padding: 29.22px 160px 27.78px 50.7px;
+        padding: 29.22px 170px 27.78px 50.7px;
         background-position: center left 20px;
       }
 
@@ -900,12 +900,15 @@
 
     input.tnp-email,
     input.tnp-email::placeholder {
-      font-size: 16px;
+      font-size: 18px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
       color: $color-text;
       font-family: $text-font;
+      @media(max-width:$break-sm){
+        font-size: 16px;
+      }
     }
 
     input.tnp-submit {
@@ -914,7 +917,7 @@
       right: 0;
       width: unset;
       min-width: 216px;
-      font-size: 16px;
+      font-size: 18px;
       font-family: $secondary-font;
       font-style: normal;
       font-weight: 600;
@@ -938,6 +941,7 @@
 
       @media (max-width: 767.98px) {
         height: 47px;
+        font-size: 16px;
       }
 
       @media (max-width: 575.98px) {

@@ -39,7 +39,7 @@
     input:not([type="checkbox"], [type="radio"]),
     select,
     textarea {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 400;
       line-height: normal;
       height: auto;
@@ -78,7 +78,7 @@
         }
         .select2-selection__placeholder {
           color: $color-text;
-          font-size: 16px;
+          font-size: 18px;
           font-weight: 400;
           line-height: normal;
         }
@@ -86,7 +86,7 @@
           line-height: 50px;
           color: $color-text;
           padding-left: 28px;
-          font-size: 16px;
+          font-size: 18px;
           font-weight: 400;
           line-height: normal;
         }
@@ -105,9 +105,12 @@
     }
     .ginput_container_checkbox {
       margin-top: 9px;
+      .gchoice{
+        align-items: center;
+      }
       label {
         color: $color-text;
-        font-size: 16px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -124,7 +127,7 @@
     }
   }
   .gform_footer {
-    margin-block-start: 15px;
+    margin-block-start: 29px;
     input[type="submit"] {
       display: inline-block !important;
       font-size: 18px !important;
