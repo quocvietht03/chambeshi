@@ -389,64 +389,6 @@ class Widget_PostGridStyle1 extends Widget_Base {
 		$this->end_controls_section();
 
 		$this->start_controls_section(
-			'section_style_image',
-			[
-				'label' => esc_html__( 'Image', 'chambeshi' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'img_border_radius',
-			[
-				'label' => __( 'Border Radius', 'chambeshi' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%' ],
-				'selectors' => [
-					'{{WRAPPER}} .bt-post--featured .bt-cover-image' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->start_controls_tabs( 'thumbnail_effects_tabs' );
-
-		$this->start_controls_tab( 'thumbnail_tab_normal',
-			[
-				'label' => __( 'Normal', 'chambeshi' ),
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Css_Filter::get_type(),
-			[
-				'name' => 'thumbnail_filters',
-				'selector' => '{{WRAPPER}} .bt-post--featured img',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->start_controls_tab( 'thumbnail_tab_hover',
-			[
-				'label' => __( 'Hover', 'chambeshi' ),
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Css_Filter::get_type(),
-			[
-				'name' => 'thumbnail_hover_filters',
-				'selector' => '{{WRAPPER}} .bt-post:hover .bt-post--featured img',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
-		$this->end_controls_section();
-
-		$this->start_controls_section(
 			'section_style_content',
 			[
 				'label' => esc_html__( 'Content', 'chambeshi' ),
