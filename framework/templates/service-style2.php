@@ -22,7 +22,7 @@ if (!empty($icon_svg)) {
                 </div>
             <?php } else { ?>
                 <div class="bt-post--icon">
-                    <img src="<?php echo $thumb; ?>">
+                    <img src="<?php echo esc_url($thumb); ?>">
                 </div>
             <?php } ?>
 

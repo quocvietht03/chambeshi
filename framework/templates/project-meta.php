@@ -38,9 +38,8 @@ if (function_exists('get_field')) {
                 <span><?php echo esc_html__( 'Category:', 'chambeshi' ) ?></span>
                 <div class="bt-value">
                     <?php foreach ($terms as $key => $term) {
-                        if ($key != 0)
-                            echo ', ';
-                        echo $term->name;
+                        if ($key != 0) echo ', ';
+                        echo esc_html($term->name);
                     } ?>
                 </div>
             </div>
@@ -123,9 +122,7 @@ if (function_exists('get_field')) {
             </div>
             <div class="bt-item--info">
                 <span><?php echo esc_html__('Location:','chambeshi') ?></span>
-                <div class="bt-value">
-                    <?php echo $location; ?>
-                </div>
+                <?php echo '<div class="bt-value">' . $location . '</div>'; ?>
             </div>
         </div>
     <?php } ?>

@@ -820,14 +820,15 @@ if (!function_exists('chambeshi_custom_comment')) {
           foreach ($featured as $item) {
           ?>
             <div class="bt-counter">
-              <h3 class="bt-head"><?php echo esc_attr($item['top_label']) ?></h3>
+              <?php echo '<h3 class="bt-head">' . $item['top_label'] . '</h3>'; ?>
               <div class="bt-number-wrapper">
-                <span class="bt-before-number"><?php echo esc_attr($item['before_number']) ?></span>
-                <span class="bt-number"
-                  data-count="<?php echo esc_attr($item['number']) ?>"><?php echo esc_attr(number_format($item['number'])) ?></span>
-                <span class="bt-affter-number"><?php echo esc_attr($item['after_number']) ?></span>
+                <?php 
+                  echo '<span class="bt-before-number">' . $item['before_number'] . '</span>';
+                  echo '<span class="bt-number" data-count="' . esc_attr($item['number']) . '">' . number_format($item['number']) . '</span>';
+                  echo '<span class="bt-affter-number">' . $item['after_number'] . '</span>';
+                ?>
               </div>
-              <h3 class="bt-head-bottom"><?php echo esc_attr($item['bottom_label']) ?></h3>
+              <?php echo '<h3 class="bt-head-bottom">' . $item['bottom_label'] . '</h3>'; ?>
             </div>
           <?php
           }

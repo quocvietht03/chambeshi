@@ -9,7 +9,7 @@ $icon_lively = get_field('icon_lively_service', $post_id);
     <div class="bt-post--infor">
       <div class="bt-post--icon-lively">
       <?php if (!empty($icon_lively['url'])) { ?>
-        <img src="<?php echo $icon_lively['url'] ?>" />
+        <img src="<?php echo esc_url($icon_lively['url']); ?>" />
         <?php } ?>
       </div>
       <?php echo chambeshi_post_title_render();

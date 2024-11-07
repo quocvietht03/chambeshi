@@ -278,7 +278,7 @@ class Widget_ServiceLoopItemMenu extends Widget_Base
                     <div class="bt-post--inner">
                         <?php if (!empty($thumb)) { ?>
                             <div class="bt-post--icon">
-                                <img src="<?php echo $thumb; ?>">
+                                <img src="<?php echo esc_url($thumb); ?>">
                             </div>
                         <?php } ?>
                         <div class="bt-post--infor">

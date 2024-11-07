@@ -191,10 +191,12 @@ $featured = get_field('featured', get_the_ID());
 								?>
 										<div class="bt-counter">
 											<div class="bt-number-wrapper">
-												<span class="bt-number" data-count="<?php echo esc_attr($item['number']) ?>"><?php echo esc_attr($item['number']) ?></span>
-												<span class="bt-affter-number"><?php echo esc_attr($item['after_number']) ?></span>
+												<?php 
+													echo '<span class="bt-number" data-count="' . esc_attr($item['number']) . '">' . $item['number'] . '</span>';
+													echo '<span class="bt-affter-number">' . $item['after_number'] . '</span>'; 
+												?>
 											</div>
-											<h3 class="bt-head"><?php echo esc_attr($item['heading']) ?></h3>
+											<?php echo '<h3 class="bt-head">' . $item['heading'] . '</h3>'; ?>
 										</div>
 								<?php
 									}
@@ -215,7 +217,7 @@ $featured = get_field('featured', get_the_ID());
 	<?php
 	if (!empty($feature_section['shortcode_feature'])) {
 		$id_template = $feature_section['shortcode_feature']->ID;
-		echo do_shortcode('[elementor-template id="' . $id_template . '"]');
+		echo do_shortcode('[elementor-template id="' . esc_attr($id_template) . '"]');
 	}
 	?>
 </main><!-- #main -->

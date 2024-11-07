@@ -48,7 +48,7 @@ class Widget_PageBreadcrumb extends Widget_Base
 		$this->add_control(
 			'icon_breadcrumb',
 			[
-				'label' => esc_html__('Choose Home Image', 'textdomain'),
+				'label' => esc_html__('Choose Home Image', 'chambeshi'),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),

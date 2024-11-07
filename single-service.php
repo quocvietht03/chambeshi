@@ -136,7 +136,7 @@ if (function_exists('get_field')) {
 											<div class="bt-label">
 												<?php
 												if (!empty($phone_sv['label'])) {
-													echo $phone_sv['label'];
+													echo esc_html($phone_sv['label']);
 												} else {
 													echo esc_html__('Any questions?', 'chambeshi');
 												}
@@ -145,7 +145,7 @@ if (function_exists('get_field')) {
 											<div class="bt-sub-label">
 												<?php
 												if (!empty($phone_sv['sub_label'])) {
-													echo $phone_sv['sub_label'];
+													echo esc_html($phone_sv['sub_label']);
 												} else {
 													echo esc_html__('Please call us at the number provided below.', 'chambeshi');
 												}
@@ -159,7 +159,7 @@ if (function_exists('get_field')) {
 											</div>
 											<?php
 											if (!empty($phone_sv['cta_text']) && !empty($phone_sv['cta_url'])) {
-												echo '<a class="bt-cta" href="' . $phone_sv['cta_url'] . '"><span>' . $phone_sv['cta_text'] . '</span></a>';
+												echo '<a class="bt-cta" href="' . esc_url($phone_sv['cta_url']) . '"><span>' . $phone_sv['cta_text'] . '</span></a>';
 											}
 											?>
 										</div>
@@ -184,7 +184,7 @@ if (function_exists('get_field')) {
 							<?php if (!empty($thumb)) { ?>
 								<div class="bt-post--infor">
 									<div class="bt-post--info">
-										<img src="<?php echo $thumb; ?>" alt="<?php echo get_the_title($post_id); ?>">
+										<img src="<?php echo esc_url($thumb); ?>" alt="<?php echo get_the_title($post_id); ?>">
 									</div>
 								</div>
 							<?php } ?>

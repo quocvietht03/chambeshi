@@ -343,7 +343,7 @@ class Widget_OpenJobs extends Widget_Base
 				?>
 					<li class="bt-jobs--item">
 						<div class="bt-jobs--number">
-							<?php echo ($index + 1) . '.' ?>
+							<?php echo esc_html($index + 1) . '.' ?>
 						</div>
 						<div class="bt-jobs--infor">
 							<div class="bt-jobs--info">
