@@ -54,6 +54,9 @@
       height: 57px;
       border-radius: 10px;
       background: #f0f7f3;
+      @media(max-width:767px){
+        font-size: 16px;
+      }
     }
     textarea {
       min-block-size: auto !important;
@@ -67,7 +70,7 @@
         border-color: #d8d8d8;
         border-radius: 10px;
         background: #f0f7f3;
-        .select2-selection__clear{
+        .select2-selection__clear {
           position: absolute;
           background: transparent !important;
           box-shadow: none !important;
@@ -81,6 +84,9 @@
           font-size: 18px;
           font-weight: 400;
           line-height: normal;
+          @media(max-width:767px){
+            font-size: 16px;
+          }
         }
         .select2-selection__rendered {
           line-height: 50px;
@@ -89,6 +95,9 @@
           font-size: 18px;
           font-weight: 400;
           line-height: normal;
+          @media(max-width:767px){
+            font-size: 16px;
+          }
         }
         .select2-selection__arrow {
           height: 57px;
@@ -105,21 +114,23 @@
     }
     .ginput_container_checkbox {
       margin-top: 9px;
-      .gchoice{
-        align-items: center;
-      }
       label {
         color: $color-text;
         font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @media(max-width:767px){
+          font-size: 16px;
+        }
       }
       input {
         border-radius: 3px;
         border: 1px solid #cacaca;
         background: #fff;
         box-shadow: none !important;
+        position: relative;
+        top: 2px;
         &::before {
           color: $color-accent;
         }
@@ -128,6 +139,9 @@
   }
   .gform_footer {
     margin-block-start: 29px;
+    @media(max-width:767px){
+      margin-block-start: 20px;
+    }
     input[type="submit"] {
       display: inline-block !important;
       font-size: 18px !important;
