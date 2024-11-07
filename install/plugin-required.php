@@ -59,42 +59,37 @@ function chambeshi_register_required_plugins() {
 
   $plugin_includes = array(
     array(
-		'name'     			=> 'Elementor Website Builder',
+		'name'     			=> __( 'Elementor Website Builder', 'chambeshi' ),
 		'slug'     			=> 'elementor',
 		'required'     	=> true,
     ),
     array(
-		'name'          => 'Elementor Pro',
+		'name'          => __( 'Elementor Pro', 'chambeshi' ),
 		'slug'          => 'elementor-pro',
 		'source'        => $pathfile . 'elementor-pro.zip',
 		'required'      => true,
 	),
 	array(
-		'name'          => 'Smart Slider 3 Pro',
+		'name'          => __( 'Smart Slider 3 Pro', 'chambeshi' ),
 		'slug'          => 'nextend-smart-slider3-pro',
 		'source'        => $pathfile . 'nextend-smart-slider3-pro.zip',
 		'required'      => true,
 	),
 	array(
-		'name'          => 'Advanced Custom Fields PRO',
+		'name'          => __( 'Advanced Custom Fields PRO', 'chambeshi' ),
 		'slug'          => 'advanced-custom-fields-pro',
 		'source'        => $pathfile . 'advanced-custom-fields-pro.zip',
 		'required'      => true,
     ),
 	array(
-		'name'          => 'Gravity Forms',
+		'name'          => __( 'Gravity Forms', 'chambeshi' ),
 		'slug'          => 'gravityforms',
 		'source'        => $pathfile . 'gravityforms.zip',
 		'required'      => true,
 	),
 	array(
-		'name'          => 'Newsletter',
+		'name'          => __( 'Newsletter', 'chambeshi' ),
 		'slug'          => 'newsletter',
-		'required'      => false,
-    ),
-    array(
-		'name'          => 'WooCommerce',
-		'slug'          => 'woocommerce',
 		'required'      => false,
     ),
 

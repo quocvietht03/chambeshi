@@ -32,10 +32,6 @@ $plugin_includes = array(
     'name'     => __( 'Newsletter', 'chambeshi' ),
     'slug'     => 'newsletter',
   ),
-  array(
-    'name'     => __( 'WooCommerce', 'chambeshi' ),
-    'slug'     => 'woocommerce',
-  ),
 
 );
 

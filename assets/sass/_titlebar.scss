@@ -27,6 +27,7 @@
       -webkit-box-orient: vertical;
       padding-right: 60px;
       max-width: 850px;
+      word-break: break-word;
       @media (max-width: $break-lg) {
         .single & {
           font-size: 40px;

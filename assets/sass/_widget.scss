@@ -226,10 +226,10 @@
       font-family: $primary-font;
       font-size: 20px;
       font-style: normal;
-      font-weight: 600;
-      line-height: 30px;
-      text-transform: uppercase;
-      margin-bottom: 11px;
+      font-weight: 700;
+      line-height: normal;
+      color: $color-accent;
+      margin-bottom: 12px;
     }
     &__button {
       padding: 16px;
@@ -237,6 +237,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 16px;
       padding: 16px;
       border-radius: 10px;
     }
@@ -286,7 +287,6 @@
           width: 100%;
           display: flex;
           align-items: center;
-          column-gap: 15px;
         }
         &__button {
           svg {

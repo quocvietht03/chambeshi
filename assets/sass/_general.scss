@@ -194,7 +194,11 @@
 .bt-cover-image {
   position: relative;
   overflow: hidden;
-  background: #cdcdcd;
+  background-color: #cdcdcd;
+  background-image: url(../images/placeholder-image.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   padding-bottom: 66.66%;
   img {
     @extend .bt-image-absolute;
@@ -361,7 +365,7 @@
     font-size: 40px;
     font-style: normal;
     font-weight: 600;
-    line-height: 162.5%; /* 162.5% */
+    line-height: 1.25;
     margin-bottom: 16px;
     @media (max-width: $break-sm){
       font-size: 32px;
@@ -531,6 +535,108 @@
         min-width: 200px;
         width: 200px;
       }
+    }
+  }
+  .wp-block-navigation {
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        margin: 0 10px 0 0;
+        padding-left: 0;
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+  .wp-block-query {
+    &-pagination {
+      margin-top: 24px;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        padding-left: 0;
+        &:before {
+          display: none;
+        }
+        &:not(:last-child) {
+          margin-bottom: 24px;
+        }
+      }
+    }
+    .wp-block-post {
+      &-title {
+        font-size: 24px;
+        margin: 0 0 8px;
+      }
+    }
+  }
+  ul.wp-block-archives-list,
+  ul.wp-block-categories-list,
+  ul.wp-block-latest-posts__list,
+  ul.wp-block-page-list,
+  ul.wp-block-rss { 
+    margin: 0 0 24px;
+    padding: 0;
+    ul {
+      padding-left: 20px;
+    }
+  }
+  ul.wp-block-social-links {
+    margin: 0 0 24px;
+    padding: 0;
+    li {
+      margin-bottom: 0;
+      padding-left: 0;
+      &:before {
+        display: none;
+      }
+    }
+  }
+  .wp-block-latest-comments {
+    margin: 0;
+    padding: 0;
+    ol {
+      padding-left: 30px;
+    }
+    &__comment {
+      position: relative;
+    }
+    &__comment-avatar {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .wp-block-search {
+    &__button-inside {
+      .wp-block-search__button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        border-radius: 0 5px 5px 0;
+      }
+    }
+    &__text-button {
+      .wp-block-search__input {
+        padding-right: 165px;
+      }
+    }
+    &__icon-button {
+      .wp-block-search__input {
+        padding-right: 120px;
+      }
+    }
+    &__inside-wrapper {
+      position: relative;
+      padding: 0;
+    }
+    &__button {
+      border-radius: 5px;
     }
   }
 }

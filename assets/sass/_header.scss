@@ -73,7 +73,7 @@
           display: inline-block;
           font-family: $primary-font;
           color: $color-primary;
-          font-size: 16px;
+          font-size: 18px;
           font-weight: 500;
           line-height: 130%;
           &:hover {
@@ -240,6 +240,7 @@
               opacity: 1;
               visibility: visible;
               background: transparent;
+              box-shadow: none;
               li {
                 border-top: 1px solid #c4c4c4;
                 &:not(:first-child) {
