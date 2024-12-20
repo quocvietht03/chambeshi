@@ -97,7 +97,7 @@ class ElementorWidgets
 	public function widget_styles()
 	{
 		wp_enqueue_style('slick-slider', get_template_directory_uri() . '/assets/libs/slick/slick.css', array(), false);
-		wp_enqueue_style('elementor-swiper', plugins_url('elementor/assets/lib/swiper/css/swiper.min.css'), array(), false);
+		wp_enqueue_style('swiper-slider', get_template_directory_uri() . '/assets/libs/swiper/swiper.min.css', array(), false);
 	}
 
 	/**
@@ -110,7 +110,7 @@ class ElementorWidgets
 	 */
 	public function widget_scripts()
 	{
-		wp_register_script('elementor-swiper',plugins_url('elementor/assets/lib/swiper/swiper.min.js'), array('jquery'), '', true);
+		wp_register_script('swiper-slider', get_template_directory_uri() . '/assets/libs/swiper/swiper.min.js', array('jquery'), '', true);
 		wp_register_script('slick-slider', get_template_directory_uri() . '/assets/libs/slick/slick.min.js', array('jquery'), '', true);
 		wp_register_script('select2-min', get_template_directory_uri() . '/assets/libs/select2/select2.min.js', array('jquery'), '', true);
 		wp_register_script('elementor-widgets',  get_stylesheet_directory_uri() . '/framework/widgets/frontend.js', ['jquery'], '', true);

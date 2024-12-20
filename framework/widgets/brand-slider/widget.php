@@ -37,7 +37,7 @@ class Widget_BrandSlider extends Widget_Base
 
     public function get_script_depends()
     {
-        return ['elementor-swiper', 'elementor-widgets'];
+        return ['swiper-slider', 'elementor-widgets'];
     }
 
     protected function register_layout_section_controls()
