@@ -167,6 +167,14 @@
 			});
 		}
 	}
+	function ChambeshiCopyrightCurrentYear() {
+		var searchTerm = '{Year}',
+			replaceWith = new Date().getFullYear();
+
+		$('.bt-elwg-site-copyright').each(function () {
+			this.innerHTML = this.innerHTML.replace(searchTerm, replaceWith);
+		});
+	}
 	function Chambeshi_GF_Select2() {
 		$('.gform_wrapper').each(function () {
 			const $self = $(this);
@@ -192,6 +200,7 @@
 		ChambeshiCounter();
 		ChambeshiMegaMenuAddClass();
 		ChambeshiCommentValidation();
+		ChambeshiCopyrightCurrentYear();
 	});
 
 	jQuery(window).on('resize', function () {
