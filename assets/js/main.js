@@ -181,8 +181,6 @@
 			$($self).find('select').select2({
 				dropdownParent: $self,
 				minimumResultsForSearch: Infinity,
-				placeholder: "Please Choose Option",
-				allowClear: true
 			});
 		})
 	}
